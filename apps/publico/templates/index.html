@@ -20,16 +20,21 @@
 
 
 	<link rel="stylesheet" type="text/css" href="{% static 'css/styles.css' %}">
+	<link rel="stylesheet" href="css/normalize.min.css">
 	<script type="text/javascript" src="{% static 'js/funciones.js' %}"></script>
+
 
 </head>
 <body>
- {% include 'header.html' %}
+	{% include 'header.html' %}
 
- {% include 'body_video.html' %}
+	<div class="container-fluid">
+ 
+	 {% include 'body_video.html' %}
 
 
- {% include 'footer.html' %}
+	 {% include 'footer.html' %}
+	</div>
 
 </body>
 </html>
