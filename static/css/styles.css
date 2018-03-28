@@ -6,13 +6,8 @@
     .lema:before {
         font-size: 1rem; 
     }
-    .btn-xs:before{
-	padding:0.75rem 2.1874rem;
-	font-size: 0.5rem;
-	line-height: 1.33333;
-	border-radius: 3px;
+    
 }
-
 @media (max-width:580px) and (min-width: 440px) {
     .h1-video:before {
         font-size: 4rem; 
@@ -20,6 +15,7 @@
     .lema:before {
         font-size: 1.5rem; 
     }
+    
 }
 
 @media (max-width:720px) and (min-width: 580px){
@@ -29,6 +25,7 @@
     .lema:before {
         font-size: 2rem; 
     }
+    
 }
 
 @media (max-width:900px) and (min-width: 720) {
@@ -38,7 +35,7 @@
     .lema:before {
         font-size: 3rem; 
     }
-}
+
 }
 @media (max-width:1550px) and (min-width: 900px) {
     
@@ -54,12 +51,7 @@
     .lema:before {
         font-size: 4rem; 
     }
-    .btn-lg:before{
-	padding:0.75rem 2.1874rem;
-	font-size: 3rem;
-	line-height: 1.33333;
-	border-radius: 3px;
-}
+    
 }
 
 
@@ -249,7 +241,7 @@ section{
 .btn + .btn{
 	margin-left: 1rem;
 }
-/*.btn-lg{
+.btn-lg{
 	padding:0.75rem 2.1874rem;
 	font-size: 3rem;
 	line-height: 1.33333;
@@ -278,7 +270,7 @@ section{
 	font-size: 0.5rem;
 	line-height: 1.33333;
 	border-radius: 3px;
-}*/
+}
 .btn-black{
 	background-color: #bfcecb;
 	border-color: #bfcecb;
