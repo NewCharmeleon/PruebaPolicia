@@ -13,7 +13,7 @@ def home(request):
 
 
 
-def publicacion(request):
+"""def publicacion(request):
 
 	if request.method == 'POST':
 		form = PublicacionForm(request.POST)
@@ -25,4 +25,4 @@ def publicacion(request):
 		form = PublicacionForm()
 
 
-	return render(request,"publicacion.html",{'form': form})	
+	return render(request,"publicacion.html",{'form': form})	"""

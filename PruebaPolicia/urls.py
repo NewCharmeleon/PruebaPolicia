@@ -22,7 +22,8 @@ urlpatterns = [
     path('admin/', admin.site.urls),
     path('', public.home,name='home'),
     path('login/',private.login,name='login'),
-    path('logout',private.logout,name='logout'),
-    #path('publicacion/', private.publicacion,name='publicacion'),
-    path('publicacion/', public.publicacion,name='publicacion'),
+    path('logout/',private.logout,name='logout'),
+    path('publicacion/',private.publicacion,name='publicacion'),
+    path('dashboard/',private.dashboard,name='dashboard'),
+    #path('publicacion/', public.publicacion,name='publicacion'),
 ]
