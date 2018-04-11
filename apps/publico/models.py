@@ -7,7 +7,7 @@ class Publicacion(models.Model):
 	TIPO = ((1 , 'articulo'), (2, 'video'),)
 
 	tipo = models.IntegerField(choices = TIPO)
-	descripcion = models.CharField(max_length=100)
+	#descripcion = models.CharField(max_length=100)
 	titulo = models.CharField(max_length=50)
 	contenido = models.TextField()
 	url = models.URLField()
