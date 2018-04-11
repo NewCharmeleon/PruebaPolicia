@@ -1,5 +1,6 @@
 from django.db import models
 from django.contrib.auth.models import User
+from datetime import datetime
 
 # Create your models here.
 class Publicacion(models.Model):
@@ -10,6 +11,7 @@ class Publicacion(models.Model):
 	titulo = models.CharField(max_length=50)
 	contenido = models.TextField()
 	url = models.URLField()
-	fecha_creacion = models.DateField()
 	fuente = models.CharField(max_length=100)
-	usuario = models.ForeignKey(User, on_delete = 'CASCADE')
+	fecha_creacion = models.DateTimeField(auto_now_add=True)
+	#fecha_creacion = models.DateTimeField(("Fecha de creacion"),default=datetime.now())
+	usuario = models.ForeignKey(User, on_delete = 'CASCADE', default=User)
