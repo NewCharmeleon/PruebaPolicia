@@ -38,7 +38,7 @@ def logout(request):
 	auth_logout(request)  # cierra sesion
 	return redirect(reverse('home')) # redirecciona a home
 
-def publicacion(request):
+def new_publicacion(request):
 
 	if request.method == 'POST':
 		form = PublicacionForm(request.POST)
@@ -61,4 +61,36 @@ def publicacion(request):
 		form = PublicacionForm()
 
 
-	return render(request,"publicacion.html",{'form': form})	
+	return render(request,'new_publicacion.html',{'form': form})
+
+def show_publicacion(request,id):
+
+	publicacion=get_object_or_404(Publicacion, id=id)
+	return render(request,'show_publicacion.html',{'publicacion':publicacion})
+		
+	
+def edit_publicacion(request, id):
+
+	publicacion=get_object_or_404(Publicacion, id=id)
+	if request.method == 'POST':
+		form = PublicacionForm(request.POST, instance=publicacion)
+		if form.is_valid():
+			
+			publicacion.tipo = form.cleaned_data['tipo']
+			publicacion.titulo = form.cleaned_data['titulo']
+			publicacion.contenido = form.cleaned_data['contenido']
+			publicacion.url = form.cleaned_data['url']
+			publicacion.fuente = form.cleaned_data['fuente']
+			publicacion.usuario = request.user
+			try:
+				publicacion.save()
+				return render(request,'new_publicacion.html',{'usuario':request.user, 'id':publicacion.id})
+			except Exception as e:
+				print(e)
+
+
+	else:
+		form = PublicacionForm(instance=publicacion)
+
+
+	return render(request,"edit_publicacion.html",{'form': form})			

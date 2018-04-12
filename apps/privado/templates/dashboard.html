@@ -22,7 +22,7 @@
 						<hr style="border-top: 3px solid #81BEF7;">
 						<div class="mbr-section-btn pull-right">
 							
-        					<a href="{% url 'publicacion' %}" class="btn-lg btn-success"> <i class="glyphicon glyphicon-pencil"></i>Crear Publicacion</a>	
+        					<a href="{% url 'new_publicacion' %}" class="btn-lg btn-success"> <i class="glyphicon glyphicon-pencil"></i>Crear Publicacion</a>	
             				
         					
         					<a href="{% url 'logout' %}" class="btn btn-default btn-lg"> <i class="glyphicon glyphicon-log-out"></i> cerrar sesion</a>
@@ -61,7 +61,7 @@
 											{{publicacion.titulo}}
 										</td>
 										<td>
-											<a href="" alt="Ver publicacion"> <i class="glyphicon glyphicon-eye-open"></i> </a>
+											<a href="{% url 'show_publicacion' id=publicacion.id %}" > <i class="glyphicon glyphicon-eye-open"></i> </a>
 										</td>
 										<td>
 											<a href="" alt="Editar Publicacion"> <i class="glyphicon glyphicon-edit" ></i> </a>

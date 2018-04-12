@@ -1,0 +1,107 @@
+<!DOCTYPE html>
+{% load staticfiles %}
+<html>
+<head>
+	<title>Ver</title>
+	<!-- Integracion de JQuery y Bootstrap -->
+	<link rel="stylesheet" type="text/css" href="{% static 'css/bootstrap.min.css' %}">
+	<script type="text/javascript" src="{% static 'js/jquery-3.3.1.min.js' %}"></script>
+	<script type="text/javascript" src="{% static 'js/bootstrap.min.js' %}"></script>
+	<!-- Fin Integracion -->
+</head>
+<body style="background-color: #81BEF7">
+	<div class="container">
+		<div class="container">
+			<div class="row" style="padding-top: 5%;">
+				<div class="col-md-10 col-md-offset-1 well">
+					<div class="row">
+						<div class="col-md-12">
+							<center><img src="{% static 'img/Escudo_PoliciaCh.png' %}"></center>
+						</div>
+					</div>
+					<hr>
+					<div class="row">
+						<div class="col-md-12">
+							<h2> Ver publicaci&oacute;n</h2>
+							<hr style="border-top: 3px solid #81BEF7;">
+						</div>
+					</div>
+					<div class="row">
+						<br>
+						<div class="col-md-12">
+							<label class="col-md-2"> Tipo </label>
+							<div id="tipo" class="col-md-10">
+								{% if publicacion.tipo == 1%}
+									Articulo
+								{% else %}
+									Video
+								{% endif %}
+							</div>
+						</div>
+						<br>
+						<hr style="border-top: 2px solid #cccccc;">
+						<div class="col-md-12">
+							<label class="col-md-2"> Titulo </label>
+							<div class="col-md-10">
+								{{publicacion.titulo}}
+							</div>
+						</div>
+						<br>	
+						<hr style="border-top: 2px solid #cccccc;">
+						<div class="col-md-12">
+							<label class="col-md-2"> Contenido </label>
+							<div class="col-md-10">
+								{{publicacion.contenido}}
+							</div>
+						</div>
+						<br>
+						<hr style="border-top: 2px solid #cccccc;">
+						{% if publicacion.tipo == 2%}
+						<div id="url" class="col-md-12">
+							<label class="col-md-2"> URL </label>
+							<div class="col-md-10">
+								<a href="{{publicacion.url}}" target="_blank">{{publicacion.url}}</a>
+							</div>
+							<br>
+						<hr style="border-top: 2px solid #81BEF7;">
+						</div>
+						{% else %}
+						<div id="fuente" class="col-md-12">
+							<label class="col-md-2"> Fuente </label>
+							<div class="col-md-10">
+								{{publicacion.fuente}}
+							</div>
+							<br>
+						<hr style="border-top: 2px solid #81BEF7;">
+						</div>
+						{% endif %}
+						
+						<a href="{% url 'dashboard' %}" class="btn btn-info btn-lg pull-right"> <i class="glyphicon glyphicon-arrow-left"></i> Volver </a>
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>			
+	</div>
+	<script type="text/javascript">
+
+		
+			/*var tipo = document.getElementById('tipo').innerHTML;
+			
+			if (tipo == 1){
+     			 
+     			 $('#url').hide();
+     			 $('#fuente').show();
+     			 
+     				
+			}
+			else{
+				
+     			 $('#url').show();
+     			 $('#fuente').hide();
+     			 
+     				
+			};*/
+			
+	</script>	
+</body>
