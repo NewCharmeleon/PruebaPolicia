@@ -23,7 +23,10 @@ urlpatterns = [
     path('', public.home,name='home'),
     path('login/',private.login,name='login'),
     path('logout/',private.logout,name='logout'),
-    path('publicacion/',private.publicacion,name='publicacion'),
     path('dashboard/',private.dashboard,name='dashboard'),
+    path('publicacion/new/',private.new_publicacion,name='new_publicacion'),
+    path('publicacion/<int:id>/',private.show_publicacion,name='show_publicacion'),
+    path('publicacion/id/',private.edit_publicacion,name='edit_publicacion'),
+    
     #path('publicacion/', public.publicacion,name='publicacion'),
 ]

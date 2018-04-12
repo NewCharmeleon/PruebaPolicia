@@ -27,19 +27,13 @@
 					</div>
 					<div class="row">
 						<br>
-						<form action="{% url 'publicacion' %}" method="post" class="form-horizontal">{% csrf_token %}
+						<form action="{% url 'new_publicacion' %}" method="post" class="form-horizontal">{% csrf_token %}
 							<div class="form-group form-group-lg">
 								<label class="col-md-2"> Tipo </label>
 								<div class="col-md-10">
 									{{form.tipo}}
 								</div>
 							</div>
-							<!--div class="form-group form-group-lg">
-								<label class="col-md-2"> Descripci&oacute;n </label>
-								<div class="col-md-10">
-									{{form.descripcion}}
-								</div>
-							</div-->
 							<div class="form-group form-group-lg">
 								<label class="col-md-2"> Titulo </label>
 								<div class="col-md-10">
