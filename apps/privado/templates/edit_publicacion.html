@@ -1,0 +1,102 @@
+<!DOCTYPE html>
+{% load staticfiles %}
+<html>
+<head>
+	<title>Editar</title>
+	<!-- Integracion de JQuery y Bootstrap -->
+	<link rel="stylesheet" type="text/css" href="{% static 'css/bootstrap.min.css' %}">
+	<script type="text/javascript" src="{% static 'js/jquery-3.3.1.min.js' %}"></script>
+	<script type="text/javascript" src="{% static 'js/bootstrap.min.js' %}"></script>
+	<!-- Fin Integracion -->
+</head>
+<body style="background-color: #81BEF7">
+	<div class="container">
+		<div class="container">
+			<div class="row" style="padding-top: 5%;">
+				<div class="col-md-10 col-md-offset-1 well">
+					<div class="row">
+						<div class="col-md-12">
+							<center><img src="{% static 'img/Escudo_PoliciaCh.png' %}"></center>
+						</div>
+					</div>
+						<hr>
+					<div class="row">
+						<div class="col-md-12">
+							<h2> Editar publicaci&oacute;n</h2>
+							<hr style="border-top: 3px solid #81BEF7;">
+						</div>
+					</div>
+					<div class="row">
+						<br>
+						<form method="post" class="form-horizontal">{% csrf_token %}
+							<div class="form-group form-group-lg">
+								<label class="col-md-2"> Tipo </label>
+								<div class="col-md-10">
+									{{form.tipo}}
+								</div>
+							</div>
+							<div class="form-group form-group-lg">
+								<label class="col-md-2"> Titulo </label>
+								<div class="col-md-10">
+									{{form.titulo}}
+								</div>
+							</div>
+							<div class="form-group form-group-lg">
+								<label class="col-md-2"> Contenido </label>
+								<div class="col-md-10">
+									{{form.contenido}}
+								</div>
+							</div>
+							
+							<div class="form-group form-group-lg">
+								<label class="col-md-2"> URL </label>
+								<div class="col-md-10">
+									{{form.url}}
+								</div>
+							</div>
+							
+							<div class="form-group form-group-lg">
+								<label class="col-md-2"> Fuente </label>
+								<div class="col-md-10">
+									{{form.fuente}}
+								</div>
+							</div>
+							
+							<hr>
+							<button type="submit" class="btn btn-primary btn-lg pull-right"> <i class="glyphicon glyphicon-save"></i> Guardar </button>
+							<a href="{% url 'dashboard' %}" class="btn btn-danger btn-lg pull-right"> <i class="glyphicon glyphicon-remove"></i> Cancelar </a>
+							
+						</form>
+					</div>
+					</div>
+				</div>
+			</div>
+		</div>			
+	</div>
+	<script type="text/javascript">
+		if ($("#id_tipo_0").is(':checked')){
+			$("#id_url").parent().parent().hide();
+		}
+		else
+			{
+				$("#id_fuente").parent().parent().hide();	
+			}/*$("#id_url, #id_fuente").parent().parent().hide();*/
+
+		$("#id_tipo_0").change(function(){
+			if($(this).is(':checked')){
+				$("#id_fuente").parent().parent().show();
+				$("#id_fuente").attr('required','required');
+				$("#id_url").parent().parent().hide();
+				$("#id_url").removeAttr('required');
+			}
+		});
+		$("#id_tipo_1").change(function(){
+			if($(this).is(':checked')){
+				$("#id_url").parent().parent().show();
+				$("#id_url").attr('required','required');
+				$("#id_fuente").parent().parent().hide();
+				$("#id_fuente").removeAttr('required');
+			}
+		});
+	</script>
+</body>

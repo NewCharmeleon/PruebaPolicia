@@ -84,13 +84,12 @@ def edit_publicacion(request, id):
 			publicacion.usuario = request.user
 			try:
 				publicacion.save()
-				return render(request,'new_publicacion.html',{'usuario':request.user, 'id':publicacion.id})
+				return HttpResponseRedirect(reverse('dashboard'))
+				#return redirect(request,'dashboard.html',{'usuario':request.user})
+				#return redirect('dashboard.html',id=publicacion.id)
 			except Exception as e:
 				print(e)
-
-
 	else:
 		form = PublicacionForm(instance=publicacion)
-
 
 	return render(request,"edit_publicacion.html",{'form': form})			

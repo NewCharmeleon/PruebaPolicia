@@ -64,10 +64,10 @@
 											<a href="{% url 'show_publicacion' id=publicacion.id %}" > <i class="glyphicon glyphicon-eye-open"></i> </a>
 										</td>
 										<td>
-											<a href="" alt="Editar Publicacion"> <i class="glyphicon glyphicon-edit" ></i> </a>
+											<a href="{% url 'edit_publicacion' id=publicacion.id %}" alt="Editar Publicacion"> <i class="glyphicon glyphicon-edit" ></i> </a>
 										</td>
 										<td>
-											<a href="" alt="Eliminar Publicacion"> <i class="glyphicon glyphicon-trash"></i> </a>
+											<a href="% url 'delete_publicacion' id=publicacion.id %" alt="Eliminar Publicacion"> <i class="glyphicon glyphicon-trash"></i> </a>
 										</td>
 									</tr>	
 									{% endfor %}
