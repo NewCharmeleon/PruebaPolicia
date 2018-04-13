@@ -26,7 +26,7 @@ urlpatterns = [
     path('dashboard/',private.dashboard,name='dashboard'),
     path('publicacion/new/',private.new_publicacion,name='new_publicacion'),
     path('publicacion/<int:id>/',private.show_publicacion,name='show_publicacion'),
-    path('publicacion/id/',private.edit_publicacion,name='edit_publicacion'),
+    path('publicacion/<int:id>/edit/',private.edit_publicacion,name='edit_publicacion'),
     
     #path('publicacion/', public.publicacion,name='publicacion'),
 ]
