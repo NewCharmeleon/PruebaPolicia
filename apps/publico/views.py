@@ -1,15 +1,16 @@
 from django.shortcuts import render
 from django.http import HttpResponseRedirect
-
-from .forms import PublicacionForm
+from apps.privado.models import Publicacion
+#from .forms import PublicacionForm
 
 # Create your views here.
 
 def home(request):
 
-	repetir = [1,2,3,4]
+	noticias = Publicacion.objects.filter(is_para_portada=True, tipo=1)
+	videos = Publicacion.objects.filter(is_para_portada=True, tipo=2)
 
-	return render(request,"index.html",{'nombre':"Adrian", 'rango' :repetir})
+	return render(request,"index.html",{'nombre':"Adrian", 'noticias' :noticias, 'videos':videos})
 
 
 
