@@ -6,10 +6,10 @@
 		<div class="col-md-12">
 			<section>
 				<div video id="institucional">
-					<video poster="{% static 'img/Escudo_PoliciaCh.png' %}" loop autoplay muted				width=99% height=100%>
-							<source src="{% static 'img/Video_PFA.mp4' %}" type="video/mp4">
-						<source src="{% static 'img/Video_PFA.ogg' %}" type="video/ogg">
-						<source src="{% static 'img/Video_PFA.webm' %}" type="video/webm">	
+					<video poster="{% static 'img/Escudo_PoliciaCh.png' %}" loop autoplay muted width=99% height=100%>
+							<source src="{% static 'img/Video.mp4' %}" type="video/mp4">
+						<source src="{% static 'img/Video.ogg' %}" type="video/ogg">
+						<source src="{% static 'img/Video.webm' %}" type="video/webm">	
 					Lo sentimos. Tu navegador no soporta HTML5 video.	
 					</video>
 					<hgroup class="hgroup-video" >
@@ -17,10 +17,10 @@
        			 		<p class="lema" id="lema">Una fuerza de seguridad que evoluciona.</p>
        			 		<div class="mbr-section-btn">
         					<div class="btn btn-lg btn-black">
-            					<a href="">Inscripcion Oficiales</a>	
+            					<a href="http://institutosuperior811.wordpress.com/inscripciones-2017/" class="external_link">Inscripcion Oficiales</a>	
             				</div>
            				 	<div class="btn btn-lg btn-secondary">
-            					<a href="">Inscripcion Suboficiales</a>
+            					<a href="http://institutosuperior811.wordpress.com/inscripciones-agentes/" class="external_link">Inscripcion Suboficiales</a>
         					</div>
         				</div>
     				</hgroup>
@@ -33,40 +33,13 @@
 
 	<!--Columnas de Noticias-->
 	<div class="row">
-		<div class="col-md-4 noticia">
-			<h2>
-				Noticia 1
-			</h2>
-			<p>
-				Donec id elit non mi porta gravida at eget metus. Fusce dapibus, tellus ac cursus commodo, tortor mauris condimentum nibh, ut fermentum massa justo sit amet risus. Etiam porta sem malesuada magna mollis euismod. Donec sed odio dui.
-			</p>
-			<p>
-				<a class="btn" href="#">Leer mas»</a>
-			</p>
-		</div>
-		<div class="col-md-4 noticia">
-			<h2>
-				Noticia 2
-			</h2>
-			<p>
-				Donec id elit non mi porta gravida at eget metus. Fusce dapibus, tellus ac cursus commodo, tortor mauris condimentum nibh, ut fermentum massa justo sit amet risus. Etiam porta sem malesuada magna mollis euismod. Donec sed odio dui.
-			</p>
-			<p>
-				<a class="btn" href="#">Leer mas»</a>
-			</p>
-		</div>
-			<div class="col-md-4 noticia">
-			<h2>
-				Noticia 3
-			</h2>
-			<p>
-				Donec id elit non mi porta gravida at eget metus. Fusce dapibus, tellus ac cursus commodo, tortor mauris condimentum nibh, ut fermentum massa justo sit amet risus. Etiam porta sem malesuada magna mollis euismod. Donec sed odio dui.
-			</p>
-			<p>
-				<a class="btn" href="#">Leer mas»</a>
-			</p>
-		</div>
-	</div>
+		{% for noticia in noticias %}
+
+			{% include 'preview_noticia.html' with noticia=noticia %}
+
+		{% endfor %}
+		
+		
 	<!--Tabla de Videos-->
 	<div class="row table">
 		<div class="col-md-12">
@@ -83,29 +56,12 @@
 					</tr>
 				</thead>
 				<tbody>
-					<tr>
-						<td>
-							<iframe width="230" height="162" src="https://www.youtube.com/embed/A23xrIWOsVw" frameborder="0" allow="autoplay; encrypted-media" allowfullscreen></iframe>
-						</td>
-						<td>
-							<b>El Jefe de la Unidad Regional, Felipe González dio cuenta de dos personas detenidas tras robar 2.500 pesos en una verdulería. Habría un tercer implicado en el robo que aun es buscado. En otro hecho se demora un menor de 15 años que luego de robar un celular fue a cometer otro delito. Además el comisario se refirió a los controles vehiculares durante el fin de semana. 12 Noticias</b> 
-						</td>
-					</tr>	
-					<tr>
-						<td>
-							<iframe width="230" height="162" src="https://www.youtube.com/embed/Ed2xydnGE2c" frameborder="0" allow="autoplay; encrypted-media" allowfullscreen></iframe>
-						</td>
-						<td>
-							<b text-align="center">Continúa la investigación en la causa de enriquecimiento ilícito y fraude al Estado por parte de ex funcionarios. Ayer la justicia realizó 4 diligencias. Por un lado en el domicilio de el ex gerente de Corfo "Bedo" Reinoso; otro en Playa Unión, en el domicilio de Miguel Ángel García, un hombre vinculado a la construcción; en Trelew en el domicilio del ex titular de Seros Cristian Eguillor, y el estudio contable de este mismo. 12 Noticias</b> 
-						</td>
-					</tr>
-						<td>
-							<iframe width="230" height="162" src="https://www.youtube.com/embed/LczaSSBjcdo4" frameborder="0" allow="autoplay; encrypted-media" allowfullscreen></iframe>
-						</td>
-						<td>
-							<b>Allanamientos en Trelew.</b> 
-						</td>
-					</tr>
+					{% for video in videos %}
+
+						{% include 'preview_video.html' with video=video %}
+
+					{% endfor %}
+				
 				</tbody>
 			</table>
 		</div>
