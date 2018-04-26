@@ -11,6 +11,7 @@
 </head>
 <body style="background-color: #81BEF7">
 	<div class="container">
+
 		<div class="row" style="padding-top:5%;">
 			<div class="col-md-4 col-md-offset-4 well ">
 				<div class="row">
@@ -20,6 +21,13 @@
 				</div>		
 				<hr style="border-top: 3px solid #81BEF7;">
 				<form method="POST" action="{% url 'login' %}" class="form-horizontal">{% csrf_token %}
+					{% if error %}
+						<div class="alert alert-danger alert-dismissible" role alert>
+							<button type="button" class="close" data-dismiss="alert" aria-label="Close"><span aria-hidden="true">&times;</span>
+							</button>
+								<p> <i class="glyphicon glyphicon-info-sign"></i> {{error}}</p>	
+						</div>
+					{% endif %}
 					<div class="form-group">
 						<div class="col-md-12">
 							{{form.user}}

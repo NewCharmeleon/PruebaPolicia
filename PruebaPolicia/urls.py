@@ -17,6 +17,8 @@ from django.contrib import admin
 from apps.publico import views as public
 from apps.privado import views as private
 from django.urls import path
+from django.conf import settings
+from django.conf.urls.static import static
 
 urlpatterns = [
     path('admin/', admin.site.urls),
@@ -27,6 +29,15 @@ urlpatterns = [
     path('publicacion/new/',private.new_publicacion,name='new_publicacion'),
     path('publicacion/<int:id>/',private.show_publicacion,name='show_publicacion'),
     path('publicacion/<int:id>/edit/',private.edit_publicacion,name='edit_publicacion'),
+    path('publicacion/<int:id>/confirm_delete/',private.confirm_delete_publicacion,name='confirm_delete_publicacion'),
+    path('publicacion/<int:id>/delete/',private.delete_publicacion,name='delete_publicacion'),
+    path('publicacion/<int:id>/publicar/',private.publicar_publicacion,name='publicar_publicacion'),
+    path('publicacion/<int:id>/despublicar/',private.despublicar_publicacion,name='despublicar_publicacion'),
+    path('publicacion/<int:id>/archivar/',private.archivar_publicacion,name='archivar_publicacion'),
+    path('publicacion/<int:id>/portada/',private.enviar_publicacion,name='enviar_publicacion'),
+    path('publicacion/publicados/',private.show_publicados,name='show_publicados'),
+    path('publicacion/archivados/',private.show_archivados,name='show_archivados'),
+    path('publicacion/portada/',private.show_portada,name='show_portada'),
     
     #path('publicacion/', public.publicacion,name='publicacion'),
-]
+] # + static(settings.MEDIA_URL, document_root=settings.MEDIA_ROOT)

@@ -21,6 +21,13 @@
 					</div>
 						<hr>
 					<div class="row">
+						{% if messages %}
+							<div class="alert alert-succes">
+								{% for message in messages %}
+									{{ message}}
+								{%endfor%}	
+							</div>
+						{% endif %}		
 						<div class="col-md-12">
 							<h2> Editar publicaci&oacute;n</h2>
 							<hr style="border-top: 3px solid #81BEF7;">
@@ -29,38 +36,66 @@
 					<div class="row">
 						<br>
 						<form method="post" class="form-horizontal">{% csrf_token %}
+							
+    							     							
+    							
 							<div class="form-group form-group-lg">
 								<label class="col-md-2"> Tipo </label>
 								<div class="col-md-10">
 									{{form.tipo}}
 								</div>
-							</div>
+									{% if form.errors.tipo %}
+								<div class="col-md-10 col-md-offset-2 alert alert-danger">
+                							{{ form.errors.tipo }}
+            					</div>
+								{% endif %}
+							</div>	
+							<br>
 							<div class="form-group form-group-lg">
 								<label class="col-md-2"> Titulo </label>
 								<div class="col-md-10">
 									{{form.titulo}}
 								</div>
-							</div>
+									{% if form.errors.titulo %}
+								<div class="col-md-10 col-md-offset-2 alert alert-danger">
+                						{{ form.errors.titulo|escape }}
+            					</div>
+								{% endif %}
+							</div>	
+							<br>
 							<div class="form-group form-group-lg">
 								<label class="col-md-2"> Contenido </label>
 								<div class="col-md-10">
 									{{form.contenido}}
 								</div>
 							</div>
-							
+								{% if form.errors.contenido %}
+								<div class="col-md-10 col-md-offset-2 alert alert-danger">
+                							{{ form.errors.contenido|escape }}
+            					</div>
+								{% endif %}
 							<div class="form-group form-group-lg">
 								<label class="col-md-2"> URL </label>
 								<div class="col-md-10">
 									{{form.url}}
 								</div>
 							</div>
-							
+								{% if form.errors.url %}
+								<div class="col-md-10 col-md-offset-2 alert alert-danger">
+                							La URL no es Valida
+            					</div>
+								{% endif %}
 							<div class="form-group form-group-lg">
 								<label class="col-md-2"> Fuente </label>
 								<div class="col-md-10">
 									{{form.fuente}}
 								</div>
 							</div>
+								{% if form.errors.fuente %}
+								<div class="col-md-10 col-md-offset-2 alert alert-danger">
+                							{{ form.errors.fuente|escape }}
+            					</div>
+								{% endif %}
 							
 							<hr>
 							<button type="submit" class="btn btn-primary btn-lg pull-right"> <i class="glyphicon glyphicon-save"></i> Guardar </button>
@@ -75,10 +110,12 @@
 	</div>
 	<script type="text/javascript">
 		if ($("#id_tipo_0").is(':checked')){
+			
 			$("#id_url").parent().parent().hide();
 		}
 		else
 			{
+
 				$("#id_fuente").parent().parent().hide();	
 			}/*$("#id_url, #id_fuente").parent().parent().hide();*/
 
@@ -86,6 +123,7 @@
 			if($(this).is(':checked')){
 				$("#id_fuente").parent().parent().show();
 				$("#id_fuente").attr('required','required');
+				$("#id_url").attr('value','');
 				$("#id_url").parent().parent().hide();
 				$("#id_url").removeAttr('required');
 			}
@@ -94,6 +132,7 @@
 			if($(this).is(':checked')){
 				$("#id_url").parent().parent().show();
 				$("#id_url").attr('required','required');
+				$("#id_fuente").attr('value','');
 				$("#id_fuente").parent().parent().hide();
 				$("#id_fuente").removeAttr('required');
 			}
