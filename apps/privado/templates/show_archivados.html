@@ -2,63 +2,12 @@
 {% load staticfiles %}
 <html>
 <head>
-	<title>Dashboard</title>
+	<title>Achivados</title>
 	<!-- Integracion de JQuery y Bootstrap -->
 	<link rel="stylesheet" type="text/css" href="{% static 'css/bootstrap.min.css' %}">
 	<script type="text/javascript" src="{% static 'js/jquery-3.3.1.min.js' %}"></script>
 	<script type="text/javascript" src="{% static 'js/bootstrap.min.js' %}"></script>
 	<!-- Fin Integracion -->
-	<style type="text/css">
-		/* Badge custom */
-		.badge {
-		  padding: 1px 9px 2px;
-		  font-size: 12.025px;
-		  font-weight: bold;
-		  white-space: nowrap;
-		  color: #ffffff;
-		  background-color: #999999;
-		  -webkit-border-radius: 9px;
-		  -moz-border-radius: 9px;
-		  border-radius: 9px;
-		}
-		.badge:hover {
-		  color: #ffffff;
-		  text-decoration: none;
-		  cursor: pointer;
-		}
-		.badge-error {
-		  background-color: #b94a48;
-		}
-		.badge-error:hover {
-		  background-color: #953b39;
-		}
-		.badge-warning {
-		  background-color: #f89406;
-		}
-		.badge-warning:hover {
-		  background-color: #c67605;
-		}
-		.badge-success {
-		  background-color: #468847;
-		}
-		.badge-success:hover {
-		  background-color: #356635;
-		}
-		.badge-info {
-		  background-color: #3a87ad;
-		}
-		.badge-info:hover {
-		  background-color: #2d6987;
-		}
-		.badge-inverse {
-		  background-color: #333333;
-		}
-		.badge-inverse:hover {
-		  background-color: #1a1a1a;
-		}
-	</style>
-
-
 </head>
 <body style="background-color: #81BEF7">
 	<div class="container">
@@ -70,37 +19,21 @@
 							<center><img src="{% static 'img/Escudo_PoliciaCh.png' %}"></center>
 						</div>
 						{% if messages %}
-							
 							{% for message in messages %}
 								<div class="alert alert-success alert-dismissible" role alert>
-									<button type="button" class="close" data-dismiss="alert" aria-label="Close"><span aria-hidden	="true">&times;</span></button>
-									<p> <i class="glyphicon glyphicon-info-sign"></i> {{ message}}</p>	
+									<button type="button" class="close" data-dismiss="alert" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+									<p> <i class="glyphicon glyphicon-info-sign"></i> {{ message}}</p>
 								</div>
 							{%endfor%}	
 						{% endif %}	
-
-						<h1>Tablero de Control de: {{user.username}} </h1>
-						<hr style="border-top: 3px solid #81BEF7;">
-						<div class="mbr-section-btn pull-right">
-							
-
-							<a href="{% url 'show_publicados' %}" class="btn-lg btn-info"> <i class="glyphicon glyphicon-eye-open"></i>Publicaciones publicadas</a>	
-        					<a href="{% url 'show_archivados' %}" class="btn-lg btn-info"> <i class="glyphicon glyphicon-eye-open"></i>Publicaciones archivadas</a>	
-        					<a href="{% url 'show_portada' %}" class="btn-lg btn-info"> <i class="glyphicon glyphicon-eye-open"></i>Publicaciones en Portada</a>	
-            				<br><br>
-        					<a href="{% url 'logout' %}" class="btn btn-default btn-lg pull-right"> <i class="glyphicon glyphicon-log-out"></i> cerrar sesion</a>
-        					<a href="{% url 'new_publicacion' %}" class="btn-lg btn-success pull-right"> <i class="glyphicon glyphicon-pencil"></i>Crear Publicacion</a>	
-							
-        				</div>
-        			</div>
-					<hr style="border-top: 3px solid #81BEF7;">
+					<hr>
 					<div class="row">
 						<div class="col-md-12">
-							<h3>Publicaciones anteriores</h3>
+							<h2> Ver publicaciones archivadas</h2>
+							<hr style="border-top: 3px solid #81BEF7;">
 						</div>
 					</div>
 					<div class="row">
-
 						<div class="col-md-12">
 							<table class="table table-condensed">
 								<thead>
@@ -140,9 +73,6 @@
 											{% elif not publicacion.is_publicado and not publicacion.is_archivado %}
 												  <span class="badge badge-info">No Publicado</span> 											 
 											{% endif %}	
-											{% if publicacion.is_para_portada %}
-												<span class="badge badge-success">En Portada</span>
-											{% endif %}	
 										</td>
 										<td>
 											{{publicacion.usuario}}
@@ -150,9 +80,9 @@
 										<td>
 											<a href="{% url 'show_publicacion' id=publicacion.id %}" > <i class="glyphicon glyphicon-eye-open"></i> </a>
 										</td>
-										<td>
+										<!--<td>
 											<a href="{% url 'edit_publicacion' id=publicacion.id %}" alt="Editar Publicacion"> <i class="glyphicon glyphicon-edit" ></i> </a>
-										</td>
+										</td>-->
 										<td>
 											<a href="{% url 'confirm_delete_publicacion' id=publicacion.id %}" alt="Eliminar Publicacion"> <i class="glyphicon glyphicon-trash"></i> </a>
 										</td>
@@ -160,6 +90,7 @@
 									{% endfor %}
 								</tbody>
 							</table>
+							<a href="{% url 'dashboard' %}" class="btn btn-info btn-lg pull-right"> <i class="glyphicon glyphicon-arrow-left"></i> Volver </a>
 						</div>
 					</div>
 				</div>	
