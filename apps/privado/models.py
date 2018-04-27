@@ -19,7 +19,7 @@ class Publicacion(models.Model):
 	fecha_modificacion = models.DateTimeField(auto_now=True)
 	fecha_publicacion = models.DateTimeField(blank=True, null=True)	
 	fecha_archivado = models.DateTimeField(blank=True, null=True)
-	imagen = models.ImageField(upload_to='media/publicaciones/',null=True,blank=True,default=None)
+	imagen = models.ImageField(upload_to='publicaciones',null=True,blank=True)
 	intro = models.CharField(max_length=250, null=True, blank=True, default=None)
 	is_publicado = models.BooleanField(default=False)
 	is_archivado = models.BooleanField(default=False)

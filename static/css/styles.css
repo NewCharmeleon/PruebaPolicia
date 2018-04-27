@@ -203,7 +203,7 @@ section{
 	display: inline-block;
 	box-sizing: border-box;
 	padding-left:10%;
-       
+    min-height: 100vh;
 	
 }
 .hgroup-video{
