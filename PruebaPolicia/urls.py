@@ -19,6 +19,8 @@ from apps.privado import views as private
 from django.urls import path
 from django.conf import settings
 from django.conf.urls.static import static
+from django.urls import re_path
+from django.views.static import serve
 
 urlpatterns = [
     path('admin/', admin.site.urls),
@@ -40,4 +42,11 @@ urlpatterns = [
     path('publicacion/portada/',private.show_portada,name='show_portada'),
     
     #path('publicacion/', public.publicacion,name='publicacion'),
-] # + static(settings.MEDIA_URL, document_root=settings.MEDIA_ROOT)
+] + static(settings.STATIC_URL, document_root=settings.STATIC_ROOT)
+
+if settings.DEBUG:
+    urlpatterns += [
+        re_path(r'^media/(?P<path>.*)$', serve, {
+            'document_root': settings.MEDIA_ROOT,
+        }),
+    ]
