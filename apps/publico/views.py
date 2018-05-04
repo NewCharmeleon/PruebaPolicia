@@ -1,7 +1,8 @@
 from django.shortcuts import render
 from django.http import HttpResponseRedirect
 from apps.privado.models import Publicacion
-#from .forms import PublicacionForm
+from django.shortcuts import render, get_object_or_404, redirect
+from django.urls import reverse
 
 # Create your views here.
 
@@ -9,11 +10,16 @@ def home(request):
 
 	noticias = Publicacion.objects.filter(is_para_portada=True, tipo=1)
 	videos = Publicacion.objects.filter(is_para_portada=True, tipo=2)
-
+	
 	return render(request,"index.html",{'nombre':"Adrian", 'noticias' :noticias, 'videos':videos})
 
 
+def noticia(request, id):
 
+	noticia=get_object_or_404(Publicacion, id=id)
+				
+	return render(request,'noticia.html',{'noticia':noticia})
+	#return HttpResponseRedirect(reverse('home',{'noticia':noticia}))	
 """def publicacion(request):
 
 	if request.method == 'POST':

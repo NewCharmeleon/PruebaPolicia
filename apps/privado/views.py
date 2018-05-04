@@ -61,9 +61,18 @@ def new_publicacion(request):
 			publicacion.intro = form.cleaned_data['intro']
 			publicacion.imagen = form.cleaned_data['imagen']
 			publicacion.usuario = request.user
+			
 			try:
+				#form.publicacion=save(commit=false)
+				#image = Image.open(publicacion.imagen)
+        		#ancho, alto = image.size
+        		#ratio_height = (800*alto)/ancho
+        		#size = ( 800, ratio_height)
+        		#image = image.resize(size, Image.ANTIALIAS)
+        		#image.save(publicacion.imagen)
+				
 				publicacion.save()
-				messages.success(request, "Publicacion creada con exito!!!")
+				messages.success(request, "Borrador creado con exito!!!")
 				return HttpResponseRedirect(reverse('dashboard'))
 				
 			except Exception as e:
@@ -72,6 +81,7 @@ def new_publicacion(request):
 				#return render(request, 'new_publicacion.html',{'form':form,'error':error})
 		else:
 			messages.error(request, "Error. Revise los datos mal cargados.")
+			#print(form.errors)
 			#return render(request,'new_publicacion.html',{'form': form})
 	else:
 		form = PublicacionForm()
@@ -82,12 +92,12 @@ def new_publicacion(request):
 def show_publicacion(request,id):
 
 	publicacion=get_object_or_404(Publicacion, id=id)
-	messages.success(request, "Publicacion obtenida con exito!!!")
+	messages.success(request, "Borradores obtenidos con exito!!!")
 	return render(request,'show_publicacion.html',{'publicacion':publicacion})
 
 @login_required
 def show_archivados(request):	
-	publicaciones = Publicacion.objects.filter(fecha_archivado__isnull=False,is_publicado=False,usuario = request.user).order_by('fecha_archivado')
+	publicaciones = Publicacion.objects.filter(fecha_archivado__isnull=False,is_publicado=False).order_by('fecha_archivado')
 	if not len(publicaciones):
 		messages.warning(request, "No existen publicaciones archivadas")
 	else:	
@@ -96,16 +106,16 @@ def show_archivados(request):
 
 @login_required
 def show_publicados(request):	
-	publicaciones = Publicacion.objects.filter(fecha_publicacion__isnull=False,fecha_archivado__isnull=True, usuario = request.user).order_by('fecha_publicacion')
+	publicaciones = Publicacion.objects.filter(fecha_publicacion__isnull=False,fecha_archivado__isnull=True).order_by('fecha_publicacion')
 	if not len(publicaciones):
 		messages.warning(request, "No existen publicaciones")
 	else:	
-		messages.success(request, "Publicaciones publicadas obtenidas con exito!!!")
+		messages.success(request, "Publicaciones obtenidas con exito!!!")
 	return render(request,'show_publicados.html',{'publicaciones':publicaciones})	
 
 @login_required
 def show_portada(request):	
-	publicaciones = Publicacion.objects.filter(fecha_publicacion__isnull=False, is_para_portada=True,usuario = request.user).order_by('fecha_publicacion')
+	publicaciones = Publicacion.objects.filter(fecha_publicacion__isnull=False, is_para_portada=True).order_by('fecha_publicacion')
 	if not len(publicaciones):
 		messages.warning(request, "No existen publicaciones en portada")
 	else:	
@@ -113,7 +123,7 @@ def show_portada(request):
 	return render(request,'show_portada.html',{'publicaciones':publicaciones})			
 
 @login_required	
-@permission_required('publicacion.change_publicacion', raise_exception=False)
+@permission_required('privado.change_publicacion', raise_exception=False)
 def edit_publicacion(request, id):
 
 	publicacion=get_object_or_404(Publicacion, id=id)
@@ -136,7 +146,7 @@ def edit_publicacion(request, id):
 	return render(request,"edit_publicacion.html",{'form': form})	
 
 @login_required
-@permission_required('publicacion.delete_publicacion', raise_exception=False)
+@permission_required('privado.delete_publicacion', raise_exception=False)
 def confirm_delete_publicacion(request,id):
 
 	publicacion=get_object_or_404(Publicacion, id=id)
@@ -144,6 +154,7 @@ def confirm_delete_publicacion(request,id):
 	return render(request,'confirm_delete_publicacion.html',{'publicacion':publicacion})
 		
 @login_required
+@permission_required('privado.delete_publicacion', raise_exception=False)
 def delete_publicacion(request,id):
 
 	publicacion=get_object_or_404(Publicacion, id=id)
@@ -152,7 +163,7 @@ def delete_publicacion(request,id):
 	return HttpResponseRedirect(reverse('dashboard'))
 
 @login_required
-@permission_required('publicacion.change_publicacion', raise_exception=False)
+@permission_required('privado.change_publicacion', raise_exception=False)
 def publicar_publicacion(request,id):
 
 	publicacion=get_object_or_404(Publicacion, id=id)
@@ -161,11 +172,11 @@ def publicar_publicacion(request,id):
 	return HttpResponseRedirect(reverse('dashboard'))
 
 @login_required
-@permission_required('publicacion.change_publicacion', raise_exception=False)
+@permission_required('privado.change_publicacion', raise_exception=False)
 def enviar_publicacion(request,id):
 	publicaciones=Publicacion.objects.filter(is_publicado=True, is_para_portada=True)
 	cantidad = len(publicaciones)
-	if cantidad>5:
+	if cantidad>6:
 		messages.warning(request, "Debe despublicar alguna publicacion de la portada!!!")
 	else:
 		publicacion=get_object_or_404(Publicacion, id=id)
@@ -175,7 +186,7 @@ def enviar_publicacion(request,id):
 	return HttpResponseRedirect(reverse('dashboard'))	
 
 @login_required
-@permission_required('publicacion.change_publicacion', raise_exception=True)
+@permission_required('privado.change_publicacion', raise_exception=True)
 def despublicar_publicacion(request,id):
 
 	publicacion=get_object_or_404(Publicacion, id=id)
@@ -184,7 +195,7 @@ def despublicar_publicacion(request,id):
 	return HttpResponseRedirect(reverse('dashboard'))	
 
 @login_required
-@permission_required('publicacion.change_publicacion', raise_exception=True)
+@permission_required('privado.change_publicacion', raise_exception=True)
 def archivar_publicacion(request,id):
 
 	publicacion=get_object_or_404(Publicacion, id=id)

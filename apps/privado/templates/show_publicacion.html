@@ -57,34 +57,47 @@
 						<br>	
 						<hr style="border-top: 2px solid #cccccc;">
 						<div class="col-md-12">
+							<label class="col-md-2"> Introduccion </label>
+							<div class="col-md-10">
+								{{publicacion.intro}}
+							</div>
+						</div>
+						<br>	
+						<br>
+						<hr style="border-top: 2px solid #cccccc;">
+						<br>
+						<div class="col-md-12">
 							<label class="col-md-2"> Contenido </label>
 							<div class="col-md-10">
 								{{publicacion.contenido}}
 							</div>
 						</div>
+						
+						{% if publicacion.tipo == 2%}
 						<br>
 						<hr style="border-top: 2px solid #cccccc;">
-						{% if publicacion.tipo == 2%}
 						<div id="url" class="col-md-12">
 							<label class="col-md-2"> URL </label>
 							<div class="col-md-10">
 								<a href="{{publicacion.url}}" target="_blank">{{publicacion.url}}</a>
 							</div>
 							<br>
-						<hr style="border-top: 2px solid #81BEF7;">
 						</div>
 						{% else %}
-						<br>	
-						<hr style="border-top: 2px solid #cccccc;">
+						<br>
+						<hr style="border-top: 1px solid #cccccc;">
 						<div id="fuente" class="col-md-12">
 							<label class="col-md-2"> Fuente </label>
 							<div class="col-md-10">
 								{{publicacion.fuente}}
 							</div>
 							<br>
-						<hr style="border-top: 2px solid #81BEF7;">
+						<br>
 						</div>
 						{% endif %}
+						<br>
+						<br>
+						<hr style="border-top: 2px solid #81BEF7;">
 						<div id="estado" class="col-md-12">
 								<label class="col-md-2"> Estado </label>
 								<div class="col-md-10"> {% if publicacion.is_publicado %}
@@ -92,7 +105,7 @@
 											{% elif publicacion.is_archivado  %}
 												<span class="badge">Archivado</span>											 
 											{% elif not publicacion.is_publicado and not publicacion.is_archivado %}
-												  <span class="badge badge-info">No Publicado</span> 											 
+												  <span class="badge badge-info">Borrador</span> 											 
 											{% endif %}	
 											{% if publicacion.is_para_portada %}
 												<span class="badge badge-success">En Portada</span>
@@ -100,7 +113,10 @@
 						</div>
 						<br>
 						<hr style="border-top: 2px solid #81BEF7;">
-	   					
+	   					<a class="twitter-share-button"
+  href="https://twitter.com/intent/tweet?text={{publicacion.titulo}}. %20Fuente:{{publicacion.fuente}}.%20Miralo aqui: "
+  data-size="large">
+Tweet</a>
 						{% if publicacion.is_publicado and not publicacion.is_para_portada %}
 							¿Desea Enviar a la portada la publicacion: {{ publicacion.id}} ?
 							<a href="{% url 'enviar_publicacion' id=publicacion.id %}" class="btn btn-success btn-lg"> <i class="glyphicon glyphicon-trash"></i> Enviar a Portada </a>
@@ -121,6 +137,21 @@
 			</div>
 		</div>			
 	</div>
-	
+<script>window.twttr = (function(d, s, id) {
+  var js, fjs = d.getElementsByTagName(s)[0],
+    t = window.twttr || {};
+  if (d.getElementById(id)) return t;
+  js = d.createElement(s);
+  js.id = id;
+  js.src = "https://platform.twitter.com/widgets.js";
+  fjs.parentNode.insertBefore(js, fjs);
+
+  t._e = [];
+  t.ready = function(f) {
+    t._e.push(f);
+  };
+
+  return t;
+}(document, "script", "twitter-wjs"));</script>	
 		
 </body>

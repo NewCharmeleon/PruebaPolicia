@@ -1,9 +1,5 @@
 <!DOCTYPE html>
 {% load staticfiles %}
-
-
-
-
 <html>
 
 <head>
@@ -30,9 +26,9 @@
 	{% include 'header.html' %}
 
 	<div class="container-fluid">
- 
-	 {% include 'body_video.html' %}
-
+ 	{% block contenido%}
+	 	{% include 'body_video.html' %}
+	{% endblock contenido %}
 
 	 {% include 'footer.html' %}
 	</div>

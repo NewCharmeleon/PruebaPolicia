@@ -34,13 +34,14 @@
 	
 
 	<!--Columnas de Noticias-->
-	<div class="row">
+	<div class="row" >
 		{% for noticia in noticias %}
-
-			{% include 'preview_noticia.html' with noticia=noticia %}
+			
+				{% include 'preview_noticia.html' with noticia=noticia %}
+			
 
 		{% endfor %}
-		
+	</div>	
 		
 	<!--Tabla de Videos-->
 	<div class="row table">
