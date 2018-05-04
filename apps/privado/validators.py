@@ -14,10 +14,12 @@ def texto_validacion(valor):
 		raise ValidationError("No se permiten solo numeros en el campo")	
 	if valor.isupper():
 		raise ValidationError("El campo no debe ser escrito todo en mayusculas") 
-'''def url_validacion():
-	if not URLField(value):
-		raise ValidationError("El campo debe ser una URL valida")'''
 
+def imagen_validacion(valor):
+        filesize = valor.file.size
+        megabyte_limit = 5.0
+        if filesize > megabyte_limit*1024*1024:
+            raise ValidationError("El tamaño maximo del archivo debe ser de %sMB" % str(megabyte_limit))
 
 			
 

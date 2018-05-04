@@ -1,0 +1,50 @@
+{% extends 'index.html' %}	
+{% block contenido %}
+<div class="row body">
+	<div id="noticia-{{noticia.id}}" class="col-md-12 noticia">
+		<div class="row">
+			<div class="col-md-10 col-md-offset-1">
+				<div class="carousel" data-ride="carousel">
+					<div class="item">
+						<img class="thumbnail" src="/media/{{noticia.imagen}}">
+					</div>
+					<div class="carousel-caption">
+						<h1>{{noticia.titulo}}</h1>
+						<h3><i>{{noticia.intro}}</i></h3>
+					</div>
+				</div>
+			</div>
+			<!--div class="col-md-12 well">
+				<h1>
+				{{noticia.titulo}}
+			</h1>
+			<h3>
+				<i>{{noticia.intro}}</i>
+			</h3>	
+			</div-->
+		</div>
+			
+		<!--div class="row">
+			<div class="col-md-12">
+				<img class="thumbnail" src="/media/{{noticia.imagen}}">
+			</div>
+		</div-->			
+		<div class="row">
+			<div class="col-md-10 col-md-offset-1 well">
+				<p style="font-size: 25px ">
+				{{noticia.contenido}}
+			</p>
+			<p>
+				{{noticia.fecha_publicacion}}
+			</p>	
+			</div>
+		</div>	
+			
+			
+			
+			<p><a href="/" class="btn btn-sm btn-default">Volver</a></p>
+	</div>	
+</div>
+	
+	
+{% endblock contenido%}

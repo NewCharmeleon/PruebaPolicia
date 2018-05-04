@@ -127,6 +127,8 @@
 	<script type="text/javascript">
 		if ($("#id_tipo_0").is(':checked')){
 			$("#id_url").parent().parent().hide();
+			$("#id_imagen").parent().parent().show();
+			$("#id_intro").parent().parent().show();
 		}
 		else
 			{
@@ -134,6 +136,7 @@
 			}/*$("#id_url, #id_fuente").parent().parent().hide();*/
 
 		//$("#id_url, #id_fuente").parent().parent().hide();
+		//si radiobutton es publicacion
 		$("#id_tipo_0").change(function(){
 			if($(this).is(':checked')){
 				$("#id_fuente").parent().parent().show();
@@ -141,8 +144,11 @@
 				$("#id_url").attr('value','');
 				$("#id_url").parent().parent().hide();
 				$("#id_url").removeAttr('required');
+				$("#id_imagen").parent().parent().show();
+				$("#id_intro").parent().parent().show();
 			}
 		});
+		//si es video
 		$("#id_tipo_1").change(function(){
 			if($(this).is(':checked')){
 				$("#id_url").parent().parent().show();
@@ -150,6 +156,11 @@
 				$("#id_fuente").attr('value','');
 				$("#id_fuente").parent().parent().hide();
 				$("#id_fuente").removeAttr('required');
+				$("#id_imagen").parent().parent().hide();
+				$("#id_intro").removeAttr('required');
+				$("#id_intro").attr('value','');
+				$("#id_intro").parent().parent().hide();
+				
 			}
 		});
 	</script>

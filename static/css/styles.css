@@ -53,14 +53,7 @@
     }
     
 }
-
-
-
-
-
-
-   			
-		       	
+	       	
     		
 *{
 	box-sizing: border-box;
@@ -286,7 +279,7 @@ section{
 
 }
 .table{
-	display: relative;
+	display: inline-block;
 	left: 30%;
     margin:1%;
     width: 98%;
@@ -308,7 +301,6 @@ section{
 	position: relative;
 	left: 2%;
 	float: left;
-  	width: 32%;
   	background-color: white;
   	border-style:double;
   	border-color: #449eed;

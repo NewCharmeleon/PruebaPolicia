@@ -20,9 +20,9 @@ class PublicacionForm(ModelForm):
 	TIPO = ((1 , 'articulo'), (2, 'video'),)
 
 	tipo = forms.ChoiceField(choices = TIPO,required=True, widget=forms.RadioSelect(attrs=dict({})))
-	titulo = forms.CharField(required=True, max_length=50, widget=forms.TextInput(attrs=dict({'class':'form-control input-lg verifca','placeholder':'Titulo','required':'required', 'style':'text-align: left;'})))
+	titulo = forms.CharField(required=True, max_length=100, widget=forms.TextInput(attrs=dict({'class':'form-control input-lg verifca','placeholder':'Titulo','required':'required', 'style':'text-align: left;'})))
 	contenido = forms.CharField(required=True, widget=forms.Textarea(attrs=dict({'class':'form-control input-lg verifca','placeholder':'Contenido','required':'required', 'style':'text-align:left'})))
-	url = forms.URLField(max_length=100, required=False, widget=forms.TextInput(attrs=dict({'class':'form-control input-lg verifca','placeholder':'Ingrese Url','style':'text-align: left;'})))
-	fuente = forms.CharField(required=False, max_length=100, widget=forms.TextInput(attrs=dict({'class':'form-control input-lg verifca','placeholder':'Ingrese la Fuente','style':'text-align: left;'})))
+	url = forms.URLField(max_length=150, required=False, widget=forms.TextInput(attrs=dict({'class':'form-control input-lg verifca','placeholder':'Ingrese Url','style':'text-align: left;'})))
+	fuente = forms.CharField(required=False, max_length=150, widget=forms.TextInput(attrs=dict({'class':'form-control input-lg verifca','placeholder':'Ingrese la Fuente','style':'text-align: left;'})))
 	imagen = forms.ImageField(required=False)
-	intro = forms.CharField(widget=forms.TextInput(attrs=dict({'class':'form-control input-lg verifca','placeholder':'Introduccion','required':'required', 'style':'text-align: left;'})))
+	intro = forms.CharField(required=False,widget=forms.TextInput(attrs=dict({'class':'form-control input-lg','placeholder':'Introduccion', 'style':'text-align: left;'})))
