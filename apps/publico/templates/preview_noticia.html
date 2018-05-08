@@ -11,7 +11,29 @@
 				{{noticia.intro}}
 			</p>
 			<p>
-				<a class="btn" href="{% url 'noticia' id=noticia.id %}"">Leer mas»</a>
+				<a class="btn" href="{% url 'noticia' id=noticia.id %}">Leer mas»</a>
+				<a href="https://twitter.com/share?ref_src=twsrc%5Etfw" class="twitter-share-button" data-text="{{noticia.titulo}} Fuente:{{noticia.fuente}}" data-url="http://policia.chubut.gov.ar:8003/{% url 'noticia' noticia.id %}" data-via="POLICIA_CHUBUT" data-hashtags="noticia, policial, Chubut, Jefatura de Policia" data-lang="es" data-show-count="true">Tweet</a>
+				<script async src="https://platform.twitter.com/widgets.js" charset="utf-8"></script>
+
+				<iframe src="https://www.facebook.com/plugins/share_button.php?href=http%3A%2F%2Fpolicia.chubut.gov.ar%3A8003{% url 'noticia' noticia.id %}&t={{noticia.titulo}}&layout=button_count&size=small&mobile_iframe=true&width=123&height=20&appId=601917176835816" width="123" height="20" style="border:none;overflow:hidden" scrolling="no" frameborder="0" allowTransparency="true" allow="encrypted-media"></iframe>
+				
 			</p>
-		</div>
+<script>window.twttr = (function(d, s, id) {
+  var js, fjs = d.getElementsByTagName(s)[0],
+    t = window.twttr || {};
+ 	 if (d.getElementById(id)) return t;
+ 	 js = d.createElement(s);
+  	js.id = id;
+ 	 js.src = "https://platform.twitter.com/widgets.js";
+ 	 fjs.parentNode.insertBefore(js, fjs);
+
+ 	 t._e = [];
+ 	 t.ready = function(f) {
+ 	  t._e.push(f);
+  	};
+
+  	return t;
+	}(document, "script", "twitter-wjs"));
+	</script>
+</div>
 		
