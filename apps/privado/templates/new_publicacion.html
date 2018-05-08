@@ -166,20 +166,20 @@
 		});
 		var imagen = [];
 
-function revisarImagen(input, num){
-    var id_preview = input.getAttribute("id") + "_preview";
-    if (input.files && input.files[0]) {
-        var reader = new FileReader();
-        reader.onloadend = function (e) {
+	function revisarImagen(input, num){
+  	  var id_preview = input.getAttribute("id") + "_preview";
+    	if (input.files && input.files[0]) {
+      	  var reader = new FileReader();
+       	 reader.onloadend = function (e) {
             var id_preview_text = "#"+id_preview;
             var base64image = e.target.result;
-            $("body").append("<canvas id='tempCanvas' width='200' height='200' style='display:none'></canvas>");
+            $("body").append("<canvas id='tempCanvas' width='600' height='600' style='display:none'></canvas>");
             var canvas=document.getElementById("tempCanvas");
             var ctx=canvas.getContext("2d");
             var cw=canvas.width;
             var ch=canvas.height;
-            var maxW=200;
-            var maxH=200;
+            var maxW=600;
+            var maxH=600;
             var img = new Image;
             img.src=this.result;
             img.onload = function(){
