@@ -1,12 +1,15 @@
 <!DOCTYPE html>
 {% load staticfiles %}
+
 <html>
 <head>
 	<title>Ver</title>
+	{% include 'metatags.html'%}
 	<!-- Integracion de JQuery y Bootstrap -->
 	<link rel="stylesheet" type="text/css" href="{% static 'css/bootstrap.min.css' %}">
 	<script type="text/javascript" src="{% static 'js/jquery-3.3.1.min.js' %}"></script>
 	<script type="text/javascript" src="{% static 'js/bootstrap.min.js' %}"></script>
+
 	<!-- Fin Integracion -->
 </head>
 <body style="background-color: #81BEF7">
@@ -114,9 +117,9 @@
 						<br>
 						<hr style="border-top: 2px solid #81BEF7;">
 	   					<a class="twitter-share-button"
-  href="https://twitter.com/intent/tweet?text={{publicacion.titulo}}. %20Fuente:{{publicacion.fuente}}.%20Miralo aqui: "
-  data-size="large">
+  href="https://twitter.com/intent/tweet?text={{publicacion.titulo}}. %20Fuente:{{publicacion.fuente}}.%20Miralo aqui: ">
 Tweet</a>
+<iframe src="https://www.facebook.com/plugins/share_button.php?href=http%3A%2F%2Flocalhost%3A8000%2Fpublicacion%2F13%2F&layout=button_count&size=small&mobile_iframe=true&width=91&height=20&appId" width="91" height="20" style="border:none;overflow:hidden" scrolling="no" frameborder="0" allowTransparency="true" allow="encrypted-media"></iframe>
 						{% if publicacion.is_publicado and not publicacion.is_para_portada %}
 							¿Desea Enviar a la portada la publicacion: {{ publicacion.id}} ?
 							<a href="{% url 'enviar_publicacion' id=publicacion.id %}" class="btn btn-success btn-lg"> <i class="glyphicon glyphicon-trash"></i> Enviar a Portada </a>
@@ -137,6 +140,7 @@ Tweet</a>
 			</div>
 		</div>			
 	</div>
+
 <script>window.twttr = (function(d, s, id) {
   var js, fjs = d.getElementsByTagName(s)[0],
     t = window.twttr || {};

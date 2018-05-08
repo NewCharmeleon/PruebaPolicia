@@ -10,7 +10,7 @@ class Publicacion(models.Model):
 
 	tipo = models.IntegerField(default=1,choices = TIPO, validators=[tipo_validacion])
 
-	#descripcion = models.CharField(max_length=100)
+	
 	titulo = models.CharField(max_length=100, validators=[texto_validacion])
 	contenido = models.TextField(validators=[texto_validacion])
 	url = models.URLField()#validators=[url_validacion])

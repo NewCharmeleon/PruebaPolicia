@@ -108,9 +108,10 @@
 								{% endif %}	
 							<div class="form-group form-group-lg">
 								<label class="col-md-2"> Imagen </label>
-								<div class="col-md-10">
+								<div class="col-md-10" >
 									{{form.imagen}}
 								</div>
+								
 							</div>
 							<br>
 							<hr>
@@ -163,5 +164,42 @@
 				
 			}
 		});
+		var imagen = [];
+
+function revisarImagen(input, num){
+    var id_preview = input.getAttribute("id") + "_preview";
+    if (input.files && input.files[0]) {
+        var reader = new FileReader();
+        reader.onloadend = function (e) {
+            var id_preview_text = "#"+id_preview;
+            var base64image = e.target.result;
+            $("body").append("<canvas id='tempCanvas' width='200' height='200' style='display:none'></canvas>");
+            var canvas=document.getElementById("tempCanvas");
+            var ctx=canvas.getContext("2d");
+            var cw=canvas.width;
+            var ch=canvas.height;
+            var maxW=200;
+            var maxH=200;
+            var img = new Image;
+            img.src=this.result;
+            img.onload = function(){
+                var iw=img.width;
+                var ih=img.height;
+                var scale=Math.min((maxW/iw),(maxH/ih));
+                var iwScaled=iw*scale;
+                var ihScaled=ih*scale;
+                canvas.width=iwScaled;
+                canvas.height=ihScaled;
+                ctx.drawImage(img,0,0,iwScaled,ihScaled);
+                base64image = canvas.toDataURL("image/jpeg");
+                $(id_preview_text).attr('src', base64image).width(250).height(157);
+                imagen[num] = base64image;
+                $("#tempCanvas").remove();
+            }
+        };
+        reader.readAsDataURL(input.files[0]);
+    }
+
+}
 	</script>
 </body>

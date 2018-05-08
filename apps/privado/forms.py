@@ -24,5 +24,5 @@ class PublicacionForm(ModelForm):
 	contenido = forms.CharField(required=True, widget=forms.Textarea(attrs=dict({'class':'form-control input-lg verifca','placeholder':'Contenido','required':'required', 'style':'text-align:left'})))
 	url = forms.URLField(max_length=150, required=False, widget=forms.TextInput(attrs=dict({'class':'form-control input-lg verifca','placeholder':'Ingrese Url','style':'text-align: left;'})))
 	fuente = forms.CharField(required=False, max_length=150, widget=forms.TextInput(attrs=dict({'class':'form-control input-lg verifca','placeholder':'Ingrese la Fuente','style':'text-align: left;'})))
-	imagen = forms.ImageField(required=False)
+	imagen = forms.ImageField(required=False,widget=forms.FileInput(attrs=dict({'id':'imagen1','onchange':'revisarImagen(this,1);'})))
 	intro = forms.CharField(required=False,widget=forms.TextInput(attrs=dict({'class':'form-control input-lg','placeholder':'Introduccion', 'style':'text-align: left;'})))

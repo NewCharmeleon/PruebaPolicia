@@ -14,21 +14,10 @@
 					</div>
 				</div>
 			</div>
-			<!--div class="col-md-12 well">
-				<h1>
-				{{noticia.titulo}}
-			</h1>
-			<h3>
-				<i>{{noticia.intro}}</i>
-			</h3>	
-			</div-->
+			
 		</div>
 			
-		<!--div class="row">
-			<div class="col-md-12">
-				<img class="thumbnail" src="/media/{{noticia.imagen}}">
-			</div>
-		</div-->			
+				
 		<div class="row">
 			<div class="col-md-10 col-md-offset-1 well">
 				<p style="font-size: 25px ">
@@ -39,10 +28,31 @@
 			</p>	
 			</div>
 		</div>	
+			<div>			
+			<p><a href="/" class="btn btn-sm btn-default">Volver</a>
+				<a href="https://twitter.com/share?ref_src=twsrc%5Etfw" class="twitter-share-button" data-text="{{noticia.titulo}} Fuente:{{noticia.fuente}}" data-url="http://policia.chubut.gov.ar:8003/{% url 'noticia' noticia.id %}" data-via="POLICIA_CHUBUT" data-hashtags="noticia, policial, Chubut, Jefatura de Policia" data-lang="es" data-show-count="true" data-size="small">Tweet</a>
+				<script async src="https://platform.twitter.com/widgets.js" charset="utf-8"></script>
 			
-			
-			
-			<p><a href="/" class="btn btn-sm btn-default">Volver</a></p>
+				<iframe src="https://www.facebook.com/plugins/share_button.php?href=http%3A%2F%2Fpolicia.chubut.gov.ar%3A8003{% url 'noticia' noticia.id %}&layout=button_count&size=small&mobile_iframe=true&width=123&height=20&appId=601917176835816" width="123" height="20" style="border:none;overflow:hidden" scrolling="no" frameborder="0" allowTransparency="true" allow="encrypted-media"></iframe>
+			</p>
+			</div>
+<script>window.twttr = (function(d, s, id) {
+  var js, fjs = d.getElementsByTagName(s)[0],
+    t = window.twttr || {};
+ 	 if (d.getElementById(id)) return t;
+ 	 js = d.createElement(s);
+  	js.id = id;
+ 	 js.src = "https://platform.twitter.com/widgets.js";
+ 	 fjs.parentNode.insertBefore(js, fjs);
+
+ 	 t._e = [];
+ 	 t.ready = function(f) {
+ 	  t._e.push(f);
+  	};
+
+  	return t;
+	}(document, "script", "twitter-wjs"));
+	</script>
 	</div>	
 </div>
 	
