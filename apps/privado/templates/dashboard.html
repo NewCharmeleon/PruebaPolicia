@@ -4,7 +4,7 @@
 <head>
 	<title>Dashboard</title>
 	<meta property="og:url" content="{{publicacion.url}}" />
-	<meta property="og:title" content="{{noticia.titulo}}" />
+	<meta property="og:title" content="{{publicacion.titulo}}" />
 	
 	<!-- Integracion de JQuery y Bootstrap -->
 	<link rel="stylesheet" type="text/css" href="{% static 'css/bootstrap.min.css' %}">
@@ -155,7 +155,7 @@
 											
 <a href="https://twitter.com/share?ref_src=twsrc%5Etfw" class="twitter-share-button" data-text="{{publicacion.titulo}} Fuente:{{publicacion.fuente}}" data-url="http://policia.chubut.gov.ar:8003{% url 'noticia' publicacion.id %}" data-via="POLICIA_CHUBUT" data-hashtags="noticia, policial, Chubut, Jefatura de Policia" data-lang="es" data-show-count="true">Tweet</a>
 <script async src="https://platform.twitter.com/widgets.js" charset="utf-8"></script>
-<iframe src="https://www.facebook.com/plugins/share_button.php?href=http%3A%2F%2Fpolicia.chubut.gov.ar%3A8003{% url 'noticia' publicacion.id %}&layout=button_count&size=small&mobile_iframe=true&width=123&height=20&appId=601917176835816" width="123" height="20" style="border:none;overflow:hidden" scrolling="no" frameborder="0" allowTransparency="true" allow="encrypted-media"></iframe>
+<iframe src="https://www.facebook.com/plugins/share_button.php?href=http%3A%2F%2Fpolicia.chubut.gov.ar%3A8003{% url 'noticia' publicacion.id %}&layout=button_count&size=small&mobile_iframe=true&width=123&height=20&appId=601917176835816&p[title]={{publicacion.titulo}}" width="123" height="20" style="border:none;overflow:hidden" scrolling="no" frameborder="0" allowTransparency="true" allow="encrypted-media"></iframe>
 											<a href="{% url 'show_publicacion' id=publicacion.id %}" > <i class="glyphicon glyphicon-eye-open"></i> </a>
 										</td>
 										<td>
