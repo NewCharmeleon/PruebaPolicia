@@ -155,6 +155,8 @@
 											
 <a href="https://twitter.com/share?ref_src=twsrc%5Etfw" class="twitter-share-button" data-text="{{publicacion.titulo}} Fuente:{{publicacion.fuente}}" data-url="http://policia.chubut.gov.ar:8003{% url 'noticia' publicacion.id %}" data-via="POLICIA_CHUBUT" data-hashtags="noticia, policial, Chubut, Jefatura de Policia" data-lang="es" data-show-count="true">Tweet</a>
 <script async src="https://platform.twitter.com/widgets.js" charset="utf-8"></script>
+<a href="http://www.facebook.com/sharer.php?s=100&p[url]=http://developando.com?s=100&p[title]=Conoce+a+Developando&p[images][0]=http://developando.com/images/developandoLogo.jpeg&p[summary]=Desarrollo+web+y+movil"></a>
+<a href="javascript: void(0);" onclick="window.open('http://www.facebook.com/sharer.php?u=http://policia.chubut.gov.ar:8003{% url 'noticia' publicacion.id %}','ventanacompartir', 'toolbar=0, status=0, width=650, height=450');">Compartir popup</a>
 <iframe src="https://www.facebook.com/plugins/share_button.php?href=http%3A%2F%2Fpolicia.chubut.gov.ar%3A8003{% url 'noticia' publicacion.id %}&layout=button_count&size=small&mobile_iframe=true&width=123&height=20&appId=601917176835816&p[title]={{publicacion.titulo}}" width="123" height="20" style="border:none;overflow:hidden" scrolling="no" frameborder="0" allowTransparency="true" allow="encrypted-media"></iframe>
 											<a href="{% url 'show_publicacion' id=publicacion.id %}" > <i class="glyphicon glyphicon-eye-open"></i> </a>
 										</td>

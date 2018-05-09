@@ -1,5 +1,5 @@
 {% load staticfiles %}
-<meta name="description" content="Pagina Institucional de la Policia del Chubut" />
+
 <!-- Para Twitter Card -->
 <meta name="twitter:card" content="summary_large_image" />
 <meta name="twitter:title" content="{{publicacion.titulo}}" />
@@ -7,27 +7,14 @@
 <meta name="twitter:image:src" content="Imagen de la página" />
 <!-- Para Facebook y otros -->
 <!-- OG -->
-   <meta property="og:type" content="website" />
+   
     <meta name="keywords" content="policia, Chubut, policiales, escuela de policia, noticias"/>
     <meta property="og:image" content="{% static 'img/Escudo_PoliciaCh.png' %}">
-    <!--<meta property="og:description" content="{{noticia.descripcion}}"/>-->
-    <meta property="og:url" content="http://policia.chubut.gov.ar:8003"/>-->
-    <meta property="og:url" content="http://localhost:8000"/>
-    <meta property="og:title" content="Pagina Institucional de Policia del Chubut"/>
-    <!--<meta itemprop="name" content="policia.chubut.gov.ar:8003"/>
-    <meta property="og:site_name" content="policia.chubut.gov.ar:8003"/>-->
-
-   <!-- <meta property="og:url" content="http://policia.chubut.gov.ar:8003/noticia/{{publicacion.id}}" />
-<meta property="og:type" content="article" />
-<meta property="og:title" content="{{publicacion.titulo}}" />
-<meta property="fb:app_id" content="601917176835816" />
-<meta property="og:image"              content="http://static01.nyt.com/images/2015/02/19/arts/international/19iht-btnumbers19A/19iht-btnumbers19A-facebookJumbo-v2.jpg" />-->
-
-<!--
-<meta property="og:url" content="{{publicacion.url}}" />
-<meta property="og:title" content="{{noticia.titulo}}" />
-<meta property="og:image" content="{{publicacion.imagen}}" />
-<meta property="og:site_name" content="{{publicacion.titulo}}" />-->
+    <meta property="og:description" content="{{noticia.descripcion}}"/>
+    <meta property="og:url" content="policia.chubut.gor.ar:8003"/>
+    <meta property="og:title" content="Policia del Chubut"/>
+    
+  
 <!-- Para Google+ -->
 <meta itemprop="name" content="{{publicacion.titulo}}" />
 <meta itemprop="description" content="Descripción de la página" />

@@ -1,4 +1,6 @@
+
 {% extends 'index.html' %}	
+
 {% block contenido %}
 <div class="row body">
 	<div id="noticia-{{noticia.id}}" class="col-md-12 noticia">
@@ -32,8 +34,13 @@
 			<p><a href="/" class="btn btn-sm btn-default">Volver</a>
 				<a href="https://twitter.com/share?ref_src=twsrc%5Etfw" class="twitter-share-button" data-text="{{noticia.titulo}} Fuente:{{noticia.fuente}}" data-url="http://policia.chubut.gov.ar:8003/{% url 'noticia' noticia.id %}" data-via="POLICIA_CHUBUT" data-hashtags="noticia, policial, Chubut, Jefatura de Policia" data-lang="es" data-show-count="true" data-size="small">Tweet</a>
 				<script async src="https://platform.twitter.com/widgets.js" charset="utf-8"></script>
-			
+			<a href="javascript: void(0);" onclick="window.open('http://www.facebook.com/sharer.php?t={{noticia.titulo}}&u=http://policia.chubut.gov.ar:8003{% url 'noticia' noticia.id %}','ventanacompartir', 'toolbar=0, status=0, width=650, height=450');">Compartir popup</a>
 				<iframe src="https://www.facebook.com/plugins/share_button.php?href=http%3A%2F%2Fpolicia.chubut.gov.ar%3A8003{% url 'noticia' noticia.id %}&layout=button_count&size=small&mobile_iframe=true&width=123&height=20&appId=601917176835816" width="123" height="20" style="border:none;overflow:hidden" scrolling="no" frameborder="0" allowTransparency="true" allow="encrypted-media"></iframe>
+				<td class="compartir_interior compartir_fb_interior">
+				<a target='_blank'
+                     onclick="javascript:window.open('https://www.facebook.com/dialog/feed?app_id=601917176835816&amp;link=http%3A%2F%2Fpolicia.chubut.gov.ar%3A8003{% url 'noticia' noticia.id %}&amp;name={{noticia.titulo}}&amp;description={{noticia.descripcion}}&amp;display=popup&amp;picture=http%3A%2F%2Fpolicia.chubut.gov.ar%3A8003/media/{{noticia.imagen}}2F%23close_window')">
+                      <div >Compartir en facebook</div>
+                </a></td>
 			</p>
 			</div>
 <script>window.twttr = (function(d, s, id) {
@@ -52,6 +59,9 @@
 
   	return t;
 	}(document, "script", "twitter-wjs"));
+
+	
+  
 	</script>
 	</div>	
 </div>
