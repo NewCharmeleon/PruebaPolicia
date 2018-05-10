@@ -70,7 +70,7 @@ def new_publicacion(request):
         		#size = ( 800, ratio_height)
         		#image = image.resize(size, Image.ANTIALIAS)
         		#image.save(publicacion.imagen)
-				
+				publicacion.Redimensionar()
 				publicacion.save()
 				messages.success(request, "Borrador creado con exito!!!")
 				return HttpResponseRedirect(reverse('dashboard'))
