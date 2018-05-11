@@ -12,6 +12,12 @@ def home(request):
 	videos = Publicacion.objects.filter(is_para_portada=True, tipo=2)
 	
 	return render(request,"index.html",{'nombre':"Adrian", 'noticias' :noticias, 'videos':videos})
+def noticias(request):
+
+	noticias = Publicacion.objects.filter(is_publicado=True, tipo=1)
+	videos = Publicacion.objects.filter(is_para_portada=True, tipo=2)
+	
+	return render(request,"noticias.html",{'noticias' :noticias, 'videos':videos})	
 
 
 def noticia(request, id):
@@ -20,7 +26,8 @@ def noticia(request, id):
 				
 	return render(request,'noticia.html',{'noticia':noticia})
 
-
+def autoridades(request):
+	return render(request,"autoridades.html")
 	#return HttpResponseRedirect(reverse('home',{'noticia':noticia}))	
 """def publicacion(request):
 

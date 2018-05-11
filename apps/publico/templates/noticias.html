@@ -1,0 +1,14 @@
+
+{% extends 'index.html' %}	
+
+{% block contenido %}
+
+<div class="row body" >
+    {% for noticia in noticias %}
+      
+        {% include 'preview_noticia.html' with noticias=noticias %}
+      
+
+    {% endfor %}
+  </div>  
+{% endblock contenido%}
