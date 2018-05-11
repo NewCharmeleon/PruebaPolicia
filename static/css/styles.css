@@ -319,6 +319,19 @@ nav.navbar ul.nav li a {
   	border-color: #449eed;
   	border-radius: 0.5px;
 }
+.autor{
+	
+	position: initial;
+	margin-left: 1%;
+	margin-right: 1%;
+	margin-top: 13%;
+}
+.medium{
+	width: 300px;
+}
+.small{
+	width: 200px;
+}
 
 
 /*Css de Footer*/
