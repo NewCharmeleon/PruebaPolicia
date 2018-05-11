@@ -25,7 +25,7 @@ from django.views.static import serve
 urlpatterns = [
     path('admin/', admin.site.urls),
     path('', public.home,name='home'),
-    path('autoridades', public.autoridades, name='autoridades'),
+    path('autoridades/', public.autoridades, name='autoridades'),
     path('noticias/', public.noticias, name='noticias'),
     path('noticia/<id>/',public.noticia,name='noticia'),
     path('login/',private.login,name='login'),
