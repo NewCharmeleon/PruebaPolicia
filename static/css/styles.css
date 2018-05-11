@@ -62,6 +62,7 @@ img{
 	
 	width: 100%;
 }
+
 .header{
 	position: relative;
 	top: 0;
@@ -183,12 +184,11 @@ nav.navbar ul.nav li a {
 	box-sizing: border-box;
 	
 }
-section{
-	
-	padding-left:1.1%;
-	
-	
+.blue{
+	background-color: #81BEF7;
 }
+
+
 .video{
 	
 	position: relative center;
@@ -290,13 +290,26 @@ section{
 }
 
 .slide, .carousel-inner > .item > img{
-	position: relative;
-	top: 33%;
-	height: 50%;
-	width: 98%;
-	left:1%;
+	position: inherite;
+	height: 500px;
+	margin-left: 3.8%;
+	width: 92.5%;
+	margin-top: 5.5%;
+	margin-bottom: 5%;
+	
 }
-
+.carousel-control{
+	top:13%;
+	left:4%;
+	height: 100%;
+}
+.carousel-control.right {
+    right: 4%;
+    left: auto;
+}
+.carousel-indicators{
+	top:20%;
+}
 .noticia{
 	position: relative;
 	left: 2%;
@@ -306,6 +319,8 @@ section{
   	border-color: #449eed;
   	border-radius: 0.5px;
 }
+
+
 /*Css de Footer*/
 .footer-logo{
 	width:15%;
