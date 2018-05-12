@@ -25,9 +25,9 @@ def noticia(request, id):
 	noticia=get_object_or_404(Publicacion, id=id)
 				
 	return render(request,'noticia.html',{'noticia':noticia})
-
+	
 def autoridades(request):
-	return render(request,"autoridades.html")
+	return render(request,'autoridades.html')
 	#return HttpResponseRedirect(reverse('home',{'noticia':noticia}))	
 """def publicacion(request):
 
