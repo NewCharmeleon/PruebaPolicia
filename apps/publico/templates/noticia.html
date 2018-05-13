@@ -65,11 +65,34 @@
                      	onclick="javascript:window.open('https://www.facebook.com/dialog/feed?app_id=601917176835816&amp;link=http%3A%2F%2Fpolicia.chubut.gov.ar%3A8003{% url 'noticia' noticia.id %}&amp;name={{noticia.titulo}}&amp;description={{noticia.descripcion}}&amp;display=popup&amp;picture=http%3A%2F%2Fpolicia.chubut.gov.ar%3A8003/media/{{noticia.imagen}}2F%23close_window')">
                       Compartir en facebook
                		</a>
+                  
                	</td>
 			</button>
 		</div>	
 	</div>
 <div>	
+ <script> 
+$(document).ready(function(){  
+ 
+
+var url="{{noticia.url}}";
+var title="{{noticia.titulo}}";
+var description="{{noticia.intro}}";
+
+var metas = document.getElementsByTagName("meta");
+ 
+for(var i=0;i<metas.length;i++){
+    if(metas[i].getAttribute("property")=="og:description")
+    {
+        metas[i].setAttribute("content",description);
+    }
+    if(metas[i].getAttribute("property")=="og:title")
+    {
+        metas[i].setAttribute("content",title);
+    }
+}
+});
+</script>
 <script>window.twttr = (function(d, s, id) {
   var js, fjs = d.getElementsByTagName(s)[0],
     t = window.twttr || {};
