@@ -36,3 +36,27 @@
 
 </body>
 </html>
+ <script> 
+ <script> 
+$(document).ready(function(){  
+ 
+
+var url="{{noticia.url}}";
+var title="{{noticia.titulo}}";
+var description="{{noticia.intro}}";
+
+var metas = document.getElementsByTagName("meta");
+ 
+for(var i=0;i<metas.length;i++){
+    if(metas[i].getAttribute("property")=="og:description")
+    {
+        metas[i].setAttribute("content",description);
+    }
+    if(metas[i].getAttribute("property")=="og:title")
+    {
+        metas[i].setAttribute("content",title);
+    }
+}
+});
+</script>
+</script>
