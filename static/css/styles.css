@@ -57,6 +57,7 @@
     		
 *{
 	box-sizing: border-box;
+	/*margin-top: -1.4%;*/
 }
 img{
 	
@@ -107,7 +108,7 @@ img{
 .navbar-default{
 	display: inline-block;
 	
-	background-color: #81BEF7;
+	background-color: #51BDF483;
 	border-color: transparent;
 
 	width: 100%;
@@ -169,7 +170,9 @@ nav.navbar ul.nav li a {
 /*Css de Body*/
 .container-fluid{
 	min-height: 100%;
-	top:33%;
+	top:50%;
+	padding-right: 1%;
+	padding-left: 1%;
 }
 .body{
 	display:inline-block;
@@ -179,24 +182,29 @@ nav.navbar ul.nav li a {
 	margin-bottom: -1%;
 	padding: 1%;
 	width: auto;
-	background-color: #81BEF7;
+	/*background-color: #81BEF7;*/
+	background-color: #E7E5F9;
+
 	background-size: cover;
 	box-sizing: border-box;
 	
 }
 .blue{
-	background-color: #81BEF7;
+	/*background-color: #81BEF7;*/
+	background-color: #E7E5F9;
 }
 
 
-.video{
+audio, canvas, progress, video{
 	
 	position: relative center;
+	
 	width: 100%;
 	display: inline-block;
 	box-sizing: border-box;
-	padding-left:10%;
-    min-height: 100vh;
+	margin-bottom: -10%; 
+	margin-top: 5%;
+    min-height: 40vh;
 	
 }
 .hgroup-video{
@@ -281,12 +289,13 @@ nav.navbar ul.nav li a {
 .table{
 	display: inline-block;
 	left: 30%;
-    margin:1%;
-    width: 98%;
+    margin:0%;
+    width: 100%;
+    padding:2%;  
     border-style:double;
-  	border-color: #449eed;
+  	border-color: #E7E5F9;;
   	border-radius: 0.5px;
-  	background-color: white;
+  	background-color: #E7E5F9;;
 }
 
 .slide, .carousel-inner > .item > img{
@@ -327,7 +336,7 @@ nav.navbar ul.nav li a {
 	margin-top: 13%;
 }
 .medium{
-	width: 300px;
+	width: 280px;
 }
 .small{
 	width: 200px;
@@ -344,7 +353,9 @@ nav.navbar ul.nav li a {
 
 }
 .footer-distributed{
-	background-color: #81BEF7;
+	/*background-color: #81BEF7;*/
+	background-color: #1E1E22;
+
 	box-shadow: 0 1px 1px 0 rgba(0, 0, 0, 0.12);
 	box-sizing: border-box;
 	width: auto;
@@ -489,10 +500,13 @@ nav.navbar ul.nav li a {
 }
 /*css de NavBar estilizado*/
 .navbar-default {
-  background-color: #81bef7;
+  /*background-color: #81bef7;*/
+  background-color: #61aff7;
+  opacity: 0.75;
   border-color: transparent;
 }
 .navbar-default .navbar-brand {
+  background-color: #61aff7;
   color: #ffffff;
 }
 .navbar-default .navbar-brand:hover,
@@ -567,6 +581,7 @@ nav.navbar ul.nav li a {
 }
 .navbar-default .navbar-collapse,
 .navbar-default .navbar-form {
+  background-color: #61aff7; 
   border-color: transparent;
 }
 .navbar-default .navbar-link {
