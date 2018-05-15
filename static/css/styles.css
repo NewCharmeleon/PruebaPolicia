@@ -57,7 +57,7 @@
     		
 *{
 	box-sizing: border-box;
-	/*margin-top: -1.4%;*/
+	
 }
 img{
 	
@@ -156,8 +156,7 @@ nav.navbar ul.nav li a {
 
 }
 .navbar-toggle .icon-bar{
-	background-color:black;/*#75A3F2; */
-	/*background-border:blue;*/
+	background-color:#75A3F2; 
 	
 	
 	margin-left: 25%;
@@ -179,10 +178,9 @@ nav.navbar ul.nav li a {
 	position: relative;
 	top: 33%;
 	margin-top: 8%;
-	margin-bottom: -1%;
+	width: 102%;
 	padding: 1%;
-	width: auto;
-	/*background-color: #81BEF7;*/
+	
 	background-color: #E7E5F9;
 
 	background-size: cover;
@@ -190,7 +188,7 @@ nav.navbar ul.nav li a {
 	
 }
 .blue{
-	/*background-color: #81BEF7;*/
+	
 	background-color: #E7E5F9;
 }
 
@@ -355,10 +353,10 @@ audio, canvas, progress, video{
 .footer-distributed{
 	/*background-color: #81BEF7;*/
 	background-color: #1E1E22;
-
+	display: inline-block;
 	box-shadow: 0 1px 1px 0 rgba(0, 0, 0, 0.12);
 	box-sizing: border-box;
-	width: auto;
+	width: 103%;
 	text-align: left;
 	font: bold 16px sans-serif;
 	padding: 55px 50px;
