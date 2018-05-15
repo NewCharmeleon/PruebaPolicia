@@ -26,6 +26,8 @@ urlpatterns = [
     path('admin/', admin.site.urls),
     path('', public.home,name='home'),
     path('autoridades/', public.autoridades, name='autoridades'),
+    path('comunidad/', public.comunidad, name='comunidad'),
+    path('historia/', public.historia, name='historia'),
     path('noticias/', public.noticias, name='noticias'),
     path('noticia/<id>/',public.noticia,name='noticia'),
     path('login/',private.login,name='login'),

@@ -28,6 +28,12 @@ def noticia(request, id):
 	
 def autoridades(request):
 	return render(request,'autoridades.html')
+
+def comunidad(request):
+	return render(request,'comunidad.html')
+
+def historia(request):
+	return render(request,'historia.html')	
 	#return HttpResponseRedirect(reverse('home',{'noticia':noticia}))	
 """def publicacion(request):
 
