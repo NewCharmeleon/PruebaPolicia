@@ -28,6 +28,7 @@ urlpatterns = [
     path('autoridades/', public.autoridades, name='autoridades'),
     path('comunidad/', public.comunidad, name='comunidad'),
     path('historia/', public.historia, name='historia'),
+    path('escuelas/', public.escuelas, name='escuelas'),
     path('noticias/', public.noticias, name='noticias'),
     path('noticia/<id>/',public.noticia,name='noticia'),
     path('login/',private.login,name='login'),
