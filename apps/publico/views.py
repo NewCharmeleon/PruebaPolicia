@@ -33,7 +33,10 @@ def comunidad(request):
 	return render(request,'comunidad.html')
 
 def historia(request):
-	return render(request,'historia.html')	
+	return render(request,'historia.html')
+
+def escuelas(request):
+	return render(request,'escuelas.html')	
 	#return HttpResponseRedirect(reverse('home',{'noticia':noticia}))	
 """def publicacion(request):
 
