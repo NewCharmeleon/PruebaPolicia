@@ -333,8 +333,11 @@ audio, canvas, progress, video{
 	margin-right: 1%;
 	margin-top: 13%;
 }
+.grande{
+	width: 450px;
+}
 .medium{
-	width: 280px;
+	width: 400px;
 }
 .small{
 	width: 200px;
