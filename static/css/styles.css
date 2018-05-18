@@ -1,14 +1,26 @@
 /*Css de cabecera*/
 @media (max-width:440px) and (min-width: 0px) {
     .h1-video:before {
-        font-size: 3rem; 
+        font-size: 2rem; 
+        
     }
     .lema:before {
-        font-size: 1rem; 
+        font-size: 0.5rem; 
     }
     
 }
 @media (max-width:580px) and (min-width: 440px) {
+    .h1-video:before {
+        font-size: 2rem; 
+
+    }
+    .lema:before {
+        font-size: 0.5rem; 
+    }
+    
+}
+
+@media (max-width:720px) and (min-width: 580px){
     .h1-video:before {
         font-size: 4rem; 
     }
@@ -18,35 +30,28 @@
     
 }
 
-@media (max-width:720px) and (min-width: 580px){
+@media (max-width:900px) and (min-width: 720) {
     .h1-video:before {
         font-size: 6rem; 
     }
     .lema:before {
         font-size: 2rem; 
     }
-    
-}
-
-@media (max-width:900px) and (min-width: 720) {
-    .h1-video:before {
-        font-size: 8rem; 
-    }
-    .lema:before {
-        font-size: 3rem; 
-    }
 
 }
 @media (max-width:1550px) and (min-width: 900px) {
     
     #textoVideo{
-    	font-size: 100px;
+    	font-size: 50px;
     }
     #lema{
-    	font-size: 40px;
+    	font-size: 30px;
     }
     .h1-video:before {
-        font-size: 10rem; 
+        
+        font-size: 6rem;
+    	opacity: 0.75;
+    	 
     }
     .lema:before {
         font-size: 4rem; 
@@ -213,25 +218,28 @@ audio, canvas, progress, video{
 	border-color: #bfcecb;
 	position: absolute;
 	z-index: 2;
-	margin-left: 5%;
-	top: 40%;
+	margin-left: 1%;
+	top: 65%;
 	text-align:left;
+
+	/*opacity: 0.75;*/
 }
 .h1-video{
 	
 	text-align: left;
 	/*position: relative;*/
 	/*width:100%;*/
-	color:#81BEF7;
+	background-color: #61aff7;
+ 	 opacity: 0.75;
 	border-color: #bfcecb;
-	/*font-size: 10rem;*/
 	
+	opacity: 0.05;
 }
 .lema{
 	text-align: left;
 	/*width:100%;*/
-	color:#81BEF7;
-	/*font-size: 4rem;*/
+	background-color: #61aff7;
+  opacity: 0.75;
 	
 }
 .btn{
