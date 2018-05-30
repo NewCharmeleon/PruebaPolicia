@@ -202,3 +202,159 @@ def archivar_publicacion(request,id):
 	publicacion.Archivar()
 	messages.success(request, "Publicacion archivada con exito!!!")
 	return HttpResponseRedirect(reverse('dashboard'))	
+
+@login_required
+def dashboard_autoridad(request):
+	autoridades = Autoridad.objects.order_by('cargo')
+	#.filter(usuario = request.user)
+	return render(request,'dashboard_autoridad.html',{'usuario':request.user,'autoridades':autoridades})
+
+@login_required
+@permission_required('privado.add_autoridad', raise_exception=True)
+def new_autoridad(request):
+
+	if request.method == 'POST':
+
+		form = AutoridadForm(request.POST,request.FILES)
+		print(form.errors)
+		if form.is_valid():
+			autoridad = Autoridad() #instancio una nueva publicacion
+			autoridad.nombre = form.cleaned_data['nombre']
+			autoridad.segundo_nombre = form.cleaned_data['segundo_nombre']
+			autoridad.apellido = form.cleaned_data['apellido']
+			autoridad.jerarquia = form.cleaned_data['jerarquia']
+			autoridad.cargo = form.cleaned_data['cargo']
+			autoridad.dependencia = form.cleaned_data['dependencia']
+			autoridad.direccion_laboral = form.cleaned_data['direccion_laboral']
+			autoridad.telefono_laboral = form.cleaned_data['telefono_laboral']
+			autoridad.telefono = form.cleaned_data['telefono']
+			autoridad.email = form.cleaned_data['email']
+			autoridad.trayectoria = form.cleaned_data['trayectoria']
+			autoridad.imagen = form.cleaned_data['imagen']
+			autoridad.usuario = request.user
+
+
+			try:
+				#form.publicacion=save(commit=false)
+				#image = Image.open(publicacion.imagen)
+        		#ancho, alto = image.size
+        		#ratio_height = (800*alto)/ancho
+        		#size = ( 800, ratio_height)
+        		#image = image.resize(size, Image.ANTIALIAS)
+        		#image.save(publicacion.imagen)
+				autoridad.Redimensionar()
+				autoridad.save()
+				messages.success(request, "Autoridad creada con exito!!!")
+				return HttpResponseRedirect(reverse('show_autoridades'))
+				
+			except Exception as e:
+				print(e)
+				error = "Ocurrio un problema al guardar los datos"
+				#return render(request, 'new_publicacion.html',{'form':form,'error':error})
+		else:
+			messages.error(request, "Error. Revise los datos mal cargados.")
+			#print(form.errors)
+			#return render(request,'new_publicacion.html',{'form': form})
+	else:
+		form = AutoridadForm()
+		#form.initial['tipo'] ='1'
+	return render(request,'new_autoridad.html',{'form': form})
+
+@login_required
+def show_autoridades(request):
+
+	autoridades = Autoridad.objects.order_by('cargo')
+	if not len(autoridades):
+		messages.warning(request, "No existen autoridades")
+	else:	
+		messages.success(request, "Autoridades obtenidas con exito!!!")
+	return render(request,'show_autoridades.html',{'autoridades':autoridades})
+
+@login_required
+def show_autoridad(request,id):
+
+	autoridad=get_object_or_404(Autoridad, id=id)
+	messages.success(request, "Autoridad obtenida con exito!!!")
+	return render(request,'show_autoridad.html',{'autoridad':autoridad})
+
+
+@login_required	
+@permission_required('privado.change_autoridad', raise_exception=False)
+def edit_autoridad(request, id):
+
+	autoridad=get_object_or_404(Autoridad, id=id)
+	if request.method == 'POST':
+		form = AutoridadForm(request.POST, instance=autoridad)
+		if form.is_valid():
+						
+			try:
+				form.save()
+				messages.success(request, "Autoridad editada con exito!!!")
+				return HttpResponseRedirect(reverse('show_autoridades'))
+				
+			except Exception as e:
+				#print(e)
+				error = "Ocurrio un problema al guardar los datos"
+				return render(request, 'edit_autoridad.html',{'form':form,'error':error})
+	else:
+		form = AutoridadForm(instance=autoridad)
+
+	return render(request,"edit_autoridad.html",{'form': form})	
+
+@login_required
+#@permission_required('privado.delete_autoridad', raise_exception=False)
+def confirm_delete_autoridad(request,id):
+
+	autoridad=get_object_or_404(Autoridad, id=id)
+	messages.success(request, "Autoridad a eliminar!!!")
+	return render(request,'confirm_delete_autoridad.html',{'autoridad':autoridad})
+
+@login_required
+@permission_required('privado.delete_autoridad', raise_exception=False)
+def delete_autoridad(request,id):
+
+	autoridad=get_object_or_404(Autoridad, id=id)
+	autoridad.delete()
+	messages.success(request, "Autoridad eliminada con exito!!!")
+	return HttpResponseRedirect(reverse('dashboard'))	
+
+@login_required
+@permission_required('privado.change_autoridad', raise_exception=False)
+def publicar_autoridad(request,id):
+
+	autoridad=get_object_or_404(Autoridad, id=id)
+	autoridad.Publicar()
+	messages.success(request, "Autoridad publicada con exito!!!")
+	return HttpResponseRedirect(reverse('show_autoridades'))	
+
+@login_required
+@permission_required('privado.change_autoridad', raise_exception=False)
+def enviar_autoridad(request,id):
+	autoridades=Autoridad.objects.filter(is_publicado=True, is_para_portada=True)
+	cantidad = len(autoridades)
+	if cantidad>7:
+		messages.warning(request, "Debe despublicar alguna Autoridad de la portada!!!")
+	else:
+		autoridad=get_object_or_404(Autoridad, id=id)
+		
+		autoridad.Enviar()
+		messages.success(request, "Autoridad publicada en portada con exito!!!")
+	return HttpResponseRedirect(reverse('show_autoridades'))	
+
+@login_required
+@permission_required('privado.change_autoridad', raise_exception=True)
+def despublicar_autoridad(request,id):
+
+	autoridad=get_object_or_404(Autoridad, id=id)
+	autoridad.Despublicar()
+	messages.success(request, "Autoridad despublicada en portada con exito!!!")
+	return HttpResponseRedirect(reverse('show_autoridades'))	
+
+@login_required
+@permission_required('privado.change_autoridad', raise_exception=True)
+def archivar_autoridad(request,id):
+
+	autoridad=get_object_or_404(Autoridad, id=id)
+	autoridad.Archivar()
+	messages.success(request, "Autoridad archivada con exito!!!")
+	return HttpResponseRedirect(reverse('show_autoridades'))	

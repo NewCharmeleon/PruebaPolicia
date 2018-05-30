@@ -34,6 +34,18 @@ urlpatterns = [
     path('login/',private.login,name='login'),
     path('logout/',private.logout,name='logout'),
     path('dashboard/',private.dashboard,name='dashboard'),
+
+    path('autoridad/publicada/',private.show_autoridades,name='show_autoridades'),
+    path('autoridad/new/',private.new_autoridad,name='new_autoridad'),
+    path('autoridad/<int:id>/',private.show_autoridad,name='show_autoridad'),
+    path('autoridad/<int:id>/edit/',private.edit_autoridad,name='edit_autoridad'),
+    path('autoridad/<int:id>/confirm_delete/',private.confirm_delete_autoridad,name='confirm_delete_autoridad'),
+    path('autoridad/<int:id>/delete/',private.delete_autoridad,name='delete_autoridad'),
+    path('autoridad/<int:id>/publicar/',private.publicar_autoridad,name='publicar_autoridad'),
+    path('autoridad/<int:id>/despublicar/',private.despublicar_autoridad,name='despublicar_autoridad'),
+    path('autoridad/<int:id>/archivar/',private.archivar_autoridad,name='archivar_autoridad'),
+    path('autoridad/<int:id>/portada/',private.enviar_autoridad,name='enviar_autoridad'),
+
     path('publicacion/new/',private.new_publicacion,name='new_publicacion'),
     path('publicacion/<int:id>/',private.show_publicacion,name='show_publicacion'),
     path('publicacion/<int:id>/edit/',private.edit_publicacion,name='edit_publicacion'),
