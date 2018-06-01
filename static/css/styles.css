@@ -435,8 +435,8 @@ audio, canvas, progress, video{
 	
 	float: left;
   	background-color: white;
-  	border-style:double;
-  	border-color: #449eed;
+  	/*border-style:double;*/
+  	/*border-color: #449eed;*/
   	border-radius: 0.5px;
 }
 .autor{

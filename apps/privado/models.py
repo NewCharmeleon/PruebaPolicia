@@ -11,10 +11,13 @@ from django.core.validators import RegexValidator
 
 # Create your models here.
 class Publicacion(models.Model):
-	TIPO = ((1 , 'articulo'), (2, 'video'),)
+	TIPO = ((1 , 'Articulo'), (2, 'Video'),)
+	JURISDICCION = ((1, 'Jefatura de Policia'),(2 , 'Unidad Regional Comodoro Rivadavia'), (3, 'Unidad Regional Esquel'),(4, 'Unidad Regional Puerto Madryn'),(5, 'Unidad Regional Trelew'),)
+	CATEGORIA = ((1 , 'Informativo'), (2, 'Institucional'), (3, 'Comunidad'),(4, 'Otro'),)
 
 	tipo = models.IntegerField(default=1,choices = TIPO, validators=[tipo_validacion])
-
+	jurisdiccion = models.IntegerField(default=1,choices = TIPO, validators=[tipo_validacion])
+	categoria = models.IntegerField(default=1,choices = TIPO, validators=[tipo_validacion])
 	
 	titulo = models.CharField(max_length=100, validators=[texto_validacion])
 	contenido = models.TextField(validators=[texto_validacion])
@@ -82,8 +85,8 @@ class Autoridad(models.Model):
 
 	#telefono_regex = RegexValidator(regex=r'^(?:(?:00)?549?)?0?(?:11|[2368]\d)(?:(?=\d{0,2}15)\d{2})??\d{8}$/D', message="El telefono debe tener formato: '+999999999'. Hasta 15 digitos es permitido.")
 	
-	JERARQUIA = ((1 , 'Crio. General'), (2, 'Crio. Mayor'), (3, 'Crio. Inspector'), (4, 'Comisario'),(5, 'SubCrio.'),(6, 'Of. Principal'),(7, 'Of. Inspector.'),(8, 'Of. SubInsp.'),)
-	CARGO = ((1 , 'Jefe de Policia'), (2, 'SubJefe de Policia'), (3, 'Secretario General'), (4, 'Jefe de Area'), (5, 'SubJefe de Area'), (6, 'Jefe'), (7, 'SubJefe'),)
+	JERARQUIA = ((1 , 'Crio. General'), (2, 'Crio. Mayor'), (3, 'Crio. Inspector'), (4, 'Comisario'),(5, 'SubCrio.'),(6, 'Of. Principal'),(7, 'Of. Inspector.'),(8, 'Of. SubInsp.'),(9, 'Retirado'),(10, 'Retirado en servicio'),)
+	CARGO = ((1 , 'Jefe de Policia'), (2, 'SubJefe de Policia'), (3, 'Secretario General'), (4, 'Director'), (5, 'Jefe de Area'), (6, 'SubJefe de Area'), (7, 'Jefe'), (8, 'SubJefe'),)
 	DEPENDENCIA = ((1 , 'Jefatura de Policia'), (2, 'Secretaria General'), (3, 'Direccion Seguridad'), (4, 'Direccion Recursos Humanos'),(5, 'Direccion Recursos Materiales'),(6, 'Direccion Policia Judicial'),)
 
 	jerarquia = models.IntegerField(default=1,choices = JERARQUIA, validators=[tipo_validacion])
