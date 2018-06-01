@@ -114,6 +114,8 @@
 									<tr>
 										<th>#</th>
 										<th>Tipo</th>
+										<th>Jurisdiccion</th>
+										<th>Categoria</th>
 										<th>Titulo</th>
 										<th>Fecha de Creacion</th>
 										<th>Estado</th>
@@ -132,6 +134,12 @@
 											{% else %}
 												Video
 											{% endif %}
+										</td>
+										<td>
+											{{publicacion.jurisdiccion}}
+										</td>
+										<td>
+											{{publicacion.categoria}}
 										</td>
 										<td>
 											{{publicacion.titulo}}

@@ -50,6 +50,30 @@
 							</div>	
 							<br>
 							<div class="form-group form-group-lg">
+								<label class="col-md-2"> Jurisdiccion </label>
+								<div class="col-md-10">
+									{{form.jurisdiccion}}
+								</div>
+									{% if form.errors.jurisdiccion %}
+								<div class="col-md-10 col-md-offset-2 alert alert-danger">
+                							{{ form.errors.jurisdiccion }}
+            					</div>
+								{% endif %}
+							</div>	
+							<br>
+							<div class="form-group form-group-lg">
+								<label class="col-md-2"> Categoria </label>
+								<div class="col-md-10">
+									{{form.categoria}}
+								</div>
+									{% if form.errors.categoria %}
+								<div class="col-md-10 col-md-offset-2 alert alert-danger">
+                							{{ form.errors.categoria }}
+            					</div>
+								{% endif %}
+							</div>	
+							<br>
+							<div class="form-group form-group-lg">
 								<label class="col-md-2"> Titulo </label>
 								<div class="col-md-10">
 									{{form.titulo}}

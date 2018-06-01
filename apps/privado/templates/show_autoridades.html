@@ -44,6 +44,7 @@
 										<th>Nombre</th>
 										<th>Apellido</th>
 										<th>Jerarquia</th>
+										<th>Cargo</th>
 										<th>Fecha de Carga</th>
 										<th>Estado</th>
 										<th>Usuario</th>
@@ -62,7 +63,10 @@
 											{{autoridad.apellido}}
 										</td>
 										<td>
-											{{autoridad.jerarquia}}
+											{{autoridad.jerarquia.nombre}}
+										</td>
+										<td>
+											{{autoridad.cargo}}
 										</td>
 										<td>
 											{{autoridad.fecha_creacion|date:'d/m/Y'}}

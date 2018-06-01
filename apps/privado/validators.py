@@ -25,13 +25,13 @@ def imagen_validacion(valor):
 def telefono_validacion(valor):
 		#telefono = re.sub( '/\D+/', '', valor);
 		#devolver si coincidió con el regex
-		regex = re.compile('^[(\d](?:(?:00)?549?)?0?(?:11|[2\d\d\d]\d\d\d)[)\d](?:(?=\d{0,2}15)\d{2})??([-\s]\d{7,9}).+$')
+		patron = re.compile('^[(\d](?:(?:00)?549?)?0?(?:11|[2\d\d\d]\d\d\d)[)\d](?:(?=\d{0,2}15)\d{2})??([-\s]\d{7,9}).+$')
 		#patron='^[\\(](?:(?:00){0,1}549{0,1}){0,1}0{0,1}(?:11|2\\d\\d\\d|02\\d\\d|[2\\d\\d\\d])[\\)](?:(?=\\d{0,2}15)\\d{2,2}){0,1}(\\s\\d{7,7}).{1,}$)^[(\d](?:(?:00)?549?)?0?(?:11|[2\d\d\d]\d\d\d)[)\d](?:(?=\d{0,2}15)\d{2})??([-\s]\d{7,9}).+$\D'
 		#patron='^\+?\d{1,3}?[- .]?\(?(?:\d{2,3})\)?[- .]?\d\d\d[- .]?\d\d\d\d$'  
 		#testString = valor # fill this in
-		if not (re.match(regex,valor)):
+		if not (re.match(patron,valor)):
 		#if not (matchArray = regex.findall(testString))
-			raise ValidationError("la lal al")
+			raise ValidationError("Formato invalido, formato correcto: (02xx) xxxxxx (- xxxxxx)")
 	 
 	
 
