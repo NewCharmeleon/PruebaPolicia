@@ -510,7 +510,7 @@ a.text-danger:focus {
 }
 a.text-white:hover,
 a.text-white:focus {
-  color: #b3b3b3 !important;
+  color: #ffffff !important;
 }
 a.text-black:hover,
 a.text-black:focus {
@@ -1379,7 +1379,7 @@ body {
   min-height: 77px;
 }
 .cid-qNpW2qMbbC .navbar-dropdown.bg-color.transparent.opened {
-  background: #1a0fb6;
+  background: #82bdf8;
 }
 .cid-qNpW2qMbbC a {
   font-style: normal;
