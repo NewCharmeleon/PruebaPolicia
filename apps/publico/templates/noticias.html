@@ -15,10 +15,20 @@
                 <a class="btn btn-md btn-primary-outline display-7 active" href="">Provincial</a>
               </li>
               <li>
-                <a class>Trelew</a>
+                <a class="btn btn-md btn-primary-outline display-7" href="">Trelew</a>
               </li>
             </ul>
           </div>
+          <script>
+  
+    $(document).ready(function(){
+        $('#filtro ul li a').click(function(){
+            $('#filtro ul li').removeClass('active');
+            $(this).parent().parent().addClass('active');
+        });
+        
+    });
+</script>  
           <!-- Gallery -->
           <div class="mbr-gallery-row">
             <div class="mbr-gallery-layout-default">
@@ -53,7 +63,7 @@
                   </ol>
                   <div class="carousel-inner">
                     {% for noticia in noticias %}
-                    <div class="carousel-item active">
+                    <div class="carousel-item" id="filtro">
                       <img src="/media/{{noticia.imagen}}" alt="">
                     </div>
                     {% endfor %}
@@ -68,7 +78,7 @@
 
       </div>
     </div>
-<script>
+<script>/*
   // Add active class to the current button (highlight it)
 var header = document.getElementById("filtro");
 var btns = header.getElementsByClassName("btn");
@@ -79,6 +89,13 @@ for (var i = 0; i < btns.length; i++) {
     this.className += " active";
   });
 }
+    $(document).ready(function(){
+        $('#mainMenu li a').click(function(){
+            $('#mainMenu li').removeClass('active');
+            $(this).parent().addClass('active');
+        });
+        
+    });*/
 </script>  
 </section>
 
