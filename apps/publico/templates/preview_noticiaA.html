@@ -1,0 +1,115 @@
+
+
+<div id="noticia-{{noticia.id}}" class="col-lg-4 col-md-4 col-sm-4 col-xs-10"style="margin-top: 11%;">
+	<div id="carousel-example-generic" class="carousel slide" data-ride="carousel">
+
+  		<!-- Indicators -->
+  		<ol class="carousel-indicators">
+    		<li data-target="#carousel-example-generic" data-slide-to="0" class="active"></li>
+    		<!--<li data-target="#carousel-example-generic" data-slide-to="1"></li>
+    		<li data-target="#carousel-example-generic" data-slide-to="2"></li>-->
+  		</ol>
+	  	<!-- Wrapper for slides -->
+  		<div class="carousel-inner" role="listbox">
+    		<div class="item active">
+    			 <img class="thumbnail imgwrapper" style="width:40vh;height:30vh;margin-left: 0;" src="/media/{{noticia.imagen}}">
+
+      			<div class="carousel-caption">
+      				<button class="btn btn-info" type="button">{{noticia.categoria}}</button>
+        			<h1>{{noticia.titulo}}</h1>
+					<p><i>{{noticia.fecha_creacion}}</i></p>
+      			</div>
+    		</div>
+    	
+    		<div class="btn-group" role="group">
+				<button class="btn btn-secondary" type="button">
+				<a href="/">Volver</a>
+				</button> 
+				<button class="btn btn-secondary" type="button">
+				<a href="https://twitter.com/share?ref_src=twsrc%5Etfw" class="twitter-share-button" data-text="{{noticia.titulo}} Fuente:{{noticia.fuente}}" data-url="http://policia.chubut.gov.ar:8003/{% url 'noticia' noticia.id %}" data-via="POLICIA_CHUBUT" data-hashtags="noticia, policial, Chubut, Jefatura de Policia" data-lang="es" data-show-count="true" data-size="small">Tweet</a>
+				</button> 
+				<!--<button class="btn btn-secondary" type="button">
+				<a href="javascript: void(0);" onclick="window.open('http://www.facebook.com/sharer.php?t={{noticia.titulo}}&u=http://policia.chubut.gov.ar:8003{% url 'noticia' noticia.id %}','ventanacompartir', 'toolbar=0, status=0, width=650, height=450');">Compartir popup</a>
+				</button> -->
+				<button class="btn btn-secondary" type="button">
+				<iframe src="https://www.facebook.com/plugins/share_button.php?href=http%3A%2F%2Fpolicia.chubut.gov.ar%2F{% url 'noticia' noticia.id %}&layout=button_count&size=small&mobile_iframe=true&width=123&height=20&appId=601917176835816" width="123" height="20" style="border:none;overflow:hidden" scrolling="no" frameborder="0" allowTransparency="true" allow="encrypted-media"></iframe>
+				</button>
+				<!--<button class="btn btn-secondary" type="button">
+				<td class="compartir_interior compartir_fb_interior">
+					<a target='_blank'
+                     	onclick="javascript:window.open('https://www.facebook.com/dialog/feed?app_id=601917176835816&amp;link=http%3A%2F%2Fpolicia.chubut.gov.ar%3A8003{% url 'noticia' noticia.id %}&amp;name={{noticia.titulo}}&amp;description={{noticia.descripcion}}&amp;display=popup&amp;picture=http%3A%2F%2Fpolicia.chubut.gov.ar%3A8003/media/{{noticia.imagen}}2F%23close_window')">
+                      Compartir en facebook
+               		</a>
+                  
+               	</td>
+				</button>-->
+			</div>
+		</div>
+	</div>	
+		
+</div>
+
+<script>window.twttr = (function(d, s, id) {
+  var js, fjs = d.getElementsByTagName(s)[0],
+    t = window.twttr || {};
+ 	 if (d.getElementById(id)) return t;
+ 	 js = d.createElement(s);
+  	js.id = id;
+ 	 js.src = "https://platform.twitter.com/widgets.js";
+ 	 fjs.parentNode.insertBefore(js, fjs);
+
+ 	 t._e = [];
+ 	 t.ready = function(f) {
+ 	  t._e.push(f);
+  	};
+
+  	return t;
+	}(document, "script", "twitter-wjs"));
+	
+	</script>
+<!--
+<div class="carousel slide" id="myCarousel">
+    <!-- Carousel items -->
+    <div class="carousel-inner">
+        <div class="item active">
+            <div class="row centered">
+                <div class="col-md-4" data-toggle="collapse" data-target="#servicenotopportunities-collapse">
+                    <a href="#">Title lorem ipsum dolor</a>
+                    <p>
+                        Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aenean euismod bibendum laoreet.
+                    </p>
+                </div>
+                <div class="col-md-4 margin" data-toggle="collapse" data-target="#servicenotopportunities-collapse">
+                    <a href="#">Title lorem ipsum dolor</a>
+                    <p>
+                        Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aenean euismod bibendum laoreet.
+                    </p>
+                </div>
+            </div>
+            <!--/row-->
+        </div>
+        <!--/item-->
+        <div class="item">
+            <div class="row centered">
+                <div class="col-md-4" data-toggle="collapse" data-target="#servicenotopportunities-collapse">
+                    <a href="#">Title lorem ipsum dolor</a>
+                    <p>
+                        Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aenean euismod bibendum laoreet.
+                    </p>
+                </div>
+                <div class="col-md-4 margin" data-toggle="collapse" data-target="#servicenotopportunities-collapse">
+                    <a href="#">Title lorem ipsum dolor</a>
+                    <p>
+                        Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aenean euismod bibendum laoreet.
+                    </p>
+                </div>
+            </div>
+            <!--/row-->
+        </div>
+        <!--/item-->
+    </div>
+    <!--/carousel-inner--> 
+    <a class="left carousel-control" href="#myCarousel" data-slide="prev">‹</a>
+    <a class="right carousel-control" href="#myCarousel" data-slide="next">›</a>
+</div>-
+<!--/myCarousel-->
