@@ -1,12 +1,12 @@
 <!DOCTYPE html>
 {% load staticfiles %}
-<html >
+<html>
 <head>
   
   <meta charset="UTF-8">
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <meta name="viewport" content="width=device-width, initial-scale=1, minimum-scale=1">
-     <link rel="shortcut icon" href="{% static 'images/escudo-policiach-102x107.png' %} type="image/x-icon">
+     <link rel="shortcut icon" href="{% static 'images/escudo-policiach-102x107.png' %}"  type="image/x-icon">
   
   <meta name="description" content="Policia del Chubut">
   <title>Inicio</title>
@@ -23,315 +23,33 @@
   <link rel="stylesheet" type="text/css" href="{% static 'theme/css/style.css' %}">
   <link rel="stylesheet" type="text/css" href="{% static 'mobirise/css/mbr-additional.css' %}">
   
-   
+  <!--libs Noticias-->  
+  <link rel="stylesheet" href="https://netdna.bootstrapcdn.com/font-awesome/4.0.3/css/font-awesome.css">
+  <link rel="stylesheet" href="{% static 'social-feed-plugin/jquery.socialfeed.css' %}">
+  <link rel="stylesheet" href="{% static 'social-feed-plugin/style.css' %}">
+  <link rel="stylesheet" href="{% static 'gallery/style.css' %}">
+  <link rel="stylesheet" href="{% static 'mobirise/css/mbr-additional.css' %}" type="text/css">
+<style>
+.dropdown-submenu {
+    position: relative;
+}
+
+.dropdown-submenu .dropdown-menu {
+    top: 0;
+    left: 100%;
+    margin-top: -1px;
+}
+</style>
+
 </head>
 <body>
-  <section class="menu cid-qNpW2qMbbC" once="menu" id="menu1-e">
+    {% include 'headerMBR.html' %}
+  
+{% block contenido%}
+       {% include 'bodyMBR.html' %}
+{% endblock contenido %}
 
-   
-    <nav class="navbar navbar-expand beta-menu navbar-dropdown align-items-center navbar-fixed-top navbar-toggleable-sm bg-color transparent">
-        <button class="navbar-toggler navbar-toggler-right" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
-            <div class="hamburger">
-                <span></span>
-                <span></span>
-                <span></span>
-                <span></span>
-            </div>
-        </button>
-        <div class="menu-logo">
-            <div class="navbar-brand">
-                <span class="navbar-logo">
-                    <a href="http://policia.chubut.gov.ar/">
-                         <img src="{% static 'images/escudo-policiach-102x107.png' %}" alt="Escudo de Policia" title="Escudo de Policia del Chubut" style="height: 4.6rem;">
-                    </a>
-                </span>
-                <span class="navbar-caption-wrap"><a class="navbar-caption text-white display-4" href="http://policia.chubut.gov.ar:8003">Policia del Chubut &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;&nbsp;</a></span>
-            </div>
-        </div>
-        <div class="collapse navbar-collapse" id="navbarSupportedContent">
-            <ul class="navbar-nav nav-dropdown nav-right" data-app-modern-menu="true"><li class="nav-item">
-                    <a class="nav-link link text-white display-4" href="#">
-                        <span class="mbri-home mbr-iconfont mbr-iconfont-btn"></span>
-                        Inicio</a>
-                </li><li class="nav-item"><a class="nav-link link text-white display-4" href="% url 'noticias/' %}"><span class="mbrib-sites mbr-iconfont mbr-iconfont-btn"></span>
-                        Noticias</a></li><li class="nav-item"><a class="nav-link link text-white display-4" href="% url 'sistemas/' %}"><span class="mbri-link mbr-iconfont mbr-iconfont-btn"></span>
-                        Sistemas</a></li><li class="nav-item dropdown open"><a class="nav-link link text-white dropdown-toggle display-4" href="/" data-toggle="dropdown-submenu" aria-expanded="true"><span class="mbri-italic mbr-iconfont mbr-iconfont-btn"></span>
-                        Institucional</a><div class="dropdown-menu"><a class="text-white dropdown-item display-4" href="% url 'historia/' %}">Historia</a><a class="text-white dropdown-item display-4" href="% url 'autoridades/' %}" aria-expanded="false">Autoridades</a><a class="text-white dropdown-item display-4" href="% url 'escuela/' %}" aria-expanded="false">Escuelas</a></div></li><li class="nav-item"><a class="nav-link link text-white display-4" href="% url 'comunidad/' %}" aria-expanded="false"><span class="mbri-users mbr-iconfont mbr-iconfont-btn"></span>Comunidad</a></li></ul>
-            
-        </div>
-    </nav>
-</section>
-
-<section class="engine"><a href="% url '/' %}"></a></section><section class="header6 cid-qNpXsUs46r mbr-fullscreen mbr-parallax-background" id="header6-h">
-
-    
-
-    <div class="mbr-overlay" style="opacity: 0.2; background-color: rgb(0, 0, 0);">
-    </div>
-
-    <div class="container">
-        <div class="row justify-content-md-center">
-            <div class="mbr-white col-md-10">
-                <h1 class="mbr-section-title align-center mbr-bold pb-3 mbr-fonts-style display-1">Policia del Chubut</h1>
-                <p class="mbr-text align-center pb-3 mbr-fonts-style display-5">En servicio a la comunidad.
-                </p>
-                <div class="mbr-section-btn align-center">
-                    <a class="btn btn-md btn-primary display-4" href="http://institutosuperior811.wordpress.com/inscripciones-agentes/"  class="external_link">Inscripcion Agentes</a>
-                    <a class="btn btn-md btn-primary-outline display-4" href="http://institutosuperior811.wordpress.com/inscripciones-2017/" class="external_link">Inscripcion Oficiales</a>
-                </div>
-            </div>
-        </div>
-    </div>
-
-    <div class="mbr-arrow hidden-sm-down" aria-hidden="true">
-        <a href="#next">
-            <i class="mbri-down mbr-iconfont"></i>
-        </a>
-    </div>
-</section>
-
-<section class="accordion2 cid-qTDrCyv9IM" id="accordion2-n">
-
-    
-
-
-    
-    <div class="container">
-        <div class="media-container-row pt-5">
-            <div class="accordion-content">
-                <h2 class="mbr-section-title align-center pb-3 mbr-fonts-style display-1">
-                        Jefe de Policia<br>Crio. Gral. Miguel Ramon Gomez&nbsp;</h2>
-                <h3 class="mbr-section-subtitle pt-2 align-center mbr-light mbr-fonts-style display-5">Jefatura de Policia. Mitre 551-Rawson. Tel: (0280) 4482494 - 4482511 - 4483878 .
-                </h3>
-                <div id="bootstrap-accordion_9" class="panel-group accordionStyles accordion pt-5 mt-3" role="tablist" aria-multiselectable="true">
-                        <div class="card">
-                            <div class="card-header" role="tab" id="headingOne">
-                                <a role="button" class="collapsed panel-title text-black" data-toggle="collapse" data-core="" href="#collapse1_9" aria-expanded="false" aria-controls="collapse1">
-                                    <h4 class="mbr-fonts-style display-5">
-                                        <span class="sign mbr-iconfont mbri-arrow-down inactive"></span>&nbsp;Reseña Curricular</h4>
-                                </a>
-                            </div>
-                            <div id="collapse1_9" class="panel-collapse noScroll collapse" role="tabpanel" aria-labelledby="headingOne" data-parent="#bootstrap-accordion_9">
-                                <div class="panel-body p-4">
-                                    <p class="mbr-fonts-style panel-text display-7">
-                                       "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum."</p>
-                                </div>
-                            </div>
-                        </div>
-                 </div>
-            </div>
-            <div class="mbr-figure" style="width: 46%;">
-                    <img src="{% static 'images/jp1a-200x229.png' %}" alt="JP1" title="JP1">
-            </div>
-        </div>
-    </div>
-</section>
-
-<section class="accordion2 cid-qTDx1Lvrmk" id="accordion2-q">
-
-    <div class="container">
-        <div class="media-container-row pt-5">
-            <div class="accordion-content">
-                <h2 class="mbr-section-title align-center pb-3 mbr-fonts-style display-1">Crio. Gral. Nestor Angel Gomez Ocampo&nbsp;</h2>
-                <h3 class="mbr-section-subtitle pt-2 align-center mbr-light mbr-fonts-style display-5">Jefatura de Policia. Mitre 551-Rawson. Tel: (0280) 4482494 - 4482511 - 4483878 .</h3>
-                <div id="bootstrap-accordion_12" class="panel-group accordionStyles accordion pt-5 mt-3" role="tablist" aria-multiselectable="true">
-                        <div class="card">
-                            <div class="card-header" role="tab" id="headingOne">
-                                <a role="button" class="collapsed panel-title text-black" data-toggle="collapse" data-core="" href="#collapse1_12" aria-expanded="false" aria-controls="collapse1">
-                                    <h4 class="mbr-fonts-style display-5">
-                                        <span class="sign mbr-iconfont mbri-arrow-down inactive"></span>Reseña Curricular</h4>
-                                </a>
-                            </div>
-                            <div id="collapse1_12" class="panel-collapse noScroll collapse" role="tabpanel" aria-labelledby="headingOne" data-parent="#bootstrap-accordion_12">
-                                <div class="panel-body p-4">
-                                    <p class="mbr-fonts-style panel-text display-7">
-                                       "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum."</p>
-                                </div>
-                            </div>
-                        </div>
-              </div>
-            </div>
-            <div class="mbr-figure" style="width: 46%;">
-                    <img src="{% static 'images/jp2a-1042x1022.png' %}" alt="JP2" title="JP2">
-            </div>
-        </div>
-    </div>
-</section>
-
-<section class="accordion1 cid-qTDzhN50bs" id="accordion1-r">
-
-    <div class="container">
-        <div class="media-container-row">
-            <div class="col-12 col-md-8">
-                <div class="section-head text-center space30">
-                    <h2 class="mbr-section-title pb-5 mbr-fonts-style display-2">Telefonos Utiles</h2>
-                </div>
-                <div class="clearfix"></div>
-                <div id="bootstrap-accordion_13" class="panel-group accordionStyles accordion" role="tablist" aria-multiselectable="true">
-                    <div class="card">
-                        <div class="card-header" role="tab" id="headingOne">
-                            <a role="button" class="panel-title collapsed text-black" data-toggle="collapse" data-core="" href="#collapse1_13" aria-expanded="false" aria-controls="collapse1">
-                                <h4 class="mbr-fonts-style display-7">
-                                    <span class="sign mbr-iconfont mbri-arrow-down inactive"></span>Jefatura de Policia. &nbsp;<br></h4>
-                            </a>
-                        </div>
-                        <div id="collapse1_13" class="panel-collapse noScroll collapse " role="tabpanel" aria-labelledby="headingOne" data-parent="#bootstrap-accordion_13">
-                            <div class="panel-body p-4">
-                                <p class="mbr-fonts-style panel-text display-7">
-                                    <b>Direccion: Mitre 551-Rawson. Tel: (0280) 4482494 - 4482511 - 4483878.</b>&nbsp;<br>
-                                    -Cría. Dtto. 1ª: Dirección: Mitre nº 699 Tel. 2945-450-789&nbsp;<br>-Cría. Dtto. 2ª: Dirección: Pasaje 25 nº 990&nbsp;Tel. 2945-451-420
-                                <br>-Subcría Barrio Baden: Dirección: Calle sin nombre y s/n Tel: 2945-456-468&nbsp;<br>-Subcría Languiñeo: Dirección: Ruta Provincial 25 s/nº Tel: 02945-470-529&nbsp;<br></p>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="card">
-                        <div class="card-header" role="tab" id="headingTwo">
-                            <a role="button" class="collapsed panel-title text-black" data-toggle="collapse" data-core="" href="#collapse2_13" aria-expanded="false" aria-controls="collapse2">
-                                <h4 class="mbr-fonts-style display-7">
-                                    <span class="sign mbr-iconfont mbri-arrow-down inactive"></span>Unidad Regional Comodoro Rivadavia<br></h4>
-                            </a>
-                            
-                        </div>
-                        <div id="collapse2_13" class="panel-collapse noScroll collapse" role="tabpanel" aria-labelledby="headingTwo" data-parent="#bootstrap-accordion_13">
-                            <div class="panel-body p-4">
-                                <p class="mbr-fonts-style panel-text display-7">
-                                    <b>Direcci&oacute;n: Av. Rivadavia 99-199 - Comodoro Rivadavia.&nbsp;Tel: (0297)-447-3015</b><br>
-                                    -Cría. Dtto. 1ª: Dirección: Tel. 2974-446-2778<br>-Cría. Dtto. 2ª: Dirección: Tel. 2974-446-2439<br>-Cría. Dtto. 3ª: Dirección: Tel. 2974-446-2652<br>-Cría. Dtto. 4ª: Dirección: Tel. 2974-447-3433<br>-Cría. Dtto. 5ª: Dirección: Tel. 2974-448-1255<br>-Cría. Dtto. 6ª: Dirección: Tel. 2974-444-1653<br>-Cría. Dtto. 7ª: Dirección: Tel. 2974-<br>-Cría Km3 : Dirección:&nbsp;Tel: 2974-455-7755/7766
-                                <br>-Cría Laprida: Dirección: Tel:&nbsp;2974-456-0599
-                                <br>-Cría Diadema: Dirección: Tel: 2974-484-3000
-                                <br>-Cría Km8: Dirección: Tel: 2974-453-5851
-                                <br>
-                                -Cría Rada Tilly: Dirección: 2974-445-1255
-                                <br>	
-                                -Cría de la Mujer: Dirección: Tel:&nbsp;2974-447-1994
-                                <br>
-                                -Policía Comunitaria: Dirección: Tel: 2974-448-3308&nbsp;<br><br></p>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="card">
-                        <div class="card-header" role="tab" id="headingThree">
-                            <a role="button" class="collapsed text-black panel-title" data-toggle="collapse" data-core="" href="#collapse3_13" aria-expanded="false" aria-controls="collapse3">
-                                <h4 class="mbr-fonts-style display-7">
-                                    <span class="sign mbr-iconfont mbri-arrow-down inactive"></span>&nbsp;Unidad Regional Esquel&nbsp;<div><span style="color: inherit; font-size: 1rem; background-color: transparent;">&nbsp;</span></div><div><br></div></h4>
-                            </a>
-                        </div>
-                        <div id="collapse3_13" class="panel-collapse noScroll collapse" role="tabpanel" aria-labelledby="headingThree" data-parent="#bootstrap-accordion_13">
-                            <div class="panel-body p-4">
-                                <p class="mbr-fonts-style panel-text display-7">
-                                    <b>Direcci&oacute;n: Rivadavia nº 672 -Esquel.&nbsp;Tel: (02945)-451-427</b><br>
-                                    -Cría. Dtto. 1ª: Dirección: Mitre nº 699 Tel. 2945-450-789&nbsp;<br>-Cría. Dtto. 2ª: Dirección: Pasaje 25 nº 990&nbsp;Tel. 2945-451-420
-                                <br>-Subcría Barrio Baden: Dirección: Calle sin nombre y s/n Tel: 2945-456-468&nbsp;<br>-Subcría Languiñeo: Dirección: Ruta Provincial 25 s/nº Tel: 02945-470-529&nbsp;<br></p>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="card">
-                        <div class="card-header" role="tab" id="headingFour">
-                            <a role="button" class="collapsed panel-title text-black" data-toggle="collapse" data-core="" href="#collapse4_13" aria-expanded="false" aria-controls="collapse4">
-                                <h4 class="mbr-fonts-style display-7">
-                                    <span class="sign mbr-iconfont mbri-arrow-down inactive"></span>&nbsp; Unidad Regional Puerto Madryn &nbsp;<div> 
-                                </div><div>
-                                </div><div><br></div></h4>
-                            </a> 
-                        </div>
-                        <div id="collapse4_13" class="panel-collapse noScroll collapse" role="tabpanel" aria-labelledby="headingFour" data-parent="#bootstrap-accordion_13">
-                            <div class="panel-body p-4">
-                                <p class="mbr-fonts-style panel-text display-7">
-                                <b>Direccion: &nbsp;nº -Puerto Madryn.&nbsp; Tel: (02945)-451-427</b><br>
-                                    -Cría. Dtto. 1ª: Dirección: Tel. 2974-446-2778
-                                <br>-Cría. Dtto. 2ª: Dirección: Tel. 2974-446-2439
-                                <br>-Cría. Dtto. 3ª: Dirección: Tel. 2974-446-2652
-                                <br>-Cría. Dtto. 4ª: Dirección: Tel. 2974-447-3433
-                                <br><br>-Cría Km3 : Dirección: Tel: 2974-455-7755/7766 
-                                <br>-Cría Laprida: Dirección: Tel: 2974-456-0599 
-                                <br>-Cría Diadema: Dirección: Tel: 2974-484-3000 
-                                <br>-Cría Km8: Dirección: Tel: 2974-453-5851 
-                                <br>-Cría Rada Tilly: Dirección: 2974-445-1255 
-                                <br>-Cría de la Mujer: Dirección: Tel: 2974-447-1994 
-                                <br>-Policía Comunitaria: Dirección: Tel: 2974-448-3308</p>
-                                                            <v>
-                        </div>
-                    </div>
-                    <div class="card">
-                        <div class="card-header" role="tab" id="headingFive">
-                            <a role="button" class="collapsed panel-title text-black" data-toggle="collapse" data-core="" href="#collapse5_13" aria-expanded="false" aria-controls="collapse5">
-                                <h4 class="mbr-fonts-style display-7">
-                                    <span class="sign mbr-iconfont mbri-arrow-down inactive"></span>&nbsp; Unidad Regional Trelew 
-                                <div></div></h4>
-                            </a>
-                        </div>
-                        <div id="collapse5_13" class="panel-collapse noScroll collapse" role="tabpanel" aria-labelledby="headingFive" data-parent="#bootstrap-accordion_13">
-                            <div class="panel-body p-4">
-                                <p class="mbr-fonts-style panel-text display-7">
-                                   <b> Direccion: San Martin nº 435 -Trelew.&nbsp; Tel: (0280)-4420-891</b><br>
-                                    -Cría. Dtto. 1ª: Dirección: San Martín nº 451 Tel. 2804-427-587&nbsp;<br>-Cría. Dtto. 2ª: Dirección: Colombia s/nº &nbsp;Tel. 2804-426-845&nbsp;<br>-Cría. Dtto. 3ª: Dirección: Av. La Plata nº 1554 Tel. 2804-426-162&nbsp;<br>-Cría. Dtto. 4ª: Dirección: Sargento Cabral nº 1580 Tel. 2804-425-273&nbsp;<br>-Cría de la Mujer: Dirección: Pje. San Juan Nº 345 Tel: 2804-438-521<br>-Subcría Barrio INTA Dirección: Gastre s/nº Tel: 2804-446-021&nbsp;<br>&nbsp;<br>&nbsp;<br><br><br><br></p>
-                            </div>
-                        </div>
-                    </div>
-                    
-                </div>
-            </div>
-        </div>
-    </div>
-</section>
-
-<section class="cid-qTDoqAYcHm" id="footer2-j">
-
-    <div class="container">
-        <div class="media-container-row content mbr-white">
-            <div class="col-12 col-md-3 mbr-fonts-style display-7">
-                <p class="mbr-text"><strong>Jefatura de Policía</strong><br>
-                    <br>Mitre 551-Rawson, Chubut&nbsp;<br>Codigo Postal 9103&nbsp;<br>
-                    <br>
-                    <br><strong>Contactos</strong>
-                    <br>
-                    <br>Email: jefatura@policia.chubut.gov.ar&nbsp;<br>Telefono: &nbsp;(0280) 4482494 - 4482511 - 4483878</p>
-            </div>
-            <div class="col-12 col-md-3 mbr-fonts-style display-7">
-                <p class="mbr-text">
-                    <strong>Enlaces</strong>&nbsp;<br>Enlace1&nbsp;<br>Enlace 2&nbsp;<br>Enlace 3&nbsp;<br>
-                    <br><strong>Informacion Util</strong>&nbsp;<br>
-                    <br>Info .</p>
-            </div>
-            <div class="col-12 col-md-6">
-                <div class="google-map"><iframe frameborder="0" style="border:0" src="https://www.google.com/maps/embed/v1/place?key=AIzaSyA0Dx_boXQiwvdz8sJHoYeZNVTdoWONYkU&amp;q=place_id:Ei9CYXJ0b2xvbcOpIE1pdHJlIDU5OSwgUmF3c29uLCBDaHVidXQsIEFyZ2VudGluYSIbEhkKFAoSCUtMf_QhVwG-ESmgFW7iVaHaENcE" allowfullscreen=""></iframe></div>
-            </div>
-        </div>
-        <div class="footer-lower">
-            <div class="media-container-row">
-                <div class="col-sm-12">
-                    <hr>
-                </div>
-            </div>
-            <div class="media-container-row mbr-white">
-                <div class="col-sm-6 copyright">
-                    <p class="mbr-text mbr-fonts-style display-7">
-                        © Copyright 2018 - Area Comunicaciones e Informatica</p>
-                </div>
-                <div class="col-md-6">
-                    <div class="social-list align-right">
-                        <div class="soc-item">
-                            <a href="https://twitter.com/Policia_Chubut" target="_blank">
-                                <span class="mbr-iconfont mbr-iconfont-social socicon-twitter socicon"></span>
-                            </a>
-                        </div>
-                        <div class="soc-item">
-                            <a href="https://es-la.facebook.com/prensapoliciachubut/" target="_blank">
-                                <span class="mbr-iconfont mbr-iconfont-social socicon-facebook socicon"></span>
-                            </a>
-                        </div>
-                        <div class="soc-item">
-                            <a href="tel:+549-2804414428">
-                                <span class="mbr-iconfont mbr-iconfont-social socicon-whatsapp socicon"></span>
-                            </a>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </div>
-</section>
-
+{% include 'footerMBR.html' %}
 
   <script src="{% static 'web/assets/jquery/jquery.min.js' %}"></script>
   <script src="{% static 'popper/popper.min.js' %}"></script>
@@ -344,6 +62,23 @@
   <script src="{% static 'touchswipe/jquery.touch-swipe.min.js' %}"></script>
   <script src="{% static 'theme/js/script.js' %}"></script>
   
+ 
+  <!--libs noticias-->  
+  <script src="{% static 'viewportchecker/jquery.viewportchecker.js' %}"></script>
+  <script src="{% static 'masonry/masonry.pkgd.min.js' %}"></script>
+  <script src="{% static 'imagesloaded/imagesloaded.pkgd.min.js' %}"></script>
+  <script src="{% static 'vimeoplayer/jquery.mb.vimeo_player.js' %}"></script>
+  <script src="{% static 'sociallikes/social-likes.js' %}"></script>
+  <script src="{% static 'bootstrapcarouselswipe/bootstrap-carousel-swipe.js' %}"></script>
+  <script src="{% static 'social-feed-plugin/codebird.min.js' %}"></script>
+  <script src="{% static 'social-feed-plugin/moment.js' %}"></script>
+  <script src="{% static 'social-feed-plugin/en-gb.js' %}"></script>
+  <script src="{% static 'social-feed-plugin/doT.js' %}"></script>
+  <script src="{% static 'social-feed-plugin/jquery.socialfeed.js' %}"></script>
+  <script src="{% static 'slidervideo/script.js' %}"></script>
+  <script src="{% static 'gallery/player.min.js' %}"></script>
+  <script src="{% static 'gallery/script.js' %}"></script>
+
   
  <div id="scrollToTop" class="scrollToTop mbr-arrow-up"><a style="text-align: center;"><i></i></a></div>
     <input name="animation" type="hidden">

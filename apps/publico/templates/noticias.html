@@ -1,14 +1,124 @@
 
-{% extends 'index.html' %}	
-
+{% extends 'indexMBR.html' %}  
+{% load staticfiles %}
 {% block contenido %}
+<section class="engine"><a href="https://mobirise.ws/n">mobile website builder app</a></section><section class="mbr-gallery mbr-slider-carousel cid-qTIJvd41Fl" id="gallery2-t">
 
-<div class="row body" >
-    {% for noticia in noticias %}
-      
-        {% include 'preview_noticia.html' with noticias=noticias %}
-      
+    
 
-    {% endfor %}
-  </div>  
+    <div>
+        <div>
+          <!-- Filter -->
+          <div class="mbr-gallery-filter container gallery-filter-active" id="filtro">
+            <ul buttons="0">
+              <li class="mbr-gallery-filter-all">
+                <a class="btn btn-md btn-primary-outline display-7 active" href="">Provincial</a>
+              </li>
+              <li>
+                <a class>Trelew</a>
+              </li>
+            </ul>
+          </div>
+          <!-- Gallery -->
+          <div class="mbr-gallery-row">
+            <div class="mbr-gallery-layout-default">
+              <div>
+                <div>
+                  {% for noticia in noticias%}
+                  <div class="mbr-gallery-item mbr-gallery-item--p1" data-video-url="false" data-tags="{{noticia.jurisdiccion}}">
+                    <div href="#lb-gallery2-t" data-slide-to="{{noticia.id}}" data-toggle="modal">
+                      <img src="/media/{{noticia.imagen}}" alt="">
+                      <span class="icon-focus"></span>
+                      <span class="mbr-gallery-title mbr-fonts-style display-7">{{noticia.titulo}}</span>
+                    </div>
+                  </div>
+                  {% endfor %}
+                </div>
+              </div>
+              <div class="clearfix">
+                
+              </div>
+            </div>
+          </div>
+          <!-- Lightbox -->
+          <div data-app-prevent-settings="" class="mbr-slider modal fade carousel slide" tabindex="-1" data-keyboard="true" data-interval="false" id="lb-gallery2-t">
+            <div class="modal-dialog">
+              <div class="modal-content">
+                <div class="modal-body">
+                  <ol class="carousel-indicators">
+                    {% for noticia in noticias %}
+                    <li data-app-prevent-settings=""  data-target="#lb-gallery2-t" data-slide-to="{{noticia.id}}"></li>
+                    {% endfor %}
+                    
+                  </ol>
+                  <div class="carousel-inner">
+                    {% for noticia in noticias %}
+                    <div class="carousel-item active">
+                      <img src="/media/{{noticia.imagen}}" alt="">
+                    </div>
+                    {% endfor %}
+                  </div>
+                  <a class="carousel-control carousel-control-prev" role="button" data-slide="prev" href="#lb-gallery2-t"><span class="mbri-left mbr-iconfont" aria-hidden="true"></span><span class="sr-only">Previo</span></a>
+                  <a class="carousel-control carousel-control-next" role="button" data-slide="next" href="#lb-gallery2-t"><span class="mbri-right mbr-iconfont" aria-hidden="true"></span><span class="sr-only">Siguiente</span></a>
+                  <a class="close" href="#" role="button" data-dismiss="modal"><span class="sr-only">Cerrar</span></a>
+                </div>
+              </div>
+            </div>
+          </div>
+
+      </div>
+    </div>
+<script>
+  // Add active class to the current button (highlight it)
+var header = document.getElementById("filtro");
+var btns = header.getElementsByClassName("btn");
+for (var i = 0; i < btns.length; i++) {
+  btns[i].addEventListener("click", function() {
+    var current = document.getElementsByClassName("active");
+    current[0].className = current[0].className.replace(" active", "");
+    this.className += " active";
+  });
+}
+</script>  
+</section>
+
+<section class="cid-qTJfFBQoSb" id="social-buttons3-10">
+    
+    
+
+    
+
+    <div class="container">
+        <div class="media-container-row">
+            <div class="col-md-8 align-center">
+                <h2 class="pb-3 mbr-section-title mbr-fonts-style display-2">Comparte esta pagina!
+                </h2>
+                <div>
+                    <div class="mbr-social-likes">
+                        <span class="btn btn-social socicon-bg-facebook facebook mx-2" title="Share link on Facebook">
+                            <i class="socicon socicon-facebook"></i>
+                        </span>
+                        <span class="btn btn-social twitter socicon-bg-twitter mx-2" title="Share link on Twitter">
+                            <i class="socicon socicon-twitter"></i>
+                        </span>
+                        
+                        
+                        
+                        
+                        
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+<section class="mbr-social-feed loading" id="feed-z" data-facebook="https://es-la.facebook.com/prensapoliciachubut/" data-twitter="https://twitter.com/Policia_Chubut" data-google="" data-posts="2" data-youtube="" data-rv-view="148" style="background-color: rgb(231, 229, 249); padding-top: 0px; padding-bottom: 0px;">
+    
+    <img class="social-feed-container-loading" alt="" src="/static/assets/images/loading.svg">
+    <div class="social-feed-container">
+    </div>
+</section>
+
+
 {% endblock contenido%}
