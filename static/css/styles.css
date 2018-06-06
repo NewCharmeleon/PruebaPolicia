@@ -410,12 +410,13 @@ audio, canvas, progress, video{
 }
 
 .slide, .carousel-inner > .item > img{
-	position: inherite;
+	/*position: inherite;
 	height: 500px;
 	margin-left: 3.8%;
-	width: 92.5%;
+	width: 100%;
 	margin-top: 5.5%;
-	margin-bottom: 5%;
+	margin-bottom: 5%;*/
+	width:100%;
 	
 }
 .carousel-control{
