@@ -8,26 +8,30 @@
     <div>
         <div>
           <!-- Filter -->
-          <div class="mbr-gallery-filter container gallery-filter-active" id="filtro">
-            <ul buttons="0">
+          <div class="mbr-gallery-filter container gallery-filter-active">
+            <ul buttons="0" id="menu">
               <li class="mbr-gallery-filter-all">
-                <a class="btn btn-md btn-primary-outline display-7 active" href="">Provincial</a>
+                <a class="btn btn-md btn-primary-outline display-7 active" href="" >Provincial</a>
               </li>
               <li>
-                <a class="btn btn-md btn-primary-outline display-7" href="">Trelew</a>
+                <a class="btn btn-md btn-primary-outline display-7" href="">Comodoro Rivadavia</a>
+              </li>
+              <li>
+                <a class="btn btn-md btn-primary-outline display-7" href="" >Esquel</a>
+              </li>
+              <li>
+                <a class="btn btn-md btn-primary-outline display-7" href="" >Puerto Madryn</a>
+              </li>
+              <li>
+                <a class="btn btn-md btn-primary-outline display-7" href="" >Rawson</a>
+              </li>
+              <li>
+                <a class="btn btn-md btn-primary-outline display-7" href="" >Trelew</a>
               </li>
             </ul>
           </div>
-          <script>
+          
   
-    $(document).ready(function(){
-        $('#filtro ul li a').click(function(){
-            $('#filtro ul li').removeClass('active');
-            $(this).parent().parent().addClass('active');
-        });
-        
-    });
-</script>  
           <!-- Gallery -->
           <div class="mbr-gallery-row">
             <div class="mbr-gallery-layout-default">
@@ -35,7 +39,7 @@
                 <div>
                   {% for noticia in noticias%}
                   <div class="mbr-gallery-item mbr-gallery-item--p1" data-video-url="false" data-tags="{{noticia.jurisdiccion}}">
-                    <div href="#lb-gallery2-t" data-slide-to="{{noticia.id}}" data-toggle="modal">
+                    <div href="#lb-gallery2-t" data-slide-to="{{noticia.id}}" data-toggle="modal" onclick="javascript:setActive({{noticia.id}})">
                       <img src="/media/{{noticia.imagen}}" alt="">
                       <span class="icon-focus"></span>
                       <span class="mbr-gallery-title mbr-fonts-style display-7">{{noticia.titulo}}</span>
@@ -62,7 +66,7 @@
                   </ol>
                   <div class="carousel-inner">
                     {% for noticia in noticias %}
-                    <div class="carousel-item" id="filtro">
+                    <div class="carousel-item" id={{noticia.id}}>
                       <img src="/media/{{noticia.imagen}}" alt="">
                     </div>
                     {% endfor %}
@@ -77,24 +81,39 @@
 
       </div>
     </div>
-<script>/*
-  // Add active class to the current button (highlight it)
-var header = document.getElementById("filtro");
-var btns = header.getElementsByClassName("btn");
-for (var i = 0; i < btns.length; i++) {
-  btns[i].addEventListener("click", function() {
-    var current = document.getElementsByClassName("active");
-    current[0].className = current[0].className.replace(" active", "");
-    this.className += " active";
+<script>
+  
+    function setActive(id){
+      $(".carousel-item").removeClass("active");
+      $("#"+id).addClass("active");
+    }
+    function setActiveBtn(){
+      //$(".display-7 active").removeClass("active");
+      $(this).addClass("active");
+    }
+    $("#menu li a").on('click', function(e){
+    $("#menu .active").removeClass('active');
+    $(this).parent().addClass('active'); 
+    e.preventDefault();
+});
+    /*var btn = document.getElementsByClassName('a btn btn-md btn-primary-outline display-7')
+
+for (var i = 0; i < btn.length; i++) {
+  btn[i].addEventListener('click', function() {
+    for (var j = 0; j < btn.length; j++) {
+      if (btn[j] == this) {
+        btn[j].classList.add('active');
+      } else {
+        btn[j].classList.remove('active');
+      }
+    }
   });
-}
-    $(document).ready(function(){
-        $('#mainMenu li a').click(function(){
-            $('#mainMenu li').removeClass('active');
-            $(this).parent().addClass('active');
-        });
-        
+}*/
+   /* $('ul').find('a').on('click', function () {
+    $(this).closest('ul').find('a').removeClass('active');
+    $(this).addClass('active');
     });*/
+    //agregar mbr-gallery-item__hided
 </script>  
 </section>
 
