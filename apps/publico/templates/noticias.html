@@ -9,25 +9,19 @@
         <div>
           <!-- Filter -->
           <div class="mbr-gallery-filter container gallery-filter-active">
-            <ul buttons="0" id="menu">
-              <li class="mbr-gallery-filter-all">
-                <a class="btn btn-md btn-primary-outline display-7 active" href="" >Provincial</a>
-              </li>
-              <li>
-                <a class="btn btn-md btn-primary-outline display-7" href="">Comodoro Rivadavia</a>
-              </li>
-              <li>
-                <a class="btn btn-md btn-primary-outline display-7" href="" >Esquel</a>
-              </li>
-              <li>
-                <a class="btn btn-md btn-primary-outline display-7" href="" >Puerto Madryn</a>
-              </li>
-              <li>
-                <a class="btn btn-md btn-primary-outline display-7" href="" >Rawson</a>
-              </li>
-              <li>
-                <a class="btn btn-md btn-primary-outline display-7" href="" >Trelew</a>
-              </li>
+            <ul buttons="0">
+              {% for jurisdiccion in jurisdicciones %}
+                {% if jurisdiccion.0 == 0 %}
+                  <li class="mbr-gallery-filter-all">
+                    <a class="btn btn-md btn-primary-outline display-7 filtro-{{jurisdiccion.0}} active" href="javascript:filtro({{jurisdiccion.0}})" >{{jurisdiccion.1}}</a>
+                  </li>
+                {% else  %}
+                  <li>
+                    <a class="btn btn-md btn-primary-outline filtro-{{jurisdiccion.0}} display-7" href="javascript:filtro({{jurisdiccion.0}})">{{jurisdiccion.1}}</a>
+                  </li>
+                {% endif %}
+              {% endfor %}
+              
             </ul>
           </div>
           
@@ -87,33 +81,19 @@
       $(".carousel-item").removeClass("active");
       $("#"+id).addClass("active");
     }
-    function setActiveBtn(){
-      //$(".display-7 active").removeClass("active");
-      $(this).addClass("active");
-    }
-    $("#menu li a").on('click', function(e){
-    $("#menu .active").removeClass('active');
-    $(this).parent().addClass('active'); 
-    e.preventDefault();
-});
-    /*var btn = document.getElementsByClassName('a btn btn-md btn-primary-outline display-7')
-
-for (var i = 0; i < btn.length; i++) {
-  btn[i].addEventListener('click', function() {
-    for (var j = 0; j < btn.length; j++) {
-      if (btn[j] == this) {
-        btn[j].classList.add('active');
-      } else {
-        btn[j].classList.remove('active');
+    
+    function filtro(jurisdiccion){
+      $("a.btn-primary-outline.display-7").removeClass('active');
+      $(".filtro-"+jurisdiccion).addClass('active');
+      $(".mbr-gallery-item.mbr-gallery-item--p1").addClass('mbr-gallery-item__hided');
+      $("div[data-tags='"+ jurisdiccion +"']").removeClass('mbr-gallery-item__hided');
+      if (jurisdiccion==0){
+      $(".mbr-gallery-item.mbr-gallery-item--p1").removeClass('mbr-gallery-item__hided');
       }
+
     }
-  });
-}*/
-   /* $('ul').find('a').on('click', function () {
-    $(this).closest('ul').find('a').removeClass('active');
-    $(this).addClass('active');
-    });*/
-    //agregar mbr-gallery-item__hided
+   
+    
 </script>  
 </section>
 

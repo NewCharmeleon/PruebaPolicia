@@ -12,7 +12,7 @@ from django.core.validators import RegexValidator
 # Create your models here.
 class Publicacion(models.Model):
 	TIPO = ((1 , 'Articulo'), (2, 'Video'),)
-	JURISDICCION = ((1, 'Jefatura de Policia'),(2 , 'Unidad Regional Comodoro Rivadavia'), (3, 'Unidad Regional Esquel'),(4, 'Unidad Regional Puerto Madryn'),(5, 'Unidad Regional Trelew'),)
+	JURISDICCION = ((0, 'Provincial'),(1, 'Jefatura de Policia'),(2 , 'Unidad Regional Comodoro Rivadavia'), (3, 'Unidad Regional Esquel'),(4, 'Unidad Regional Puerto Madryn'),(5, 'Unidad Regional Trelew'),)
 	CATEGORIA = ((1 , 'Informativo'), (2, 'Institucional'), (3, 'Comunidad'),(4, 'Otro'),)
 
 	tipo = models.IntegerField(default=1,choices = TIPO, validators=[tipo_validacion])
