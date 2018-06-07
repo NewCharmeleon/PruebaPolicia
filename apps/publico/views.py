@@ -16,8 +16,9 @@ def noticias(request):
 
 	noticias = Publicacion.objects.filter(is_publicado=True, tipo=1)
 	videos = Publicacion.objects.filter(is_para_portada=True, tipo=2)
+	jurisdiccion = Publicacion.JURISDICCION
 	
-	return render(request,"noticias.html",{'noticias' :noticias, 'videos':videos})	
+	return render(request,"noticias.html",{'noticias' :noticias, 'videos':videos,"jurisdicciones":jurisdiccion})	
 
 
 def noticia(request, id):
