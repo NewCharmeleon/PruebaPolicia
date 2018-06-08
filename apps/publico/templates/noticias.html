@@ -36,7 +36,7 @@
                     <div href="#lb-gallery2-t" data-slide-to="{{noticia.id}}" data-toggle="modal" onclick="javascript:setActive({{noticia.id}})">
                       <img src="/media/{{noticia.imagen}}" alt="">
                       <span class="icon-focus"></span>
-                      <span class="mbr-gallery-title mbr-fonts-style display-7">{{noticia.titulo}}</span>
+                      <span class="mbr-gallery-title mbr-fonts-style display-7">{{noticia.titulo}}<p>{{noticia.intro}}</p></span>
                     </div>
                   </div>
                   {% endfor %}
@@ -62,7 +62,9 @@
                     {% for noticia in noticias %}
                     <div class="carousel-item" id={{noticia.id}}>
                       <img src="/media/{{noticia.imagen}}" alt="">
+                      {{noticia.titulo}}<p>{{noticia.intro}}</p>
                     </div>
+
                     {% endfor %}
                   </div>
                   <a class="carousel-control carousel-control-prev" role="button" data-slide="prev" href="#lb-gallery2-t"><span class="mbri-left mbr-iconfont" aria-hidden="true"></span><span class="sr-only">Previo</span></a>
@@ -99,9 +101,6 @@
 
 <section class="cid-qTJfFBQoSb" id="social-buttons3-10">
     
-    
-
-    
 
     <div class="container">
         <div class="media-container-row">
@@ -116,11 +115,7 @@
                         <span class="btn btn-social twitter socicon-bg-twitter mx-2" title="Share link on Twitter">
                             <i class="socicon socicon-twitter"></i>
                         </span>
-                        
-                        
-                        
-                        
-                        
+            
                     </div>
                 </div>
             </div>
