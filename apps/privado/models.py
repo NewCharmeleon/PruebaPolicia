@@ -13,11 +13,11 @@ from django.core.validators import RegexValidator
 class Publicacion(models.Model):
 	TIPO = ((1 , 'Articulo'), (2, 'Video'),)
 	JURISDICCION = ((0, 'Provincial'),(1, 'Jefatura de Policia'),(2 , 'Unidad Regional Comodoro Rivadavia'), (3, 'Unidad Regional Esquel'),(4, 'Unidad Regional Puerto Madryn'),(5, 'Unidad Regional Trelew'),)
-	CATEGORIA = ((1 , 'Informativo'), (2, 'Institucional'), (3, 'Comunidad'),(4, 'Otro'),)
+	CATEGORIA = ((0 , 'Informativo'), (1, 'Institucional'), (2, 'Comunidad'),(3, 'Otro'),)
 
-	tipo = models.IntegerField(default=1,choices = TIPO, validators=[tipo_validacion])
-	jurisdiccion = models.IntegerField(default=1,choices = TIPO, validators=[tipo_validacion])
-	categoria = models.IntegerField(default=1,choices = TIPO, validators=[tipo_validacion])
+	tipo = models.IntegerField(choices = TIPO, validators=[tipo_validacion])
+	jurisdiccion = models.IntegerField(choices = JURISDICCION, validators=[tipo_validacion])
+	categoria = models.IntegerField(choices = CATEGORIA, validators=[tipo_validacion])
 	
 	titulo = models.CharField(max_length=100, validators=[texto_validacion])
 	contenido = models.TextField(validators=[texto_validacion])

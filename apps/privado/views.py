@@ -54,6 +54,8 @@ def new_publicacion(request):
 		if form.is_valid():
 			publicacion = Publicacion() #instancio una nueva publicacion
 			publicacion.tipo = form.cleaned_data['tipo']
+			publicacion.jurisdiccion = form.cleaned_data['jurisdiccion']
+			publicacion.categoria = form.cleaned_data['categoria']
 			publicacion.titulo = form.cleaned_data['titulo']
 			publicacion.contenido = form.cleaned_data['contenido']
 			publicacion.url = form.cleaned_data['url']
