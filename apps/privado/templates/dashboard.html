@@ -136,10 +136,30 @@
 											{% endif %}
 										</td>
 										<td>
-											{{publicacion.jurisdiccion}}
+											{% if publicacion.jurisdiccion == 1 %}
+												Jefatura de Policia
+											{% elif publicacion.jurisdiccion == 2 %}
+												U. R. Cro. Rivadavia
+											{% elif publicacion.jurisdiccion == 3 %}
+												U. R. Esquel
+											{% elif publicacion.jurisdiccion == 4 %}
+												U. R. Pto. Madryn
+											{% elif publicacion.jurisdiccion == 5 %}
+												 U. R. Trelew
+											{% else %}
+												Provincia	 
+											{% endif %}
 										</td>
 										<td>
-											{{publicacion.categoria}}
+											{% if publicacion.categoria == 0 %}
+												Informativo
+											{% elif publicacion.categoria == 1 %}
+												Institucional
+											{% elif publicacion.categoria == 2 %}
+												Comunidad
+											{% else %}
+												Otro	
+											{% endif %}
 										</td>
 										<td>
 											{{publicacion.titulo}}
