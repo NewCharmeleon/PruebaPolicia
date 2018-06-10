@@ -36,7 +36,10 @@
                     <div href="#lb-gallery2-t" data-slide-to="{{noticia.id}}" data-toggle="modal" onclick="javascript:setActive({{noticia.id}})">
                       <img src="/media/{{noticia.imagen}}" alt="">
                       <span class="icon-focus"></span>
-                      <span class="mbr-gallery-title mbr-fonts-style display-7">{{noticia.titulo}}<p>{{noticia.intro}}</p></span>
+                      <span class="mbr-gallery-title mbr-fonts-style display-7"><h5>{{noticia.titulo}}</h5><p>{{noticia.intro}}&nbsp;</p>
+                      <a class="btn-sm btn-warning" href="{% url 'noticia' id=noticia.id %}">Leer mas»</a>
+    
+                      </span>
                     </div>
                   </div>
                   {% endfor %}
@@ -62,7 +65,9 @@
                     {% for noticia in noticias %}
                     <div class="carousel-item" id={{noticia.id}}>
                       <img src="/media/{{noticia.imagen}}" alt="">
-                      {{noticia.titulo}}<p>{{noticia.intro}}</p>
+                      <h4 style="color:#f8f9fa !important;">{{noticia.titulo}}</h4>
+                      <p style="color:#f8f9fa !important;">{{noticia.intro}}</p>
+                      <p style="color:#f8f9fa !important;"><a class="btn-sm btn-warning" href="{% url 'noticia' id=noticia.id %}">Leer mas»</a>
                     </div>
 
                     {% endfor %}
