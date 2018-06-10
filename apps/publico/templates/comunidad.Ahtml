@@ -1,0 +1,106 @@
+
+{% extends 'index.html' %}	
+{% load staticfiles %}
+{% block contenido %}
+<div class="row body" style="margin-top:15%;margin-left: 0.5%;">
+<!---Redes Sociales-->	
+	<div class="col-lg-12 col-md-12 col-sm-12 col-xs-12">
+		<h1><b><u>Redes Sociales</u></b></h1>
+		<div class=" col-lg-4 col-md-4 col-sm-4 col-xs-12">
+			<div class="panel panel-info">
+	  			<div class="panel-heading">
+	    			<h3 class="panel-title" style="margin-top:5%;">Twitter:</h3>
+	  			</div>
+	  			<div class="panel-body">
+	    			<img class="thumbnail" alt="Twitter" height="256" src="{% static 'img/twitter.png' %}">
+				</div>
+				<div class="panel-footer">		
+					<a href="https://twitter.com/Policia_Chubut" target="_blank" class="external-link"><i class="fa fa-twitter"></i> @POLICIA_CHUBUT</a>
+	  			</div>
+			</div>
+		</div>
+		<div class=" col-lg-4 col-md-4 col-sm-4 col-xs-12">
+			<div class="panel panel-primary">
+	  			<div class="panel-heading">
+	    			<h3 class="panel-title" style="margin-top:5%;">Facebook:</h3>
+	  			</div>
+	  			<div class="panel-body">
+	    			<img class="thumbnail" alt="Facebook" height="256" src="{% static 'img/facebook2.png' %}">
+				</div>
+				<div class="panel-footer">		
+					<a href="https://es-la.facebook.com/prensapoliciachubut/" target="_blank" class="external-link"><i class="fa fa-facebook"></i> prensapoliciachubut</a>
+	  			</div>
+			</div>
+		</div>
+		<div class=" col-lg-4 col-md-4 col-sm-4 col-xs-12">
+			<div class="panel panel-success">
+	  			<div class="panel-heading">
+	    			<h3 class="panel-title" style="margin-top:5%;">Whatsapp:</h3>
+	  			</div>
+	  			<div class="panel-body">
+	    			<img class="thumbnail" alt="Twitter" height="256" src="{% static 'img/whatsapp.jpeg' %}">
+				</div>
+				<div class="panel-footer">		
+					<a href="#"><i class="fa fa-whatsapp" aria-hidden="true"></i> 2804-xxxxx</a>
+	  			</div>
+			</div>
+		</div>
+	</div>
+
+<!---Programa de Radios-->	
+<div class="col-lg-12 col-md-12 col-sm-12 col-xs-12">
+	<h1><b><u>Programas de Radio</u></b></h1>
+	<div class="col-lg-4 col-md-4 col-sm-4 col-xs-12">
+		<div class="panel panel-default ">
+			<div class="panel-heading">
+	   			<h1 class="panel-title" style="margin-top:5%;">"Ayudanos a Prevenir"</h1>
+	    			
+			</div>
+			<div class="panel-body">
+	   			<p> Conducido por: Crio. Gral. Retirado Felix Huincalef y  Licenciado Rodrigo Gomez </p >
+	   		</div>	
+			<div class="panel-footer">		Viernes de 20:15 hs. a 21:15 hs.- LU 20 Radio Chubut
+					<a href="https://www.facebook.com/lu20radiochubut" target="_blank" class="external-link">@lu20</a>
+					radiochubut
+					
+	  		</div>
+		</div>
+	</div>
+	<div class="col-lg-4 col-md-4 col-sm-4 col-xs-12">
+		<img class="thumbnail" alt="LU 20 Radio Chubut" height="195" src="{% static 'img/lu20.png' %}">
+	</div>			
+</div> 
+	<div class="col-lg-12 col-md-12 col-sm-12 col-xs-12" style="width: 100%;">
+		<img class="thumbnail" alt="Programa Ayudanos a Prevenir" src="{% static 'img/AyudanosPrograma.jpg' %}">
+	</div>
+<!--	
+<div class="row table">
+		<div class="col-lg-12 col-md-12 col-sm-12 col-xs-12">
+			<h1><b><u>Eventos</u></b></h1>
+			<table class="table">
+				<thead>
+					<tr>
+						<th>
+							Videos
+						</th>
+						<th>
+							Descripcion
+						</th>
+						
+					</tr>
+				</thead>
+				<tbody>
+					{% for video in videos %}
+
+						{% include 'preview_video.html' with video=video %}
+
+					{% endfor %}
+				
+				</tbody>
+			</table>
+		</div>
+	</div>   		
+</div>						
+-->
+			
+{% endblock contenido%}
