@@ -1763,7 +1763,7 @@ body {
 }
 .cid-qNpXsUs46r {
   
-  background-image: url("/static/assets/images/foto4-1245x367.png");
+  background-image: url("/static/assets/images/foto4-1245x367.png") !important;
 }
 .cid-qNpXsUs46r H1 {
   text-align: right;
