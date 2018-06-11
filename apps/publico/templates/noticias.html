@@ -36,7 +36,7 @@
                     <div href="#lb-gallery2-t" data-slide-to="{{noticia.id}}" data-toggle="modal" onclick="javascript:setActive({{noticia.id}})">
                       <img src="/media/{{noticia.imagen}}" alt="">
                       <span class="icon-focus"></span>
-                      <span class="mbr-gallery-title mbr-fonts-style display-7"><h5>{{noticia.titulo}}</h5><p>{{noticia.intro}}&nbsp;</p>
+                      <span class="mbr-gallery-title mbr-fonts-style display-7"><h5>{{noticia.titulo}}</h5><p>{{noticia.intro}}&nbsp;</p><p style="text-align:left;">{{noticia.fecha_creacion}}&nbsp; &nbsp;&nbsp;&nbsp; Publicado por:  {{noticia.usuario}}</p>
                       <a class="btn-sm btn-warning" href="{% url 'noticia' id=noticia.id %}">Leer mas»</a>
     
                       </span>
@@ -67,7 +67,7 @@
                       <img src="/media/{{noticia.imagen}}" alt="">
                       <h4 style="color:#f8f9fa !important;">{{noticia.titulo}}</h4>
                       <p style="color:#f8f9fa !important;">{{noticia.intro}}</p>
-                      <p style="color:#f8f9fa !important;"><a class="btn-sm btn-warning" href="{% url 'noticia' id=noticia.id %}">Leer mas»</a>
+                      <p style="color:#f8f9fa !important;"><p style="color:#f8f9fa !important;text-align:left;">{{noticia.fecha_creacion}}&nbsp; &nbsp;&nbsp;&nbsp; Publicado por:  {{noticia.usuario}}</p><a class="btn-sm btn-warning" href="{% url 'noticia' id=noticia.id %}">Leer mas»</a>
                     </div>
 
                     {% endfor %}
@@ -104,6 +104,15 @@
 </script>  
 </section>
 
+<section class="mbr-social-feed loading" id="feed-z" data-facebook="https://es-la.facebook.com/prensapoliciachubut/" data-twitter="https://twitter.com/Policia_Chubut" data-google="" data-posts="1" data-youtube="" data-rv-view="62" style="background-color: rgb(231, 229, 249); padding-top: 0px; padding-bottom: 0px;">
+    
+    <img class="social-feed-container-loading" alt="" src="/static/images/loading.svg">
+    <div class="social-feed-container">
+    </div>
+</section>
+
+
+
 <section class="cid-qTJfFBQoSb" id="social-buttons3-10">
     
 
@@ -125,13 +134,6 @@
                 </div>
             </div>
         </div>
-    </div>
-</section>
-
-<section class="mbr-social-feed loading" id="feed-z" data-facebook="https://es-la.facebook.com/prensapoliciachubut/" data-twitter="https://twitter.com/Policia_Chubut" data-google="" data-posts="2" data-youtube="" data-rv-view="148" style="background-color: rgb(231, 229, 249); padding-top: 0px; padding-bottom: 0px;">
-    
-    <img class="social-feed-container-loading" alt="" src="/static/assets/images/loading.svg">
-    <div class="social-feed-container">
     </div>
 </section>
 
