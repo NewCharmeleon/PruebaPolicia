@@ -32,7 +32,7 @@
               <div>
                 <div>
                   {% for noticia in noticias%}
-                  <div class="mbr-gallery-item mbr-gallery-item--p3" data-video-url="false" data-tags="{{noticia.jurisdiccion}}">
+                  <div class="mbr-gallery-item mbr-gallery-item--p1" data-video-url="false" data-tags="{{noticia.jurisdiccion}}">
                     <div href="#lb-gallery2-t" data-slide-to="{{noticia.id}}" data-toggle="modal" onclick="javascript:setActive({{noticia.id}})">
                       <img src="/media/{{noticia.imagen}}" alt="">
                       <span class="icon-focus"></span>
@@ -65,10 +65,9 @@
                     {% for noticia in noticias %}
                     <div class="carousel-item" id={{noticia.id}}>
                       <img src="/media/{{noticia.imagen}}" alt="">
-                      <h5 style="color:#f8f9fa !important;">{{noticia.titulo}}</h5>
+                      <h4 style="color:#f8f9fa !important;">{{noticia.titulo}}</h4>
                       <p style="color:#f8f9fa !important;">{{noticia.intro}}</p>
-                      <p style="color:#f8f9fa !important;">
-                        <p style="color:#f8f9fa !important;text-align:left;">{{noticia.fecha_creacion}}&nbsp;&nbsp; Publicado por:  {{noticia.usuario}}&nbsp;&nbsp;<a class="btn-sm btn-warning" href="{% url 'noticia' id=noticia.id %}">Leer mas»</a></p>
+                      <p style="color:#f8f9fa !important;"><p style="color:#f8f9fa !important;text-align:left;">{{noticia.fecha_creacion}}&nbsp; &nbsp;&nbsp;&nbsp; Publicado por:  {{noticia.usuario}}</p><a class="btn-sm btn-warning" href="{% url 'noticia' id=noticia.id %}">Leer mas»</a>
                     </div>
 
                     {% endfor %}
@@ -98,6 +97,7 @@
       if (jurisdiccion==0){
       $(".mbr-gallery-item.mbr-gallery-item--p1").removeClass('mbr-gallery-item__hided');
       }
+
     }
    
     
