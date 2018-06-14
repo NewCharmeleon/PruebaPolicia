@@ -1,6 +1,7 @@
 from django.shortcuts import render
 from django.http import HttpResponseRedirect
 from apps.privado.models import Publicacion
+from apps.privado.models import Autoridad
 from django.shortcuts import render, get_object_or_404, redirect
 from django.urls import reverse
 
@@ -10,8 +11,9 @@ def home(request):
 
 	noticias = Publicacion.objects.filter(is_para_portada=True, tipo=1)
 	videos = Publicacion.objects.filter(is_para_portada=True, tipo=2)
+	autoridad = Autoridad.objects.filter(is_para_portada=True)
 	
-	return render(request,"indexMBR.html",{'nombre':"Adrian", 'noticias' :noticias, 'videos':videos})
+	return render(request,"indexMBR.html",{'nombre':"Adrian", 'noticias' :noticias, 'videos':videos, 'autoridades':autoridad})
 def noticias(request):
 
 	noticias = Publicacion.objects.filter(is_publicado=True, tipo=1)

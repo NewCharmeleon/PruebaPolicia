@@ -36,7 +36,7 @@
                     <div href="#lb-gallery2-t" data-slide-to="{{noticia.id}}" data-toggle="modal" onclick="javascript:setActive({{noticia.id}})">
                       <img src="/media/{{noticia.imagen}}" alt="">
                       <span class="icon-focus"></span>
-                      <span class="mbr-gallery-title mbr-fonts-style display-7"><h5>{{noticia.titulo}}</h5><p>{{noticia.intro}}&nbsp;</p><p style="text-align:left;">{{noticia.fecha_creacion}}&nbsp; &nbsp;&nbsp;&nbsp; Publicado por:  {{noticia.usuario}}</p>
+                      <span class="mbr-gallery-title mbr-fonts-style display-7"><h5>{{noticia.titulo}}</h5><!--<p>{{noticia.intro}}&nbsp;</p>--><p style="text-align:left;">{{noticia.fecha_creacion}}&nbsp; &nbsp;&nbsp;&nbsp; Publicado por:  {{noticia.usuario}}</p>
                       <a class="btn-sm btn-warning" href="{% url 'noticia' id=noticia.id %}">Leer mas»</a>
     
                       </span>
