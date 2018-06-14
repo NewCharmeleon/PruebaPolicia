@@ -1,0 +1,227 @@
+{% load staticfiles %}
+
+<section class="engine">
+    <a href="#"></a>
+</section>
+<section class="header6 cid-qNpXsUs46r mbr-fullscreen mbr-parallax-background" id="header6-h">
+    <div class="mbr-overlay" style="opacity: 0.2; background-color: rgb(0, 0, 0);">
+    </div>
+    <div class="container">
+        <div class="row justify-content-md-center">
+            <div class="mbr-white col-md-10">
+                <h1 class="mbr-section-title align-center mbr-bold pb-3 mbr-fonts-style display-1">Policia del Chubut</h1>
+                <p class="mbr-text align-center pb-3 mbr-fonts-style display-5">En servicio a la comunidad.
+                </p>
+                <div class="mbr-section-btn align-center">
+                    <a class="btn btn-md btn-primary display-4" href="http://institutosuperior811.wordpress.com/inscripciones-agentes/"  class="external_link">Inscripcion Agentes</a>
+                    <a class="btn btn-md btn-primary-outline display-4" href="http://institutosuperior811.wordpress.com/inscripciones-2017/" class="external_link">Inscripcion Oficiales</a>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="mbr-arrow hidden-sm-down" aria-hidden="true">
+        <a href="#next">
+            <i class="mbri-down mbr-iconfont"></i>
+        </a>
+    </div>
+</section>
+<div>
+    {% for autoridad in autoridades %}
+    <section class="accordion2 cid-qTDrCyv9IM" id="accordion2-n">
+        <div class="container">
+            <div class="media-container-row pt-5">
+                
+                    
+                <div class="accordion-content">
+                    <h2 class="mbr-section-title align-center pb-3 mbr-fonts-style display-1">
+                            Jefe de Policia
+                            
+                            {% if autoridad.cargo == 1 %}
+                            <br>{{autoridad.jerarquia}}<br>
+                            {{autoridad.nombre}}&nbsp;{{autoridad.segundo_nombre}}&nbsp;{{autoridad.apellido}}
+                            
+                             
+                    </h2>
+                    <h3 class="mbr-section-subtitle pt-2 align-center mbr-light mbr-fonts-style display-5">{{autoridad.dependencia}}.&nbsp;{{autoridad.direccion_laboral}}.&nbsp;{{autoridad.telefono_laboral}}Jefatura de Policia. Mitre 551-Rawson. Tel: (0280) 4482494 - 4482511 - 4483878 .
+                    </h3>
+                    <div id="bootstrap-accordion_9" class="panel-group accordionStyles accordion pt-5 mt-3" role="tablist" aria-multiselectable="true">
+                        <div class="card">
+                            <div class="card-header" role="tab" id="headingOne">
+                                <a role="button" class="collapsed panel-title text-black" data-toggle="collapse" data-core="" href="#collapse1_9" aria-expanded="false" aria-controls="collapse1">
+                                    <h4 class="mbr-fonts-style display-5">
+                                        <span class="sign mbr-iconfont mbri-arrow-down inactive"></span>&nbsp;Reseña Curricular
+                                    </h4>
+                                </a>
+                            </div>
+                            <div id="collapse1_9" class="panel-collapse noScroll collapse" role="tabpanel" aria-labelledby="headingOne" data-parent="#bootstrap-accordion_9">
+                                <div class="panel-body p-4">
+                                    <p class="mbr-fonts-style panel-text display-7">
+                                       {{autoridad.trayectoria}}"Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum."
+                                    </p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="mbr-figure" style="width: 100%;">
+                        <img src="/media/{{autoridad.imagen}}" alt="JP1" title="JP1">
+                        {{autoridad.imagen}}
+                </div>
+                    
+                      
+            </div>
+        </div>{% endif %}
+    </section>
+
+    <section class="accordion2 cid-qTDx1Lvrmk" id="accordion2-q">
+        <div class="container">
+            <div class="media-container-row pt-5">
+                <div class="accordion-content">
+                    <h2 class="mbr-section-title align-center pb-3 mbr-fonts-style display-1">SubJefe de Policia
+                        <br>Crio. Gral. Nestor Angel Gomez Ocampo&nbsp;
+                    </h2>
+                    <h3 class="mbr-section-subtitle pt-2 align-center mbr-light mbr-fonts-style display-5">Jefatura de Policia. Mitre 551-Rawson. Tel: (0280) 4482494 - 4482511 - 4483878.
+                    </h3>
+                    <div id="bootstrap-accordion_12" class="panel-group accordionStyles accordion pt-5 mt-3" role="tablist" aria-multiselectable="true">
+                        <div class="card">
+                            <div class="card-header" role="tab" id="headingOne">
+                                <a role="button" class="collapsed panel-title text-black" data-toggle="collapse" data-core="" href="#collapse1_12" aria-expanded="false" aria-controls="collapse1">
+                                    <h4 class="mbr-fonts-style display-5">
+                                        <span class="sign mbr-iconfont mbri-arrow-down inactive"></span>Reseña Curricular
+                                    </h4>
+                                </a>
+                            </div>
+                            <div id="collapse1_12" class="panel-collapse noScroll collapse" role="tabpanel" aria-labelledby="headingOne" data-parent="#bootstrap-accordion_12">
+                                <div class="panel-body p-4">
+                                    <p class="mbr-fonts-style panel-text display-7">
+                                       "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum."</p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="mbr-figure" style="width: 100%;">
+                    <img src="{% static 'images/DSC_0080.JPG' %}" alt="JP2" title="JP2">
+                </div>
+            </div>
+        </div>
+    </section>
+    {% endfor %}
+</div>
+<!--
+<section class="accordion1 cid-qTDzhN50bs" id="accordion1-r">
+
+    <div class="container">
+        <div class="media-container-row">
+            <div class="col-12 col-md-8">
+                <div class="section-head text-center space30">
+                    <h2 class="mbr-section-title pb-5 mbr-fonts-style display-2">Telefonos Utiles</h2>
+                </div>
+                <div class="clearfix"></div>
+                <div id="bootstrap-accordion_13" class="panel-group accordionStyles accordion" role="tablist" aria-multiselectable="true">
+                    <div class="card">
+                        <div class="card-header" role="tab" id="headingOne">
+                            <a role="button" class="panel-title collapsed text-black" data-toggle="collapse" data-core="" href="#collapse1_13" aria-expanded="false" aria-controls="collapse1">
+                                <h4 class="mbr-fonts-style display-7">
+                                    <span class="sign mbr-iconfont mbri-arrow-down inactive"></span>Jefatura de Policia. &nbsp;<br></h4>
+                            </a>
+                        </div>
+                        <div id="collapse1_13" class="panel-collapse noScroll collapse " role="tabpanel" aria-labelledby="headingOne" data-parent="#bootstrap-accordion_13">
+                            <div class="panel-body p-4">
+                                <p class="mbr-fonts-style panel-text display-7">
+                                    <b>Direccion: Mitre 551-Rawson. Tel: (0280) 4482494 - 4482511 - 4483878.</b>&nbsp;<br>
+                                    -Cría. Dtto. 1ª: Dirección: Mitre nº 699 Tel. 2945-450-789&nbsp;<br>-Cría. Dtto. 2ª: Dirección: Pasaje 25 nº 990&nbsp;Tel. 2945-451-420
+                                <br>-Subcría Barrio Baden: Dirección: Calle sin nombre y s/n Tel: 2945-456-468&nbsp;<br>-Subcría Languiñeo: Dirección: Ruta Provincial 25 s/nº Tel: 02945-470-529&nbsp;<br></p>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="card">
+                        <div class="card-header" role="tab" id="headingTwo">
+                            <a role="button" class="collapsed panel-title text-black" data-toggle="collapse" data-core="" href="#collapse2_13" aria-expanded="false" aria-controls="collapse2">
+                                <h4 class="mbr-fonts-style display-7">
+                                    <span class="sign mbr-iconfont mbri-arrow-down inactive"></span>Unidad Regional Comodoro Rivadavia<br></h4>
+                            </a>
+                            
+                        </div>
+                        <div id="collapse2_13" class="panel-collapse noScroll collapse" role="tabpanel" aria-labelledby="headingTwo" data-parent="#bootstrap-accordion_13">
+                            <div class="panel-body p-4">
+                                <p class="mbr-fonts-style panel-text display-7">
+                                    <b>Direcci&oacute;n: Av. Rivadavia 99-199 - Comodoro Rivadavia.&nbsp;Tel: (0297)-447-3015</b><br>
+                                    -Cría. Dtto. 1ª: Dirección: Tel. 2974-446-2778<br>-Cría. Dtto. 2ª: Dirección: Tel. 2974-446-2439<br>-Cría. Dtto. 3ª: Dirección: Tel. 2974-446-2652<br>-Cría. Dtto. 4ª: Dirección: Tel. 2974-447-3433<br>-Cría. Dtto. 5ª: Dirección: Tel. 2974-448-1255<br>-Cría. Dtto. 6ª: Dirección: Tel. 2974-444-1653<br>-Cría. Dtto. 7ª: Dirección: Tel. 2974-<br>-Cría Km3 : Dirección:&nbsp;Tel: 2974-455-7755/7766
+                                <br>-Cría Laprida: Dirección: Tel:&nbsp;2974-456-0599
+                                <br>-Cría Diadema: Dirección: Tel: 2974-484-3000
+                                <br>-Cría Km8: Dirección: Tel: 2974-453-5851
+                                <br>
+                                -Cría Rada Tilly: Dirección: 2974-445-1255
+                                <br>  
+                                -Cría de la Mujer: Dirección: Tel:&nbsp;2974-447-1994
+                                <br>
+                                -Policía Comunitaria: Dirección: Tel: 2974-448-3308&nbsp;<br><br></p>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="card">
+                        <div class="card-header" role="tab" id="headingThree">
+                            <a role="button" class="collapsed text-black panel-title" data-toggle="collapse" data-core="" href="#collapse3_13" aria-expanded="false" aria-controls="collapse3">
+                                <h4 class="mbr-fonts-style display-7">
+                                    <span class="sign mbr-iconfont mbri-arrow-down inactive"></span>&nbsp;Unidad Regional Esquel&nbsp;<div><span style="color: inherit; font-size: 1rem; background-color: transparent;">&nbsp;</span></div><div><br></div></h4>
+                            </a>
+                        </div>
+                        <div id="collapse3_13" class="panel-collapse noScroll collapse" role="tabpanel" aria-labelledby="headingThree" data-parent="#bootstrap-accordion_13">
+                            <div class="panel-body p-4">
+                                <p class="mbr-fonts-style panel-text display-7">
+                                    <b>Direcci&oacute;n: Rivadavia nº 672 -Esquel.&nbsp;Tel: (02945)-451-427</b><br>
+                                    -Cría. Dtto. 1ª: Dirección: Mitre nº 699 Tel. 2945-450-789&nbsp;<br>-Cría. Dtto. 2ª: Dirección: Pasaje 25 nº 990&nbsp;Tel. 2945-451-420
+                                <br>-Subcría Barrio Baden: Dirección: Calle sin nombre y s/n Tel: 2945-456-468&nbsp;<br>-Subcría Languiñeo: Dirección: Ruta Provincial 25 s/nº Tel: 02945-470-529&nbsp;<br></p>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="card">
+                        <div class="card-header" role="tab" id="headingFour">
+                            <a role="button" class="collapsed panel-title text-black" data-toggle="collapse" data-core="" href="#collapse4_13" aria-expanded="false" aria-controls="collapse4">
+                                <h4 class="mbr-fonts-style display-7">
+                                    <span class="sign mbr-iconfont mbri-arrow-down inactive"></span>&nbsp; Unidad Regional Puerto Madryn &nbsp;<div> 
+                                </div><div>
+                                </div><div><br></div></h4>
+                            </a> 
+                        </div>
+                        <div id="collapse4_13" class="panel-collapse noScroll collapse" role="tabpanel" aria-labelledby="headingFour" data-parent="#bootstrap-accordion_13">
+                            <div class="panel-body p-4">
+                                <p class="mbr-fonts-style panel-text display-7">
+                                <b>Direccion: &nbsp;nº -Puerto Madryn.&nbsp; Tel: (02945)-451-427</b><br>
+                                    -Cría. Dtto. 1ª: Dirección: Tel. 2974-446-2778
+                                <br>-Cría. Dtto. 2ª: Dirección: Tel. 2974-446-2439
+                                <br>-Cría. Dtto. 3ª: Dirección: Tel. 2974-446-2652
+                                <br>-Cría. Dtto. 4ª: Dirección: Tel. 2974-447-3433
+                                <br><br>-Cría Km3 : Dirección: Tel: 2974-455-7755/7766 
+                                <br>-Cría Laprida: Dirección: Tel: 2974-456-0599 
+                                <br>-Cría Diadema: Dirección: Tel: 2974-484-3000 
+                                <br>-Cría Km8: Dirección: Tel: 2974-453-5851 
+                                <br>-Cría Rada Tilly: Dirección: 2974-445-1255 
+                                <br>-Cría de la Mujer: Dirección: Tel: 2974-447-1994 
+                                <br>-Policía Comunitaria: Dirección: Tel: 2974-448-3308</p>
+                                                            <v>
+                        </div>
+                    </div>
+                    <div class="card">
+                        <div class="card-header" role="tab" id="headingFive">
+                            <a role="button" class="collapsed panel-title text-black" data-toggle="collapse" data-core="" href="#collapse5_13" aria-expanded="false" aria-controls="collapse5">
+                                <h4 class="mbr-fonts-style display-7">
+                                    <span class="sign mbr-iconfont mbri-arrow-down inactive"></span>&nbsp; Unidad Regional Trelew 
+                                <div></div></h4>
+                            </a>
+                        </div>
+                        <div id="collapse5_13" class="panel-collapse noScroll collapse" role="tabpanel" aria-labelledby="headingFive" data-parent="#bootstrap-accordion_13">
+                            <div class="panel-body p-4">
+                                <p class="mbr-fonts-style panel-text display-7">
+                                   <b> Direccion: San Martin nº 435 -Trelew.&nbsp; Tel: (0280)-4420-891</b><br>
+                                    -Cría. Dtto. 1ª: Dirección: San Martín nº 451 Tel. 2804-427-587&nbsp;<br>-Cría. Dtto. 2ª: Dirección: Colombia s/nº &nbsp;Tel. 2804-426-845&nbsp;<br>-Cría. Dtto. 3ª: Dirección: Av. La Plata nº 1554 Tel. 2804-426-162&nbsp;<br>-Cría. Dtto. 4ª: Dirección: Sargento Cabral nº 1580 Tel. 2804-425-273&nbsp;<br>-Cría de la Mujer: Dirección: Pje. San Juan Nº 345 Tel: 2804-438-521<br>-Subcría Barrio INTA Dirección: Gastre s/nº Tel: 2804-446-021&nbsp;<br>&nbsp;<br>&nbsp;<br><br><br><br></p>
+                            </div>
+                        </div>
+                    </div>
+                    
+                </div>
+            </div>
+        </div>
+    </div>
+</section>-->
