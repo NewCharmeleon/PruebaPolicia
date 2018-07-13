@@ -119,7 +119,7 @@ def new_publicacion(request):
 	else:
 		form = PublicacionForm()
 		form.initial['tipo'] ='1'
-		print(form)
+		#print(form)
 		
 	return render(request,'new_publicacion.html',{'form': form })
 
