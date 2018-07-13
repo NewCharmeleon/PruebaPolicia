@@ -2,6 +2,7 @@ from django.shortcuts import render
 from django.http import HttpResponseRedirect
 from apps.privado.models import Publicacion
 from apps.privado.models import Autoridad
+from apps.privado.models import Dependencia
 from django.shortcuts import render, get_object_or_404, redirect
 from django.urls import reverse
 
@@ -9,11 +10,18 @@ from django.urls import reverse
 
 def home(request):
 
-	noticias = Publicacion.objects.filter(is_para_portada=True, tipo=1)
+	#noticias = Publicacion.objects.filter(is_para_portada=True, tipo=1)
+	noticias = Publicacion.objects.filter(is_publicado=True, tipo=1)
 	videos = Publicacion.objects.filter(is_para_portada=True, tipo=2)
-	autoridad = Autoridad.objects.filter(is_para_portada=True)
-	
-	return render(request,"indexMBR.html",{'nombre':"Adrian", 'noticias' :noticias, 'videos':videos, 'autoridades':autoridad})
+	autoridad = Autoridad.objects.filter(is_para_portada=True, cargo_id__in=[1,2])
+	print ("hay")
+	print(len(autoridad))
+	#argo = Autoridad.CARGO
+	#jerarquia = Autoridad.JERARQUIA
+	#dependencia = Autoridad.DEPENDENCIA
+
+
+	return render(request,"indexMBR.html",{'nombre':"Adrian", 'noticias' :noticias, 'videos':videos, 'autoridades':autoridad })
 def noticias(request):
 
 	noticias = Publicacion.objects.filter(is_publicado=True, tipo=1)
@@ -30,7 +38,24 @@ def noticia(request, id):
 	return render(request,'noticia.html',{'noticia':noticia})
 	
 def autoridades(request):
-	return render(request,'autoridades.html')
+	autoridadJefe = Autoridad.objects.filter(is_para_portada=True, cargo_id__in=[1,2])
+	autoridadPlana = Autoridad.objects.filter(is_para_portada=True, cargo_id__in=[4])
+	return render(request,'autoridades.html', {'autoridadesJefe' :autoridadJefe, 'autoridadesPlana':autoridadPlana})
+
+def dependencias(request, id):
+	jurisdiccion = id
+	#dependencias = Dependencia.objects.filter(is_para_portada=True)
+	dependencia = Dependencia.objects.filter(is_para_portada=True, jurisdiccion__in=[jurisdiccion])
+	print ("hay")
+	print(len(dependencia))
+	return render(request,'dependencias.html', {'dependencias':dependencia})
+
+def dependencia(request, id):
+	#dependencias = Dependencia.objects.filter(is_para_portada=True)
+	dependencia=get_object_or_404(Dependencia, id=id)
+	print ("hay")
+	#print(len(dependencia))
+	return render(request,'dependencia.html', {'dependencia':dependencia})	
 
 def comunidad(request):
 	return render(request,'comunidad.html')

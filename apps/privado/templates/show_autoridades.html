@@ -30,7 +30,7 @@
 					<hr>
 					<div class="row">
 						<div class="col-md-12">
-							<h2> Ver Autoridades publicadas</h2>
+							<h2> Ver Autoridades</h2>
 							<hr style="border-top: 3px solid #81BEF7;">
 						</div>
 					</div>
@@ -72,13 +72,16 @@
 											{{autoridad.fecha_creacion|date:'d/m/Y'}}
 										</td>
 										<td>
-											{% if autoridad.is_cargado %}
-												<span class="badge badge-info">Cargado</span>
+											{% if autoridad.is_publicado %}
+												<span class="badge badge-success">Publicado</span>
 											{% elif autoridad.is_archivado  %}
 												<span class="badge">Archivado</span>											 
-											{% elif not autoridad.is_para_portada %}
-												  <span class="badge badge-success">En Portada</span> 											 
+											{% elif not autoridad.is_publicado and not autoridad.is_archivado %}
+												  <span class="badge badge-info">Guardado</span> 											 
 											{% endif %}	
+											{% if autoridad.is_para_portada %}
+												<span class="badge badge-success">En Portada</span>
+											{% endif %}
 											
 										</td>
 										<td>
@@ -87,11 +90,9 @@
 										<td>
 											
 											<a href="{% url 'show_autoridad' autoridad.id %}" > <i class="glyphicon glyphicon-eye-open"></i> </a>
-										</td>
-										<td>
+										
 											<a href="{% url 'edit_autoridad' id=autoridad.id %}" alt="Editar Autoridad"> <i class="glyphicon glyphicon-edit" ></i> </a>
-										</td>
-										<td>
+										
 											<a href="{% url 'confirm_delete_autoridad' id=autoridad.id %}" alt="Eliminar Autoridad"> <i class="glyphicon glyphicon-trash"></i> </a>
 										</td>
 									</tr>	

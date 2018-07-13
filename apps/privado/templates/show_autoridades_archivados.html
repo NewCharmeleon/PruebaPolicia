@@ -1,0 +1,109 @@
+<!DOCTYPE html>
+{% load staticfiles %}
+<html>
+<head>
+	<title>Archivados</title>
+	<!-- Integracion de JQuery y Bootstrap -->
+	<link rel="stylesheet" type="text/css" href="{% static 'css/bootstrap.min.css' %}">
+	<script type="text/javascript" src="{% static 'js/jquery-3.3.1.min.js' %}"></script>
+	<script type="text/javascript" src="{% static 'js/bootstrap.min.js' %}"></script>
+	<!-- Fin Integracion -->
+</head>
+<body style="background-color: #81BEF7">
+	<div class="container">
+		<div class="container">
+			<div class="row" style="padding-top: 5%;">
+				<div class="col-md-10 col-md-offset-1 well">
+					<div class="row">
+						<div class="col-md-12">
+							<center><img src="{% static 'img/Escudo_PoliciaCh.png' %}"></center>
+						</div>
+						{% if messages %}
+							{% for message in messages %}
+								<div class="alert alert-success alert-dismissible" role alert>
+									<button type="button" class="close" data-dismiss="alert" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+									<p> <i class="glyphicon glyphicon-info-sign"></i> {{ message}}</p>
+								</div>
+							{%endfor%}	
+						{% endif %}	
+					<hr>
+					<div class="row">
+						<div class="col-md-12">
+							<h2> Ver Autoridades archivadas</h2>
+							<hr style="border-top: 3px solid #81BEF7;">
+						</div>
+					</div>
+					<div class="row">
+						<div class="col-md-12">
+							<table class="table table-condensed">
+								<thead>
+									<tr>
+										<th>#</th>
+										<th>Nombre</th>
+										<th>Apellido</th>
+										<th>Jerarquia</th>
+										<th>Cargo</th>
+										<th>Fecha de Carga</th>
+										<th>Estado</th>
+										<th>Usuario</th>
+									</tr>
+								</thead>
+								<tbody>
+									{% for autoridad in autoridades %}
+									<tr>
+										<td>
+											{{autoridad.id}}
+										</td>
+										<td>
+											{{autoridad.nombre}}
+										</td>
+										<td>
+											{{autoridad.apellido}}
+										</td>
+										<td>
+											{{autoridad.jerarquia}}
+										</td>
+										<td>
+											{{autoridad.cargo}}
+										</td>
+										<td>
+											{{autoridad.fecha_creacion|date:'d/m/Y'}}
+										</td>
+										<td>
+											{% if autoridad.is_publicado %}
+												<span class="badge badge-success">Publicado</span>
+											{% elif autoridad.is_archivado  %}
+												<span class="badge">Archivado</span>											 
+											{% elif not autoridad.is_publicado and not autoridad.is_archivado %}
+												  <span class="badge badge-info">Guardado</span> 											 
+											{% endif %}	
+											{% if autoridad.is_para_portada %}
+												<span class="badge badge-success">En Portada</span>
+											{% endif %}
+											
+										</td>
+										<td>
+											{{autoridad.usuario}}
+										</td>	
+										<td>
+											
+											<a href="{% url 'show_autoridad' autoridad.id %}" > <i class="glyphicon glyphicon-eye-open"></i> </a>
+										
+											<a href="{% url 'edit_autoridad' id=autoridad.id %}" alt="Editar Autoridad"> <i class="glyphicon glyphicon-edit" ></i> </a>
+										
+											<a href="{% url 'confirm_delete_autoridad' id=autoridad.id %}" alt="Eliminar Autoridad"> <i class="glyphicon glyphicon-trash"></i> </a>
+										</td>
+									</tr>	
+									{% endfor %}
+								</tbody>
+								
+							</table>
+							<a href="{% url 'dashboard' %}" class="btn btn-info btn-lg pull-right"> <i class="glyphicon glyphicon-arrow-left"></i> Volver </a>
+						</div>
+					</div>
+				</div>	
+			</div>
+		</div>
+	</div>
+</body>
+</html>
