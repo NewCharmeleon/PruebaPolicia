@@ -61,12 +61,32 @@
             </div>
             <div class="mbr-text align-center mbr-black pb-3">
                     <p class="mbr-text mbr-fonts-style display-5" style="text-indent:50px;text-align:justify;">
-                      {{noticia.contenido}}
+                      {{noticia.contenido|safe}}
                     </p><br>
                     <p style="text-align:left;">{{noticia.fecha_creacion}}&nbsp; &nbsp;&nbsp;&nbsp; Publicado por:  {{noticia.usuario}}</p>
             </div>
         </div>
     </div>    
+</section>
+<section class="cid-qUw7Ih0H2g" id="social-buttons3-1z">
+  <div class="container">
+        <div class="media-container-row">
+            <div class="col-md-8 align-center">
+                <h2 class="pb-3 mbr-section-title mbr-fonts-style display-2">Comparte esta noticia!
+                </h2>
+                <div>
+                    <div class="mbr-social-likes">
+                        <span class="btn btn-social socicon-bg-facebook facebook mx-2" title="Share link on Facebook">
+                            <i class="socicon socicon-facebook"></i>
+                        </span>
+                        <span class="btn btn-social twitter socicon-bg-twitter mx-2" title="Share link on Twitter">
+                            <i class="socicon socicon-twitter"></i>
+                        </span>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
 </section>
 <!--
 <section class="header3 cid-qUwi9x5HiO" id="header3-23">
@@ -173,26 +193,7 @@
     </div>
 </section>
 
-<section class="cid-qUw7Ih0H2g" id="social-buttons3-1z">
-  ||<div class="container">
-        <div class="media-container-row">
-            <div class="col-md-8 align-center">
-                <h2 class="pb-3 mbr-section-title mbr-fonts-style display-2">Comparte esta pagina!
-                </h2>
-                <div>
-                    <div class="mbr-social-likes">
-                        <span class="btn btn-social socicon-bg-facebook facebook mx-2" title="Share link on Facebook">
-                            <i class="socicon socicon-facebook"></i>
-                        </span>
-                        <span class="btn btn-social twitter socicon-bg-twitter mx-2" title="Share link on Twitter">
-                            <i class="socicon socicon-twitter"></i>
-                        </span>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </div>
-</section>
+
 
 {% include 'footerMBR.html' %}
 

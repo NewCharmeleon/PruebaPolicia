@@ -101,8 +101,74 @@
     }
    
     
-</script>  
+</script> 
 </section>
+<!--
+<section>
+  <h1>Visor Cursos Comunidad</h1>
+
+<div id="myVisor1" class="visor-carousel slide" data-ride="visor">
+   Indicators 
+  <ol class="carousel-indicators">
+    <li data-target="#myVisor1" data-slide-to="0" class="active"></li>
+    <li data-target="#myVisor1" data-slide-to="1"></li>
+    <li data-target="#myVisor1" data-slide-to="2"></li>
+  </ol>
+  <div class="carousel-inner" role="listbox">
+    {% for noticia in noticias%}
+    <div class="item col-md-2 active">
+
+      <img class="first-slide thumbnail" src="/media/{{noticia.imagen}}" alt="First slide">
+      <div class="container-fluid">
+        <div class="carousel-caption">
+          <h5>{{noticia.titulo}}</h5>
+          <p></p>
+          <p><a class="btn btn-lg btn-primary" href="#" role="button" >Ver</a></p>
+        </div>
+      </div>
+    </div>
+    
+    <div class="item col-md-2">
+      <img class="second-slide" src="/media/{{noticia.imagen}}" alt="Second slide">
+      <div class="container-fluid">
+        <div class="carousel-caption">
+          <h5>{{noticia.titulo}}</h5>
+          <p></p>
+          <p><a class="btn btn-xs btn-primary" href="#" role="button">Ver</a></p>
+        </div>
+      </div>
+    </div>
+    <div class="item col-md-2">
+      <img class="third-slide" src="/media/{{noticia.imagen}}" alt="Third slide">
+      <div class="container-fluid">
+        <div class="carousel-caption">
+          <h5>{{noticia.titulo}}</h5>
+          <p></p>
+          <p><a class="btn btn-xs btn-primary" href="#" role="button">Ver</a></p>
+        </div>
+      </div>
+    </div>
+    {% endfor %}
+  </div>
+  <a class="left carousel-control layout-landscape" href="#myVisor1" role="button" data-slide="prev">
+    <span class="glyphicon glyphicon-chevron-left" aria-hidden="true"></span>
+    <span class="sr-only">Previous</span>
+  </a>
+  <a class="left carousel-control layout-portrait" href="#myVisor1" role="button" data-slide="prev">
+    <span class="glyphicon glyphicon-chevron-up" aria-hidden="true"></span>
+    <span class="sr-only">Previous</span>
+  </a>
+  <a class="right carousel-control layout-landscape" href="#myVisor1" role="button" data-slide="next">
+    <span class="glyphicon glyphicon-chevron-right" aria-hidden="true"></span>
+    <span class="sr-only">Next</span>
+  </a>
+  <a class="right carousel-control layout-portrait" href="#myVisor1" role="button" data-slide="next">
+    <span class="glyphicon glyphicon-chevron-down" aria-hidden="true"></span>
+    <span class="sr-only">Next</span>
+  </a>
+</div>
+</section> -->
+
 
 <section class="mbr-social-feed loading" id="feed-z" data-facebook="https://es-la.facebook.com/prensapoliciachubut/" data-twitter="https://twitter.com/Policia_Chubut" data-google="" data-posts="1" data-youtube="" data-rv-view="62" style="background-color: rgb(231, 229, 249); padding-top: 0px; padding-bottom: 0px;">
     

@@ -21,21 +21,25 @@ from django.conf import settings
 from django.conf.urls.static import static
 from django.urls import re_path
 from django.views.static import serve
+from django.conf.urls import include
 
 urlpatterns = [
+    path('tinymce/', include('tinymce.urls')),
     path('admin/', admin.site.urls),
     path('', public.home,name='home'),
     path('autoridades/', public.autoridades, name='autoridades'),
     path('comunidad/', public.comunidad, name='comunidad'),
     path('historia/', public.historia, name='historia'),
     path('escuelas/', public.escuelas, name='escuelas'),
+    path('dependencias/<int:id>/', public.dependencias, name='dependencias'),
+    path('dependencia/<int:id>/', public.dependencia, name='dependencia'),
     path('noticias/', public.noticias, name='noticias'),
     path('noticia/<id>/',public.noticia,name='noticia'),
     path('login/',private.login,name='login'),
     path('logout/',private.logout,name='logout'),
     path('dashboard/',private.dashboard,name='dashboard'),
 
-    path('autoridad/publicada/',private.show_autoridades,name='show_autoridades'),
+    path('autoridades/ver/',private.show_autoridades,name='show_autoridades'),
     path('autoridad/new/',private.new_autoridad,name='new_autoridad'),
     path('autoridad/<int:id>/',private.show_autoridad,name='show_autoridad'),
     path('autoridad/<int:id>/edit/',private.edit_autoridad,name='edit_autoridad'),
@@ -45,9 +49,28 @@ urlpatterns = [
     path('autoridad/<int:id>/despublicar/',private.despublicar_autoridad,name='despublicar_autoridad'),
     path('autoridad/<int:id>/archivar/',private.archivar_autoridad,name='archivar_autoridad'),
     path('autoridad/<int:id>/portada/',private.enviar_autoridad,name='enviar_autoridad'),
+    path('autoridades/publicados/',private.show_autoridades_publicados,name='show_autoridades_publicados'),
+    path('autoridades/archivados/',private.show_autoridades_archivados,name='show_autoridades_archivados'),
+    path('autoridades/portada/',private.show_autoridades_portada,name='show_autoridades_portada'),
+
+    path('dependencias/ver/',private.show_dependencias,name='show_dependencias_ver'),
+    path('dependencia/new/',private.new_dependencia,name='new_dependencia'),
+    path('dependencias/<int:id>/ver/',private.show_dependencia,name='show_dependencia_ver'),
+    path('dependencia/<int:id>/edit/',private.edit_dependencia,name='edit_dependencia'),
+    path('dependencia/<int:id>/confirm_delete/',private.confirm_delete_dependencia,name='confirm_delete_dependencia'),   
+    path('dependencia/<int:id>/delete/',private.delete_dependencia,name='delete_dependencia'),
+    path('dependencia/<int:id>/publicar/',private.publicar_dependencia,name='publicar_dependencia'),
+    path('dependencia/<int:id>/despublicar/',private.despublicar_dependencia,name='despublicar_dependencia'),
+    path('dependencia/<int:id>/archivar/',private.archivar_dependencia,name='archivar_dependencia'),
+    path('dependencia/<int:id>/portada/',private.enviar_dependencia,name='enviar_dependencia'),
+    path('dependencias/publicados/',private.show_dependencias_publicados,name='show_dependencias_publicados'),
+    path('dependencias/archivados/',private.show_dependencias_archivados,name='show_dependencias_archivados'),
+    path('dependencias/portada/',private.show_dependencias_portada,name='show_dependencias_portada'),
+
 
     path('publicacion/new/',private.new_publicacion,name='new_publicacion'),
     path('publicacion/<int:id>/',private.show_publicacion,name='show_publicacion'),
+    path('publicacion/<int:id>/ver/',private.ver_publicacion,name='ver_publicacion'),
     path('publicacion/<int:id>/edit/',private.edit_publicacion,name='edit_publicacion'),
     path('publicacion/<int:id>/confirm_delete/',private.confirm_delete_publicacion,name='confirm_delete_publicacion'),
     path('publicacion/<int:id>/delete/',private.delete_publicacion,name='delete_publicacion'),

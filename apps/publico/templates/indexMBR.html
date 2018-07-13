@@ -24,16 +24,44 @@
   <link rel="stylesheet" type="text/css" href="{% static 'mobirise/css/mbr-additional.css' %}">
   
   <!--libs Noticias-->  
-  <link rel="stylesheet" href="https://netdna.bootstrapcdn.com/font-awesome/4.0.3/css/font-awesome.css">
+  <link rel="stylesheet" href="{% static 'fontsawesome/css/fontawesome.css' %}"">
   <link rel="stylesheet" href="{% static 'social-feed-plugin/jquery.socialfeed.css' %}">
   <link rel="stylesheet" href="{% static 'social-feed-plugin/style.css' %}">
   <link rel="stylesheet" href="{% static 'gallery/style.css' %}">
   <link rel="stylesheet" href="{% static 'mobirise/css/mbr-additional.css' %}" type="text/css">
+
+  <link rel="stylesheet" type="text/css" href="{% static 'visor-carousel/css/jquery.visor-carousel.css' %}">
   
+  <style type="text/css">
+    .visor-carousel,
+    .visor-carousel .visor-wrapper,
+    .visor-carousel .carousel-inner > .item,
+    .visor-carousel .carousel-inner > .item > img {
+      height: 250px !important;
+      margin-left: -10px;
+      left:1.5%;
+    }
+    .visor-carousel .carousel-inner > .item > img {
+      position: relative;
+      width: 110% !important;
+
+    }
+  </style>
+      <!-- Important Owl stylesheet -->
+    <link rel="stylesheet" href="{% static 'owl-carousel/owl.carousel.css' %}">
+     
+    <!-- Default Theme -->
+    <link rel="stylesheet" href="{% static 'owl-carousel/owl.theme.css' %}">
+          
+   
 
   <script src="{% static 'dropdown/js/script.min.js' %}"></script>
   <script src="{% static 'web/assets/jquery/jquery.min.js' %}"></script>
-  
+   <!--libreria Visor-->
+   
+  <script type="text/javascript" src="{% static 'visor-carousel/js/jquery.visor-carousel.js' %}"></script>
+   <!-- Include js plugin -->
+    <script src="{% static 'owl-carousel/owl.carousel.js' %}"></script>
   
 
 
@@ -80,6 +108,8 @@
   <script src="{% static 'slidervideo/script.js' %}"></script>
   <script src="{% static 'gallery/player.min.js' %}"></script>
   <script src="{% static 'gallery/script.js' %}"></script>
+
+
   <!--
    <script src="{% static 'web/assets/jquery/jquery.min.js' %}"></script>
   <script src="{% static 'tether/tether.min.js' %}"></script>

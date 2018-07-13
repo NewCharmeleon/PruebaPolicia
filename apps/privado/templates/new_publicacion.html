@@ -7,6 +7,13 @@
 	<link rel="stylesheet" type="text/css" href="{% static 'css/bootstrap.min.css' %}">
 	<script type="text/javascript" src="{% static 'js/jquery-3.3.1.min.js' %}"></script>
 	<script type="text/javascript" src="{% static 'js/bootstrap.min.js' %}"></script>
+	<!--Tinymce Text-Editor (Must be in Head Tag) -->
+  <script src="{% static 'js/tinymce/tinymce.min.js' %}"></script>
+  <script type="text/javascript" src="{% static 'js/tinymce/custom.js' %}" ></script>
+	
+
+
+
 	<!-- Fin Integracion -->
 </head>
 <body style="background-color: #81BEF7">
@@ -100,7 +107,7 @@
 							<div class="form-group form-group-lg">
 								<label class="col-md-2"> Contenido </label>
 								<div class="col-md-10">
-									{{form.contenido}}
+									{{form.contenido|safe}}
 								</div>
 							</div>
 								{% if form.errors.contenido %}
@@ -116,7 +123,7 @@
 							</div>
 								{% if form.errors.fuente %}
 								<div class="col-md-10 col-md-offset-2 alert alert-danger">
-                							{{ form.errors.fuente|escape }}
+                					{{ form.errors.fuente|escape }}
             					</div>
 								{% endif %}
 							<div class="form-group form-group-lg">
@@ -130,13 +137,53 @@
                 							La URL no es valida, verifiquela.
             							</div>
 								{% endif %}	
+
 							<div class="form-group form-group-lg">
-								<label class="col-md-2"> Imagen </label>
-								<div class="col-md-10" >
+								<!--<label class="col-md-2"> Imagen </label>-->
+								<div class="col-md-2">
+								<img id="uploadPreview1" class="img-responsive" width="150" height="150" src="{% static '/img/foto_no_disponible.jpg' %}" /></div>
+								<div class="col-md-10">
 									{{form.imagen}}
 								</div>
-								
+
+								<!--
+								<div class="">
+				                    <div class="upload_image col-md-12">
+				                        <div class="col-md-2">
+				                            <img id="uploadPreview1" class="img-responsive" width="150" height="150" src="{% static '/img/image_not_available.jpg' %}" />
+				                        </div>
+
+				                        <div class="form-group col-md-10">
+				                            <label>Image 1</label>
+				                            <input class="form-control" id="uploadImage1" type="file" name="images[1]" onchange="previewImage(1);" />
+				                        </div>
+				                    </div>
+				                    <br>
+				                    <div class="upload_image col-md-12">
+				                        <div class="col-md-2">
+				                            <img id="uploadPreview2" class="img-responsive" width="150" height="150" src="{% static '/img/image_not_available.jpg' %}" />
+				                        </div>
+
+				                        <div class="form-group col-md-10">
+				                            <label>Image 2</label>
+				                            <input class="form-control" id="uploadImage2" type="file" name="images[2]" onchange="previewImage(2);" />
+				                        </div>
+				                    </div>
+				                    <br>
+				                    <div class="upload_image col-md-12">
+				                        <div class="col-md-2">
+				                            <img id="uploadPreview3" class="img-responsive" width="150" height="150" src="{% static '/img/image_not_available.jpg' %}" />
+				                        </div>
+
+				                        <div class="form-group col-md-10">
+				                            <label>Image 3</label>
+				                            <input class="form-control" id="uploadImage3" type="file" name="images[3]" onchange="previewImage(3);" />
+				                        </div>
+                   					 </div>
+               					 </div>
+               					 -->
 							</div>
+
 							<br>
 							<hr>
 							<button type="submit" class="btn btn-primary btn-lg pull-right"> <i class="glyphicon glyphicon-save"></i> Subir </button>
@@ -144,86 +191,57 @@
 							
 						</form>
 					</div>
-					</div>
 				</div>
 			</div>
 		</div>			
 	</div>
-	<script type="text/javascript">
-		if ($("#id_tipo_0").is(':checked')){
+  </div>
+</div>
+<script type="text/javascript">
+	if ($("#id_tipo_0").is(':checked')){
+		$("#id_url").parent().parent().hide();
+		$("#id_imagen").parent().parent().show();
+		$("#id_intro").parent().parent().show();
+	}
+	else
+		{
+			$("#id_fuente").parent().parent().hide();	
+		}/*$("#id_url, #id_fuente").parent().parent().hide();*/
+
+	//$("#id_url, #id_fuente").parent().parent().hide();
+	//si radiobutton es publicacion
+	$("#id_tipo_0").change(function(){
+		if($(this).is(':checked')){
+			$("#id_fuente").parent().parent().show();
+			$("#id_fuente").attr('required','required');
+			$("#id_url").attr('value','');
 			$("#id_url").parent().parent().hide();
+			$("#id_url").removeAttr('required');
 			$("#id_imagen").parent().parent().show();
 			$("#id_intro").parent().parent().show();
 		}
-		else
-			{
-				$("#id_fuente").parent().parent().hide();	
-			}/*$("#id_url, #id_fuente").parent().parent().hide();*/
-
-		//$("#id_url, #id_fuente").parent().parent().hide();
-		//si radiobutton es publicacion
-		$("#id_tipo_0").change(function(){
-			if($(this).is(':checked')){
-				$("#id_fuente").parent().parent().show();
-				$("#id_fuente").attr('required','required');
-				$("#id_url").attr('value','');
-				$("#id_url").parent().parent().hide();
-				$("#id_url").removeAttr('required');
-				$("#id_imagen").parent().parent().show();
-				$("#id_intro").parent().parent().show();
-			}
-		});
-		//si es video
-		$("#id_tipo_1").change(function(){
-			if($(this).is(':checked')){
-				$("#id_url").parent().parent().show();
-				$("#id_url").attr('required','required');
-				$("#id_fuente").attr('value','');
-				$("#id_fuente").parent().parent().hide();
-				$("#id_fuente").removeAttr('required');
-				$("#id_imagen").parent().parent().hide();
-				$("#id_intro").removeAttr('required');
-				$("#id_intro").attr('value','');
-				$("#id_intro").parent().parent().hide();
-				
-			}
-		});
-		var imagen = [];
-
-	function revisarImagen(input, num){
-  	  var id_preview = input.getAttribute("id") + "_preview";
-    	if (input.files && input.files[0]) {
-      	  var reader = new FileReader();
-       	 reader.onloadend = function (e) {
-            var id_preview_text = "#"+id_preview;
-            var base64image = e.target.result;
-            $("body").append("<canvas id='tempCanvas' width='600' height='600' style='display:none'></canvas>");
-            var canvas=document.getElementById("tempCanvas");
-            var ctx=canvas.getContext("2d");
-            var cw=canvas.width;
-            var ch=canvas.height;
-            var maxW=600;
-            var maxH=600;
-            var img = new Image;
-            img.src=this.result;
-            img.onload = function(){
-                var iw=img.width;
-                var ih=img.height;
-                var scale=Math.min((maxW/iw),(maxH/ih));
-                var iwScaled=iw*scale;
-                var ihScaled=ih*scale;
-                canvas.width=iwScaled;
-                canvas.height=ihScaled;
-                ctx.drawImage(img,0,0,iwScaled,ihScaled);
-                base64image = canvas.toDataURL("image/jpeg");
-                $(id_preview_text).attr('src', base64image).width(250).height(157);
-                imagen[num] = base64image;
-                $("#tempCanvas").remove();
-            }
-        };
-        reader.readAsDataURL(input.files[0]);
-    }
-
-}
-	</script>
+	});
+	//si es video
+	$("#id_tipo_1").change(function(){
+		if($(this).is(':checked')){
+			$("#id_url").parent().parent().show();
+			$("#id_url").attr('required','required');
+			$("#id_fuente").attr('value','');
+			$("#id_fuente").parent().parent().hide();
+			$("#id_fuente").removeAttr('required');
+			$("#id_imagen").parent().parent().hide();
+			$("#id_intro").removeAttr('required');
+			$("#id_intro").attr('value','');
+			$("#id_intro").parent().parent().hide();
+			
+		}
+	});
+	function previewImage(nb) {        
+    var reader = new FileReader();         
+    reader.readAsDataURL(document.getElementById('uploadImage'+nb).files[0]);         
+    reader.onload = function (e) {             
+        document.getElementById('uploadPreview'+nb).src = e.target.result;         
+    };     
+};
+</script>
 </body>

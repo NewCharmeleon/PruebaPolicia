@@ -30,133 +30,174 @@
     </div>
 </section>-->
 
-<section class="accordion2 cid-qTDrCyv9IM" id="accordion2-n">
+{% for autoridad in autoridadesJefe %}
+    {% if autoridad.cargo_id == 1%}
+        <div class="accordion2 cid-qTDrCyv9IM" id="accordion2-n">
+            <div class="container">
+                
 
+                    
+                    
+                <div class="media-container-row pt-5">
+                    <div class="accordion-content">
+                        <h2 class="mbr-section-title align-center pb-3 mbr-fonts-style display-1">
 
-    <div class="container">
-        <div class="media-container-row pt-5">
-            <div class="accordion-content">
-                <h2 class="mbr-section-title align-center pb-3 mbr-fonts-style display-1">
-                        Jefe de Policia<br>Crio. Gral. Miguel Ramon Gomez&nbsp;</h2>
-                <h3 class="mbr-section-subtitle pt-2 align-center mbr-light mbr-fonts-style display-5">Jefatura de Policia. Mitre 551-Rawson. Tel: (0280) 4482494 - 4482511 - 4483878 .
-                </h3>
-                <div id="bootstrap-accordion_9" class="panel-group accordionStyles accordion pt-5 mt-3" role="tablist" aria-multiselectable="true">
-                        <div class="card">
-                            <div class="card-header" role="tab" id="headingOne">
-                                <a role="button" class="collapsed panel-title text-black" data-toggle="collapse" data-core="" href="#collapse1_9" aria-expanded="false" aria-controls="collapse1">
-                                    <h4 class="mbr-fonts-style display-5">
-                                        <span class="sign mbr-iconfont mbri-arrow-down inactive"></span>&nbsp;Reseña Curricular</h4>
-                                </a>
-                            </div>
-                            <div id="collapse1_9" class="panel-collapse noScroll collapse" role="tabpanel" aria-labelledby="headingOne" data-parent="#bootstrap-accordion_9">
-                                <div class="panel-body p-4">
-                                    <p class="mbr-fonts-style panel-text display-7">
-                                       "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum."</p>
+                                {{autoridad.cargo}}
+                                <br>{{autoridad.jerarquia}}<br>{{autoridad.nombre}}&nbsp;{{autoridad.segundo_nombre}}<br>{{autoridad.apellido}}
+                        </h2>
+                        <h3 class="mbr-section-subtitle pt-2 align-left mbr-light mbr-fonts-style display-5">{{autoridad.lugar}}&nbsp;- {{autoridad.direccion_laboral}}&nbsp;{{autoridad.telefono_laboral}}&nbsp;.
+                        </h3>
+                        <div id="bootstrap-accordion_9" class="panel-group accordionStyles accordion pt-5 mt-3" role="tablist" aria-multiselectable="true">
+                            <div class="card">
+                                <div class="card-header" role="tab" id="headingOne">
+                                    <a role="button" class="collapsed panel-title text-black" data-toggle="collapse" data-core="" href="#collapse1_9" aria-expanded="false" aria-controls="collapse1">
+                                        <h4 class="mbr-fonts-style display-5">
+                                            <span class="sign mbr-iconfont mbri-arrow-down inactive"></span>&nbsp;Reseña Curricular
+                                        </h4>
+                                    </a>
+                                </div>
+                                <div id="collapse1_9" class="panel-collapse noScroll collapse" role="tabpanel" aria-labelledby="headingOne" data-parent="#bootstrap-accordion_9">
+                                    <div class="panel-body p-4">
+                                        <p class="mbr-fonts-style panel-text display-7">
+                                           "{{autoridad.trayectoria}}"
+                                        </p>
+                                    </div>
                                 </div>
                             </div>
                         </div>
-                 </div>
-            </div>
-            <div class="mbr-figure" style="width: 100%;">
-                    <img src="{% static 'images/DSC_0065.JPG' %}" alt="JP1" title="JP1">
+                    </div>
+                    <div class="mbr-figure" style="width: 100%;">
+                            <img src="/media/{{autoridad.imagen}}" alt="JP1" title="JP1">
+                    </div>
+                    
+                    
+                </div>
             </div>
         </div>
-    </div>
-</section>
+    {% elif autoridad.cargo_id == 2 %}
+        <section class="accordion2 cid-qTDx1Lvrmk" id="accordion2-q">
+            <div class="container">
+                
+                <div class="media-container-row pt-5">
+                    <div class="accordion-content">
+                        <h2 class="mbr-section-title align-center pb-3 mbr-fonts-style display-1">
 
-<section class="accordion2 cid-qTDx1Lvrmk" id="accordion2-q">
-
-    <div class="container">
-        <div class="media-container-row pt-5">
-            <div class="accordion-content">
-                <h2 class="mbr-section-title align-center pb-3 mbr-fonts-style display-1">SubJefe de Policia<br>Crio. Gral. Nestor Angel Gomez Ocampo&nbsp;</h2>
-                <h3 class="mbr-section-subtitle pt-2 align-center mbr-light mbr-fonts-style display-5">Jefatura de Policia. Mitre 551-Rawson. Tel: (0280) 4482494 - 4482511 - 4483878 .</h3>
-                <div id="bootstrap-accordion_12" class="panel-group accordionStyles accordion pt-5 mt-3" role="tablist" aria-multiselectable="true">
-                    <div class="card">
-                        <div class="card-header" role="tab" id="headingOne">
-                            <a role="button" class="collapsed panel-title text-black" data-toggle="collapse" data-core="" href="#collapse1_12" aria-expanded="false" aria-controls="collapse1">
-                                <h4 class="mbr-fonts-style display-5">
-                                    <span class="sign mbr-iconfont mbri-arrow-down inactive"></span>Reseña Curricular</h4>
-                            </a>
-                        </div>
-                        <div id="collapse1_12" class="panel-collapse noScroll collapse" role="tabpanel" aria-labelledby="headingOne" data-parent="#bootstrap-accordion_12">
-                            <div class="panel-body p-4">
-                                <p class="mbr-fonts-style panel-text display-7">
-                                   "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum."</p>
+                                {{autoridad.cargo}}
+                                <br>{{autoridad.jerarquia}}<br>{{autoridad.nombre}}&nbsp;{{autoridad.segundo_nombre}}<br>{{autoridad.apellido}}
+                        </h2>
+                        <h3 class="mbr-section-subtitle pt-2 align-left mbr-light mbr-fonts-style display-5">{{autoridad.lugar}}&nbsp;- {{autoridad.direccion_laboral}}&nbsp;{{autoridad.telefono_laboral}}&nbsp;.
+                        </h3>
+                        <div id="bootstrap-accordion_9" class="panel-group accordionStyles accordion pt-5 mt-3" role="tablist" aria-multiselectable="true">
+                            <div class="card">
+                                <div class="card-header" role="tab" id="headingOne">
+                                    <a role="button" class="collapsed panel-title text-black" data-toggle="collapse" data-core="" href="#collapse1_9" aria-expanded="false" aria-controls="collapse1">
+                                        <h4 class="mbr-fonts-style display-5">
+                                            <span class="sign mbr-iconfont mbri-arrow-down inactive"></span>&nbsp;Reseña Curricular
+                                        </h4>
+                                    </a>
+                                </div>
+                                <div id="collapse1_9" class="panel-collapse noScroll collapse" role="tabpanel" aria-labelledby="headingOne" data-parent="#bootstrap-accordion_9">
+                                    <div class="panel-body p-4">
+                                        <p class="mbr-fonts-style panel-text display-7">
+                                           "{{autoridad.trayectoria}}"
+                                        </p>
+                                    </div>
+                                </div>
                             </div>
                         </div>
                     </div>
-              </div>
-            </div>
-            <div class="mbr-figure" style="width: 100%;">
-                    <img src="{% static 'images/DSC_0080.JPG' %}" alt="JP2" title="JP2">
+                    <div class="mbr-figure" style="width: 100%;">
+                            <img src="/media/{{autoridad.imagen}}" alt="JP2" title="JP2">
+                    </div>
+                    
+                    
+                </div>
+                
             </div>
         </div>
-    </div>
-</section>
+        {% endif %}
+{% endfor %}    
 
+            
 <section class="features16 cid-qUcoeIgD2N" id="features16-18">
+    
+    
+    
     <div class="container align-center">
+        
+        
         <div class="row media-row">
+            {% for autoridad in autoridadesPlana %}
+            
             <div class="team-item col-lg-3 col-md-6">
                 <div class="item-image">
-                    <img src="/static/images/DS.png" alt="Director de Seguridad" title="Director de Seguridad">
+                    <img src="/media/{{autoridad.imagen}}" alt="Director de Seguridad" title="Director de Seguridad">
                 </div>
                 <div class="item-caption py-3">
                     <div class="item-name px-2">
                         <p class="mbr-fonts-style display-5">
-                           Director de Seguridad</p>
+                           {{ autoridad.cargo }}<br>{{ autoridad.lugar }}</p>
                     </div>
                     <div class="item-role px-2">
-                        <p>Crio. Gral. Mayor Jose Luis Matschke</p>
-                    </div>
-                </div>
-            </div>
-            <div class="team-item col-lg-3 col-md-6">
-                <div class="item-image">
-                    <img src="/static/images/DRH.png" alt="Director de Recursos Humanos" title="Director de Recursos Humanos">
-                </div>
-                <div class="item-caption py-3">
-                    <div class="item-name px-2">
-                        <p class="mbr-fonts-style display-5">
-                           Director de Recursos Humanos</p>
-                    </div>
-                    <div class="item-role px-2">
-                        <p>Crio. Gral. Luciano Salvador Yapileo</p>
+                        <p>{{autoridad.jerarquia}}<br>{{autoridad.nombre}}&nbsp;{{autoridad.segundo_nombre}}<br>{{autoridad.apellido}}</p>
                     </div>
                     
                 </div>
             </div>
+            {% endfor %}
+            <!--{% if autoridad.dependencia_id == 4 %}
             <div class="team-item col-lg-3 col-md-6">
                 <div class="item-image">
-                    <img src="/static/images/DRM.png" alt="Director de Recursos Materiales" title="Director de Recursos Materiales">
+                    <img src="/media/{{autoridad.imagen}}" alt="Director de Seguridad" title="Director de Seguridad">
                 </div>
                 <div class="item-caption py-3">
                     <div class="item-name px-2">
                         <p class="mbr-fonts-style display-5">
-                           Director de Recursos Materiales</p>
+                           {{ autoridad.cargo }}<br>{{ autoridad.dependencia }}</p>
                     </div>
                     <div class="item-role px-2">
-                        <p>Crio. Gral. Paulo Daniel Heredia &nbsp;</p>
+                        <p>{{autoridad.jerarquia}}<br>{{autoridad.nombre}}&nbsp;{{autoridad.segundo_nombre}}<br>{{autoridad.apellido}}</p>
                     </div>
+                    
                 </div>
             </div>
+            {% elif autoridad.dependencia_id == 5 %}
             <div class="team-item col-lg-3 col-md-6">
                 <div class="item-image">
-                    <img src="/static/images/DPJ.png" alt="Director de Seguridad" title="Director de Seguridad">
+                    <img src="/media/{{autoridad.imagen}}" alt="Director de Seguridad" title="Director de Seguridad">
                 </div>
                 <div class="item-caption py-3">
                     <div class="item-name px-2">
                         <p class="mbr-fonts-style display-5">
-                           Director de Policia Judicial</p>
+                           {{ autoridad.cargo }}<br>{{ autoridad.dependencia }}</p>
                     </div>
                     <div class="item-role px-2">
-                        <p>Crio. Gral. Paulino Ramon Gomez &nbsp;</p>
+                        <p>{{autoridad.jerarquia}}<br>{{autoridad.nombre}}&nbsp;{{autoridad.segundo_nombre}}<br>{{autoridad.apellido}}</p>
                     </div>
+                    
                 </div>
             </div>
+            {% endif%}
+            <div class="team-item col-lg-3 col-md-6">
+                <div class="item-image">
+                    <img src="/media/{{autoridad.imagen}}" alt="Director de Seguridad" title="Director de Seguridad">
+                </div>
+                <div class="item-caption py-3">
+                    <div class="item-name px-2">
+                        <p class="mbr-fonts-style display-5">
+                           {{ autoridad.cargo }}<br>{{ autoridad.dependencia }}</p>
+                    </div>
+                    <div class="item-role px-2">
+                        <p>{{autoridad.jerarquia}}<br>{{autoridad.nombre}}&nbsp;{{autoridad.segundo_nombre}}<br>{{autoridad.apellido}}</p>
+                    </div>
+                    
+                </div>
+            </div>-->
         </div>    
     </div>
-</section>		
+
+</section>	
+    
+	
 			
 {% endblock contenido%}
