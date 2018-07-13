@@ -188,8 +188,8 @@
 							<a href="{% url 'despublicar_publicacion' id=publicacion.id %}" class="btn btn-warning btn-lg"> <i class="glyphicon glyphicon-trash"></i> Despublicar </a>
 						{% else  %}
 							¿Desea Publicar la publicacion: {{ publicacion.id }} ?
-							<a href="{% url 'ver_publicacion' id=publicacion.id %}" target="_blank"class="btn btn-success btn-lg"> <i class="glyphicon glyphicon-trash"></i> Ver en Sitio </a>
-							<a href="{% url 'edit_publicacion' id=publicacion.id %}" class="btn btn-warning btn-lg"> <i class="glyphicon glyphicon-trash"></i> Editar </a>
+							<a href="{% url 'ver_publicacion' id=publicacion.id %}" target="_blank"class="btn btn-success btn-lg"> <i class="glyphicon glyphicon-eye-open"></i> Ver en Sitio </a>
+							<a href="{% url 'edit_publicacion' id=publicacion.id %}" class="btn btn-warning btn-lg"> <i class="glyphicon glyphicon-edit"></i> Editar </a>
 							<a href="{% url 'publicar_publicacion' id=publicacion.id %}" class="btn btn-success btn-lg"> <i class="glyphicon glyphicon-trash"></i> Publicar </a>
 	   					{% endif %}
 	   					
