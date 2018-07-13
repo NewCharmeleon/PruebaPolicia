@@ -25,7 +25,7 @@ class Publicacion(models.Model):
 	titulo = models.CharField(max_length=100, validators=[texto_validacion])
 	#contenido = models.TextField(validators=[texto_validacion])
 	contenido = tinymce_models.HTMLField()
-	
+	imagen = models.ImageField(upload_to='publicaciones',null=True,blank=True, validators=[imagen_validacion])
 	url = models.URLField()#validators=[url_validacion])
 	fuente = models.CharField(max_length=200, validators=[texto_validacion])
 	fecha_creacion = models.DateTimeField(auto_now_add=True)
@@ -87,7 +87,7 @@ class Publicacion(models.Model):
 		self.save()
 		#super(Modify,self).save()
 
-
+'''
 class PublicacionFoto(models.Model):
 	publicacion = models.ForeignKey(Publicacion, on_delete = models.PROTECT, null=True)
 	imagen = models.ImageField(upload_to='publicaciones',null=True,blank=True, validators=[imagen_validacion])
@@ -116,7 +116,7 @@ class PublicacionFoto(models.Model):
 		#super(Modify,self).save()
 	#imagen_publicacion = models.ForeignKey(Publicacion, on_delete = 'CASCADE')
 	
-
+'''
 
 class Cargo(models.Model):
 
