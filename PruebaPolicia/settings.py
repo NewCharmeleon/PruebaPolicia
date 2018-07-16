@@ -25,7 +25,7 @@ SECRET_KEY = 'c2hr7a@r00y5)p7-_6w_-bn0!yt2_^%_939r)v7si4ox5f40$r'
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
 
-ALLOWED_HOSTS = ['192.168.2.192','localhost']
+ALLOWED_HOSTS = ['policia.chubut.gov.ar','www.policia.chubut.gov.ar','192.168.1.167']
 
 LOGIN_URL = '/login/'
 
@@ -40,7 +40,6 @@ INSTALLED_APPS = [
     'django.contrib.staticfiles',
     'apps.publico',
     'apps.privado',
-    'tinymce',
 
 ]
 
@@ -128,8 +127,8 @@ MEDIA_URL = '/media/'
 
 STATIC_URL = '/static/'
 
-STATICFILES_DIRS = [
+STATICFILES_DIRS = (
     os.path.join(BASE_DIR,'static'),
-]
+)
 
 MEDIA_ROOT = os.path.join(BASE_DIR,'media')
