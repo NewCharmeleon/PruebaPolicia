@@ -29,7 +29,7 @@
 -->
 <section class="">
     <div>
-        <video poster="{% static 'img/sddefault.jpg' %}" loop autoplay muted width=100% height=100%>
+        <video poster="{% static 'img/sddefault.jpg' %}" loop autoplay muted width=99% height=100%>
             <source src="{% static 'images/portada_pagina_poli_ achicado.mp4' %}" type="video/mp4">
             
         Lo sentimos. Tu navegador no soporta HTML5 video.	
@@ -178,7 +178,7 @@
 
 
 <section>
-  <h1>Noticias</h1>
+  <h1>Galeria</h1>
 
 <div id="myVisor1" class="visor-carousel slide" data-ride="visor">
     <!--ol class="carousel-indicators">
@@ -188,7 +188,7 @@
   </ol>-->
   <div class="carousel-inner" role="listbox">
     {% for noticia in noticias %}
-    <div class="item col-md-4 active">
+    <div class="item col-md-2 active">
 
       <img class="first-slide" src="/media/{{noticia.imagen}}" alt="First slide">
       <div class="container-fluid">
@@ -266,7 +266,6 @@
   -webkit-tap-highlight-color: rgba(0, 0, 0, 0);
 }
   </style> 
-  <!--
  <h1>Galeria 2 </h1>
   <div id="owl-demo" class="owl-carousel owl-theme">
       <div class="item"><h1>1</h1></div>
@@ -293,7 +292,7 @@
   });
 });
 
-</script>-->    
+</script>    
 </section>    
 <!--
 <section class="accordion1 cid-qTDzhN50bs" id="accordion1-r">

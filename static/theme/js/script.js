@@ -143,7 +143,7 @@
 
     $(function() {
 
-        $('html').addClass(($.isMobile()) ? 'mobile' : 'desktop');
+        $('html').addClass($.isMobile() ? 'mobile' : 'desktop');
 
         // .mbr-navbar--sticky
         $(window).scroll(function() {
