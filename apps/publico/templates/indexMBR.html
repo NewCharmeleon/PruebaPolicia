@@ -2,7 +2,8 @@
 {% load staticfiles %}
 <html>
 <head>
-  
+  <script id="www-widgetapi-script" src="https://s.ytimg.com/yts/jsbin/www-widgetapi-vfl3m9ZW-/www-widgetapi.js" type="text/javascript" async=""></script>
+  <script id="YTAPI" src="{% static 'ytplayer/iframe_api.js' %}"></script>
   <meta charset="UTF-8">
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <meta name="viewport" content="width=device-width, initial-scale=1, minimum-scale=1">
@@ -38,15 +39,16 @@
     .visor-carousel .carousel-inner > .item,
     .visor-carousel .carousel-inner > .item > img {
       height: 250px !important;
-      margin-left: -10px;
-      left:1.5%;
+      left:-1%;
     }
     .visor-carousel .carousel-inner > .item > img {
       position: relative;
-      width: 110% !important;
+      width: 100% !important;
+      margin-left: 8%;
 
     }
   </style>
+  
       <!-- Important Owl stylesheet -->
     <link rel="stylesheet" href="{% static 'owl-carousel/owl.carousel.css' %}">
      
@@ -55,8 +57,9 @@
           
    
 
-  <script src="{% static 'dropdown/js/script.min.js' %}"></script>
+   <script src="{% static 'bootstrap/js/bootstrap.min.js' %}"></script>
   <script src="{% static 'web/assets/jquery/jquery.min.js' %}"></script>
+  <script src="{% static 'dropdown/js/script.min.js' %}"></script>
    <!--libreria Visor-->
    
   <script type="text/javascript" src="{% static 'visor-carousel/js/jquery.visor-carousel.js' %}"></script>
@@ -110,32 +113,11 @@
   <script src="{% static 'gallery/script.js' %}"></script>
 
 
-  <!--
-   <script src="{% static 'web/assets/jquery/jquery.min.js' %}"></script>
-  <script src="{% static 'tether/tether.min.js' %}"></script>
-  <script src="{% static 'popper/popper.min.js' %}"></script>
-  <script src="{% static 'bootstrap/js/bootstrap.min.js' %}"></script>
-  <script src="{% static 'dropdown/js/script.min.js' %}"></script>
-  <script src="{% static 'touchswipe/jquery.touch-swipe.min.js' %}"></script>
-  <script src="{% static 'viewportchecker/jquery.viewportchecker.js' %}"></script>
-  <script src="{% static 'masonry/masonry.pkgd.min.js' %}"></script>
-  <script src="{% static 'imagesloaded/imagesloaded.pkgd.min.js' %}"></script>
-  <script src="{% static 'smoothscroll/smooth-scroll.js' %}"></script>
-  <script src="{% static 'vimeoplayer/jquery.mb.vimeo_player.js' %}"></script>
-  <script src="{% static 'sociallikes/social-likes.js' %}"></script>
-  <script src="{% static 'bootstrapcarouselswipe/bootstrap-carousel-swipe.js' %}"></script>
-  <script src="{% static 'social-feed-plugin/codebird.min.js' %}"></script>
-  <script src="{% static 'social-feed-plugin/moment.js' %}"></script>
-  <script src="{% static 'social-feed-plugin/en-gb.js' %}"></script>
-  <script src="{% static 'social-feed-plugin/doT.js' %}"></script>
-  <script src="{% static 'social-feed-plugin/jquery.socialfeed.js' %}"></script>
-  <script src="{% static 'social-feed-plugin/main.js' %}"></script>
-  <script src="{% static 'theme/js/script.js' %}"></script>
-  <script src="{% static 'slidervideo/script.js' %}"></script>
-  <script src="{% static 'gallery/player.min.js' %}"></script>
-  <script src="{% static 'gallery/script.js' %}"></script>-->
- <!--
- <div id="scrollToTop" class="scrollToTop mbr-arrow-up"><a style="text-align: center;"><i></i></a></div>
-     <input name="animation" type="hidden">-->
+  <script src="https://www.youtube.com/iframe_api"></script>
+ 
+  <script src="{% static 'mbr-flip-card/mbr-flip-card.js' %}"></script>
+  <script src="{% static 'ytplayer/jquery.mb.ytplayer.min.js' %}"></script>
+  
+  
   </body>
 </html>
