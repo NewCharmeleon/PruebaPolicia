@@ -226,7 +226,7 @@ def publicar_publicacion(request,id):
 def enviar_publicacion(request,id):
 	publicaciones=Publicacion.objects.filter(is_publicado=True, is_para_portada=True)
 	cantidad = len(publicaciones)
-	if cantidad>6:
+	if cantidad>9:
 		messages.warning(request, "Debe despublicar alguna publicacion de la portada!!!")
 	else:
 		publicacion=get_object_or_404(Publicacion, id=id)

@@ -25,7 +25,7 @@ SECRET_KEY = 'c2hr7a@r00y5)p7-_6w_-bn0!yt2_^%_939r)v7si4ox5f40$r'
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
 
-ALLOWED_HOSTS = ['policia.chubut.gov.ar','www.policia.chubut.gov.ar','192.168.1.167']
+ALLOWED_HOSTS = ['policia.chubut.gov.ar','www.policia.chubut.gov.ar','192.168.1.167', 'localhost', '192.168.1.168']
 
 LOGIN_URL = '/login/'
 
