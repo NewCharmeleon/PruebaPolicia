@@ -180,8 +180,8 @@
 </section>	-->
 							<!--<iframe src="https://www.facebook.com/plugins/share_button.php?title={{noticia.titulo}}&href=http%3A%2F%2Flocalhost%3A8000%2Fpublicacion%2F13%2F&layout=button_count&size=small&mobile_iframe=true&width=91&height=20&appId" width="91" height="20" style="border:none;overflow:hidden" scrolling="no" frameborder="0" allowTransparency="true" allow="encrypted-media"></iframe>-->
 						{% if publicacion.is_publicado and not publicacion.is_para_portada %}
-							<!--¿Desea Enviar a la portada la publicacion: {{ publicacion.id}} ?
-							<a href="{% url 'enviar_publicacion' id=publicacion.id %}" class="btn btn-success btn-lg"> <i class="glyphicon glyphicon-trash"></i> Enviar a Portada </a>-->
+							¿Desea Enviar a la portada la publicacion: {{ publicacion.id}} ?
+							<a href="{% url 'enviar_publicacion' id=publicacion.id %}" class="btn btn-success btn-lg"> <i class="glyphicon glyphicon-trash"></i> Enviar a Portada </a>
 							<a href="{% url 'archivar_publicacion' id=publicacion.id %}" class="btn btn-warning btn-lg"> <i class="glyphicon glyphicon-trash"></i> Archivar </a>
 						{% elif publicacion.is_para_portada	%}
 

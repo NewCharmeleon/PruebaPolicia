@@ -23,8 +23,8 @@ class Publicacion(models.Model):
 	categoria = models.IntegerField(choices = CATEGORIA, validators=[tipo_validacion])
 	
 	titulo = models.CharField(max_length=100, validators=[texto_validacion])
-	#contenido = models.TextField(validators=[texto_validacion])
-	contenido = tinymce_models.HTMLField()
+	contenido = models.TextField(validators=[texto_validacion])
+	#contenido = tinymce_models.HTMLField()
 	imagen = models.ImageField(upload_to='publicaciones',null=True,blank=True, validators=[imagen_validacion])
 	url = models.URLField()#validators=[url_validacion])
 	fuente = models.CharField(max_length=200, validators=[texto_validacion])

@@ -11,7 +11,7 @@ from django.urls import reverse
 def home(request):
 
 	#noticias = Publicacion.objects.filter(is_para_portada=True, tipo=1)
-	noticias = Publicacion.objects.filter(is_publicado=True, tipo=1)
+	noticias = Publicacion.objects.filter(is_para_portada=True, is_publicado=True, tipo=1).order_by('-fecha_creacion')[:10]
 	videos = Publicacion.objects.filter(is_para_portada=True, tipo=2)
 	autoridad = Autoridad.objects.filter(is_para_portada=True, cargo_id__in=[1,2])
 	print ("hay")
@@ -24,7 +24,7 @@ def home(request):
 	return render(request,"indexMBR.html",{'nombre':"Adrian", 'noticias' :noticias, 'videos':videos, 'autoridades':autoridad })
 def noticias(request):
 
-	noticias = Publicacion.objects.filter(is_publicado=True, tipo=1)
+	noticias = Publicacion.objects.filter(is_publicado=True, tipo=1).order_by('-fecha_creacion')
 	videos = Publicacion.objects.filter(is_para_portada=True, tipo=2)
 	jurisdiccion = Publicacion.JURISDICCION
 	
