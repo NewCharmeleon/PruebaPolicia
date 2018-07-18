@@ -14,8 +14,8 @@ def home(request):
 	noticias = Publicacion.objects.filter(is_para_portada=True, is_publicado=True, tipo=1).order_by('-fecha_creacion')[:10]
 	videos = Publicacion.objects.filter(is_para_portada=True, tipo=2)
 	autoridad = Autoridad.objects.filter(is_para_portada=True, cargo_id__in=[1,2])
-	print ("hay")
-	print(len(autoridad))
+	#print ("hay")
+	#print(len(autoridad))
 	#argo = Autoridad.CARGO
 	#jerarquia = Autoridad.JERARQUIA
 	#dependencia = Autoridad.DEPENDENCIA

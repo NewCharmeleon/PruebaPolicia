@@ -36,7 +36,7 @@ def login(request):
 #Vista de Tablero++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
 @login_required
 def dashboard(request):
-	publicaciones = Publicacion.objects.order_by('fecha_creacion')
+	publicaciones = Publicacion.objects.filter(is_archivado__isnull=False,is_publicado=False, is_para_portada=False).order_by('fecha_creacion')
 	#.filter(usuario = request.user)
 	return render(request,'dashboard.html',{'usuario':request.user,'publicaciones':publicaciones})
 
@@ -150,7 +150,7 @@ def show_archivados(request):
 
 @login_required
 def show_publicados(request):	
-	publicaciones = Publicacion.objects.filter(fecha_publicacion__isnull=False,fecha_archivado__isnull=True).order_by('fecha_publicacion')
+	publicaciones = Publicacion.objects.filter(fecha_publicacion__isnull=False,fecha_archivado__isnull=True, is_para_portada=False).order_by('fecha_publicacion')
 	if not len(publicaciones):
 		messages.warning(request, "No existen publicaciones")
 	else:	
@@ -160,7 +160,7 @@ def show_publicados(request):
 
 @login_required
 def show_portada(request):	
-	publicaciones = Publicacion.objects.filter(fecha_publicacion__isnull=False, is_para_portada=True).order_by('fecha_publicacion')
+	publicaciones = Publicacion.objects.filter(is_publicado=True, is_para_portada=True).order_by('fecha_publicacion')
 	if not len(publicaciones):
 		messages.warning(request, "No existen publicaciones en portada")
 	else:	

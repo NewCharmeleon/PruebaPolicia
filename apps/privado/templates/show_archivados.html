@@ -27,15 +27,10 @@
 							{%endfor%}	
 						{% endif %}	
 					<hr>
-					<div class="row">
-						<div class="col-md-12">
-							<h2> Ver publicaciones archivadas</h2>
-							<hr style="border-top: 3px solid #81BEF7;">
-						</div>
-					</div>
-					<div class="row">
-						<div class="col-md-12">
-							<table class="table table-condensed">
+					
+					<div class="table-bordered table condensed table-hover table-responsive">
+							<table class="table">
+							<caption><h4>Ver Publicaciones Archivadas</h4></caption>
 								<thead>
 									<tr>
 										<th>#</th>
@@ -116,7 +111,7 @@
 								</tbody>
 							</table>
 							<a href="{% url 'dashboard' %}" class="btn btn-info btn-lg pull-right"> <i class="glyphicon glyphicon-arrow-left"></i> Volver </a>
-						</div>
+						
 					</div>
 				</div>	
 			</div>

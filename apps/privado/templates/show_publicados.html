@@ -28,17 +28,11 @@
 						{% endif %}	
 						
 					<hr>
-					<div class="row">
-						<div class="col-md-12">
-							<h2> Ver publicaciones publicadas</h2>
-							<hr style="border-top: 3px solid #81BEF7;">
-						</div>
-					</div>
-					<div class="row">
-
-						<div class="col-md-12">
-							<table class="table table-condensed">
+					<div class="table-bordered table condensed table-hover table-responsive">
+							<table class="table">
+							<caption><h4>Ver Publicaciones Publicadas</h4></caption>
 								<thead>
+								
 									<tr>
 										<th>#</th>
 										<th>Tipo</th>
@@ -103,6 +97,9 @@
 											{% elif not publicacion.is_publicado and not publicacion.is_archivado %}
 												  <span class="badge badge-info">Borrador</span> 											 
 											{% endif %}	
+											{% if publicacion.is_para_portada %}
+												<span class="badge badge-success">En Portada</span>
+											{% endif %}	
 										</td>
 										<td>
 											{{publicacion.usuario}}
@@ -118,8 +115,8 @@
 								</tbody>
 							</table>
 							<a href="{% url 'dashboard' %}" class="btn btn-info btn-lg pull-right"> <i class="glyphicon glyphicon-arrow-left"></i> Volver </a>
-						</div>
 					</div>
+					
 				</div>	
 			</div>
 		</div>
