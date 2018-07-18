@@ -68,47 +68,43 @@
 
 <body style="background-color: #81BEF7">
 	
-		<div class="container">
-			<div class="row" style="padding-top: 5%;">
-				<div class="col-md-10 col-md-offset-1 well">
-					<div class="row">
-						<div class="col-md-12">
-							<center><img src="{% static 'img/Escudo_PoliciaCh.png' %}"></center>
-						</div>
-						{% if messages %}
-							
-							{% for message in messages %}
-								<div class="alert alert-success alert-dismissible" role alert>
-									<button type="button" class="close" data-dismiss="alert" aria-label="Close"><span aria-hidden	="true">&times;</span></button>
+	<div class="container">
+		<div class="row" style="padding-top: 5%;">
+			<div class="col-md-10 col-md-offset-1 well">
+				<div class="row">
+					<div class="col-md-12">
+						<center><img src="{% static 'img/Escudo_PoliciaCh.png' %}"></center>
+					</div>
+					{% if messages %}
+						
+						{% for message in messages %}
+							<div class="alert alert-success alert-dismissible" role alert>
+								<button type="button" class="close" data-dismiss="alert" aria-label="Close"><span aria-hidden	="true">&times;</span></button>
 									<p> <i class="glyphicon glyphicon-info-sign"></i> {{ message}}</p>	
-								</div>
-							{%endfor%}	
-						{% endif %}	
-
+							</div>
+						{%endfor%}	
+					{% endif %}	
 						<h1>Tablero de Control de: {{user.username}} </h1>
 						<hr style="border-top: 3px solid #81BEF7;">
+						<div id="content" class="content">
 
-
-							<div id="content" class="content">
-
-	
-                   		        <nav class="navbar navbar-policia navbar-default" >
-                   					<div class="navbar-header">
+               		        <nav class="navbar navbar-policia navbar-default" >
+               					<div class="navbar-header">
 
 	                       				 <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#nab-menu-min" aria-expanded="false" aria-controls="navbar">
 				                            <span class="sr-only">Toggle navigation</span>
 				                            <span class="icon-bar"></span>
 				                            <span class="icon-bar"></span>
 				                            <span class="icon-bar"></span>
-	                        			</button>
+                        			</button>
 
-	                       				 <a class="navbar-brand" href="{% url 'dashboard' %}">
-	                           			 <i class="glyphicon glyphicon-home"></i>
-	                      				  </a>
-                   					 </div>
+	                       				<a class="navbar-brand" href="{% url 'dashboard' %}">
+	                           			<i class="glyphicon glyphicon-home"></i>
+	                      				</a>
+                   				</div>
                     
-				                    <div class="container-fluid">
-				                        <div id="nab-menu-min" class="navbar-collapse collapse">
+				                <div class="container-fluid">
+				                    <div id="nab-menu-min" class="navbar-collapse collapse">
 
 				                            <ul class="nav navbar-nav">
 				                                <!-- roles y accesos -->
@@ -175,50 +171,16 @@
                                         
                                         		{% endif %}
                                     		</ul>
-                       					 </div><!--/.nav-collapse -->
-                   					 </div><!--/.container-fluid -->
-                   					 <a href="{% url 'logout' %}" class="btn btn-default btn-lg pull-right"> <i class="glyphicon glyphicon-log-out"></i> cerrar sesion</a>
-               					 </nav>            
+                       				</div><!--/.nav-collapse -->
+                   				</div><!--/.container-fluid -->
+                   					<a href="{% url 'logout' %}" class="btn btn-default btn-lg pull-right"> <i class="glyphicon glyphicon-log-out"></i> cerrar sesion</a>
 
-           
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-						
-        			</div>
-					<hr style="border-top: 3px solid #81BEF7;">
-					<div class="row">
-						<div class="col-md-12">
-							<h3>Publicaciones Anteriores</h3>
-						</div>
-					</div>
-					<div class="row">
-
-						<div class="col-md-12">
-							<table class="table table-condensed">
+               				</nav>            
+	        			</div>
+						<hr style="border-top: 3px solid #81BEF7;">
+						<div class="table-bordered table condensed table-hover table-responsive">
+							<table class="table">
+							<caption><h4>Publicaciones Guardadas</h4></caption>
 								<thead>
 									<tr>
 										<th>#</th>
@@ -276,7 +238,7 @@
 										<td>
 											{{publicacion.fecha_creacion|date:'d/m/Y'}}
 										</td>
-										<td>
+									<td>
 											{% if publicacion.is_publicado %}
 												<span class="badge badge-success">Publicado</span>
 											{% elif publicacion.is_archivado  %}
@@ -292,7 +254,7 @@
 											{{publicacion.usuario}}
 										</td>	
 										<td>
-											
+										
 											<!--<a href="https://twitter.com/share?ref_src=twsrc%5Etfw" class="twitter-share-button" data-text="{{publicacion.titulo}} Fuente:{{publicacion.fuente}}" data-url="http://policia.chubut.gov.ar:8003{% url 'noticia' publicacion.id %}" data-via="POLICIA_CHUBUT" data-hashtags="noticia, policial, Chubut, Jefatura de Policia" data-lang="es" data-show-count="true">Tweet</a>
 											<script async src="https://platform.twitter.com/widgets.js" charset="utf-8"></script>-->
 											<!--<iframe src="https://www.facebook.com/plugins/share_button.php?title={{noticia.titulo}}&href=http%3A%2F%2Flocalhost%3A8000%2Fpublicacion%2F13%2F&layout=button_count&size=small&mobile_iframe=true&width=91&height=20&appId" width="91" height="20" style="border:none;overflow:hidden" scrolling="no" frameborder="0" allowTransparency="true" allow="encrypted-media"></iframe>-->
@@ -310,11 +272,10 @@
 								</tbody>
 							</table>
 						</div>
-					</div>
 				</div>	
 			</div>
 		</div>
-	
+	</div>
 </body>
 </html>
 <script>window.twttr = (function(d, s, id) {
