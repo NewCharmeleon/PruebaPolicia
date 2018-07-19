@@ -15,7 +15,7 @@ from tinymce import models as tinymce_models
 
 class Publicacion(models.Model):
 	TIPO = ((1 , 'Articulo'), (2, 'Video'),)
-	JURISDICCION = ((0, 'Provincial'),(1, 'Jefatura de Policia'),(2 , 'Unidad Regional Comodoro Rivadavia'), (3, 'Unidad Regional Esquel'),(4, 'Unidad Regional Puerto Madryn'),(5, 'Unidad Regional Trelew'),)
+	JURISDICCION = ((0, 'Provincial'),(1, 'Jefatura de Policia - Rawson'),(2 , 'Unidad Regional Comodoro Rivadavia'), (3, 'Unidad Regional Esquel'),(4, 'Unidad Regional Puerto Madryn'),(5, 'Unidad Regional Trelew'),)
 	CATEGORIA = ((0 , 'Informativo'), (1, 'Institucional'), (2, 'Comunidad'),(3, 'Otro'),)
 
 	tipo = models.IntegerField(choices = TIPO, validators=[tipo_validacion])
