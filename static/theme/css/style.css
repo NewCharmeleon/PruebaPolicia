@@ -186,7 +186,7 @@ figure[mbr-media-size] {
 
 .card {
   background-color: transparent;
-  border: none; }
+  border: hidden; }
 
 .card-img {
   text-align: center;
