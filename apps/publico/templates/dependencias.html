@@ -23,8 +23,11 @@
   <link rel="stylesheet" href="{% static 'theme/css/style.css'%}">
   <link rel="stylesheet" href="{% static 'mobirise/css/mbr-additional.css'%}" type="text/css">
 
-   <script src="{% static 'web/assets/jquery/jquery.min.js' %}"></script>
+  <script src="{% static 'web/assets/jquery/jquery.min.js' %}"></script>
+  <script src="{% static 'bootstrap/js/bootstrap.min.js' %}"></script>
   <script src="{% static 'dropdown/js/script.min.js' %}"></script>
+  <script src="{% static 'datatables/jquery.data-tables.min.js'%}"></script>
+  <script src="{% static 'datatables/data-tables.bootstrap4.min.js'%}"></script>
   
   
   
@@ -34,125 +37,10 @@
   {% include 'headerMBR.html' %}
   
 <section class="engine"><a href=""></a></section>
-<!--<section class="accordion1 cid-qWmHCZlGEY" id="accordion1-2n" style="padding-top:10%;">
-
-        
-    <div class="container" >
-        <div class="media-container-row">
-            <div class="col-12 col-md-8" >
-                <div class="section-head text-center space30">
-                    <h2 class="mbr-section-title pb-5 mbr-fonts-style display-2">Dependencias</h2>
-                </div>
-                <div class="clearfix"></div>
-                <div id="bootstrap-accordion_12" class="panel-group accordionStyles accordion" role="tablist" aria-multiselectable="true">
-                    <div class="card">
-                      {% for dependencia in dependencias %}
-                        <div class="card-header" role="tab" id="headingOne">
-                            <a role="button" class="panel-title collapsed text-black" data-toggle="collapse" data-core="" href="#collapse1_12" aria-expanded="false" aria-controls="collapse1">
-                                <h4 class="mbr-fonts-style display-7">
-                                    <span class="sign mbr-iconfont mbri-arrow-down inactive"></span>&nbsp;{{dependencia.nombre}}&nbsp;<br>Direcci&oacute;n: {{dependencia.direccion}}&nbsp;-&nbsp;{{dependencia.ciudad}}.<br>Tel:&nbsp; {{dependencia.telefono}}.</h4>
-                            </a>
-                        </div>
-                        <div id="collapse1_12" class="panel-collapse noScroll collapse " role="tabpanel" aria-labelledby="headingOne" data-parent="#bootstrap-accordion_12">
-                            <div class="panel-body p-4">
-                                <p class="mbr-fonts-style panel-text display-7">
-                                   Mobirise is an offline app for Window and Mac to easily create small/medium websites, landing pages, online resumes and portfolios, promo sites for apps, events, services and products.</p>
-                            </div>
-                        </div>
-                    </div>
-                    
-                  </div>
-
-                    <div class="card">
-                        <div class="card-header" role="tab" id="headingTwo">
-                            <a role="button" class="collapsed panel-title text-black" data-toggle="collapse" data-core="" href="#collapse2_12" aria-expanded="false" aria-controls="collapse2">
-                                <h4 class="mbr-fonts-style display-7">
-                                    <span class="sign mbr-iconfont mbri-arrow-down inactive"></span>Unidad Regional Comodoro Rivadavia<br>Direccion: Av. Rivadavia 99-199 - Comodoro Rivadavia.<br>Tel: (0297)-447-3015</h4>
-                            </a>
-                            
-                        </div>
-                        <div id="collapse2_12" class="panel-collapse noScroll collapse" role="tabpanel" aria-labelledby="headingTwo" data-parent="#bootstrap-accordion_12">
-                            <div class="panel-body p-4">
-                                <p class="mbr-fonts-style panel-text display-7">-Cría. Dtto. 1ª: Dirección: Tel. 2974-446-2778<br>-Cría. Dtto. 2ª: Dirección: Tel. 2974-446-2439<br>-Cría. Dtto. 3ª: Dirección: Tel. 2974-446-2652<br>-Cría. Dtto. 4ª: Dirección: Tel. 2974-447-3433<br>-Cría. Dtto. 5ª: Dirección: Tel. 2974-448-1255<br>-Cría. Dtto. 6ª: Dirección: Tel. 2974-444-1653<br>-Cría. Dtto. 7ª: Dirección: Tel. 2974-<br>-Cría Km3 : Dirección:&nbsp;Tel: 2974-455-7755/7766
-<br>-Cría Laprida: Dirección: Tel:&nbsp;2974-456-0599
-<br>-Cría Diadema: Dirección: Tel: 2974-484-3000
-<br>-Cría Km8: Dirección: Tel: 2974-453-5851
-<br>
--Cría Rada Tilly: Dirección: 2974-445-1255
-<br>	
--Cría de la Mujer: Dirección: Tel:&nbsp;2974-447-1994
-<br>
--Policía Comunitaria: Dirección: Tel: 2974-448-3308&nbsp;<br><br></p>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="card">
-                        <div class="card-header" role="tab" id="headingThree">
-                            <a role="button" class="collapsed text-black panel-title" data-toggle="collapse" data-core="" href="#collapse3_12" aria-expanded="false" aria-controls="collapse3">
-                                <h4 class="mbr-fonts-style display-7">
-                                    <span class="sign mbr-iconfont mbri-arrow-down inactive"></span>&nbsp;Unidad Regional Esquel&nbsp;<div>Direccion: Rivadavia nº 672 -Esquel Tel: (02945)-451-427<span style="color: inherit; font-size: 1rem; background-color: transparent;">&nbsp;</span></div><div><br></div></h4>
-                            </a>
-                        </div>
-                        <div id="collapse3_12" class="panel-collapse noScroll collapse" role="tabpanel" aria-labelledby="headingThree" data-parent="#bootstrap-accordion_12">
-                            <div class="panel-body p-4">
-                                <p class="mbr-fonts-style panel-text display-7">-Cría. Dtto. 1ª: Dirección: Mitre nº 699 Tel. 2945-450-789&nbsp;<br>-Cría. Dtto. 2ª: Dirección: Pasaje 25 nº 990&nbsp;Tel. 2945-451-420
-<br>-Subcría Barrio Baden: Dirección: Calle sin nombre y s/n Tel: 2945-456-468&nbsp;<br>-Subcría Languiñeo: Dirección: Ruta Provincial 25 s/nº Tel: 02945-470-529&nbsp;<br></p>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="card">
-                        <div class="card-header" role="tab" id="headingFour">
-                            <a role="button" class="collapsed panel-title text-black" data-toggle="collapse" data-core="" href="#collapse4_12" aria-expanded="false" aria-controls="collapse4">
-                                <h4 class="mbr-fonts-style display-7">
-                                    <span class="sign mbr-iconfont mbri-arrow-down inactive"></span>&nbsp; Unidad Regional Puerto Madryn &nbsp;<div>Direccion: &nbsp;nº -Puerto Madryn Tel: (02945)-451-427 
-</div><div>
-</div><div><br></div></h4>
-                            </a> 
-                        </div>
-                        <div id="collapse4_12" class="panel-collapse noScroll collapse" role="tabpanel" aria-labelledby="headingFour" data-parent="#bootstrap-accordion_12">
-                            <div class="panel-body p-4">
-                                <p class="mbr-fonts-style panel-text display-7">-Cría. Dtto. 1ª: Dirección: Tel. 2974-446-2778
-<br>-Cría. Dtto. 2ª: Dirección: Tel. 2974-446-2439
-<br>-Cría. Dtto. 3ª: Dirección: Tel. 2974-446-2652
-<br>-Cría. Dtto. 4ª: Dirección: Tel. 2974-447-3433
-<br><br>-Cría Km3 : Dirección: Tel: 2974-455-7755/7766 
-<br>-Cría Laprida: Dirección: Tel: 2974-456-0599 
-<br>-Cría Diadema: Dirección: Tel: 2974-484-3000 
-<br>-Cría Km8: Dirección: Tel: 2974-453-5851 
-<br>-Cría Rada Tilly: Dirección: 2974-445-1255 
-<br>-Cría de la Mujer: Dirección: Tel: 2974-447-1994 
-<br>-Policía Comunitaria: Dirección: Tel: 2974-448-3308</p>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="card">
-                        <div class="card-header" role="tab" id="headingFive">
-                            <a role="button" class="collapsed panel-title text-black" data-toggle="collapse" data-core="" href="#collapse5_12" aria-expanded="false" aria-controls="collapse5">
-                                <h4 class="mbr-fonts-style display-7">
-                                    <span class="sign mbr-iconfont mbri-arrow-down inactive"></span>&nbsp; Unidad Regional Trelew 
-<div>Direccion: San Martin nº 435 -Trelew Tel: (0280)-4420-891</div></h4>
-                            </a>
-                        </div>
-                        <div id="collapse5_12" class="panel-collapse noScroll collapse" role="tabpanel" aria-labelledby="headingFive" data-parent="#bootstrap-accordion_12">
-                            <div class="panel-body p-4">
-                                <p class="mbr-fonts-style panel-text display-7">-Cría. Dtto. 1ª: Dirección: San Martín nº 451 Tel. 2804-427-587&nbsp;<br>-Cría. Dtto. 2ª: Dirección: Colombia s/nº &nbsp;Tel. 2804-426-845&nbsp;<br>-Cría. Dtto. 3ª: Dirección: Av. La Plata nº 1554 Tel. 2804-426-162&nbsp;<br>-Cría. Dtto. 4ª: Dirección: Sargento Cabral nº 1580 Tel. 2804-425-273&nbsp;<br>-Cría de la Mujer: Dirección: Pje. San Juan Nº 345 Tel: 2804-438-521<br>-Subcría Barrio INTA Dirección: Gastre s/nº Tel: 2804-446-021&nbsp;<br>&nbsp;<br>&nbsp;<br><br><br><br></p>
-                            </div>
-                        </div>
-                    </div>
-                    
-                </div>
-            </div>
-        </div>
-    </div>
-</section>
-{% endfor %}
--->
-
-          
-               
 
 
-<section class="section-table cid-qWmIkCujTP" id="table1-2o" style="padding-top:10%;>
+
+<section class="section-table cid-qWmIkCujTP" id="table1-2o" style="padding-top:10%;">
 
   
   
@@ -174,7 +62,7 @@
                   Provincia
               {% endif %}
            {% endif %}   
-            </h2>
+       </h2>
       
       <div class="table-wrapper">
         <div class="container">
@@ -193,24 +81,10 @@
           <table class="table isSearch" cellspacing="0">
             <thead>
               <tr class="table-heads ">
-                  
-                  
-                  
-                  
-                <th class="head-item mbr-fonts-style display-7">Nombre</th>
-                <th class="head-item mbr-fonts-style display-7">Dirección</th>
-                <th class="head-item mbr-fonts-style display-7">Telefono</th>
+               <th class="head-item mbr-fonts-style display-7">Nombre</th>
+               <th class="head-item mbr-fonts-style display-7">Dirección</th>
+               <th class="head-item mbr-fonts-style display-7">Telefono</th>
 
-
-               <!--
-                <th class="head-item mbr-fonts-style display-7">Funci&oacute;n</th>
-                <th class="head-item mbr-fonts-style display-7">Ciudad</th>
-                <th class="head-item mbr-fonts-style display-7">Telefono</th>
-                <th class="head-item mbr-fonts-style display-7">Email</th>
-                <th class="head-item mbr-fonts-style display-7">Jefe</th>
-                <th class="head-item mbr-fonts-style display-7">SubJefe</th>
-                <th class="head-item mbr-fonts-style display-7">Ubicaci&oacute;n</th>
-                <th class="head-item mbr-fonts-style display-7">Imagen</th>-->
               </tr>
             </thead>
 
@@ -224,50 +98,6 @@
                             <i class="glyphicon glyphicon-eye-open"></i>
                         Ver mas</a>
                   </td>
-                  
-                   
-                  
-                  <!--<td class="body-item mbr-fonts-style display-7">
-                  {% if dependencia.funcion == 1 %}
-                    Escuela
-                  {% else %}
-                    Seguridad
-                  {% endif %}
-                  </td>
-                  
-                  <td class="body-item mbr-fonts-style display-7">{{dependencia.ciudad}}</td>
-                  
-                  <td class="body-item mbr-fonts-style display-7">
-                    {% if dependencia.email == ""%}
-                   Sin Datos.
-                  {% else %}
-                   {{dependencia.email}}
-                  {% endif %}</td>
-                  <td class="body-item mbr-fonts-style display-7">
-                  {% if dependencia.jefe == ""%}
-                   Sin Datos.
-                  {% else %}
-                   {{dependencia.jefe}}
-                  {% endif %}</td>
-                  <td class="body-item mbr-fonts-style display-7">
-                  {% if dependencia.subjefe == ""%}
-                   Sin Datos.
-                  {% else %}
-                   {{dependencia.subjefe}}
-                  {% endif %}</td>
-                  <td class="body-item mbr-fonts-style display-7">
-                  {% if dependencia.ubicacion == ""%}
-                   Sin Datos.
-                  {% else %}
-                   {{dependencia.ubicacion}}
-                  {% endif %}
-                  </td>
-                  <td class="body-item mbr-fonts-style display-7">{% if dependencia.imagen == ""%}
-                  Sin Datos.
-                  {% else %}
-                   {{dependencia.imagen}}
-                  {% endif %}
-                  </td>-->
               </tr>
              {% endfor %}
             </tbody>
@@ -327,15 +157,13 @@ $(document).ready(function()
 
 
 {% include 'footerMBR.html' %}
-  <script src="{% static 'web/assets/jquery/jquery.min.js'%}"></script>
+ 
   <script src="{% static 'popper/popper.min.js'%}"></script>
   <script src="{% static 'tether/tether.min.js'%}"></script>
-  <script src="{% static 'bootstrap/js/bootstrap.min.js'%}"></script>
   <script src="{% static 'mbr-switch-arrow/mbr-switch-arrow.js'%}"></script>
   <script src="{% static 'viewportchecker/jquery.viewportchecker.js'%}"></script>
   <script src="{% static 'datatables/jquery.data-tables.min.js'%}"></script>
   <script src="{% static 'datatables/data-tables.bootstrap4.min.js'%}"></script>
-  <script src="{% static 'dropdown/js/script.min.js'%}"></script>
   <script src="{% static 'touchswipe/jquery.touch-swipe.min.js'%}"></script>
   <script src="{% static 'smoothscroll/smooth-scroll.js'%}"></script>
   <script src="{% static 'theme/js/script.js'%}"></script>

@@ -59,7 +59,7 @@
 										{% if dependencia.jurisdiccion == 1 %}
 												Jefatura de Policia
 										{% elif dependencia.jurisdiccion == 2 %}
-												U. R. Cro. Rivadavia
+												U. R. Cdro. Rivadavia
 										{% elif dependencia.jurisdiccion == 3 %}
 												U. R. Esquel
 										{% elif dependencia.jurisdiccion == 4 %}
@@ -73,6 +73,10 @@
 									<td>
 										{% if dependencia.funcion == 1 %}
 												Escuela
+										{% elif dependencia.funcion == 2 %}
+												Administrativa
+										{% elif dependencia.funcion == 3 %}
+												Otra		
 										{% else %}
 												Seguridad
 										{% endif %}
