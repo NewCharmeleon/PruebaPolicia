@@ -483,7 +483,7 @@ def new_dependencia(request):
 				
 				dependencia.save()
 				messages.success(request, "Dependencia creada con exito!!!")
-				return HttpResponseRedirect(reverse('show_dependencias'))
+				return HttpResponseRedirect(reverse('show_dependencias_ver'))
 				
 			except Exception as e:
 				print(e)
@@ -530,7 +530,7 @@ def edit_dependencia(request, id):
 			try:
 				form.save()
 				messages.success(request, "Dependencia editada con exito!!!")
-				return HttpResponseRedirect(reverse('show_dependencias'))
+				return HttpResponseRedirect(reverse('show_dependencias_ver'))
 				
 			except Exception as e:
 				#print(e)
@@ -568,7 +568,7 @@ def publicar_dependencia(request,id):
 	dependencia=get_object_or_404(Dependencia, id=id)
 	dependencia.Publicar()
 	messages.success(request, "Dependencia publicada con exito!!!")
-	return HttpResponseRedirect(reverse('show_dependencias'))	
+	return HttpResponseRedirect(reverse('show_dependencias_ver'))	
 
 
 @login_required
@@ -579,7 +579,7 @@ def enviar_dependencia(request,id):
 	dependencia=get_object_or_404(Dependencia, id=id)
 	dependencia.Enviar()
 	messages.success(request, "Dependencia publicada en portada con exito!!!")
-	return HttpResponseRedirect(reverse('show_dependencias'))	
+	return HttpResponseRedirect(reverse('show_dependencias_ver'))	
 
 
 @login_required
@@ -589,7 +589,7 @@ def despublicar_dependencia(request,id):
 	dependencia=get_object_or_404(Dependencia, id=id)
 	dependencia.Despublicar()
 	messages.success(request, "Dependencia despublicada en portada con exito!!!")
-	return HttpResponseRedirect(reverse('show_dependencias'))	
+	return HttpResponseRedirect(reverse('show_dependencias_ver'))	
 
 
 @login_required
@@ -599,7 +599,7 @@ def archivar_dependencia(request,id):
 	dependencia=get_object_or_404(Dependencia, id=id)
 	dependencia.Archivar()
 	messages.success(request, "Dependencia archivada con exito!!!")
-	return HttpResponseRedirect(reverse('show_dependencias'))	
+	return HttpResponseRedirect(reverse('show_dependencias_ver'))	
 
 
 @login_required

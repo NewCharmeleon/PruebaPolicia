@@ -224,7 +224,7 @@ class Autoridad(models.Model):
 class Dependencia(models.Model):
 
 	JURISDICCION = ((0, 'Provincial'),(1, 'Jefatura de Policia'),(2 , 'Unidad Regional Comodoro Rivadavia'), (3, 'Unidad Regional Esquel'),(4, 'Unidad Regional Puerto Madryn'),(5, 'Unidad Regional Trelew'),)
-	FUNCION = ((0, 'Seguridad'),(1, 'Escuela'),)
+	FUNCION = ((0, 'Seguridad'),(1, 'Escuela'),(2,'Administrativa'),(3,'Otro'),)
 
 	jurisdiccion = models.IntegerField(choices = JURISDICCION, validators=[tipo_validacion])
 	funcion = models.IntegerField(choices = FUNCION, validators=[tipo_validacion])
