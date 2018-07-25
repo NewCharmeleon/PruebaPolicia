@@ -45,7 +45,7 @@ def autoridades(request):
 def dependencias(request, id):
 	jurisdiccion = id
 	#dependencias = Dependencia.objects.filter(is_para_portada=True)
-	dependencia = Dependencia.objects.filter(is_para_portada=True, jurisdiccion__in=[jurisdiccion])
+	dependencia = Dependencia.objects.filter(is_para_portada=True, jurisdiccion__in=[jurisdiccion]).order_by('nombre')
 	print ("hay")
 	print(len(dependencia))
 	return render(request,'dependencias.html', {'dependencias':dependencia})
