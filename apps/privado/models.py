@@ -36,7 +36,7 @@ class Publicacion(models.Model):
 	is_publicado = models.BooleanField(default=False)
 	is_archivado = models.BooleanField(default=False)
 	is_para_portada = models.BooleanField(default=False)
-	usuario = models.ForeignKey(User, on_delete = 'CASCADE', default=User)
+	usuario = models.ForeignKey(User, on_delete = 'CASCADE')
 
 	#content = HTMLField()
 	
@@ -173,7 +173,7 @@ class Autoridad(models.Model):
 	is_para_portada = models.BooleanField(default=False)
 	
 	#phone_number = models.CharField(validators=[phone_regex], max_length=17, blank=True)
-	usuario = models.ForeignKey(User, on_delete = 'CASCADE', default=User)
+	usuario = models.ForeignKey(User, on_delete = 'CASCADE')
 	
 	def nombre_completo(self):
 		return '%s %s %s' % (self.nombre, self.segundo_nombre, self.apellido)
@@ -246,7 +246,7 @@ class Dependencia(models.Model):
 	is_para_portada = models.BooleanField(default=False)
 	
 	#phone_number = models.CharField(validators=[phone_regex], max_length=17, blank=True)
-	usuario = models.ForeignKey(User, on_delete = 'CASCADE', default=User)
+	usuario = models.ForeignKey(User, on_delete = 'CASCADE')
 	
 	def Publicar(self):
 		self.fecha_publicacion=timezone.now()
