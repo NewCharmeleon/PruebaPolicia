@@ -50,6 +50,7 @@ urlpatterns = [
     path('autoridad/<int:id>/archivar/',private.archivar_autoridad,name='archivar_autoridad'),
     path('autoridad/<int:id>/portada/',private.enviar_autoridad,name='enviar_autoridad'),
     path('autoridades/publicados/',private.show_autoridades_publicados,name='show_autoridades_publicados'),
+    path('autoridades/no-publicados/',private.show_autoridades_nopublicados,name='show_autoridades_nopublicados'),
     path('autoridades/archivados/',private.show_autoridades_archivados,name='show_autoridades_archivados'),
     path('autoridades/portada/',private.show_autoridades_portada,name='show_autoridades_portada'),
 
@@ -64,6 +65,7 @@ urlpatterns = [
     path('dependencia/<int:id>/archivar/',private.archivar_dependencia,name='archivar_dependencia'),
     path('dependencia/<int:id>/portada/',private.enviar_dependencia,name='enviar_dependencia'),
     path('dependencias/publicados/',private.show_dependencias_publicados,name='show_dependencias_publicados'),
+    path('dependencias/no-publicados/',private.show_dependencias_nopublicados,name='show_dependencias_nopublicados'),
     path('dependencias/archivados/',private.show_dependencias_archivados,name='show_dependencias_archivados'),
     path('dependencias/portada/',private.show_dependencias_portada,name='show_dependencias_portada'),
 
