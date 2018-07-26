@@ -501,7 +501,7 @@ def new_dependencia(request):
 @login_required
 def show_dependencias(request):
 
-	dependencias = Dependencia.objects.filter(is_publicado=false, is_archivado=false, is_para_portada=false).order_by('jurisdiccion')
+	dependencias = Dependencia.objects.filter(is_publicado=False, is_archivado=False, is_para_portada=False).order_by('jurisdiccion')
 	if not len(dependencias):
 		messages.warning(request, "No existen dependencias")
 	else:	
