@@ -319,6 +319,7 @@ def new_autoridad(request):
 
 
 @login_required
+@permission_required('privado.add_autoridad', raise_exception=True)
 def show_autoridades(request):
 
 	autoridades = Autoridad.objects.order_by('cargo')
@@ -508,6 +509,7 @@ def new_dependencia(request):
 
 
 @login_required
+@permission_required('privado.add_dependencia', raise_exception=True)
 def show_dependencias(request):
 
 	dependencias = Dependencia.objects.order_by('jurisdiccion')
