@@ -133,7 +133,7 @@
 		                                            <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false"> <i class="material-icons">&#xe7fb;</i> Autoridades <span class="caret"></span></a>
 		                                            <ul class="dropdown-menu link-acceso">
 		                                                <li>
-		                                                	<a href="{% url 'show_autoridades' %}"> <i class="glyphicon glyphicon-list-alt"></i> Listado  </a>
+		                                                	<a href="{% url 'show_autoridades_nopublicados' %}"> <i class="glyphicon glyphicon-list-alt"></i> No Publicadas  </a>
 		                                                </li>
 		                                                <li>
 		                                                	<a href="{% url 'show_autoridades_publicados' %}"> <i class="glyphicon glyphicon-list-alt"></i> Publicadas  </a>
@@ -155,7 +155,7 @@
 		                                            <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false"><i class="material-icons">&#xe7f1;</i> Dependencias <span class="caret"></span></a>
 		                                            <ul class="dropdown-menu link-acceso">
 		                                                <li>
-		                                                	<a href="{% url 'show_dependencias_ver' %}"> <i class="glyphicon glyphicon-list-alt"></i> Listado  </a>
+		                                                	<a href="{% url 'show_dependencias_nopublicados' %}"> <i class="glyphicon glyphicon-list-alt"></i> No Publicadas  </a>
 		                                                </li>
 		                                                <li>
 		                                                	<a href="{% url 'show_dependencias_publicados' %}"> <i class="glyphicon glyphicon-list-alt"></i> Publicadas  </a>
@@ -183,7 +183,17 @@
 						<hr style="border-top: 3px solid #81BEF7;">
 						<div class="table-bordered table condensed table-hover table-responsive">
 							<table class="table">
-							<caption><h4>Publicaciones Guardadas</h4></caption>
+							<caption><h4>
+								{% if perms.privado.add_publicacion %}
+									Publicaciones Guardadas
+								{% endif %}	
+								{% if perms.privado.add_autoridad %}
+									Autoridades Guardadas
+								{% endif %}
+								{% if perms.privado.add_publicacion %}
+									Dependencias Guardadas
+								{% endif %}	
+							</h4></caption>
 								<thead>
 									<tr>
 										<th>#</th>

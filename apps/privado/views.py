@@ -420,6 +420,15 @@ def archivar_autoridad(request,id):
 
 
 @login_required
+def show_autoridades_nopublicados(request):	
+	autoridades = Autoridad.objects.filter(is_archivado=False,is_publicado=False, is_para_portada=False).order_by('cargo')
+	if not len(autoridades):
+		messages.warning(request, "No existen Autoridades No Publicadas")
+	else:	
+		messages.success(request, "Autoridades obtenidas con exito!!!")
+	return render(request,'show_autoridades_nopublicados.html',{'autoridades':autoridades})
+
+@login_required
 def show_autoridades_archivados(request):	
 	autoridades = Autoridad.objects.filter(fecha_archivado__isnull=False,is_publicado=False).order_by('fecha_archivado')
 	if not len(autoridades):
@@ -430,7 +439,7 @@ def show_autoridades_archivados(request):
 
 @login_required
 def show_autoridades_publicados(request):	
-	autoridades = Autoridad.objects.filter(fecha_publicacion__isnull=False,fecha_archivado__isnull=True).order_by('fecha_publicacion')
+	autoridades = Autoridad.objects.filter(is_publicado=True,is_archivado=False, is_para_portada=False).order_by('fecha_publicacion')
 	if not len(autoridades):
 		messages.warning(request, "No existen Autoridades Publicadas")
 	else:	
@@ -439,7 +448,7 @@ def show_autoridades_publicados(request):
 
 @login_required
 def show_autoridades_portada(request):	
-	autoridades = Autoridad.objects.filter(fecha_publicacion__isnull=False, is_para_portada=True).order_by('fecha_publicacion')
+	autoridades = Autoridad.objects.filter(is_publicado=True, is_para_portada=True).order_by('fecha_publicacion')
 	if not len(autoridades):
 		messages.warning(request, "No existen Autoridades en Portada")
 	else:	
@@ -501,7 +510,7 @@ def new_dependencia(request):
 @login_required
 def show_dependencias(request):
 
-	dependencias = Dependencia.objects.filter(is_publicado=False, is_archivado=False, is_para_portada=False).order_by('jurisdiccion')
+	dependencias = Dependencia.objects.order_by('jurisdiccion')
 	if not len(dependencias):
 		messages.warning(request, "No existen dependencias")
 	else:	
@@ -591,6 +600,14 @@ def despublicar_dependencia(request,id):
 	messages.success(request, "Dependencia despublicada en portada con exito!!!")
 	return HttpResponseRedirect(reverse('show_dependencias_ver'))	
 
+@login_required
+def show_dependencias_nopublicados(request):	
+	dependencias = Dependencia.objects.filter(is_archivado=False,is_publicado=False, is_para_portada=False).order_by('jurisdiccion')
+	if not len(dependencias):
+		messages.warning(request, "No existen Dependencias No Publicadas")
+	else:	
+		messages.success(request, "Dependencias obtenidas con exito!!!")
+	return render(request,'show_dependencias_nopublicados.html',{'dependencias':dependencias})
 
 @login_required
 @permission_required('privado.change_dependencia', raise_exception=True)
@@ -614,7 +631,7 @@ def show_dependencias_archivados(request):
 
 @login_required
 def show_dependencias_publicados(request):	
-	dependencias = Dependencia.objects.filter(fecha_publicacion__isnull=False,fecha_archivado__isnull=True).order_by('fecha_publicacion')
+	dependencias = Dependencia.objects.filter(is_publicado=True,is_archivado=False, is_para_portada=False).order_by('fecha_publicacion')
 	if not len(dependencias):
 		messages.warning(request, "No existen Dependencias Publicadas")
 	else:	
