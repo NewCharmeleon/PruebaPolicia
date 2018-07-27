@@ -9,6 +9,9 @@
 	<link rel="stylesheet" type="text/css" href="{% static 'css/bootstrap.min.css' %}">
 	<script type="text/javascript" src="{% static 'js/jquery-3.3.1.min.js' %}"></script>
 	<script type="text/javascript" src="{% static 'js/bootstrap.min.js' %}"></script>
+	<link rel="stylesheet" type="text/css" href="https://cdn.datatables.net/1.10.19/css/jquery.dataTables.css">
+  
+	<script type="text/javascript" charset="utf8" src="https://cdn.datatables.net/1.10.19/js/jquery.dataTables.js"></script>
 
  
   
@@ -155,31 +158,7 @@
 						</div>
 						<br>
 						<hr style="border-top: 2px solid #81BEF7;">
-	   					<!--<a class="twitter-share-button"
-  							href="https://twitter.com/intent/tweet?text={{publicacion.titulo}}. %20Fuente:{{publicacion.fuente}}.%20Miralo aqui: ">
-							Tweet</a>-->
-						<!--<section class="cid-qUw7Ih0H2g" id="social-buttons3-1z">
-  						<div class="container">
-        					<div class="media-container-row">
-            					<div class="col-md-8 align-center">
-               					 <h2 class="pb-3 mbr-section-title mbr-fonts-style display-2">Compartir
-                				</h2>
-               				 <div>
-                    		<div class="mbr-social-likes">
-                        	<span class="btn btn-social socicon-bg-facebook facebook mx-2" title="Share link on Facebook">
-                            <i class="socicon socicon-facebook"></i>
-                      	 </span>
-                      	  <span class="btn btn-social twitter socicon-bg-twitter mx-2" title="Share link on Twitter">
-                            <i class="socicon socicon-twitter"></i>
-                        </span>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </div>
-</section>	-->
-							<!--<iframe src="https://www.facebook.com/plugins/share_button.php?title={{noticia.titulo}}&href=http%3A%2F%2Flocalhost%3A8000%2Fpublicacion%2F13%2F&layout=button_count&size=small&mobile_iframe=true&width=91&height=20&appId" width="91" height="20" style="border:none;overflow:hidden" scrolling="no" frameborder="0" allowTransparency="true" allow="encrypted-media"></iframe>-->
-						{% if publicacion.is_publicado and not publicacion.is_para_portada %}
+	   					{% if publicacion.is_publicado and not publicacion.is_para_portada %}
 							¿Desea Enviar a la portada la publicacion: {{ publicacion.id}} ?
 							<a href="{% url 'enviar_publicacion' id=publicacion.id %}" class="btn btn-success btn-lg"> <i class="glyphicon glyphicon-trash"></i> Enviar a Portada </a>
 							<a href="{% url 'archivar_publicacion' id=publicacion.id %}" class="btn btn-warning btn-lg"> <i class="glyphicon glyphicon-trash"></i> Archivar </a>
@@ -217,5 +196,10 @@
 
   return t;
 }(document, "script", "twitter-wjs"));</script>	
+<script>
+	$(document).ready( function () {
+    $('#myTable').DataTable();
+} );
+</script>
 		
 </body>

@@ -7,6 +7,10 @@
 	<link rel="stylesheet" type="text/css" href="{% static 'css/bootstrap.min.css' %}">
 	<script type="text/javascript" src="{% static 'js/jquery-3.3.1.min.js' %}"></script>
 	<script type="text/javascript" src="{% static 'js/bootstrap.min.js' %}"></script>
+
+	<link rel="stylesheet" type="text/css" href="https://cdn.datatables.net/1.10.19/css/jquery.dataTables.css">
+  
+	<script type="text/javascript" charset="utf8" src="https://cdn.datatables.net/1.10.19/js/jquery.dataTables.js"></script>
 	<!-- Fin Integracion -->
 </head>
 <body style="background-color: #81BEF7">
@@ -35,7 +39,7 @@
 					</div>
 					<div class="row">
 						<div class="col-md-12">
-							<table class="table table-condensed">
+							<table id="myTable" class="display" style="width:100%">
 								<thead>
 									<tr>
 										<th>#</th>
@@ -46,6 +50,7 @@
 										<th>Fecha de Carga</th>
 										<th>Estado</th>
 										<th>Usuario</th>
+										<th>Acciones</th>
 									</tr>
 								</thead>
 								<tbody>
@@ -96,7 +101,19 @@
 									</tr>	
 									{% endfor %}
 								</tbody>
-								
+								<tfoot>
+						            <tr>
+						                <th>#</th>
+										<th>Nombre</th>
+										<th>Apellido</th>
+										<th>Jerarquia</th>
+										<th>Cargo</th>
+										<th>Fecha de Carga</th>
+										<th>Estado</th>
+										<th>Usuario</th>
+										<th>Acciones</th>
+						            </tr>
+						        </tfoot>    
 							</table>
 							<a href="{% url 'dashboard' %}" class="btn btn-info btn-lg pull-right"> <i class="glyphicon glyphicon-arrow-left"></i> Volver </a>
 						</div>
@@ -106,4 +123,9 @@
 		</div>
 	</div>
 </body>
+<script>
+	$(document).ready( function () {
+    $('#myTable').DataTable();
+} );
+</script>
 </html>
