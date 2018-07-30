@@ -5,8 +5,8 @@
                         <h3>Detalle</h3>
                 </div>
                 <div class="modal-body">
-                        <div class="row">
-                                <div class="col-lg-4">
+                        <div class="row col-md-12" >
+                                <div class="col-md-6">
                                         <label>Jurisdicci&oacute;n: 
                                         {% if dependencia.jurisdiccion == 1 %}
                                                   Jefatura de Policia
@@ -29,26 +29,34 @@
                                              {% else %}
                                                  Seguridad
                                              {% endif %}
-                                        </label>     
+                                        </label>
+                                        <br>     
                                         <label>Nombre:
                                         {{ dependencia.nombre }}
                                         </label>
+                                        <br>
                                         <label>Direcci&oacute;n:
                                         {{dependencia.direccion}}
                                         </label>
+                                        <br>
                                         <label>Ciudad:
                                         {{dependencia.ciudad}}
                                         </label>
+                                        <br>
                                         <label>Telefono:
                                         {{dependencia.telefono}}
                                         </label>
+                                        <br>
+                                        <!--
                                         <label>Email:
                                         {% if dependencia.email == ""%}
                                                 Sin Datos.
                                         {% else %}
                                               {{ dependencia.email }}
-                                        {% endif %} 
-                                        </label>
+                                        {% endif %} APIKEY =
+AIzaSyC8hpzZpXq596T6b7lWhWmUb6Fozc91zVs
+
+                                        </label>-->
                                         <label>Jefe:
                                         {% if dependencia.jefe == " " %}
                                                 Sin Datos.
@@ -56,6 +64,7 @@
                                                 {{dependencia.jefe}}
                                         {% endif %}
                                         </label>
+                                        <br>
                                         <label>SubJefe:
                                         {% if dependencia.subjefe == " " %}
                                                 Sin Datos.
@@ -63,18 +72,19 @@
                                                 {{dependencia.subjefe}}
                                         {% endif %}
                                       </label><br>
-                                        <label>Ubicaci&oacute;n:</label>
-                                        {% if dependencia.ubicacion == "" %}
-                                                <p>Sin Datos.</p>
-                                        {% else %}
-                                                <p>{{dependencia.ubicacion}}</p>
-                                        {% endif %}
-                                        <label>Imagen:</label>
+                                       <label>Imagen:</label>
                                         {% if dependencia.imagen == "" %}
                                                 <p>Sin Datos.</p>
                                         {% else %}
                                                 <p>{{dependencia.imagen}}</p>
                                         {% endif %}
+                                </div>
+                                <div  class="col-md-6">     
+                                        <label>Ubicaci&oacute;n:</label>
+                                        
+                                                <!--<iframe width="600" height="450" frameborder="0" style="border:0" src="https://www.google.com/maps/embed/v1/search?q=Pedro%20Mart%C3%ADnez%20116%2C%20Rawson%2C%20Chubut%2C%20Argentina&key=AIzaSyC8hpzZpXq596T6b7lWhWmUb6Fozc91zVs" allowfullscreen></iframe>-->
+                                                <iframe width="350" height="450" frameborder="0" style="border:0" src="https://www.google.com/maps/embed/v1/search?q={{dependencia.direccion}}{{dependencia.ciudad}}%20Chubut%2C%20Argentina&key=AIzaSyC8hpzZpXq596T6b7lWhWmUb6Fozc91zVs" allowfullscreen></iframe>  
+                                       
 
                                 </div>
                         </div>
