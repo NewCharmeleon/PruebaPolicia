@@ -1,8 +1,9 @@
 <div class="modal-dialog modal-lg">
         <div class="modal-content">
-                <div class="modal-header">
-                        <h2>{{dependencia.nombre}}</h2>
-                        <button type="button" class="close" data-dismiss="modal">x</button>
+                <div class="modal-header" >
+
+                        <h1 class="modal-title col-md-12" style="text-align: center;">{{dependencia.nombre}}
+                        <button type="button" class="close" data-dismiss="modal">x</button></h1>
                         
                 </div>
                 <div class="modal-body">
@@ -23,7 +24,7 @@
                                                   Provincia
                                               {% endif %}
                                         </label>   
-
+                                        <br>
                                         <label><b>Funci&oacute;n :</b>
                                         {% if dependencia.funcion == 1 %}
                                                Escuela
