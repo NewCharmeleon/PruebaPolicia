@@ -1,13 +1,14 @@
 <div class="modal-dialog modal-lg">
         <div class="modal-content">
                 <div class="modal-header">
+                        <h2>{{dependencia.nombre}}</h2>
                         <button type="button" class="close" data-dismiss="modal">x</button>
-                        <h3>Detalle</h3>
+                        
                 </div>
                 <div class="modal-body">
                         <div class="row col-md-12" >
                                 <div class="col-md-6">
-                                        <label>Jurisdicci&oacute;n: 
+                                        <label><b>Jurisdicci&oacute;n:</b> 
                                         {% if dependencia.jurisdiccion == 1 %}
                                                   Jefatura de Policia
                                               {% elif dependencia.jurisdiccion == 2 %}
@@ -23,7 +24,7 @@
                                               {% endif %}
                                         </label>   
 
-                                        <label>Funci&oacute;n :
+                                        <label><b>Funci&oacute;n :</b>
                                         {% if dependencia.funcion == 1 %}
                                                Escuela
                                              {% else %}
@@ -31,19 +32,16 @@
                                              {% endif %}
                                         </label>
                                         <br>     
-                                        <label>Nombre:
-                                        {{ dependencia.nombre }}
-                                        </label>
-                                        <br>
-                                        <label>Direcci&oacute;n:
+                                        
+                                        <label><b>Direcci&oacute;n:</b>
                                         {{dependencia.direccion}}
                                         </label>
                                         <br>
-                                        <label>Ciudad:
+                                        <label><b>Ciudad:</b>
                                         {{dependencia.ciudad}}
                                         </label>
                                         <br>
-                                        <label>Telefono:
+                                        <label><b>Tel&eacute;fono:</b>
                                         {{dependencia.telefono}}
                                         </label>
                                         <br>
@@ -57,33 +55,33 @@
 AIzaSyC8hpzZpXq596T6b7lWhWmUb6Fozc91zVs
 
                                         </label>-->
-                                        <label>Jefe:
-                                        {% if dependencia.jefe == " " %}
-                                                Sin Datos.
-                                        {% else %}
-                                                {{dependencia.jefe}}
+                                        {% if not dependencia.jefe == "" %}
+                                        <label><b>Jefe:</b>
+                                        
+                                                
                                         {% endif %}
                                         </label>
                                         <br>
+                                        <!--
                                         <label>SubJefe:
                                         {% if dependencia.subjefe == " " %}
                                                 Sin Datos.
                                         {% else %}
                                                 {{dependencia.subjefe}}
                                         {% endif %}
-                                      </label><br>
+                                      </label><br>-
                                        <label>Imagen:</label>
                                         {% if dependencia.imagen == "" %}
                                                 <p>Sin Datos.</p>
                                         {% else %}
                                                 <p>{{dependencia.imagen}}</p>
-                                        {% endif %}
+                                        {% endif %}-->
                                 </div>
                                 <div  class="col-md-6">     
-                                        <label>Ubicaci&oacute;n:</label>
+                                        <!--label>Ubicaci&oacute;n:</label-->
                                         
                                                 <!--<iframe width="600" height="450" frameborder="0" style="border:0" src="https://www.google.com/maps/embed/v1/search?q=Pedro%20Mart%C3%ADnez%20116%2C%20Rawson%2C%20Chubut%2C%20Argentina&key=AIzaSyC8hpzZpXq596T6b7lWhWmUb6Fozc91zVs" allowfullscreen></iframe>-->
-                                                <iframe width="350" height="450" frameborder="0" style="border:0" src="https://www.google.com/maps/embed/v1/search?q={{dependencia.direccion}}{{dependencia.ciudad}}%20Chubut%2C%20Argentina&key=AIzaSyC8hpzZpXq596T6b7lWhWmUb6Fozc91zVs" allowfullscreen></iframe>  
+                                                <iframe width="350" height="350" frameborder="0" style="border:0" src="https://www.google.com/maps/embed/v1/search?q={{dependencia.direccion}}{{dependencia.ciudad}}%20Chubut%2C%20Argentina&key=AIzaSyC8hpzZpXq596T6b7lWhWmUb6Fozc91zVs" allowfullscreen></iframe>  
                                        
 
                                 </div>
