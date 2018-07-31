@@ -1,4 +1,3 @@
-
 <!DOCTYPE html>
 {% load staticfiles %}
 <html >
@@ -8,9 +7,9 @@
   <meta name="generator" content="">
   <meta name="viewport" content="width=device-width, initial-scale=1, minimum-scale=1">
   <link rel="shortcut icon" href="{% static 'images/escudo-policiach-102x107.png'%}" type="image/x-icon">
-  <meta name="title" content="{{publicacion.titulo}}">
-  <meta name="description" content="{{publicacion.contenido}}">
-  <title>publicacion</title>
+  <meta name="title" content="{{noticia.titulo}}">
+  <meta name="description" content="{{noticia.contenido}}">
+  <title>noticia</title>
   <link rel="stylesheet" href="{% static 'web/assets/mobirise-icons-bold/mobirise-icons-bold.css'%}">
   <link rel="stylesheet" href="{% static 'web/assets/mobirise-icons/mobirise-icons.css'%}">
   <link rel="stylesheet" href="{% static 'tether/tether.min.css'%}">
@@ -28,6 +27,7 @@
   <link rel="stylesheet" href="{% static 'mobirise/css/mbr-additional.css'%}" type="text/css">
   
   <script src="{% static 'web/assets/jquery/jquery.min.js' %}"></script>
+  <script src="{% static 'bootstrap/js/bootstrap.min.js' %}"></script>
   <script src="{% static 'dropdown/js/script.min.js' %}"></script>
   
   
@@ -48,22 +48,22 @@
         <div class="row justify-content-md-center" >
             <div class="media-content col-md-10" >
                 <h1 class="mbr-section-title align-center mbr-black pb-3 mbr-bold mbr-fonts-style display-1">
-                    {{publicacion.titulo}}
+                    {{noticia.titulo}}
                 </h1>
                 <div class="mbr-text align-center mbr-black pb-3">
                     <p class="mbr-text mbr-fonts-style display-5" style="text-align:justify;">
-                        {{publicacion.intro}}
+                        {{noticia.intro}}
                     </p>
                 </div>
             </div>
             <div class="mbr-figure pt-5">
-                <img src="/media/{{publicacion.imagen}}" alt="" style="width: 60%;">
+                <img src="/media/{{noticia.imagen}}" alt="" style="width: 60%;">
             </div>
-            <div class="mbr-text align-center mbr-black pb-3">
-                    <p class="mbr-text mbr-fonts-style display-5" style="text-indent:50px;text-align:justify;">
-                      {{publicacion.contenido|safe}}
+            <div class="mbr-text align-justify mbr-black pb-3">
+                    <p class="mbr-text mbr-fonts-style display-5" >
+                      {{noticia.contenido|safe}}
                     </p><br>
-                    <p style="text-align:left;">{{publicacion.fecha_creacion}}&nbsp; &nbsp;&nbsp;&nbsp; Publicado por:  {{publicacion.usuario}}</p>
+                    <p style="text-align:left;">{{noticia.fecha_creacion}}&nbsp; &nbsp;&nbsp;&nbsp; Publicado por:  {{noticia.usuario}}</p>
             </div>
         </div>
     </div>    
@@ -72,7 +72,7 @@
   <div class="container">
         <div class="media-container-row">
             <div class="col-md-8 align-center">
-                <h2 class="pb-3 mbr-section-title mbr-fonts-style display-2">Comparte esta publicacion!
+                <h2 class="pb-3 mbr-section-title mbr-fonts-style display-2">Comparte esta noticia!
                 </h2>
                 <div>
                     <div class="mbr-social-likes">
@@ -108,7 +108,7 @@
   
   <script src="{% static 'tether/tether.min.js'%}"></script>
   <script src="{% static 'popper/popper.min.js'%}"></script>
-  <script src="{% static 'bootstrap/js/bootstrap.min.js'%}"></script>
+ 
   <script src="https://connect.facebook.net/en_US/sdk.js#xfbml=1&version=v2.5"></script>
   <script src="https://apis.google.com/js/plusone.js"></script>
   <script src="{% static 'facebook-plugin/facebook-script.js'%}"></script>
@@ -118,7 +118,7 @@
   <script src="{% static 'smoothscroll/smooth-scroll.js'%}"></script>
   <script src="{% static 'vimeoplayer/jquery.mb.vimeo_player.js'%}"></script>
   <script src="{% static 'bootstrapcarouselswipe/bootstrap-carousel-swipe.js'%}"></script>
-  <script src="{% static 'dropdown/js/script.min.js'%}"></script>
+  
   <script src="{% static 'sociallikes/social-likes.js'%}"></script>
   <script src="{% static 'social-feed-plugin/codebird.min.js'%}"></script>
   <script src="{% static 'social-feed-plugin/moment.js'%}"></script>
