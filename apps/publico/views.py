@@ -54,7 +54,9 @@ def dependencia(request, id):
 	return render(request,'dependencia.html', {'dependencia':dependencia})	
 
 def comunidad(request):
-	return render(request,'comunidad.html')
+	videos = Publicacion.objects.filter(is_publicado=True, tipo=2, categoria=2)
+
+	return render(request,'comunidad.html',{'videos':videos})
 
 def historia(request):
 	return render(request,'historia.html')

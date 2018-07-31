@@ -2,7 +2,7 @@
         <div class="modal-content">
                 <div class="modal-header" >
 
-                        <h1 class="modal-title col-md-12" style="text-align: center;">{{dependencia.nombre}}
+                        <h1 class="modal-title col-md-12" style="text-align: center;"><i class="fas fa-building"></i>{{dependencia.nombre}}
                         <button type="button" class="close" data-dismiss="modal">x</button></h1>
                         
                 </div>
@@ -34,15 +34,11 @@
                                         </label>
                                         <br>     
                                         
-                                        <label><b>Direcci&oacute;n:</b>
-                                        {{dependencia.direccion}}
+                                        <label><i class="fas fa-directions"></i>&nbsp;
+                                        {{dependencia.direccion}} - {{dependencia.ciudad}}
                                         </label>
                                         <br>
-                                        <label><b>Ciudad:</b>
-                                        {{dependencia.ciudad}}
-                                        </label>
-                                        <br>
-                                        <label><b>Tel&eacute;fono:</b>
+                                        <label><i class="fas fa-phone"></i>&nbsp;
                                         {{dependencia.telefono}}
                                         </label>
                                         <br>
@@ -52,16 +48,14 @@
                                                 Sin Datos.
                                         {% else %}
                                               {{ dependencia.email }}
-                                        {% endif %} APIKEY =
-AIzaSyC8hpzZpXq596T6b7lWhWmUb6Fozc91zVs
-
+                                        {% endif %} 
                                         </label>-->
-                                        {% if not dependencia.jefe == "" %}
+                                        {% if not dependencia.jefe == " " %}
                                         <label><b>Jefe:</b>
                                         
-                                                
+                                        </label>        
                                         {% endif %}
-                                        </label>
+                                        
                                         <br>
                                         <!--
                                         <label>SubJefe:
@@ -79,10 +73,7 @@ AIzaSyC8hpzZpXq596T6b7lWhWmUb6Fozc91zVs
                                         {% endif %}-->
                                 </div>
                                 <div  class="col-md-6">     
-                                        <!--label>Ubicaci&oacute;n:</label-->
-                                        
-                                                <!--<iframe width="600" height="450" frameborder="0" style="border:0" src="https://www.google.com/maps/embed/v1/search?q=Pedro%20Mart%C3%ADnez%20116%2C%20Rawson%2C%20Chubut%2C%20Argentina&key=AIzaSyC8hpzZpXq596T6b7lWhWmUb6Fozc91zVs" allowfullscreen></iframe>-->
-                                                <iframe width="350" height="350" frameborder="0" style="border:0" src="https://www.google.com/maps/embed/v1/search?q={{dependencia.direccion}}{{dependencia.ciudad}}%20Chubut%2C%20Argentina&key=AIzaSyC8hpzZpXq596T6b7lWhWmUb6Fozc91zVs" allowfullscreen></iframe>  
+                                         <iframe width="350" height="350" frameborder="0" style="border:0" src="https://www.google.com/maps/embed/v1/search?q={{dependencia.direccion}}{{dependencia.ciudad}}%20Chubut%2C%20Argentina&key=AIzaSyC8hpzZpXq596T6b7lWhWmUb6Fozc91zVs" allowfullscreen></iframe>  
                                        
 
                                 </div>

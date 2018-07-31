@@ -44,29 +44,7 @@
     <div class="social-feed-container">
     </div>
 </section>
-<!--
-<section class="header4 cid-qUwi2UC8aF" id="header4-22">
-	<div class="container">
-        <div class="row justify-content-md-center">
-            <div class="media-content col-md-10">
-                <h1 class="mbr-section-title align-center mbr-black pb-3 mbr-bold mbr-fonts-style display-1">
-                    Programa de Radio
-                </h1>
-                <div class="mbr-text align-center mbr-black pb-3">
-                    <p class="mbr-text mbr-fonts-style display-5">
-                        "Ayudanos a Prevenir"
-                    </p>
-                    <p>  Conducido por: Crio. Gral. Retirado Felix Huincalef y  Licenciado Rodrigo Gomez </p >
-	   				<p>Viernes de 20:15 hs. a 21:15 hs.- LU 20 Radio Chubut</p>
-                </div>
-            </div>
-            <div class="mbr-figure pt-5">
-                <img src="/{% static 'img/AyudanosPrograma.jpg' %}" alt="" style="width: 100%;">
-            </div>
-        </div>
-    </div>
-</section>
--->
+<!--Informativo Programa de Radio-->
 <section class="header3 cid-qUwi9x5HiO" id="header3-23">
 	<div class="container">
         <div class="media-container-row">
@@ -90,27 +68,29 @@
         </div>
     </div>
 </section>
-
+<!--Videos para mostrar-->
+{% for video in videos %}
 <section class="header7 cid-qUC3lbVEsU" id="header7-2f">
-	<div class="container">
+  <div class="container">
       <div class="media-container-row">
-			    <div class="media-content align-left" style="text-align:justify; margin-right: 1%;">
-            <h1 class="mbr-section-title mbr-black pb-3 mbr-fonts-style display-1">
-                 Aniversario del 25 de Mayo
-            </h1>
-              <div class="mbr-section-text mbr-black pb-3">
-                <p class="mbr-text mbr-fonts-style display-5">
-                    A la medianoche, la Banda de Música de la Policía del Chubut interpretó el Himno Nacional Argentino -vía el canal 7 provincial- en el aniversario no. 208 de la Revolución de Mayo desde las instalaciones del Instituto Superior de Formación Policial n° 811 de Rawson.
+          <div class="media-content align-left" >
+            <h2 class="mbr-section-title mbr-black pb-1 mbr-fonts-style display-5">
+                 {{video.titulo}}
+            </h2>
+              <div class="mbr-section-text align-justify mbr-black pb-3">
+                <p class="mbr-text mbr-fonts-style display-6">
+                    {{video.contenido}}
                 </p>
               </div>
           </div>
-          <div class="mbr-figure" style="width: 100%;"><iframe src="https://www.facebook.com/plugins/video.php?href=https%3A%2F%2Fwww.facebook.com%2Fprensapoliciachubut%2Fvideos%2F1758801177532850%2F&show_text=0&width=560" width="560" height="308" style="border:none;overflow:hidden" scrolling="no" frameborder="0" allowTransparency="true" allowFullScreen="true"></iframe>
+          <div class="mbr-figure" style="width: 200%; "><iframe class="mbr-embedded-video external-link" src="{{video.url}}" width="1280" height="720" style="border:none;overflow:hidden" scrolling="no" frameborder="0" allowTransparency="true" allowFullScreen="true"></iframe>
           </div>
       </div>
   </div>
+  <!--
   <div class="container">
       <div class="media-container-row">
-		    	<div class="media-content align-left" style="text-align:justify; margin-right: 1%;">
+          <div class="media-content align-left" style="text-align:justify; margin-right: 1%;">
                 <h1 class="mbr-section-title mbr-black pb-3 mbr-fonts-style display-1">
                     Aniversario del 25 de Mayo
                 </h1>
@@ -122,76 +102,16 @@
           </div>
           <div class="mbr-figure" style="width: 100%;"><iframe class="mbr-embedded-video external-link" src="https://www.youtube.com/embed/uNCr7NdOJgw?rel=0&amp;amp;showinfo=0&amp;autoplay=0&amp;loop=0" width="1280" height="720" frameborder="0" allowfullscreen></iframe>
           </div>
-		  </div>
-  </div>
+      </div>
+  </div>-->
+
+
+  
+  
 </section>
-<!--
-<section class="carousel slide cid-qUwihYteHY" data-interval="false" id="slider2-24">
-    <div class="container content-slider">
-        <div class="content-slider-wrap">
-            <div>
-              <div class="mbr-slider slide carousel" data-pause="true" data-keyboard="false" data-ride="false" data-interval="false">
-                <ol class="carousel-indicators">
-                  <li data-app-prevent-settings="" data-target="#slider2-24" class=" active" data-slide-to="0">
-                    
-                  </li>
-                  <li data-app-prevent-settings="" data-target="#slider2-24" data-slide-to="1"><
-                    /li>
-                  <li data-app-prevent-settings="" data-target="#slider2-24" data-slide-to="2">
-                    
-                  </li>
-                </ol><div class="carousel-inner" role="listbox"><div class="carousel-item slider-fullscreen-image active" data-bg-video-slide="false" style="background-image: url({% static 'img/AyudanosPrograma.jpg' %};">
-                  <div class="container container-slide"><div class="image_wrapper">
-                  <div class="mbr-overlay" style="background-color: rgb(178, 204, 210);">
-                    
-                  </div>
-                  <img src="{% static 'img/AyudanosPrograma.jpg' %}">
-                  <div class="carousel-caption justify-content-center">
-                    <div class="col-10 align-center">
-                      <h2 class="mbr-fonts-style display-2">Programa de Radio</h2>
-                      <p class="lead mbr-text mbr-fonts-style display-7">"Ayudanos a Prevenir"</p>
-                    </div>
-                  </div>
-                </div>
-              </div>
-            </div>
-            <div class="carousel-item slider-fullscreen-image" data-bg-video-slide="https://www.youtube.com/watch?v=fwkKc6M60-0">
-              <div class="mbr-overlay">
-              </div>
-              <div class="container container-slide">
-                <div class="image_wrapper">
-                  <img src="{% static 'img/AyudanosPrograma.jpg' %}" style="opacity: 0;">
-                  <div class="carousel-caption justify-content-center">
-                    <div class="col-10 align-center">
-                      <p class="lead mbr-text mbr-fonts-style display-7">Programa de Radio
-                      </p>
-                    </div>
-                  </div>
-                </div>
-              </div>
-            </div>
-            <div class="carousel-item slider-fullscreen-image" data-bg-video-slide="false" style="background-image: url(/media/{{noticia.imagen}});">
-              <div class="container container-slide">
-                <div class="image_wrapper">
-                  <div class="mbr-overlay"></div><img src="{% static 'img/AyudanosPrograma.jpg' %}">
-                    <div class="carousel-caption justify-content-center">   <div class="col-10 align-center">
-                         <p class="lead mbr-text mbr-fonts-style display-7">"Ayudanos a Prevenir"
-                         </p>
-                         <p>  Conducido por: Crio. Gral. Retirado Felix Huincalef y  Licenciado Rodrigo Gomez </p >
-	   					<p>Viernes de 20:15 hs. a 21:15 hs.- LU 20 Radio Chubut</p>
-                       </div>
-                     </div>
-                   </div>
-                 </div>
-               </div>
-             </div>
-             <a data-app-prevent-settings="" class="carousel-control carousel-control-prev" role="button" data-slide="prev" href="#slider2-24"><span aria-hidden="true" class="mbri-left mbr-iconfont"></span><span class="sr-only">Previo</span></a><a data-app-prevent-settings="" class="carousel-control carousel-control-next" role="button" data-slide="next" href="#slider2-24"><span aria-hidden="true" class="mbri-right mbr-iconfont"></span><span class="sr-only">Siguiente</span></a>
-           </div>
-         </div> 
-        </div>
-    </div>
-</section>
--->
+{% endfor %}
+
+
 <section class="mbr-section mbr-section__comments" id="facebook-comments-block-25" data-rv-view="1561" style="background-color: rgb(231, 229, 249); padding-top: 0rem; padding-bottom: 0rem;">
          
     <div class="mbr-section__container mbr-section__container--isolated addons-container">

@@ -42,7 +42,7 @@ class PublicacionForm(ModelForm):
 	titulo = forms.CharField(required=True, max_length=100, widget=forms.TextInput(attrs=dict({'class':'form-control input-lg verifca','placeholder':'Titulo','required':'required', 'style':'text-align: left;'})))
 	contenido = forms.CharField(required=True, widget=forms.Textarea(attrs=dict({'class':'form-control input-lg verifca','placeholder':'Contenido','required':'required', 'style':'text-align:left'})))
 	#contenido = forms.CharField(widget=TinyMCE(attrs={'cols': 80, 'rows': 30}))
-	url = forms.URLField(max_length=150, required=False, widget=forms.TextInput(attrs=dict({'class':'form-control input-lg verifca','placeholder':'Ingrese Url','style':'text-align: left;'})))
+	url = forms.URLField(max_length=200, required=False, widget=forms.TextInput(attrs=dict({'class':'form-control input-lg verifca','placeholder':'Ingrese Url','style':'text-align: left;'})))
 	fuente = forms.CharField(required=False, max_length=150, widget=forms.TextInput(attrs=dict({'class':'form-control input-lg verifca','placeholder':'Ingrese la Fuente','style':'text-align: left;'})))
 	imagen = forms.ImageField(required=False,widget=forms.FileInput(attrs=dict({'id':'uploadImage1', 'type':'file','name':'images[1]','onchange':'previewImage(1);'})))
 	#class="form-control" id="uploadImage1" type="file" name="images[1]" onchange="previewImage(1);"
