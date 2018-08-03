@@ -50,9 +50,9 @@
                                               {{ dependencia.email }}
                                         {% endif %} 
                                         </label>-->
-                                        {% if not dependencia.jefe == " " %}
+                                        {% if dependencia.jefe %}
                                         <label><b>Jefe:</b>
-                                        
+                                          {{dependencia.jefe}}
                                         </label>        
                                         {% endif %}
                                         

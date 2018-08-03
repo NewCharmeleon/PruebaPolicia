@@ -150,7 +150,7 @@ def show_archivados(request):
 
 @login_required
 def show_publicados(request):	
-	publicaciones = Publicacion.objects.filter(fecha_publicacion__isnull=False,fecha_archivado__isnull=True, is_para_portada=False).order_by('-fecha_publicacion')
+	publicaciones = Publicacion.objects.filter(is_publicado=True,fecha_archivado__isnull=True, is_para_portada=False).order_by('-fecha_publicacion')
 	if not len(publicaciones):
 		messages.warning(request, "No existen publicaciones")
 	else:	
