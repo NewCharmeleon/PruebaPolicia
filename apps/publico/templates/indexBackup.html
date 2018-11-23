@@ -1,0 +1,245 @@
+<!DOCTYPE html>
+{% load staticfiles %}
+<html>
+<head>
+  <script id="www-widgetapi-script" src="https://s.ytimg.com/yts/jsbin/www-widgetapi-vfl3m9ZW-/www-widgetapi.js" type="text/javascript" async=""></script>
+  <script id="YTAPI" src="{% static 'ytplayer/iframe_api.js' %}"></script>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1, minimum-scale=1">
+  <link rel="shortcut icon" href="{% static 'images/escudo-policiach-102x107.png' %}"  type="image/x-icon">
+  
+  <meta name="description" content="Policia del Chubut">
+  <title>Inicio</title>
+  <link rel="stylesheet" type="text/css" href="{% static 'social/bootstrap-social.css' %}">
+  <link rel="stylesheet" type="text/css" href="{% static 'web/assets/mobirise-icons-bold/mobirise-icons-bold.css' %}">
+  <link rel="stylesheet" type="text/css" href="{% static 'web/assets/mobirise-icons/mobirise-icons.css' %}">
+  <link rel="stylesheet" type="text/css" href="{% static 'tether/tether.min.css' %}">
+  <link rel="stylesheet" type="text/css" href="{% static 'bootstrap/css/bootstrap.min.css' %}">
+  <link rel="stylesheet" type="text/css" href="{% static 'bootstrap/css/bootstrap-grid.min.css' %}">
+  <link rel="stylesheet" type="text/css" href="{% static 'bootstrap/css/bootstrap-reboot.min.css' %}">
+  <link rel="stylesheet" type="text/css" href="{% static 'dropdown/css/style.css' %}">
+  <link rel="stylesheet" type="text/css" href="{% static 'socicon/css/styles.css' %}">
+  <link rel="stylesheet" type="text/css" href="{% static 'animatecss/animate.min.css' %}">
+  <link rel="stylesheet" type="text/css" href="{% static 'theme/css/style.css' %}">
+  <link rel="stylesheet" type="text/css" href="{% static 'mobirise/css/mbr-additional.css' %}">
+  
+  <!--libs Noticias-->  
+  <link rel="stylesheet" href="{% static 'fontsawesome/css/fontawesome.css' %}">
+  <link rel="stylesheet" href="{% static 'social-feed-plugin/jquery.socialfeed.css' %}">
+  <link rel="stylesheet" href="{% static 'social-feed-plugin/style.css' %}">
+  <link rel="stylesheet" href="{% static 'gallery/style.css' %}">
+  <link rel="stylesheet" href="{% static 'mobirise/css/mbr-additional.css' %}" type="text/css">
+
+  <!--Template Backup-->
+  <!--link rel="stylesheet" href="{% static 'assets/templateBackup.css' %}" type="text/css"-->
+
+  <!--link rel="stylesheet" type="text/css" href="{% static 'visor-carousel/css/jquery.visor-carousel.css' %}"-->
+  
+  <style type="text/css">
+    .visor-carousel,
+    .visor-carousel .visor-wrapper,
+    .visor-carousel .carousel-inner > .item,
+    .visor-carousel .carousel-inner > .item > img {
+      height: 30% !important;
+      /*
+      height: 250px !important;
+      left:-1%;*/
+      margin-top: 5%;
+    }
+    .visor-carousel .carousel-inner > .item > img {
+      position: relative;
+      width: 100% !important;
+      /*margin-left: 8%;*/
+      
+
+    }
+    .carousel {
+    /* position: relative; */
+    margin-top: 11%;
+    background-color: transparent;
+  }
+
+.cid-qNpW2qMbbC .navbar.navbar-short .navbar-brand {
+   
+    width: 50%;
+}
+.cid-qNpW2qMbbC .menu-logo .navbar-brand {
+    
+    margin-left: 18%;
+    
+}
+.cid-qTDoqAYcHm {
+    padding-top: 60px;
+    padding-bottom: 60px;
+    background-color: #11089045;
+}
+.dd-sheet {
+    background: #FFFFFF url('../images/sheet.png') scroll;
+    background: rgba(255, 255, 255, 0.5) url('../images/sheet.png') scroll;
+        background-origin: padding-box;
+    border: 2px solid rgba(42, 80, 152, 0.8);
+        border-right-color: rgba(42, 80, 152, 0.8);
+        border-right-style: solid;
+        border-right-width: 2px;
+        border-left-color: rgba(42, 80, 152, 0.8);
+        border-left-style: solid;
+        border-left-width: 2px;
+    border-left: none;
+    border-right: none;
+    padding: 10px;
+    margin: 10px auto 0;
+    position: relative;
+    cursor: auto;
+    width: 1000px;
+    z-index: auto !important;
+}
+.dd-layout-wrapper {
+    position: relative;
+    margin: 0 auto 0 auto;
+    z-index: auto !important;
+}
+.dd-header::after, #dd-header-bg::after, .dd-layout-cell::after, .dd-layout-wrapper::after, .dd-footer::after, .dd-nav::after, #dd-hmenu-bg::after, .dd-sheet::after, .cleared, .clearfix::after {
+    clear: both;
+    font: 0/0 serif;
+    display: block;
+    content: " ";
+}
+
+.dd-blockheader {
+    /*background: #2A5098;
+    background: -webkit-linear-gradient(top, #213F78 0, #294E94 20%, #294E94 80%, #213F78 100%) no-repeat;
+    background: -moz-linear-gradient(top, #213F78 0, #294E94 20%, #294E94 80%, #213F78 100%) no-repeat;
+    background: -o-linear-gradient(top, #213F78 0, #294E94 20%, #294E94 80%, #213F78 100%) no-repeat;
+    background: -ms-linear-gradient(top, #213F78 0, #294E94 20%, #294E94 80%, #213F78 100%) no-repeat;*/
+    background: linear-gradient(to bottom, #213F78 0, #294E94 20%, #294E94 80%, #213F78 100%) no-repeat;
+    /*-svg-background: linear-gradient(top, #213F78 0, #294E94 20%, #294E94 80%, #213F78 100%) no-repeat;*/
+    border-bottom: 2px solid #FFFFFF;
+    padding: 6px 5px;
+    margin: 0 auto;
+}
+.dd-content-layout {
+    display: table;
+    width: 100%;
+    table-layout: fixed;
+}
+
+.dd-content-layout-row {
+    display: table-row;
+}
+.dd-content-layout .dd-sidebar1 {
+    margin: 0 auto;
+    width: 225px;
+}
+#dd-main {
+    font-size: 13px;
+    font-family: Arial, 'Arial Unicode MS', Helvetica, Sans-Serif;
+    cursor: default;
+}
+.dd-block {
+    margin: 10px;
+}
+.dd-sheet {
+    cursor: auto;
+}
+.dd-layout-cell {
+    display: table-cell;
+    vertical-align: top;
+}
+.dd-blockcontent {
+    background: #FFFFFF;
+    background: rgba(255, 255, 255, 0.5);
+    padding: 5px;
+    margin: 0 auto;
+    color: #303030;
+    font-size: 13px;
+    font-family: Arial, 'Arial Unicode MS', Helvetica, Sans-Serif;
+}
+.dd-content-layout .dd-content {
+
+    margin: 0 auto;
+
+}
+
+.dd-postcontent, .dd-postheadericons, .dd-postfootericons, .dd-blockcontent, ul.dd-vmenu a {
+    text-align: left;
+}
+#vvisit_counter141 {
+    padding: 5px;
+}
+  </style>
+  
+      <!-- Important Owl stylesheet -->
+    <link rel="stylesheet" href="{% static 'owl-carousel/owl.carousel.css' %}">
+     
+    <!-- Default Theme -->
+    <link rel="stylesheet" href="{% static 'owl-carousel/owl.theme.css' %}">
+          
+   
+
+   <script src="{% static 'bootstrap/js/bootstrap.min.js' %}"></script>
+  <script src="{% static 'web/assets/jquery/jquery.min.js' %}"></script>
+  <script src="{% static 'dropdown/js/script.min.js' %}"></script>
+   <!--libreria Visor-->
+   
+  <script type="text/javascript" async src="{% static 'visor-carousel/js/jquery.visor-carousel.js' %}"></script>
+   <!-- Include js plugin -->
+    <script src="{% static 'owl-carousel/owl.carousel.js' %}"></script>
+  
+
+
+</head>
+<body style="background: #262626 url({% static 'img/background.jpeg' %}) top center no-repeat fixed;">
+    {% include 'headerBackup.html' %}
+  
+{% block contenido%}
+       {% include 'bodyBackup.html' %}
+{% endblock contenido %}
+
+{% include 'footerBackup.html' %}
+
+  
+ 
+
+ 
+
+  <script src="{% static 'popper/popper.min.js' %}"></script>
+  <script src="{% static 'tether/tether.min.js' %}"></script>
+  <script src="{% static 'bootstrap/js/bootstrap.min.js' %}"></script>
+  
+  <script src="{% static 'parallax/jarallax.min.js' %}"></script>
+  <script src="{% static 'mbr-switch-arrow/mbr-switch-arrow.js' %}"></script>
+  <script src="{% static 'smoothscroll/smooth-scroll.js' %}"></script>
+  <script src="{% static 'touchswipe/jquery.touch-swipe.min.js' %}"></script>
+  <script src="{% static 'theme/js/script.js' %}"></script>
+ 
+ 
+  <!--libs noticias-->  
+  <script src="{% static 'masonry/masonry.pkgd.min.js' %}"></script>
+  <script src="{% static 'viewportchecker/jquery.viewportchecker.js' %}"></script>
+  
+  <script src="{% static 'imagesloaded/imagesloaded.pkgd.min.js' %}"></script>
+  <script src="{% static 'vimeoplayer/jquery.mb.vimeo_player.js' %}"></script>
+  <script src="{% static 'sociallikes/social-likes.js' %}"></script>
+  <script src="{% static 'bootstrapcarouselswipe/bootstrap-carousel-swipe.js' %}"></script>
+  <script src="{% static 'social-feed-plugin/codebird.min.js' %}"></script>
+  <script src="{% static 'social-feed-plugin/moment.js' %}"></script>
+  <script src="{% static 'social-feed-plugin/en-gb.js' %}"></script>
+  <script src="{% static 'social-feed-plugin/doT.js' %}"></script>
+  <script src="{% static 'social-feed-plugin/jquery.socialfeed.js' %}"></script>
+  <script src="{% static 'social-feed-plugin/main.js' %}"></script>
+  <script src="{% static 'slidervideo/script.js' %}"></script>
+  <script src="{% static 'gallery/player.min.js' %}"></script>
+  <script src="{% static 'gallery/script.js' %}"></script>
+
+
+  <script src="https://www.youtube.com/iframe_api"></script>
+ 
+  <script src="{% static 'mbr-flip-card/mbr-flip-card.js' %}"></script>
+  <script src="{% static 'ytplayer/jquery.mb.ytplayer.min.js' %}"></script>
+
+
+  
+  
+  </body>
+</html>
