@@ -9,15 +9,33 @@ from django.urls import reverse
 # Create your views here.
 
 def home(request):
+	return render(request,'indexBackup.html')
+#Nuevas rutas del Backup de Joomla
 
+def sistemas(request):
+	return render(request,'sistemas.html')
+
+def plataformas(request):
+	return render(request,'plataformas.html')
+
+def descargas(request):
+	return render(request,'descargas.html')
+
+def dependencias(request):
+	return render(request,'dependencias.html')
+
+def correo(request):
+	return render(request,'correo.html')	
 	#noticia=get_object_or_404(Publicacion, id=id)
+	'''
 	noticias = Publicacion.objects.filter(is_para_portada=True, is_publicado=True, tipo=1).order_by('-fecha_creacion')[:10]
 	videos = Publicacion.objects.filter(is_para_portada=True, tipo=2)
 	autoridad = Autoridad.objects.filter(is_para_portada=True, cargo_id__in=[1,2])
-
+	'''
 	
 
-	return render(request,"indexMBR.html",{'nombre':"Adrian", 'noticias' :noticias, 'videos':videos, 'autoridades':autoridad })
+	#return render(request,"indexBackup.html",{'nombre':"Adrian", 'noticias' :noticias, 'videos':videos, 'autoridades':autoridad })
+'''
 def noticias(request):
 
 	noticias = Publicacion.objects.filter(is_publicado=True, tipo=1).order_by('-fecha_creacion')
@@ -64,7 +82,9 @@ def historia(request):
 def escuelas(request):
 	return render(request,'escuelas.html')	
 	#return HttpResponseRedirect(reverse('home',{'noticia':noticia}))	
-"""def publicacion(request):
+'''
+'''
+def publicacion(request):
 
 	if request.method == 'POST':
 		form = PublicacionForm(request.POST)
@@ -76,4 +96,4 @@ def escuelas(request):
 		form = PublicacionForm()
 
 
-	return render(request,"publicacion.html",{'form': form})	"""
+	return render(request,"publicacion.html",{'form': form})'''		
