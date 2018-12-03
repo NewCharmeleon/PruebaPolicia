@@ -31,7 +31,8 @@ urlpatterns = [
     path('sistemas/', public.sistemas, name='sistemas'),
     path('plataformas/', public.plataformas, name='plataformas'),
     path('descargas/', public.descargas, name='descargas'),
-    path('dependencias/', public.dependencias, name='dependencias'),
+    path('dependencias/<int:id>/', public.dependencias, name='dependencias'),
+    path('dependencia/<int:id>/', public.dependencia, name='dependencia'),
     path('correo/', public.correo, name='correo'),
     
     #path('autoridades/', public.autoridades, name='autoridades'),

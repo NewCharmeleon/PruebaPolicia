@@ -42,11 +42,27 @@
                         <!--span class="mbri-home mbr-iconfont mbr-iconfont-btn"></span-->
                         Descargas</a>
                 </li>
-                <li class="nav-item">
-                <a class="nav-link link text-white display-7" href="{% url 'dependencias'%}">
-                        <!--span class="mbri-home mbr-iconfont mbr-iconfont-btn"></span-->
-                        Dependencias</a>
+
+                 <li class="nav-item dropdown">
+                    <a class="nav-link link text-white dropdown-toggle display-7" href="#" data-toggle="dropdown-submenu" aria-expanded="true">
+                        <span class="text-white dropdown-item display-7"></span>
+                            Dependencias</a>
+                       
+                        
+                        
+                        <div class="dropdown-menu">
+                      
+                          <a class="text-white dropdown-item display-7" href="{% url 'dependencias' id=0%}" aria-expanded="false">Jefatura de Policia</a>
+                            <a class="text-white dropdown-item display-7" href="{% url 'dependencias' id=1%}" aria-expanded="false">Unidad Regional Comodoro Rivadavia</a>
+                            <a class="text-white dropdown-item display-7" href="{% url 'dependencias' id=2%}" aria-expanded="false">Unidad Regional Esquel</a>
+                            <a class="text-white dropdown-item display-7" href="{% url 'dependencias' id=3%}" aria-expanded="false">Unidad Regional Puerto Madryn</a>
+                            <a class="text-white dropdown-item display-7" href="{% url 'dependencias' id=4%}" aria-expanded="false">Unidad Regional Trelew</a>
+                         </div>
+                        
+                    
                 </li>
+                <li class="nav-item">
+                
                 <a class="nav-link link text-white display-7" href="{% url 'correo'%}">
                         <!--span class="mbri-home mbr-iconfont mbr-iconfont-btn"></span-->
                         Correo y ChatWeb</a>
