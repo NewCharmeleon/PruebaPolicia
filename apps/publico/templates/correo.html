@@ -1,6 +1,23 @@
 {% extends 'indexBackup.html' %}   
 {% load staticfiles %}
 {% block contenido %}
+<style>
+.dd-layout-cell dd-content {
+    margin: 0 auto;
+    width: 80%;
+    margin-right: 0%;
+}
+.dd-post {
+    background: #FFFFFF;
+    background: rgba(255, 255, 255, 0.3);
+    background-origin: padding-box;
+    padding: 7px;
+    margin-left: 215px;
+    /* margin-right: 40px; */
+    margin-top: -87px;
+    width: 79%;
+}
+</style>
 <section class="engine">
     <a href="#"></a>
 </section>
@@ -57,59 +74,77 @@
     </div>
 </section>
 <div class="dd-sheet clearfix">
-            <div class="dd-layout-wrapper">
-                <div class="dd-content-layout">
-                    <div class="dd-content-layout-row">
-                        <div class="dd-layout-cell dd-sidebar1">
-<div class="dd-block clearfix"><div class="dd-blockheader"><h3 class="t">Correo y Chat</h3></div><div class="dd-blockcontent"><ul class="menu"><li class="item-144"><a href="https://policia.chubut.gov.ar/correo/">Webmail</a></li></ul></div></div>
-
-
-
+    <div class="dd-layout-wrapper">
+        <div class="dd-content-layout">
+            <div class="dd-content-layout-row">
+                <div class="dd-layout-cell dd-sidebar1">
+                    <div class="dd-block clearfix">
+                       <div class="dd-blockheader">
+                           <h3 class="t">Correo y Chat</h3>
                         </div>
+                    <div class="dd-blockcontent">
+                        <ul class="menu">
+                          <li class="item-144">
+                            <a href="https://policia.chubut.gov.ar/correo/">Webmail</a>
+                           </li>
+                       </ul>
 
-                        <div class="dd-layout-cell dd-content">
-<article class="dd-post dd-messages"><div class="dd-postcontent clearfix">
-<div id="system-message-container">
-</div></div></article><script type="text/javascript">
-    function currentvideo(id, title, descr) {
-
-        var xmlhttp;
-        if (window.XMLHttpRequest) {
-            xmlhttp = new XMLHttpRequest();
-        }
-        else {
-            xmlhttp = new ActiveXObject("Microsoft.XMLHTTP");
-        }
-        xmlhttp.onreadystatechange = function()
-        {
-            if (xmlhttp.readyState == 4 && xmlhttp.status == 200) {
-            }
-        }
-        xmlhttp.open("GET", "index.php?option=com_hdflvplayer&task=addview&thumbid=" + id, true);
-        xmlhttp.send();
-        var wndo = new dw_scrollObj('wn', 'lyr1');
-        wndo.setUpScrollbar("dragBar", "track", "v", 1, 1);
-        wndo.setUpScrollControls('scrollbar');
-    }
-</script>
-<div class="item-page"><article class="dd-post"><div class="dd-postcontent clearfix"><div class="dd-article"><h2 style="text-align: center;">Correo Oficial de la Policía de Chubut</h2>
-<p> </p>
-<h4 style="text-align: justify;">Se les recuerda a los usuarios que bajo ningún concepto, los administradores de los sistemas solicitaran el envió de información personal o de acceso a los usuarios, de recibir algún correo electrónico de estas características, se recomienda que sea ignorada la solicitud y reenviada al correo <span id="cloak07252826d51f00e206e9a4192df41b38">Esta dirección de correo electrónico está siendo protegida contra los robots de spam. Necesita tener JavaScript habilitado para poder verlo.</span><script type='text/javascript'>
-        document.getElementById('cloak07252826d51f00e206e9a4192df41b38').innerHTML = '';
-        var prefix = '&#109;a' + 'i&#108;' + '&#116;o';
-        var path = 'hr' + 'ef' + '=';
-        var addy07252826d51f00e206e9a4192df41b38 = 'p&#111;stm&#97;st&#101;r' + '&#64;';
-        addy07252826d51f00e206e9a4192df41b38 = addy07252826d51f00e206e9a4192df41b38 + 'p&#111;l&#105;c&#105;&#97;' + '&#46;' + 'ch&#117;b&#117;t' + '&#46;' + 'g&#111;v' + '&#46;' + '&#97;r';
-        var addy_text07252826d51f00e206e9a4192df41b38 = 'p&#111;stm&#97;st&#101;r' + '&#64;' + 'p&#111;l&#105;c&#105;&#97;' + '&#46;' + 'ch&#117;b&#117;t' + '&#46;' + 'g&#111;v' + '&#46;' + '&#97;r';document.getElementById('cloak07252826d51f00e206e9a4192df41b38').innerHTML += '<a ' + path + '\'' + prefix + ':' + addy07252826d51f00e206e9a4192df41b38 + '\'>'+addy_text07252826d51f00e206e9a4192df41b38+'<\/a>';
-    </script> para su posterior analisis.</h4>
-<p> </p>
-<p> </p></div></div></article></div>
-
-
-                        </div>
-                                            </div>
+                    </div>
                 </div>
+            </div>    
+            <div class="dd-layout-cell dd-content">
+                <article class="dd-post dd-messages" style="display: none;">
+                  <div class="dd-postcontent clearfix">
+                      <div id="system-message-container">
+                      </div>
+                    </div>
+                </article>
+                <script type="text/javascript">
+                    function currentvideo(id, title, descr) {
+
+                        var xmlhttp;
+                        if (window.XMLHttpRequest) {
+                            xmlhttp = new XMLHttpRequest();
+                        }
+                        else {
+                            xmlhttp = new ActiveXObject("Microsoft.XMLHTTP");
+                        }
+                        xmlhttp.onreadystatechange = function()
+                        {
+                            if (xmlhttp.readyState == 4 && xmlhttp.status == 200) {
+                            }
+                        }
+                        xmlhttp.open("GET", "index.php?option=com_hdflvplayer&task=addview&thumbid=" + id, true);
+                        xmlhttp.send();
+                        var wndo = new dw_scrollObj('wn', 'lyr1');
+                        wndo.setUpScrollbar("dragBar", "track", "v", 1, 1);
+                        wndo.setUpScrollControls('scrollbar');
+                    }
+                </script>
+             </div>   
+        <div class="item-page">
+            <article class="dd-post">
+                <div class="dd-postcontent clearfix">
+                    <div class="dd-article"><h2 style="text-align: center;">Correo Oficial de la Policía de Chubut</h2>
+                    <p> </p>
+                    <h4 style="text-align: justify;">Se les recuerda a los usuarios que bajo ningún concepto, los administradores de los sistemas solicitaran el envió de información personal o de acceso a los usuarios, de recibir algún correo electrónico de estas características, se recomienda que sea ignorada la solicitud y reenviada al correo <span id="cloak07252826d51f00e206e9a4192df41b38">Esta dirección de correo electrónico está siendo protegida contra los robots de spam. Necesita tener JavaScript habilitado para poder verlo.</span>
+                    <script type='text/javascript'>
+                          document.getElementById('cloak07252826d51f00e206e9a4192df41b38').innerHTML = '';
+                          var prefix = '&#109;a' + 'i&#108;' + '&#116;o';
+                          var path = 'hr' + 'ef' + '=';
+                          var addy07252826d51f00e206e9a4192df41b38 = 'p&#111;stm&#97;st&#101;r' + '&#64;';
+                          addy07252826d51f00e206e9a4192df41b38 = addy07252826d51f00e206e9a4192df41b38 + 'p&#111;l&#105;c&#105;&#97;' + '&#46;' + 'ch&#117;b&#117;t' + '&#46;' + 'g&#111;v' + '&#46;' + '&#97;r';
+                          var addy_text07252826d51f00e206e9a4192df41b38 = 'p&#111;stm&#97;st&#101;r' + '&#64;' + 'p&#111;l&#105;c&#105;&#97;' + '&#46;' + 'ch&#117;b&#117;t' + '&#46;' + 'g&#111;v' + '&#46;' + '&#97;r';document.getElementById('cloak07252826d51f00e206e9a4192df41b38').innerHTML += '<a ' + path + '\'' + prefix + ':' + addy07252826d51f00e206e9a4192df41b38 + '\'>'+addy_text07252826d51f00e206e9a4192df41b38+'<\/a>';
+                      </script> para su posterior analisis.</h4>
+                      <p> </p>
+                      <p> </p>
+                  </div>
+                </div>
+              </article>
             </div>
+    </div>
+</div>
+                        
 
 <div class="container" style="display: table-row;">
   <div class="Tweet bannerSocial" style="height: 500px;">
@@ -150,9 +185,7 @@
   }(document, 'script', 'facebook-jssdk'));
   </script>
 </div>
-<br><br>
 
-       
 
 
 
