@@ -21,8 +21,20 @@ def plataformas(request):
 def descargas(request):
 	return render(request,'descargas.html')
 
-def dependencias(request):
-	return render(request,'dependencias.html')
+def dependencias(request, id):
+	jurisdiccion = id
+	#dependencias = Dependencia.objects.filter(is_para_portada=True)
+	dependencia = Dependencia.objects.filter(is_publicado=True, jurisdiccion__in=[jurisdiccion]).order_by('nombre')
+	print ("hay")
+	print(len(dependencia))
+	return render(request,'dependencias.html', {'dependencias':dependencia})
+
+def dependencia(request, id):
+	#dependencias = Dependencia.objects.filter(is_para_portada=True)
+	dependencia=get_object_or_404(Dependencia, id=id)
+	print ("hay")
+	#print(len(dependencia))
+	return render(request,'dependencia.html', {'dependencia':dependencia})	
 
 def correo(request):
 	return render(request,'correo.html')	
