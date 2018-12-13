@@ -39,6 +39,26 @@ def dependencia(request, id):
 def correo(request):
 	return render(request,'correo.html')	
 	#noticia=get_object_or_404(Publicacion, id=id)
+
+def sinic_sat(request):
+	return render(request,'sinic_sat.html')
+#Nuevas rutas del Backup de Joomla
+
+def anexos_rrhh(request):
+	return render(request,'anexos-rrhh.html')
+
+def modus_operandis(request):
+	return render(request,'modus_operandis.html')
+
+def vivienda(request):
+	return render(request,'5-vivienda.html')
+
+def finanzas(request):
+	return render(request,'6-finanzas.html')
+#Nuevas rutas del Backup de Joomla
+
+
+
 	'''
 	noticias = Publicacion.objects.filter(is_para_portada=True, is_publicado=True, tipo=1).order_by('-fecha_creacion')[:10]
 	videos = Publicacion.objects.filter(is_para_portada=True, tipo=2)
