@@ -34,7 +34,13 @@ urlpatterns = [
     path('dependencias/<int:id>/', public.dependencias, name='dependencias'),
     path('dependencia/<int:id>/', public.dependencia, name='dependencia'),
     path('correo/', public.correo, name='correo'),
+    path('sinic-sat/', public.sinic_sat, name='sinic-sat'),
+    path('anexos-rrhh/', public.anexos_rrhh, name='anexos_rrhh'),
+    path('modus-operandis/', public.modus_operandis, name='modus_operandis'),
+    path('5-vivienda/', public.vivienda, name='5-vivienda'),
+    path('6-finanzas/', public.finanzas, name='6-finanzas'),
     
+#Nuevas rutas del Backup de Joomla
     #path('autoridades/', public.autoridades, name='autoridades'),
     #path('comunidad/', public.comunidad, name='comunidad'),
     #path('historia/', public.historia, name='historia'),
