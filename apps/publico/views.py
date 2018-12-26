@@ -1,8 +1,10 @@
 from django.shortcuts import render
 from django.http import HttpResponseRedirect
+from django.core.paginator import EmptyPage, PageNotAnInteger, Paginator
 from apps.privado.models import Publicacion
 from apps.privado.models import Autoridad
 from apps.privado.models import Dependencia
+from apps.publico.models import Documento
 from django.shortcuts import render, get_object_or_404, redirect
 from django.urls import reverse
 
@@ -41,20 +43,46 @@ def correo(request):
 	#noticia=get_object_or_404(Publicacion, id=id)
 
 def sinic_sat(request):
-	return render(request,'sinic_sat.html')
+	#form = FileUploadForm()
+	#if request.method == 'POST':
+		#form = FileUploadForm(request.POST,request.FILES)
+		#if form.is_valid():
+			#form.save()
+			#return redirect('sinic_sat')
+	archivos_lista= Documento.objects.filter(file_category__in=[0]).order_by('id')
+	paginator = Paginator(archivos_lista, 5)
+
+	page = request.GET.get('page')
+	archivos = paginator.get_page(page)
+	print ("hay")
+	print(len(archivos))
+	#return render(request,'home.html',{'form':form,'archivos':archivos})
+	return render(request,'sinic_sat.html',{'archivos':archivos})
 #Nuevas rutas del Backup de Joomla
 
 def anexos_rrhh(request):
-	return render(request,'anexos-rrhh.html')
+	#archivos = Documento.objects.filter(file_category__in=[1]).order_by('id')
+	print ("hay")
+	#print(len(archivos))
+	return render(request,'anexos-rrhh.html')#,{'archivos':archivos})
 
 def modus_operandis(request):
-	return render(request,'modus_operandis.html')
+	#archivos = Documento.objects.filter(file_category__in=[2]).order_by('id')
+	print ("hay")
+	#print(len(archivos))
+	return render(request,'modus_operandis.html')#,{'archivos':archivos})
 
 def vivienda(request):
-	return render(request,'5-vivienda.html')
+	#archivos = Documento.objects.filter(file_category__in=[3]).order_by('id')
+	print ("hay")
+	#print(len(archivos))
+	return render(request,'5-vivienda.html')#,{'archivos':archivos})
 
 def finanzas(request):
-	return render(request,'6-finanzas.html')
+	#archivos = Documento.objects.filter(file_category__in=[4]).order_by('id')
+	print ("hay")
+	#print(len(archivos))
+	return render(request,'6-finanzas.html')#,{'archivos':archivos})
 #Nuevas rutas del Backup de Joomla
 
 
