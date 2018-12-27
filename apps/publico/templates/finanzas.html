@@ -1,6 +1,53 @@
 {% extends 'indexBackup.html' %}   
 {% load staticfiles %}
 {% block contenido %}
+<script type="text/javascript" src="http://policia.chubut.gov.ar/components/com_phocadownload/assets/overlib/overlib_mini.js"></script>
+	<style type="text/css"> 
+ #sbox-window.phocadownloadplaywindow   {background-color:#fff;padding:2px} 
+ #sbox-overlay.phocadownloadplayoverlay  {background-color:#000;} 
+ </style>
+	<style type="text/css"> 
+ #sbox-window.phocadownloadpreviewwindow   {background-color:#fff;padding:2px} 
+ #sbox-overlay.phocadownloadpreviewoverlay  {background-color:#000;} 
+ #overDiv {
+    position: absolute !important;
+    visibility: visible;
+    z-index: 1000;
+    top: 624px !important;
+    left: 779px !important;
+    background-image: none;
+
+}
+/*.pagination {
+    display: -ms-flexbox;
+    display: flex ;
+    padding-left: 0 ;
+    list-style: none;
+    border-radius: .25rem;
+    
+}*/
+.pagination .pg-blue .page-item.active .page-link {
+ background-color:#4285f4
+}
+.pagination.pg-blue .page-item.active .page-link:hover {
+ background-color:#4285f4
+}
+.active {
+    background-color: #007bff;
+    color: #dee2e6;
+}
+
+.page-item.disabled .page-link {
+  color: #6c757d;
+  pointer-events: none;
+  cursor: auto;
+  background-color: #fff;
+  border-color: #dee2e6;
+}
+
+
+
+ </style>
 <section class="engine">
     <a href="#"></a>
 </section>
@@ -58,64 +105,141 @@
 </section>
 
 <div class="dd-sheet clearfix">
-            <div class="dd-layout-wrapper">
-                <div class="dd-content-layout">
-                    <div class="dd-content-layout-row">
-                        
-                        <div class="dd-layout-cell dd-content">
-<article class="dd-post dd-messages"><div class="dd-postcontent clearfix">
-<div id="system-message-container">
-</div></div></article><article class="dd-post"><div class="dd-postcontent clearfix"><div id="phoca-dl-category-box" class="pd-category-view"><div class="pd-category"><div class="pdtop"><a title="Categorías" href="/index.php/descargas" ><img src="/media/com_phocadownload/images/up.png" alt="Subir" /></a></div><h3 class="pd-ctitle">Área Finanzas</h3><div class="pd-filebox"><div class="pd-filenamebox"><div class="pd-title">Anexo 1 Asignaciones Familiares</div><div class="pd-filename"><div class="pd-document16" style="background: url('http://policia.chubut.gov.ar/media/com_phocadownload/images/mime/16/icon-document.png') 0 center no-repeat;"><div class="pd-float"><a class="" href="/index.php/descargas/category/6-finanzas?download=18:anexo-1-asignaciones-familiares" >Anexo_I_Asignaciones_Familiares_protegido.docx</a></div></div></div></div>
-<div class="pd-buttons"><div class="pd-button-download"><a class="btn btn-success" href="/index.php/descargas/category/6-finanzas?download=18:anexo-1-asignaciones-familiares" >Descarga</a></div></div><div class="pd-buttons"><div class="pd-button-details"><a class="btn btn-info" 
+    <div class="dd-layout-wrapper">
+        <div class="dd-content-layout">
+            <div class="dd-content-layout-row">
+                
+                <div class="dd-layout-cell dd-content">
+                    
 
-onmouseover="return overlib('&lt;div style=\'text-align:left;padding:5px\'&gt;&lt;div class=\'pd-title\'&gt;Anexo 1 Asignaciones Familiares&lt;/div&gt;&lt;div class=\'pd-filesize-txt\'&gt;Tamaño:&lt;/div&gt;&lt;div class=\'pd-fl-m\'&gt;72.86 kB&lt;/div&gt;&lt;div class=\'pd-date-txt\'&gt;Fecha:&lt;/div&gt;&lt;div class=\'pd-fl-m\'&gt;15 Junio 2017&lt;/div&gt;&lt;/div&gt;', CAPTION, 'Detalles', BELOW, RIGHT, CSSCLASS, TEXTFONTCLASS, 'fontPhocaPDClass', FGCLASS, 'fgPhocaPDClass', BGCLASS, 'bgPhocaPDClass', CAPTIONFONTCLASS,'capfontPhocaPDClass', CLOSEFONTCLASS, 'capfontclosePhocaPDClass', STICKY, MOUSEOFF, CLOSETEXT, 'Cerrar');" onmouseout="return nd();"
- href="#">Detalles</a></div></div><div class="pd-cb"></div></div><div class="pd-filebox"><div class="pd-filenamebox"><div class="pd-title">Anexo VI Ayuda escolar</div><div class="pd-filename"><div class="pd-document16" style="background: url('http://policia.chubut.gov.ar/media/com_phocadownload/images/mime/16/icon-document.png') 0 center no-repeat;"><div class="pd-float"><a class="" href="/index.php/descargas/category/6-finanzas?download=19:anexo-vi-ayuda-escolar" >Anexo_VI_Ayuda_escolar_protegido.docx</a></div></div></div></div>
-<div class="pd-buttons"><div class="pd-button-download"><a class="btn btn-success" href="/index.php/descargas/category/6-finanzas?download=19:anexo-vi-ayuda-escolar" >Descarga</a></div></div><div class="pd-buttons"><div class="pd-button-details"><a class="btn btn-info" 
-
-onmouseover="return overlib('&lt;div style=\'text-align:left;padding:5px\'&gt;&lt;div class=\'pd-title\'&gt;Anexo VI Ayuda escolar&lt;/div&gt;&lt;div class=\'pd-filesize-txt\'&gt;Tamaño:&lt;/div&gt;&lt;div class=\'pd-fl-m\'&gt;41.41 kB&lt;/div&gt;&lt;div class=\'pd-date-txt\'&gt;Fecha:&lt;/div&gt;&lt;div class=\'pd-fl-m\'&gt;15 Junio 2017&lt;/div&gt;&lt;/div&gt;', CAPTION, 'Detalles', BELOW, RIGHT, CSSCLASS, TEXTFONTCLASS, 'fontPhocaPDClass', FGCLASS, 'fgPhocaPDClass', BGCLASS, 'bgPhocaPDClass', CAPTIONFONTCLASS,'capfontPhocaPDClass', CLOSEFONTCLASS, 'capfontclosePhocaPDClass', STICKY, MOUSEOFF, CLOSETEXT, 'Cerrar');" onmouseout="return nd();"
- href="#">Detalles</a></div></div><div class="pd-cb"></div></div><div class="pd-filebox"><div class="pd-filenamebox"><div class="pd-title">Instructivo de Asignaciones Familiares</div><div class="pd-filename"><div class="pd-document16" style="background: url('http://policia.chubut.gov.ar/media/com_phocadownload/images/mime/16/icon-pdf.png') 0 center no-repeat;"><div class="pd-float"><a class="" href="/index.php/descargas/category/6-finanzas?download=22:instructivo-asignaciones-familiares" >INSTRUCTIVO ASIGN FLIARES.pdf</a></div></div></div></div>
-<div class="pd-buttons"><div class="pd-button-download"><a class="btn btn-success" href="/index.php/descargas/category/6-finanzas?download=22:instructivo-asignaciones-familiares" >Descarga</a></div></div><div class="pd-buttons"><div class="pd-button-details"><a class="btn btn-info" 
-
-onmouseover="return overlib('&lt;div style=\'text-align:left;padding:5px\'&gt;&lt;div class=\'pd-title\'&gt;Instructivo de Asignaciones Familiares&lt;/div&gt;&lt;div class=\'pd-filesize-txt\'&gt;Tamaño:&lt;/div&gt;&lt;div class=\'pd-fl-m\'&gt;284.37 kB&lt;/div&gt;&lt;div class=\'pd-date-txt\'&gt;Fecha:&lt;/div&gt;&lt;div class=\'pd-fl-m\'&gt;26 Septiembre 2017&lt;/div&gt;&lt;/div&gt;', CAPTION, 'Detalles', BELOW, RIGHT, CSSCLASS, TEXTFONTCLASS, 'fontPhocaPDClass', FGCLASS, 'fgPhocaPDClass', BGCLASS, 'bgPhocaPDClass', CAPTIONFONTCLASS,'capfontPhocaPDClass', CLOSEFONTCLASS, 'capfontclosePhocaPDClass', STICKY, MOUSEOFF, CLOSETEXT, 'Cerrar');" onmouseout="return nd();"
- href="#">Detalles</a></div></div><div class="pd-cb"></div></div><form action="http://policia.chubut.gov.ar/index.php/descargas/category/6-finanzas" method="post" name="adminForm">
-<div class="pd-cb">&nbsp;</div><div class="pgcenter"><div class="pagination"><div class="pginline">Ordering&nbsp;<select id="fileordering" name="fileordering" class="inputbox" size="1" onchange="this.form.submit()">
-	<option value="1" selected="selected">&Oacute;rden Ascendente</option>
-	<option value="2">&Oacute;rden Descendente</option>
-	<option value="3">T&iacute;tulo Ascendente</option>
-	<option value="4">T&iacute;tulo Descendente</option>
-	<option value="5">Fecha Ascendente</option>
-	<option value="6">Fecha Descendente</option>
-	<option value="11">Filename Ascending</option>
-	<option value="12">Filename Descending</option>
-	<option value="15">Rating Count Ascending</option>
-	<option value="16">Rating Count Descending</option>
-	<option value="13">Rating Ascending</option>
-	<option value="14">Rating Descending</option>
-	<option value="9">Downloads Ascending</option>
-	<option value="10">Downloads Descending</option>
-</select>
- &nbsp;Cantidad de ítems por página&nbsp;<select id="limit" name="limit" class="inputbox input-mini" size="1" onchange="this.form.submit()">
-	<option value="5">5</option>
-	<option value="10">10</option>
-	<option value="15">15</option>
-	<option value="20" selected="selected">20</option>
-	<option value="50">50</option>
-	<option value="0">Todo</option>
-</select>
- &nbsp;</div><div style="margin:0 10px 0 10px;display:inline;" class="sectiontablefooter" id="pg-pagination" ></div></div></div>
-<input type="hidden" name="f4d952342f33cb2d471dc5c19d4467e9" value="1" /></form></div></div><div class="pd-cb">&nbsp;</div><div style="text-align:right;">Powered by <a href="http://www.phoca.cz/phocadownload" target="_blank" title="Phoca Download">Phoca Download</a></div></div></article>
-
-
-                        </div>
+                    <article class="dd-post">
+                        <div class="dd-postcontent clearfix">
+                        <div id="phoca-dl-category-box" class="pd-category-view">
+                            <div class="pd-category">
+                                <div class="pdtop">
+                                    <a title="Categorías" href="{% url 'descargas' %}" >
+                                        <img src="/media/com_phocadownload/images/up.png" alt="Subir" style="width: 16px;height: 16px;"/></a>
+                                    </div>
+                                    <h3 class="pd-ctitle">Área Finanzas</h3>
+                                    {% for archivo in archivos %}
+                                    <div class="pd-filebox">
+                                        <div class="pd-filenamebox">
+                                            <div class="pd-title">{{archivo.file_name}}</div>
+                                            <div class="pd-filename">
+                                                <div class="pd-document16" style="background: url('/media/{{archivo.file_logo}}') 0 center no-repeat;">
+                                                    <div class="pd-float">
+                                                        <p class="" >Tipo de Archivo</p>
+                                                    </div>
+                                                </div>
                                             </div>
+                                        </div>
+                                        <div class="pd-buttons">
+                                            <div class="pd-button-download">
+                                                <a class="btn btn-success" href="/media{{archivo.file_upload}}" >Descarga</a>
+                                            </div>
+                                        </div>
+                                        <div class="pd-buttons">
+                                            <div class="pd-button-details">
+                                                <a class="btn btn-info" onmouseover="return overlib('&lt;div style=\'text-align:left;padding:30px;\'&gt;&lt;div class=\'pd-title\'&gt;{{archivo.file_description}}&lt;div class=\'pd-filesize-txt\'&gt;', CAPTION, 'Detalles', BELOW, RIGHT, CSSCLASS, TEXTFONTCLASS, 'fontPhocaPDClass', FGCLASS, 'fgPhocaPDClass', BGCLASS, 'bgPhocaPDClass', CAPTIONFONTCLASS,'capfontPhocaPDClass', CLOSEFONTCLASS, 'capfontclosePhocaPDClass', STICKY, MOUSEOFF, CLOSETEXT, 'Cerrar');" onmouseout="return nd();"
+                                        href="#">Detalles</a>
+                                        </div>
+                                    </div>
+                                    <div class="pd-cb"></div>
+                                    </div>
+                                    {% endfor %}
+
+                                    {% if archivos.has_other_pages %}
+                                    <ul class="pagination pg-blue">
+                                        
+                                            {% if archivos.has_previous %}
+                                                
+                                                <li><a class="page-link" href="?page={{ archivos.previous_page_number }}">Previa</a></li>
+                                                {% else %}
+                                                <li class="disabled page-link"><span>Previa</span></li>
+                                            {% endif %}
+                                            {% for i in archivos.paginator.page_range %}
+                                                {% if archivos.number == i %}
+                                                <li class="active page-link"><span>{{ i }} <span class="sr-only">(current)</span></span></li>
+                                                {% else %}
+                                                <li><a class="page-link" class="page-link" href="?page={{ i }}">{{ i }}</a></li>
+                                                {% endif %}
+                                            {% endfor %}
+                                            {% if archivos.has_next %}
+                                                <li><a class="page-link" href="?page={{ archivos.next_page_number }}">Siguiente</a></li>
+                                                
+                                                {% else %}
+                                                    <li class="disabled page-link"><span>Volver</span></li>
+                                            {% endif %}
+                                            <hr>
+                                            <span class="current">
+                                                    
+                                                P&aacute;gina {{ archivos.number }} de {{ archivos.paginator.num_pages }}
+                                                
+                                            </span>
+                                            <hr>
+                                            
+                                        
+                                        
+                                        </ul>
+                                    {% endif %}
+
+                                    <!--table class="table">
+                                            <thead>
+                                                <tr>
+                                                    <th>
+                                                        #
+                                                    </th>
+                                                    <th>
+                                                        Descripcion
+                                                    </th>
+                                                    <th>
+                                                        link
+                                                    </th>
+                                                </tr>
+                                            </thead>
+                                            <tbody>
+                                                {% for archivo in archivos %}
+                                                    <tr>
+                                                        <td>{{archivo.id}}</td>
+                                                        <td>{{archivo.file_description}}</td>
+                                                        <td><a target="__blank" href="/media/{{archivo.file_upload}}">descargar</a></td>
+                                                    </tr>
+                                                {% endfor %}
+                                            </tbody>
+                                        </table-->
+
+                                    
+                                    <!--form action="{% url 'sinic-sat' %}" method="post" name="adminForm">
+                                        <div class="pd-cb">&nbsp;
+
+                                        </div>
+                                        <div class="pgcenter">
+                                            <div class="pagination">
+                                                <div class="pginline">Cantidad de ítems por página&nbsp;
+                                                    <select id="limit" name="limit" class="inputbox input-mini" size="1" onchange="this.form.submit()">
+                                                        <option value="5">5</option>
+                                                        <option value="10">10</option>
+                                                        <option value="15">15</option>
+                                                        <option value="20" selected="selected">20</option>
+                                                        <option value="50">50</option>
+                                                        <option value="0">Todo</option>
+                                                    </select>
+                                        &nbsp;
+                                        </div>
+                                        <div style="margin:0 10px 0 10px;display:inline;" class="sectiontablefooter" id="pg-pagination" >
+                                        </div>
+                                    </div>
+                                    </div>
+                                    <input type="hidden" name="3a37158bb2db2126f730bb5eb0eff92e" value="1" />
+                                    </form-->
+                                </div>
+                            </div>
+                        </div>
+                     </article>
                 </div>
             </div>
-
-
-
-
-
-
+        </div>
+       
 
 <div class="dd-content-layout">
     <div class="dd-content-layout-row banner">

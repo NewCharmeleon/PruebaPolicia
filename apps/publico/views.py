@@ -61,28 +61,72 @@ def sinic_sat(request):
 #Nuevas rutas del Backup de Joomla
 
 def anexos_rrhh(request):
-	#archivos = Documento.objects.filter(file_category__in=[1]).order_by('id')
+	#form = FileUploadForm()
+	#if request.method == 'POST':
+		#form = FileUploadForm(request.POST,request.FILES)
+		#if form.is_valid():
+			#form.save()
+			#return redirect('sinic_sat')
+	archivos_lista= Documento.objects.filter(file_category__in=[1]).order_by('id')
+	paginator = Paginator(archivos_lista, 5)
+
+	page = request.GET.get('page')
+	archivos = paginator.get_page(page)
 	print ("hay")
-	#print(len(archivos))
-	return render(request,'anexos-rrhh.html')#,{'archivos':archivos})
+	print(len(archivos))
+	#return render(request,'home.html',{'form':form,'archivos':archivos})
+	return render(request,'anexos-rrhh.html',{'archivos':archivos})
 
 def modus_operandis(request):
-	#archivos = Documento.objects.filter(file_category__in=[2]).order_by('id')
+	#form = FileUploadForm()
+	#if request.method == 'POST':
+		#form = FileUploadForm(request.POST,request.FILES)
+		#if form.is_valid():
+			#form.save()
+			#return redirect('sinic_sat')
+	archivos_lista= Documento.objects.filter(file_category__in=[2]).order_by('id')
+	paginator = Paginator(archivos_lista, 5)
+
+	page = request.GET.get('page')
+	archivos = paginator.get_page(page)
 	print ("hay")
-	#print(len(archivos))
-	return render(request,'modus_operandis.html')#,{'archivos':archivos})
+	print(len(archivos))
+	#return render(request,'home.html',{'form':form,'archivos':archivos})
+	return render(request,'modus_operandis.html',{'archivos':archivos})
 
 def vivienda(request):
-	#archivos = Documento.objects.filter(file_category__in=[3]).order_by('id')
+	#form = FileUploadForm()
+	#if request.method == 'POST':
+		#form = FileUploadForm(request.POST,request.FILES)
+		#if form.is_valid():
+			#form.save()
+			#return redirect('sinic_sat')
+	archivos_lista= Documento.objects.filter(file_category__in=[3]).order_by('id')
+	paginator = Paginator(archivos_lista, 5)
+
+	page = request.GET.get('page')
+	archivos = paginator.get_page(page)
 	print ("hay")
-	#print(len(archivos))
-	return render(request,'5-vivienda.html')#,{'archivos':archivos})
+	print(len(archivos))
+	#return render(request,'home.html',{'form':form,'archivos':archivos})
+	return render(request,'vivienda.html',{'archivos':archivos})
 
 def finanzas(request):
-	#archivos = Documento.objects.filter(file_category__in=[4]).order_by('id')
+	#form = FileUploadForm()
+	#if request.method == 'POST':
+		#form = FileUploadForm(request.POST,request.FILES)
+		#if form.is_valid():
+			#form.save()
+			#return redirect('sinic_sat')
+	archivos_lista= Documento.objects.filter(file_category__in=[4]).order_by('id')
+	paginator = Paginator(archivos_lista, 5)
+
+	page = request.GET.get('page')
+	archivos = paginator.get_page(page)
 	print ("hay")
-	#print(len(archivos))
-	return render(request,'6-finanzas.html')#,{'archivos':archivos})
+	print(len(archivos))
+	#return render(request,'home.html',{'form':form,'archivos':archivos})
+	return render(request,'finanzas.html',{'archivos':archivos})
 #Nuevas rutas del Backup de Joomla
 
 
