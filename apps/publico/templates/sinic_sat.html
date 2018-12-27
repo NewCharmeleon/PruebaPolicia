@@ -117,7 +117,7 @@
                         <div id="phoca-dl-category-box" class="pd-category-view">
                             <div class="pd-category">
                                 <div class="pdtop">
-                                    <a title="Categorías" href="{% url 'sinic-sat' %}" >
+                                    <a title="Categorías" href="{% url 'descargas' %}" >
                                         <img src="/media/com_phocadownload/images/up.png" alt="Subir" style="width: 16px;height: 16px;"/></a>
                                     </div>
                                     <h3 class="pd-ctitle">SINIC-SAT</h3>
@@ -135,12 +135,12 @@
                                         </div>
                                         <div class="pd-buttons">
                                             <div class="pd-button-download">
-                                                <a class="btn btn-success" href="/media/{{archivo.file_upload}}" >Descarga</a>
+                                                <a class="btn btn-success" href="/media{{archivo.file_upload}}" >Descarga</a>
                                             </div>
                                         </div>
                                         <div class="pd-buttons">
                                             <div class="pd-button-details">
-                                                <a class="btn btn-info" onmouseover="return overlib('&lt;div style=\'text-align:left;padding:5px;\'&gt;&lt;div class=\'pd-title\'&gt;{{archivo.file_description}};&lt;div class=\'pd-filesize-txt\'&gt;', CAPTION, 'Detalles', BELOW, RIGHT, CSSCLASS, TEXTFONTCLASS, 'fontPhocaPDClass', FGCLASS, 'fgPhocaPDClass', BGCLASS, 'bgPhocaPDClass', CAPTIONFONTCLASS,'capfontPhocaPDClass', CLOSEFONTCLASS, 'capfontclosePhocaPDClass', STICKY, MOUSEOFF, CLOSETEXT, 'Cerrar');" onmouseout="return nd();"
+                                                <a class="btn btn-info" onmouseover="return overlib('&lt;div style=\'text-align:left;padding:30px;\'&gt;&lt;div class=\'pd-title\'&gt;{{archivo.file_description}}&lt;div class=\'pd-filesize-txt\'&gt', CAPTION, 'Detalles', BELOW, RIGHT, CSSCLASS, TEXTFONTCLASS, 'fontPhocaPDClass', FGCLASS, 'fgPhocaPDClass', BGCLASS, 'bgPhocaPDClass', CAPTIONFONTCLASS,'capfontPhocaPDClass', CLOSEFONTCLASS, 'capfontclosePhocaPDClass', STICKY, MOUSEOFF, CLOSETEXT, 'Cerrar');" onmouseout="return nd();"
                                         href="#">Detalles</a>
                                         </div>
                                     </div>
