@@ -25,7 +25,7 @@ from django.conf.urls import include
 
 urlpatterns = [
     #path('tinymce/', include('tinymce.urls')),
-    #path('admin/', admin.site.urls),
+    path('admin/', admin.site.urls),
     path('', public.home,name='home'),
 
     path('sistemas/', public.sistemas, name='sistemas'),
