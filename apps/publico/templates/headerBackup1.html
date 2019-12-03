@@ -1,0 +1,75 @@
+{% load staticfiles %}
+<!--Header-->
+<section class="menu cid-qNpW2qMbbC" once="menu" id="menu1-e">
+	<nav class="navbar navbar-expand beta-menu navbar-dropdown align-items-center navbar-fixed-top navbar-toggleable-sm bg-color transparent">
+        <button class="navbar-toggler navbar-toggler-right" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+            <div class="hamburger">
+                <span></span>
+                <span></span>
+                <span></span>
+                <span></span>
+            </div>
+        </button>
+        <div class="menu-logo">
+            <div class="navbar-brand">
+                <span class="navbar-logo">
+                    <a href="/">
+                         <img src="/static/images/escudo-policiach-102x107.png" alt="Escudo de Policia" title="Escudo de Policia del Chubut" style="height: 4.6rem;">
+                    </a>
+                </span>
+                <span class="navbar-caption-wrap"><a class="navbar-caption text-white display-4" href="http://www.policia.chubut.gov.ar:8003" class="external_link">Policia del Chubut &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;&nbsp;</a></span>
+            </div>
+        </div>
+        <div class="collapse navbar-collapse" id="navbarSupportedContent">
+            <ul class="navbar-nav nav-dropdown nav-right" data-app-modern-menu="true">
+            	<li class="nav-item">
+                <a class="nav-link link text-white display-7" href="/">
+                        <!--span class="mbri-home mbr-iconfont mbr-iconfont-btn"></span-->
+                        Inicio</a>
+                </li>
+                <li class="nav-item">
+                <a class="nav-link link text-white display-7" href="{% url 'sistemas'%}">
+                        <!--span class="mbri-home mbr-iconfont mbr-iconfont-btn"></span-->
+                        Sistemas</a>
+                </li>
+                <li class="nav-item">
+                <a class="nav-link link text-white display-7" href="{% url 'plataformas'%}">
+                        <!--span class="mbri-home mbr-iconfont mbr-iconfont-btn"></span-->
+                        Plataformas e Ingresos</a>
+                </li>
+                <li class="nav-item">
+                <a class="nav-link link text-white display-7" href="{% url 'descargas'%}">
+                        <!--span class="mbri-home mbr-iconfont mbr-iconfont-btn"></span-->
+                        Descargas</a>
+                </li>
+
+                 <li class="nav-item dropdown">
+                    <a class="nav-link link text-white dropdown-toggle display-7" href="#" data-toggle="dropdown-submenu" aria-expanded="true">
+                        <span class="text-white dropdown-item display-7"></span>
+                            Dependencias</a>
+                       
+                        
+                        
+                        <div class="dropdown-menu">
+                      
+                          <a class="text-white dropdown-item display-7" href="{% url 'dependencias' id=1%}" aria-expanded="false">Jefatura de Policia</a>
+                            <a class="text-white dropdown-item display-7" href="{% url 'dependencias' id=2%}" aria-expanded="false">Unidad Regional Comodoro Rivadavia</a>
+                            <a class="text-white dropdown-item display-7" href="{% url 'dependencias' id=3%}" aria-expanded="false">Unidad Regional Esquel</a>
+                            <a class="text-white dropdown-item display-7" href="{% url 'dependencias' id=4%}" aria-expanded="false">Unidad Regional Puerto Madryn</a>
+                            <a class="text-white dropdown-item display-7" href="{% url 'dependencias' id=5%}" aria-expanded="false">Unidad Regional Trelew</a>
+                         </div>
+                        
+                    
+                </li>
+                <li class="nav-item">
+                
+                <a class="nav-link link text-white display-7" href="{% url 'correo'%}">
+                        <!--span class="mbri-home mbr-iconfont mbr-iconfont-btn"></span-->
+                        Correo y ChatWeb</a>
+                </li>
+               
+            </ul>
+        </div>
+    </nav>
+
+</section>
