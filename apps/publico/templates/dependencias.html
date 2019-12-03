@@ -22,7 +22,8 @@
   <link rel="stylesheet" href="{% static 'animatecss/animate.min.css'%}">
   <link rel="stylesheet" href="{% static 'theme/css/style.css'%}">
   <link rel="stylesheet" href="{% static 'mobirise/css/mbr-additional.css'%}" type="text/css">
-  <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.2.0/css/all.css" integrity="sha384-hWVjflwFxL6sNzntih27bfxkr27PmbbK/iSvJ+a4+0owXq79v+lsFkW54bOGbiDQ" crossorigin="anonymous">
+  <link rel="stylesheet" href="{% static 'css/all.css'%}" type="text/css">
+  <!--link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.2.0/css/all.css" integrity="sha384-hWVjflwFxL6sNzntih27bfxkr27PmbbK/iSvJ+a4+0owXq79v+lsFkW54bOGbiDQ" crossorigin="anonymous"-->
 
   <script src="{% static 'web/assets/jquery/jquery.min.js' %}"></script>
   <script src="{% static 'bootstrap/js/bootstrap.min.js' %}"></script>
@@ -30,15 +31,14 @@
   <script src="{% static 'datatables/jquery.data-tables.min.js'%}"></script>
   <script src="{% static 'datatables/data-tables.bootstrap4.min.js'%}"></script>
   <style>
-    .dropdown-menu{
-  background-color: #2b82bc !important;
-    display: block;
-    align-items: left;
-    justify-content: left;
-    /*color:green !important;*/
-    /*padding: 0.7rem 0 !important;*/
-    /*margin: 0rem .65rem !important;*/
+  .cid-qNpW2qMbbC .navbar {
+    padding: .5rem 0;
+    background: #1a0fb6;
+    transition: none;
+    min-height: 77px;
+    margin-right: 57px;
 }
+
 .cid-qNpW2qMbbC .navbar.navbar-short .navbar-brand {
    
     width: 50%;
@@ -47,12 +47,64 @@
     
     margin-left: 12%;
     
+}.cid-qNpW2qMbbC .menu-logo {
+    flex-shrink: 0;
+    /*width: 42%;*/
+    margin-right: -10%;
 }
+/*.cid-qNpW2qMbbC .menu-logo .navbar-brand {
+    margin-left: 71%;
+    width: 49%;
+}*/
+.cid-qNpW2qMbbC .navbar-toggleable-sm .navbar-collapse {
+    justify-content: flex-end;
+    -webkit-justify-content: flex-end;
+    padding-right: 2rem;
+    width: -16%;
+    margin-left: -15%;
+}
+.cid-qNpW2qMbbC .navbar.navbar-short {
+    min-height: 20px;
+    transition: all .2s;
+}
+.dropdown-menu{
+  background-color: #2b82bc !important;
+    display: block;
+    align-items: left;
+    justify-content: left;
+    /*color:green !important;*/
+    /*padding: 0.7rem 0 !important;*/
+    /*margin: 0rem .65rem !important;*/
+}
+@media screen and (min-width: 768px) and (max-width: 991px)
+{
+   
+    .cid-qNpW2qMbbC .menu-logo {
+    flex-shrink: 0;
+    width: 42%;
+    margin-right: -9% !important;
+    transition: all 0.1s ease-out;
+    }
+    .dropdown{
+     margin-inline-end: 28%;  
+     transition: all 0.1s ease-out; 
+    }
+    .cid-qNpW2qMbbC .dropdown.open > .dropdown-menu {
+    position: relative;
+    opacity: 1;
+    height: auto;
+    padding: 1.4rem 0;
+    visibility: visible;
+    width: 160%;
+    transition: all 0.1s ease-out;
+    
+    }
+    
+   
+}
+
   </style>
-  
-  
-  
-</head>
+ </head>
 <body>
   <header>
   <section class="menu cid-qNpW2qMbbC" once="menu" id="menu1-e">
@@ -69,10 +121,10 @@
             <div class="navbar-brand">
                 <span class="navbar-logo">
                     <a href="/">
-                         <img src="/static/images/escudo-policiach-102x107.png" alt="Escudo de Policia" title="Escudo de Policia del Chubut" style="height: 4.6rem;">
+                         <img src="/static/images/escudo-policiach-102x107.png" alt="Policia del Chubut" title="Escudo de Policia del Chubut" style="height: 4.6rem;">
                     </a>
                 </span>
-                <span class="navbar-caption-wrap"><a class="navbar-caption text-white display-4" href="http://www.policia.chubut.gov.ar:8003" class="external_link">Policia del Chubut &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;&nbsp;</a></span>
+                <span class="navbar-caption-wrap"><a class="navbar-caption text-white display-4" href="http://www.policia.chubut.gov.ar:8003" class="external_link"></a></span>
             </div>
         </div>
         <div class="collapse navbar-collapse" id="navbarSupportedContent">
@@ -92,13 +144,7 @@
                         <!--span class="mbri-home mbr-iconfont mbr-iconfont-btn"></span-->
                         Plataformas e Ingresos</a>
                 </li>
-                <li class="nav-item">
-                <a class="nav-link link text-white display-7" href="{% url 'descargas'%}">
-                        <!--span class="mbri-home mbr-iconfont mbr-iconfont-btn"></span-->
-                        Descargas</a>
-                </li>
-
-                 <li class="nav-item dropdown">
+                <li class="nav-item dropdown">
                     <a class="nav-link link text-white dropdown-toggle display-7" href="#" data-toggle="dropdown-submenu" aria-expanded="true">
                         <span class="text-white dropdown-item display-7"></span>
                             Dependencias</a>
@@ -117,10 +163,17 @@
                     
                 </li>
                 <li class="nav-item">
-                
-                <a class="nav-link link text-white display-7" href="{% url 'correo'%}">
+                <a class="nav-link link text-white display-7" href="{% url 'descargas'%}">
                         <!--span class="mbri-home mbr-iconfont mbr-iconfont-btn"></span-->
-                        Correo y ChatWeb</a>
+                        Descargas</a>
+                </li>
+
+                
+                <li class="nav-item">
+                    <a class="nav-link link text-white display-7" href="https://policia.chubut.gov.ar/correo/" class="external_link">Webmail</a>
+                <!--a class="nav-link link text-white display-7" href="{% url 'correo'%}"-->
+                        <!--span class="mbri-home mbr-iconfont mbr-iconfont-btn"></span>
+                        WebMail</a-->
                 </li>
                
             </ul>
@@ -134,7 +187,7 @@
 
 
 
-<section class="section-table cid-qWmIkCujTP" id="table1-2o" style="padding-top:10%;background-color: #0a3fff9e !important;">
+<div class="section-table cid-qWmIkCujTP"  style="padding-top:10%;background-color: #0a3fff9e !important;">
 
   
   
@@ -158,7 +211,7 @@
            {% endif %}   
        </h2>
       
-      <div class="table-wrapper">
+      <!--div class="table-wrapper">
         <div class="container">
           <div class="row search">
             <div class="col-md-6"></div>
@@ -169,15 +222,16 @@
                 </div>
             </div>
           </div>
-        </div>
+        </div-->
 
         <div class="container scroll">
-          <table class="table isSearch" cellspacing="0">
+          <table class="table isSearch" id="table" cellspacing="0">
             <thead>
               <tr class="table-heads ">
                <th class="head-item mbr-fonts-style display-7">Nombre</th>
                <th class="head-item mbr-fonts-style display-7">Dirección</th>
-               <th class="head-item mbr-fonts-style display-7">Telefono</th>
+               <th class="head-item mbr-fonts-style display-7">Teléfono</th>
+               <th></th>
 
               </tr>
             </thead>
@@ -197,7 +251,7 @@
             </tbody>
           </table>
         </div>
-        <div class="container table-info-container">
+        <!--div class="container table-info-container">
           <div class="row info">
             <div class="col-md-6">
               <div class="dataTables_info mbr-fonts-style display-7">
@@ -213,14 +267,13 @@
           </div>
         </div>
       </div>
-    </div>
+    </div-->
   <div id="popup" class="modal fade" role="dialog">
 
 </div>  
-</section>
-
+<br><br>
 <script>
-  function abrir_modal(url)
+     function abrir_modal(url)
 {
         $('#popup').load(url, function()
         {
@@ -234,14 +287,44 @@ function cerrar_modal()
         $('#popup').modal('hide');
         return false;
 }
+</script>
+</div>
 
+<script>
 $(document).ready(function()
-{
-    var table = $('#tabla').dataTable( {
-        "language": {
+{    
+
+    var table = $('#table').dataTable( {
+        /*"language": {
                 url: "/static/localizacion/es_ES.json"
-        }
-    } );
+        }, */
+        "language": {
+            "decimal": "",
+            "lengthMenu": "Mostrando   _MENU_   dependencias por página",
+            "zeroRecords": "No hay datos para mostrar",
+            "info": "Mostrando página _PAGE_ de _PAGES_",
+            "infoEmpty": "No hay datos disponibles en la búsqueda",
+            "infoFiltered": "(filtradas de un total de _MAX_ Dependencias)",
+            "loadingRecords": "Cargando...",
+            "processing": "Procesando...",
+            "search": "Buscar", 
+            "infoPostFix": "",
+            "thousands": ",",
+            "paginate": {
+                "first": "Primero",
+                "last": "Ultimo",
+                "next": "Siguiente",
+                "previous": "Anterior"
+            }
+        },       
+        "columns": [
+            null,
+            null,    
+            { "orderable": false },
+            { "orderable": false }
+        ]
+        
+    });
 });
 
 

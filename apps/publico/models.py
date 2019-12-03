@@ -26,7 +26,7 @@ class Documento(models.Model):
 	class Meta:
 		db_table = 'publico_documentos'
 
-'''
+
 class Publicacion(models.Model):
 	TIPO = ((1 , 'Articulo'), (2, 'Video'),)
 	JURISDICCION = ((0, 'Provincial'),(1, 'Jefatura de Policia - Rawson'),(2 , 'Unidad Regional Comodoro Rivadavia'), (3, 'Unidad Regional Esquel'),(4, 'Unidad Regional Puerto Madryn'),(5, 'Unidad Regional Trelew'),)
@@ -50,7 +50,7 @@ class Publicacion(models.Model):
 	is_publicado = models.BooleanField(default=False)
 	is_archivado = models.BooleanField(default=False)
 	is_para_portada = models.BooleanField(default=False)
-	usuario = models.ForeignKey(User, on_delete = 'CASCADE')
+	usuario = models.ForeignKey(User, related_name='users',on_delete = 'CASCADE')
 
 	#content = HTMLField()
 	
@@ -100,7 +100,7 @@ class Publicacion(models.Model):
 		self.imagen = InMemoryUploadedFile(output,'ImageField', "%s.jpg" %self.imagen.name.split('.')[0], 'image/jpeg', sys.getsizeof(output), None)
 		self.save()
 		#super(Modify,self).save()
-'''
+
 
 
 

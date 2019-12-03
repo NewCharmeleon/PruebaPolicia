@@ -25,7 +25,7 @@ SECRET_KEY = 'c2hr7a@r00y5)p7-_6w_-bn0!yt2_^%_939r)v7si4ox5f40$r'
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
 
-ALLOWED_HOSTS = ['policia.chubut.gov.ar','www.policia.chubut.gov.ar','192.168.1.112', 'localhost', '127.0.0.1', '192.168.2.192', '192.168.1.168', 'www.policia.chubut.gov.ar:8003']
+ALLOWED_HOSTS = ['policia.chubut.gov.ar','www.policia.chubut.gov.ar', 'localhost', '127.0.0.1', '192.168.2.192', '192.168.1.161' ]
 
 LOGIN_URL = '/login/'
 
@@ -81,9 +81,12 @@ DATABASES = {
     'default': {
         'ENGINE': 'django.db.backends.mysql',
         'NAME': 'pagina',
-	'HOST':'192.168.1.127',
-	'USER':'root',
-	'PASSWORD':'tnt400qw',
+	    'HOST':'192.168.1.127',
+	    'USER':'adrian',
+	    'PASSWORD':'4dri4n2019',
+        'OPTIONS': {
+        'init_command': "SET sql_mode='STRICT_TRANS_TABLES'",
+    },
     }
 }
 

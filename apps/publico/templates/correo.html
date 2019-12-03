@@ -144,10 +144,71 @@
             </div>
     </div>
 </div>
+</div></div>
                         
 
-<div class="container" style="display: table-row;">
-  <div class="Tweet bannerSocial" style="height: 500px;">
+<div class="dd-content-layout">
+    <div class="dd-content-layout-row banner">
+        <div class="dd-layout-cell dd-layout-sidebar-bg col-banner-1 ala-izquierda">
+            <div class="dd-block clearfix">
+                <div class="dd-blockheader">
+                <h3 class="t">Derecho de los Niños</h3>
+                </div>
+                <div class="dd-blockcontent">
+                    <div class="bannergroup">
+                        <div class="banner">      
+                            <a href="http://elarca.org.ar/derechos-del-nino/" class="external_link" target="_blank"  title="Derechos del Niño">
+                              <img src="{% static 'img/Derechos-del-nio-El-Arca.jpg' %}" alt="Derechos del niño" width="200" height="100">
+                            </a>
+                            <div class="clr"></div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="dd-layout-cell dd-layout-sidebar-bg col-banner-2 ala-derecha">
+            <div class="dd-block clearfix">
+                <div class="dd-blockheader">
+                    <h3 class="t">Violencia&nbsp;&nbsp; Familiar</h3>
+                </div>
+                <div class="dd-blockcontent">
+                    <div class="bannergroup">
+                        <div class="banner">
+                            <a href="http://www.jus.gob.ar/atencion-al-ciudadano/guia-de-derivaciones/violencia-familiar.aspx" target="_blank" class="external_link"  title="Violencia Familiar">
+                              <img src="{% static 'img/Violencia-familiar.jpg' %}" alt="VIOLENCIA FAMILIAR" width="200" height="100">
+                            </a>
+                            <div class="clr"></div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="dd-layout-cell dd-layout-sidebar-bg col-banner-3 ala-derecha" >
+          <div class="dd-block clearfix">
+              <div class="dd-blockheader">
+                <h3 class="t">Ni&nbsp;  Una&nbsp;  Menos&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</h3>
+              </div>
+              <div class="dd-blockcontent">
+                  <div class="bannergroup">
+                      <div class="banner">               
+                          <a href="http://niunamenos.com.ar/" target="_blank" class="external_link" title="Ni Una Menos">
+                            <img src="{% static 'img/images-1.jpg' %}" alt="Ni Una Menos" width="200" height="100">
+                          </a>
+                          <div class="clr"></div>
+                      </div>
+                  </div>
+              </div>
+          </div>
+        </div>
+    </div>
+</div>
+<!-- begin nostyle -->
+
+
+<!-- begin nostyle content -->
+
+<section id="redes" class="events" style="width: 100%;">
+  <div id="Tweet" class="bannerSocial" style="width: 50%;">
       <a class="twitter-timeline" data-width="100%" data-height="100%" href="https://twitter.com/Policia_Chubut?ref_src=twsrc%5Etfw">Tweets de Policia_Chubut</a>
       <script async src="https://platform.twitter.com/widgets.js" charset="utf-8"></script>  
   </div>
@@ -169,22 +230,69 @@
     };
 
     return t;
-  }(document, "script", "twitter-wjs"));</script>
-
-
-  <div class="embed-container">
-      <iframe  class="bannerSocial2" src="https://www.facebook.com/plugins/page.php?href=https%3A%2F%2Fwww.facebook.com%2Fprensapoliciachubut%2F&tabs=timeline&width=1000&height=500&small_header=false&adapt_container_width=true&hide_cover=false&show_facepile=true&appId=601917176835816"  width="100%" height="100%" style="border:none;overflow:hidden;display: flex !important;" scrolling="no" frameborder="0" allowTransparency="true" allow="encrypted-media">
-    </iframe>
-  </div>
-  <script>(function(d, s, id) {
-    var js, fjs = d.getElementsByTagName(s)[0];
-    if (d.getElementById(id)) return;
-    js = d.createElement(s); js.id = id;
-    js.src = 'https://connect.facebook.net/es_LA/sdk.js#xfbml=1&version=v3.2&appId=601917176835816&autoLogAppEvents=1';
-    fjs.parentNode.insertBefore(js, fjs);
-  }(document, 'script', 'facebook-jssdk'));
+  }(document, "script", "twitter-wjs"));
   </script>
+
+
+    
+    
+   
+<div id="fb-root"></div>
+<script>(function(d, s, id) {
+  var js, fjs = d.getElementsByTagName(s)[0];
+  if (d.getElementById(id)) return;
+  js = d.createElement(s); js.id = id;
+  js.src = 'https://connect.facebook.net/es_LA/sdk.js#xfbml=1&version=v3.2&appId=601917176835816&autoLogAppEvents=1';
+  fjs.parentNode.insertBefore(js, fjs);
+}(document, 'script', 'facebook-jssdk'));
+$(window).on('resize', function() {
+    setTimeout(function(){CMSSpace.changeFBPagePlugin()}, 500);
+ });
+  
+ $(window).on('load', function() {
+    setTimeout(function(){CMSSpace.changeFBPagePlugin()}, 1500);
+ });
+</script>
+
+
+<div id="face"class="columns fb-column" data-equalizer-watch>
+    <div class="event-header margin-bottom-xl fb-column-header">
+        <!--div class="event-header-content"><img src= "/extension/nxc_agf/design/agf-2017/images/facebook-logo.png"></div-->
+        <!--div class="event-header-content"><h5 class="column-title">Facebook</h5></div-->
+        <!--div class="event-header-content"><a class="button abgym-btn nomargin" href="https://www.facebook.com/AlbertaGymnastics" target="_blank">Like Us</a></div-->
+    </div>
+    <div class="fb-container text-center">
+        <div
+            class="fb-page"
+            data-href="https://www.facebook.com/prensapoliciachubut"
+            data-tabs="timeline"
+            data-hide-cta="true"
+            data-small-header="true"
+            data-adapt-container-width="true"
+            data-hide-cover="true"
+            data-show-facepile="false"
+        >
+            <blockquote cite="https://www.facebook.com/prensapoliciachubut" class="fb-xfbml-parse-ignore">
+                <a href="https://www.facebook.com/prensapoliciachubut">Facebook de Policia del Chubut</a>
+            </blockquote>
+        </div>
+    </div>
 </div>
+<script>
+    CMSSpace.changeFBPagePlugin = function () {
+   //getting parent box width
+   var container_width = (Number($('.fb-column').width()) - Number($('.fb-column').css('padding-left').replace("px", ""))).toFixed(0);
+   //getting parent box height
+   var container_height = (Number($('.fb-column').height()) - (Number($('.fb-column-header').height()) + Number($('.fb-column-header').css('margin-bottom').replace("px", "")) + Number(($('.fb-column').css('padding-top').replace("px", "")*2)))).toFixed(0);
+   if (!isNaN(container_width) && !isNaN(container_height)) {
+      $(".fb-page").attr("data-width", container_width).attr("data-height", container_height);
+   }
+   if (typeof FB !== 'undefined' ) {
+      FB.XFBML.parse();
+   }
+}
+</script>
+  </section>
 
 
 
