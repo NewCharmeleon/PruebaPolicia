@@ -10,7 +10,7 @@ from django.contrib.auth.decorators import login_required, permission_required
 
 
 # Create your views here.
-'''comentadas momentaneamente por Joomla Backup 
+#comentadas momentaneamente por Joomla Backup 
 def login(request):
 
 	if not request.user.is_authenticated:
@@ -46,7 +46,7 @@ def logout(request):
 	return redirect(reverse('home')) # redirecciona a home
 
 #Vistas de Publicaciones************************************************************************
-'''
+
 '''Ejemplo de dos Forms
 def add_poll(request):
     if request.method == "POST":
@@ -65,7 +65,7 @@ def add_poll(request):
     return render_to_response('add_poll.html', {'poll_form': pform, 'choice_forms': cforms})
 '''
 
-'''
+
 @login_required
 @permission_required('privado.add_publicacion', raise_exception=True)
 def new_publicacion(request):
@@ -650,4 +650,3 @@ def show_dependencias_portada(request):
 	else:	
 		messages.success(request, "Dependencias en Portada obtenidas con exito!!!")
 	return render(request,'show_dependencias_portada.html',{'dependencias':dependencias})
-'''	

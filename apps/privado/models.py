@@ -36,7 +36,8 @@ class Publicacion(models.Model):
 	is_publicado = models.BooleanField(default=False)
 	is_archivado = models.BooleanField(default=False)
 	is_para_portada = models.BooleanField(default=False)
-	usuario = models.ForeignKey(User, on_delete = 'CASCADE')
+	usuario = models.ForeignKey(User, related_name='usuarios',on_delete = 'CASCADE')
+
 
 	#content = HTMLField()
 	
@@ -248,6 +249,9 @@ class Dependencia(models.Model):
 	#phone_number = models.CharField(validators=[phone_regex], max_length=17, blank=True)
 	usuario = models.ForeignKey(User, on_delete = 'CASCADE')
 	
+	def __str__(self):
+		return self.nombre
+		
 	def Publicar(self):
 		self.fecha_publicacion=timezone.now()
 		self.is_publicado = True
@@ -293,4 +297,4 @@ class Dependencia(models.Model):
 		#change the imagefield value to be the newley modifed image value
 		self.imagen = InMemoryUploadedFile(output,'ImageField', "%s.jpg" %self.imagen.name.split('.')[0], 'image/jpeg', sys.getsizeof(output), None)
 		self.save()
-		#super(Modify,self).save()	
+		#super(Modify,self).save()

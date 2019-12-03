@@ -127,6 +127,23 @@ def finanzas(request):
 	print(len(archivos))
 	#return render(request,'home.html',{'form':form,'archivos':archivos})
 	return render(request,'finanzas.html',{'archivos':archivos})
+
+def comunicaciones(request):
+	#form = FileUploadForm()
+	#if request.method == 'POST':
+		#form = FileUploadForm(request.POST,request.FILES)
+		#if form.is_valid():
+			#form.save()
+			#return redirect('sinic_sat')
+	archivos_lista= Documento.objects.filter(file_category__in=[5]).order_by('id')
+	paginator = Paginator(archivos_lista, 5)
+
+	page = request.GET.get('page')
+	archivos = paginator.get_page(page)
+	print ("hay")
+	print(len(archivos))
+	#return render(request,'home.html',{'form':form,'archivos':archivos})
+	return render(request,'comunicaciones.html',{'archivos':archivos})	
 #Nuevas rutas del Backup de Joomla
 
 
@@ -139,7 +156,7 @@ def finanzas(request):
 	
 
 	#return render(request,"indexBackup.html",{'nombre':"Adrian", 'noticias' :noticias, 'videos':videos, 'autoridades':autoridad })
-'''
+
 def noticias(request):
 
 	noticias = Publicacion.objects.filter(is_publicado=True, tipo=1).order_by('-fecha_creacion')
@@ -154,7 +171,7 @@ def noticia(request, id):
 	noticia=get_object_or_404(Publicacion, id=id)
 				
 	return render(request,'noticia.html',{'noticia':noticia})
-	
+'''	
 def autoridades(request):
 	autoridadJefe = Autoridad.objects.filter(is_para_portada=True, cargo_id__in=[1,2])
 	autoridadPlana = Autoridad.objects.filter(is_para_portada=True, cargo_id__in=[4])
