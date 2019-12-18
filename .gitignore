@@ -2,4 +2,7 @@
 *.ogg
 *.webm
 *.mp4
-media/
+/media/
+db.sqlite3
+_pycache_
+/media.old/
