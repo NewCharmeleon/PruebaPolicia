@@ -27,7 +27,7 @@ DEBUG = True
 
 ALLOWED_HOSTS = ['policia.chubut.gov.ar','www.policia.chubut.gov.ar', 'localhost', '127.0.0.1', '192.168.2.192', '192.168.1.161' ]
 
-LOGIN_URL = '/login/'
+
 
 # Application definition
 
@@ -79,14 +79,9 @@ WSGI_APPLICATION = 'PruebaPolicia.wsgi.application'
 
 DATABASES = {
     'default': {
-        'ENGINE': 'django.db.backends.mysql',
-        'NAME': 'pagina',
-	    'HOST':'192.168.1.127',
-	    'USER':'adrian',
-	    'PASSWORD':'4dri4n2019',
-        'OPTIONS': {
-        'init_command': "SET sql_mode='STRICT_TRANS_TABLES'",
-    },
+        'ENGINE': 'django.db.backends.sqlite3',
+        'NAME': os.path.join(BASE_DIR, 'db.sqlite3'),
+	    
     }
 }
 
