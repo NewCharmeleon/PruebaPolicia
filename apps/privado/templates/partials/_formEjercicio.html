@@ -1,0 +1,128 @@
+<div class="form-group form-group-lg">
+    <label class="col-md-2"> Tipo </label>
+    <div class="col-md-10">
+        {{form.tipo}}
+    </div>
+        {% if form.errors.tipo %}
+    <div class="col-md-10 col-md-offset-2 alert alert-danger">
+                {{ form.errors.tipo }}
+    </div>
+    {% endif %}
+</div>	
+<br>
+<div class="form-group form-group-lg">
+    <label class="col-md-2"> Zona </label>
+    <div class="col-md-10">
+        {{form.zona}}
+    </div>
+        {% if form.errors.zona %}
+    <div class="col-md-10 col-md-offset-2 alert alert-danger">
+                {{ form.errors.zona }}
+    </div>
+    {% endif %}
+</div>	
+<br>
+<div class="form-group form-group-lg">
+    <label class="col-md-2"> Objetivo </label>
+    <div class="col-md-10">
+        {{form.objetivo}}
+    </div>
+        {% if form.errors.objetivo %}
+    <div class="col-md-10 col-md-offset-2 alert alert-danger">
+                {{ form.errors.objetivo }}
+    </div>
+    {% endif %}
+</div>	
+<br>
+<div class="form-group form-group-lg">
+    <label class="col-md-2"> Nombre </label>
+    <div class="col-md-10">
+        {{form.nombre}}
+    </div>
+        {% if form.errors.nombre %}
+    <div class="col-md-10 col-md-offset-2 alert alert-danger">
+            {{ form.errors.nombre|escape }}
+    </div>
+    {% endif %}
+</div>	
+<br>
+<div class="form-group form-group-lg">
+    <label class="col-md-2"> Intensidad </label>
+    <div class="col-md-10">
+        {{form.intensidad}}
+    </div>
+        {% if form.errors.intensidad %}
+    <div class="col-md-10 col-md-offset-2 alert alert-danger">
+            {{ form.errors.intensidad|escape }}
+    </div>
+    {% endif %}
+</div>	
+<br>
+<div class="form-group form-group-lg">
+    <label class="col-md-2"> Detalle </label>
+    <div class="col-md-10">
+        {{form.detalle}}
+    </div>
+</div>
+    {% if form.errors.detalle %}
+    <div class="col-md-10 col-md-offset-2 alert alert-danger">
+                {{ form.errors.detalle|escape }}
+    </div>
+    {% endif %}
+<div class="form-group form-group-lg">
+    <label class="col-md-2"> URL </label>
+    <div class="col-md-10">
+        {{form.url}}
+    </div>
+</div>
+    {% if form.errors.url %}
+    <div class="col-md-10 col-md-offset-2 alert alert-danger">
+                La URL no es valida, verifiquela.
+            </div>
+    {% endif %}	
+
+<div class="form-group form-group-lg">
+    <!--<label class="col-md-2"> Imagen </label>-->
+    <div class="col-md-2">
+    <img id="uploadPreview1" class="img-responsive" width="150" height="150" src="{% static '/img/foto_no_disponible.jpg' %}" /></div>
+    <div class="col-md-10">
+        {{form.imagen}}
+    </div>
+
+    <!--
+    <div class="">
+        <div class="upload_image col-md-12">
+            <div class="col-md-2">
+                <img id="uploadPreview1" class="img-responsive" width="150" height="150" src="{% static '/img/image_not_available.jpg' %}" />
+            </div>
+
+            <div class="form-group col-md-10">
+                <label>Image 1</label>
+                <input class="form-control" id="uploadImage1" type="file" name="images[1]" onchange="previewImage(1);" />
+            </div>
+        </div>
+        <br>
+        <div class="upload_image col-md-12">
+            <div class="col-md-2">
+                <img id="uploadPreview2" class="img-responsive" width="150" height="150" src="{% static '/img/image_not_available.jpg' %}" />
+            </div>
+
+            <div class="form-group col-md-10">
+                <label>Image 2</label>
+                <input class="form-control" id="uploadImage2" type="file" name="images[2]" onchange="previewImage(2);" />
+            </div>
+        </div>
+        <br>
+        <div class="upload_image col-md-12">
+            <div class="col-md-2">
+                <img id="uploadPreview3" class="img-responsive" width="150" height="150" src="{% static '/img/image_not_available.jpg' %}" />
+            </div>
+
+            <div class="form-group col-md-10">
+                <label>Image 3</label>
+                <input class="form-control" id="uploadImage3" type="file" name="images[3]" onchange="previewImage(3);" />
+            </div>
+            </div>
+        </div>
+        -->
+</div>

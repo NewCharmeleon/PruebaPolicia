@@ -1,0 +1,242 @@
+<!DOCTYPE html>
+{% load staticfiles %}
+<html>
+<head>
+	<title>Nuevo</title>
+	<!-- Integracion de JQuery y Bootstrap -->
+	{% include 'partials/_headCssJs.html'%}
+	<!-- Fin Integracion -->
+	<!--Tinymce Text-Editor (Must be in Head Tag) 
+  	<script src="{% static 'js/tinymce/tinymce.min.js' %}"></script>
+  	<script type="text/javascript" src="{% static 'js/tinymce/custom.js' %}" ></script>-->
+	
+</head>
+<body style="background-color: #81BEF7">
+	<div class="container">
+		<div class="container">
+			<div class="row" style="padding-top: 5%;">
+				<div class="col-md-10 col-md-offset-1 well">
+					<div class="row">
+						<div class="col-md-12">
+							<center><img src="{% static 'img/Escudo_PoliciaCh.png' %}"></center>
+						</div>
+					</div>
+						<hr>
+					<div class="row">
+						<div class="col-md-12">
+							<h2> Crear publicaci&oacute;n</h2>
+						</div>
+					</div>
+					<div class="row">
+						{% if messages %}
+							{% for message in messages %}
+								<div class="alert alert-success alert-dismissible" role alert>
+									<button type="button" class="close" data-dismiss="alert" aria-label="Close"><span aria-hidden="true">&times;</span>
+									</button>
+									<p> <i class="glyphicon glyphicon-info-sign"></i> {{ message}}</p>	
+								</div>
+							{%endfor%}	
+						{% endif %}	
+						<br>
+						<form  method="post" class="form-horizontal" enctype="multipart/form-data">{% csrf_token %}
+							<div class="form-group form-group-lg">
+								<label class="col-md-2"> Tipo </label>
+								<div class="col-md-10">
+									{{form.tipo}}
+								</div>
+									{% if form.errors.tipo %}
+								<div class="col-md-10 col-md-offset-2 alert alert-danger">
+                							{{ form.errors.tipo }}
+            					</div>
+								{% endif %}
+							</div>	
+							<br>
+							<div class="form-group form-group-lg">
+								<label class="col-md-2"> Jurisdiccion </label>
+								<div class="col-md-10">
+									{{form.jurisdiccion}}
+								</div>
+									{% if form.errors.jurisdiccion %}
+								<div class="col-md-10 col-md-offset-2 alert alert-danger">
+                							{{ form.errors.jurisdiccion }}
+            					</div>
+								{% endif %}
+							</div>	
+							<br>
+							<div class="form-group form-group-lg">
+								<label class="col-md-2"> Categoria </label>
+								<div class="col-md-10">
+									{{form.categoria}}
+								</div>
+									{% if form.errors.categoria %}
+								<div class="col-md-10 col-md-offset-2 alert alert-danger">
+                							{{ form.errors.categoria }}
+            					</div>
+								{% endif %}
+							</div>	
+							<br>
+							<div class="form-group form-group-lg">
+								<label class="col-md-2"> Titulo </label>
+								<div class="col-md-10">
+									{{form.titulo}}
+								</div>
+									{% if form.errors.titulo %}
+								<div class="col-md-10 col-md-offset-2 alert alert-danger">
+                						{{ form.errors.titulo|escape }}
+            					</div>
+								{% endif %}
+							</div>	
+							<br>
+							<div class="form-group form-group-lg">
+								<label class="col-md-2"> Introducci&oacute;n </label>
+								<div class="col-md-10">
+									{{form.intro}}
+								</div>
+									{% if form.errors.titulo %}
+								<div class="col-md-10 col-md-offset-2 alert alert-danger">
+                						{{ form.errors.titulo|escape }}
+            					</div>
+								{% endif %}
+							</div>	
+							<br>
+							<div class="form-group form-group-lg">
+								<label class="col-md-2"> Contenido </label>
+								<div class="col-md-10">
+									{{form.contenido}}
+								</div>
+							</div>
+								{% if form.errors.contenido %}
+								<div class="col-md-10 col-md-offset-2 alert alert-danger">
+                							{{ form.errors.contenido|escape }}
+            					</div>
+								{% endif %}
+							<div class="form-group form-group-lg">
+								<label class="col-md-2"> Fuente </label>
+								<div class="col-md-10">
+									{{form.fuente}}
+								</div>
+							</div>
+								{% if form.errors.fuente %}
+								<div class="col-md-10 col-md-offset-2 alert alert-danger">
+                					{{ form.errors.fuente|escape }}
+            					</div>
+								{% endif %}
+							<div class="form-group form-group-lg">
+								<label class="col-md-2"> URL </label>
+								<div class="col-md-10">
+									{{form.url}}
+								</div>
+							</div>
+								{% if form.errors.url %}
+								<div class="col-md-10 col-md-offset-2 alert alert-danger">
+                							La URL no es valida, verifiquela.
+            							</div>
+								{% endif %}	
+
+							<div class="form-group form-group-lg">
+								<!--<label class="col-md-2"> Imagen </label>-->
+								<div class="col-md-2">
+								<img id="uploadPreview1" class="img-responsive" width="150" height="150" src="{% static '/img/foto_no_disponible.jpg' %}" /></div>
+								<div class="col-md-10">
+									{{form.imagen}}
+								</div>
+
+								<!--
+								<div class="">
+				                    <div class="upload_image col-md-12">
+				                        <div class="col-md-2">
+				                            <img id="uploadPreview1" class="img-responsive" width="150" height="150" src="{% static '/img/image_not_available.jpg' %}" />
+				                        </div>
+
+				                        <div class="form-group col-md-10">
+				                            <label>Image 1</label>
+				                            <input class="form-control" id="uploadImage1" type="file" name="images[1]" onchange="previewImage(1);" />
+				                        </div>
+				                    </div>
+				                    <br>
+				                    <div class="upload_image col-md-12">
+				                        <div class="col-md-2">
+				                            <img id="uploadPreview2" class="img-responsive" width="150" height="150" src="{% static '/img/image_not_available.jpg' %}" />
+				                        </div>
+
+				                        <div class="form-group col-md-10">
+				                            <label>Image 2</label>
+				                            <input class="form-control" id="uploadImage2" type="file" name="images[2]" onchange="previewImage(2);" />
+				                        </div>
+				                    </div>
+				                    <br>
+				                    <div class="upload_image col-md-12">
+				                        <div class="col-md-2">
+				                            <img id="uploadPreview3" class="img-responsive" width="150" height="150" src="{% static '/img/image_not_available.jpg' %}" />
+				                        </div>
+
+				                        <div class="form-group col-md-10">
+				                            <label>Image 3</label>
+				                            <input class="form-control" id="uploadImage3" type="file" name="images[3]" onchange="previewImage(3);" />
+				                        </div>
+                   					 </div>
+               					 </div>
+               					 -->
+							</div>
+
+							<br>
+							<hr>
+							<button type="submit" class="btn btn-primary btn-lg pull-right"> <i class="glyphicon glyphicon-save"></i> Subir </button>
+							<a href="{% url 'dashboard' %}" class="btn btn-danger btn-lg pull-right"> <i class="glyphicon glyphicon-remove"></i> Cancelar </a>
+							
+						</form>
+					</div>
+				</div>
+			</div>
+		</div>			
+	</div>
+  </div>
+</div>
+<script type="text/javascript">
+	if ($("#id_tipo_0").is(':checked')){
+		$("#id_url").parent().parent().hide();
+		$("#id_imagen").parent().parent().show();
+		$("#id_intro").parent().parent().show();
+	}
+	else
+		{
+			$("#id_fuente").parent().parent().hide();	
+		}/*$("#id_url, #id_fuente").parent().parent().hide();*/
+
+	//$("#id_url, #id_fuente").parent().parent().hide();
+	//si radiobutton es publicacion
+	$("#id_tipo_0").change(function(){
+		if($(this).is(':checked')){
+			$("#id_fuente").parent().parent().show();
+			$("#id_fuente").attr('required','required');
+			$("#id_url").attr('value','');
+			$("#id_url").parent().parent().hide();
+			$("#id_url").removeAttr('required');
+			$("#id_imagen").parent().parent().show();
+			$("#id_intro").parent().parent().show();
+		}
+	});
+	//si es video
+	$("#id_tipo_1").change(function(){
+		if($(this).is(':checked')){
+			$("#id_url").parent().parent().show();
+			$("#id_url").attr('required','required');
+			$("#id_fuente").attr('value','');
+			$("#id_fuente").parent().parent().hide();
+			$("#id_fuente").removeAttr('required');
+			$("#id_imagen").parent().parent().hide();
+			$("#id_intro").removeAttr('required');
+			$("#id_intro").attr('value','');
+			$("#id_intro").parent().parent().hide();
+			
+		}
+	});
+	function previewImage(nb) {        
+    var reader = new FileReader();         
+    reader.readAsDataURL(document.getElementById('uploadImage'+nb).files[0]);         
+    reader.onload = function (e) {             
+        document.getElementById('uploadPreview'+nb).src = e.target.result;         
+    };     
+};
+</script>
+</body>

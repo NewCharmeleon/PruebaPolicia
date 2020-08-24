@@ -11,10 +11,12 @@ from tinymce.widgets import TinyMCE
 CARGO = ((1 , 'Jefe de Policia'), (2, 'SubJefe de Policia'), (3, 'Secretario General'), (4, 'Director'), (5, 'Jefe de Area'), (6, 'SubJefe de Area'), (7, 'Jefe'), (8, 'SubJefe'),)
 JERARQUIA = ((1 , 'Crio. General'), (2, 'Crio. Mayor'), (3, 'Crio. Inspector'), (4, 'Comisario'),(5, 'SubCrio.'),(6, 'Of. Principal'),(7, 'Of. Inspector.'),(8, 'Of. SubInsp.'),(9, 'Retirado'),(10, 'Retirado en servicio'),)
 LUGAR = ((1 , 'Jefatura de Policia'), (2, 'Secretaria General'), (3, 'Direccion Seguridad'), (4, 'Direccion Recursos Humanos'),(5, 'Direccion Recursos Materiales'),(6, 'Direccion Policia Judicial'),)
+TIPO = ((1 , 'Resistencia'), (2, 'Elongacion'),)
+ZONA = ((0, 'Tren Superior'),(1, 'Zona Superior'),(2 , 'Tren Inferior'),)
 
 class LoginForm(forms.Form):
 	user = forms.CharField(widget=forms.TextInput(attrs=dict({'class':'form-control','placeholder':'Usuario'})))
-	password = forms.CharField(widget=forms.PasswordInput(attrs=dict({'class':'form-control','placeholder':'Contraseña'})))
+	password = forms.CharField(widget=forms.PasswordInput(attrs=dict({'class':'form-control','placeholder':'ContraseÃ±a'})))
 
 
 
@@ -121,5 +123,25 @@ class DependenciaForm(ModelForm):
 		
 	#phone_number = models.CharField(validators=[phone_regex], max_length=17, blank=True)
 	usuario = models.ForeignKey(User, on_delete = 'CASCADE', default=User)
-			
-		
+
+class EjercicioForm(ModelForm):
+	
+	class Meta:
+		model = Ejercicio
+		exclude = ['usuario']
+
+	tipo = forms.ChoiceField(choices = Ejercicio.TIPO,required=True, widget=forms.RadioSelect(attrs=dict({})))
+	zona = forms.ChoiceField(choices = Ejercicio.ZONA,required=True, widget=forms.RadioSelect(attrs=dict({})))
+	jurisdiccion = forms.ChoiceField(choices = Publicacion.JURISDICCION,required=True, widget=forms.Select(attrs=dict({})))
+	categoria = forms.ChoiceField(choices = Publicacion.CATEGORIA,required=True, widget=forms.Select(attrs=dict({})))
+	objetivo = forms.CharField(required=True, widget=forms.Textarea(attrs=dict({'class':'form-control input-lg verifca','placeholder':'Objetivo','required':'required', 'style':'text-align:left'})))
+	nombre = forms.CharField(required=True, max_length=100, widget=forms.TextInput(attrs=dict({'class':'form-control input-lg verifca','placeholder':'Nombre','required':'required', 'style':'text-align: left;'})))
+	intensidad = forms.CharField(required=True, widget=forms.Textarea(attrs=dict({'class':'form-control input-lg verifca','placeholder':'Intensidad','required':'required', 'style':'text-align:left'})))
+	detalle = forms.CharField(required=True, widget=forms.Textarea(attrs=dict({'class':'form-control input-lg verifca','placeholder':'Detalle','required':'required', 'style':'text-align:left'})))
+	url = forms.URLField(max_length=200, required=False, widget=forms.TextInput(attrs=dict({'class':'form-control input-lg verifca','placeholder':'Ingrese Url','style':'text-align: left;'})))
+	imagen = forms.ImageField(required=False,widget=forms.FileInput(attrs=dict({'id':'uploadImage1', 'type':'file','name':'images[1]','onchange':'previewImage(1);'})))
+	#fuente = forms.CharField(required=False, max_length=150, widget=forms.TextInput(attrs=dict({'class':'form-control input-lg verifca','placeholder':'Ingrese la Fuente','style':'text-align: left;'})))
+	
+	#class="form-control" id="uploadImage1" type="file" name="images[1]" onchange="previewImage(1);"
+	#foto = forms.ForeignKey(Fotos, on_delete = 'CASCADE')
+	#intro = forms.CharField(required=False,widget=forms.TextInput(attrs=dict({'class':'form-control input-lg','placeholder':'Introduccion', 'style':'text-align: left;'})))

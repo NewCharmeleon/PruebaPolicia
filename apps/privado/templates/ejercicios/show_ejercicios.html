@@ -1,0 +1,160 @@
+<!DOCTYPE html>
+{% load staticfiles %}
+
+<html>
+<head>
+	<title>Ver</title>
+	{% include 'metatags.html'%}
+    <!--incluimos el template partials enlaces de css-->
+	{% include 'partials/_headerPrivate.html' %}
+	<!-- Integracion de JQuery y Bootstrap -->
+	{% include 'partials/_headCssJs.html'%}
+	<!-- Fin Integracion -->
+</head>
+<body style="background-color: #81BEF7">
+	<div class="container">
+		<div class="container">
+			<div class="row" style="padding-top: 5%;">
+				<div class="col-md-10 col-md-offset-1 well">
+					<div class="row">
+						{% if messages %}
+							{% for message in messages %}
+								<div class="alert alert-success alert-dismissible" role alert>
+									<button type="button" class="close" data-dismiss="alert" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+									<p> <i class="glyphicon glyphicon-info-sign"></i> {{ message}}</p>
+								</div>
+							{%endfor%}	
+						{% endif %}	
+						<div class="col-md-12">
+							<center><img src="{% static 'img/Escudo_PoliciaCh.png' %}"></center>
+						</div>
+					</div>
+					<hr>
+					<div class="row">
+						<div class="col-md-12">
+							<h2> Ver ejercicios</h2>
+							<hr style="border-top: 3px solid #81BEF7;">
+						</div>
+					</div>
+					<div class="row">
+						<br>
+						<div class="col-md-12">
+							<label class="col-md-2"> Tipo </label>
+							<div id="tipo" class="col-md-10">
+								{% if ejercicio.tipo == 1%}
+									Articulo
+								{% else %}
+									Video
+								{% endif %}
+							</div>
+						</div>
+						<br>
+						<hr style="border-top: 2px solid #cccccc;">
+						<div class="col-md-12">
+							<label class="col-md-2"> Zona </label>
+							<div class="col-md-10">
+								{% if ejercicio.zona == 1 %}
+									Tren Superior
+								{% elif ejercicio.zona == 2 %}
+									Zona Media
+								{% else %}
+									Tren Inferior
+								{% endif %}
+							</div>
+						</div>
+						<br>
+						<hr style="border-top: 2px solid #cccccc;">
+						<div class="col-md-12">
+							<label class="col-md-2"> Objetivo </label>
+							<div class="col-md-10">
+								{% if ejercicio.objetivo == 0 %}
+									Informativo
+								{% elif ejercicio.objetivo == 1 %}
+									Institucional
+								{% endif %}
+							</div>
+						</div>
+						<br>
+						<hr style="border-top: 2px solid #cccccc;">
+						<div class="col-md-12">
+							<label class="col-md-2"> Nombre </label>
+							<div class="col-md-10">
+								{{ejercicio.nombre}}
+							</div>
+						</div>
+						<br>	
+						<hr style="border-top: 2px solid #cccccc;">
+						<div class="col-md-12">
+							<label class="col-md-2"> Intensidad </label>
+							<div class="col-md-10">
+								{{ejercicio.intensidad}}
+							</div>
+						</div>
+						<br>	
+						<br>
+						<hr style="border-top: 2px solid #cccccc;">
+						<br>
+						<div class="col-md-12">
+							<label class="col-md-2"> Detalle </label>
+							<div class="col-md-10">
+								{{ejercicio.detalle|safe}}
+							</div>
+						</div>
+						<br>
+						<hr style="border-top: 2px solid #cccccc;">
+						<div id="url" class="col-md-12">
+							<label class="col-md-2"> URL </label>
+							<div class="col-md-10">
+								<a href="{{ejercicio.url}}" target="_blank">{{ejercicio.url}}</a>
+							</div>
+							<br>
+						</div>
+						
+						<br>
+						<br>
+						<hr style="border-top: 2px solid #81BEF7;">
+						<div id="estado" class="col-md-12">
+								<label class="col-md-2"> Estado </label>
+								<div class="col-md-10"> {% if ejercicio.is_publicado %}
+												<span class="badge badge-success">Publicado</span>
+											{% elif ejercicio.is_archivado  %}
+												<span class="badge">Archivado</span>											 
+											{% elif not ejercicio.is_publicado and not ejercicio.is_archivado %}
+												  <span class="badge badge-info">Guardado</span> 											 
+											{% endif %}	
+											{% if ejercicio.is_para_portada %}
+												<span class="badge badge-success">En Portada</span>
+											{% endif %}	
+						</div>
+						<br>
+						<hr style="border-top: 2px solid #81BEF7;">
+	   					{% if ejercicio.is_publicado and not ejercicio.is_para_portada %}
+							Â¿Desea Enviar a la portada el ejercicio: {{ ejercicio.id}} ?
+							<a href="{% url 'enviar_ejercicio' id=ejercicio.id %}" class="btn btn-success btn-lg"> <i class="glyphicon glyphicon-trash"></i> Enviar a Portada </a>
+							<a href="{% url 'archivar_ejercicio' id=ejercicio.id %}" class="btn btn-warning btn-lg"> <i class="glyphicon glyphicon-trash"></i> Archivar </a>
+						{% elif ejercicio.is_para_portada	%}
+
+							<a href="{% url 'despublicar_ejercicio' id=ejercicio.id %}" class="btn btn-warning btn-lg"> <i class="glyphicon glyphicon-trash"></i> Despublicar </a>
+						{% else  %}
+							Â¿Desea Publicar el ejercicio: {{ ejercicio.id }} ?
+							<a href="{% url 'ver_ejercicio' id=ejercicio.id %}" target="_blank"class="btn btn-success btn-lg"> <i class="glyphicon glyphicon-eye-open"></i> Ver en Sitio </a>
+							<a href="{% url 'edit_ejercicio' id=ejercicio.id %}" class="btn btn-warning btn-lg"> <i class="glyphicon glyphicon-edit"></i> Editar </a>
+							<a href="{% url 'publicar_ejercicio' id=ejercicio.id %}" class="btn btn-success btn-lg"> <i class="glyphicon glyphicon-trash"></i> Publicar </a>
+	   					{% endif %}
+	   					
+						<a href="{% url 'dashboard' %}" class="btn btn-info btn-lg pull-right"> <i class="glyphicon glyphicon-arrow-left"></i> Volver </a>
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>			
+	</div>
+
+<script>
+	<!-- Integracion de JQuery y Bootstrap -->
+	{% include 'partials/_scriptDatatables.html'%}
+	<!-- Fin Integracion -->
+
+</script>
+		
+</body>

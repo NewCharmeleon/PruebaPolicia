@@ -1,7 +1,7 @@
 /* 
  * 	Core Owl Carousel CSS File
  *	v1.23
- */
+ */Modificado
 
 /* clearfix */
 .owl-carousel .owl-wrapper:after {
@@ -16,7 +16,7 @@
 .owl-carousel{
 	display: none;
 	position: relative;
-	width: 100%;
+	width: 79vw !important;
 	-ms-touch-action: pan-y;
 }
 .owl-carousel .owl-wrapper{

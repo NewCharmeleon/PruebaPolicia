@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+{% load staticfiles %}
+<html>
+<head>
+	<title>Editar</title>
+	 <!--incluimos el template partials enlaces de css-->
+  	{% include 'partials/_headerPrivate.html' %}
+</head>
+<body style="background-color: #81BEF7">
+	<div class="container">
+		<div class="container">
+			<div class="row" style="padding-top: 5%;">
+				<div class="col-md-10 col-md-offset-1 well">
+					<div class="row">
+						<div class="col-md-12">
+							<center><img src="{% static 'img/Escudo_PoliciaCh.png' %}"></center>
+						</div>
+					</div>
+						<hr>
+					<div class="row">
+						{% if messages %}
+							<div class="alert alert-succes">
+								{% for message in messages %}
+									{{ message}}
+								{%endfor%}	
+							</div>
+						{% endif %}		
+						<div class="col-md-12">
+							<h2> Editar ejercicio</h2>
+							<hr style="border-top: 3px solid #81BEF7;">
+						</div>
+					</div>
+					<div class="row">
+						<br>
+						<form method="post" class="form-horizontal">{% csrf_token %}
+                            			<!--incluimos el template partials enlaces de css-->
+                           			 {% include 'partials/_formEjercicio.html' %}
+							<br>
+							<hr>
+							<button type="submit" class="btn btn-primary btn-lg pull-right"> <i class="glyphicon glyphicon-save"></i> Guardar </button>
+							
+							<a href="{% url 'dashboard' %}" class="btn btn-danger btn-lg pull-right"> <i class="glyphicon glyphicon-remove"></i> Cancelar </a>
+							
+						</form>
+					</div>
+					</div>
+				</div>
+			</div>
+		</div>			
+	</div>
+	<script type="text/javascript">
+		if ($("#id_tipo_0").is(':checked')){
+			
+			$("#id_url").parent().parent().hide();
+		}
+		else
+			{
+
+				$("#id_fuente").parent().parent().hide();	
+				$("#id_imagen").parent().parent().hide();
+			}/*$("#id_url, #id_fuente").parent().parent().hide();*/
+
+		$("#id_tipo_0").change(function(){
+			if($(this).is(':checked')){
+				$("#id_fuente").parent().parent().show();
+				$("#id_fuente").attr('required','required');
+				$("#id_url").attr('value','');
+				$("#id_url").parent().parent().hide();
+				$("#id_url").removeAttr('required');
+			}
+		});
+		$("#id_tipo_1").change(function(){
+			if($(this).is(':checked')){
+				$("#id_url").parent().parent().show();
+				$("#id_url").attr('required','required');
+				$("#id_fuente").attr('value','');
+				$("#id_fuente").parent().parent().hide();
+				$("#id_fuente").removeAttr('required');
+			}
+		});
+	</script>
+</body>

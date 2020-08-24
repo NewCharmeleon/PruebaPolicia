@@ -1,0 +1,202 @@
+
+.ejercicio-principal{
+    font-size: 12px;
+    /*min-height: 650px; dividido el font-size 16px*/
+    min-height: 40.62em;
+    color: #fff;
+    /*background: linear-gradient(rgba(0,0,0, .50) 0%), rgba(0,0,0,.50 ) 100%, url("/static/img/policias200.jpg");*/
+    background: linear-gradient(rgba(0, 0, 0, .50) 0%, rgba(0,0,0,.50) 100%), url(/static/img/policias200.jpg);
+    /*background-position: center center;*/
+    background-position: center right;
+    background-size: cover;
+    /*background-size: contain;*/
+    margin-bottom: 1.12em;
+    display: flex;
+    align-items: end;
+}
+
+.ejercicio-principal .contenedor{
+    margin: 0 auto;
+   /* margin-bottom: 6.25em;*/
+   margin-bottom: 1.25em;
+
+}
+.ejercicio-principal .titulo{
+    font-weight: 600;
+    font-size: 3.12em;
+    margin-bottom: 0.4em;
+}
+
+.ejercicio-principal .descripcion{
+    font-weight: normal;
+    font-size: 1em;
+    line-height: 1.75em;
+    max-width: 80%;
+    margin-left: 10%;
+    margin-bottom: 1.25em;
+    margin-top: -6%;
+}
+
+.ejercicio-principal .boton{
+    background: rgba(0,0,0, 0.5);
+    border: none;
+    border-radius: 0.31em;
+    padding: 0.93em 1.87em;
+    color: #FFF;
+    margin-right: 8em;
+    cursor: pointer;
+    transition: .3s ease all;
+    font-size: 1.12em;
+    margin-left: 15em;
+}
+
+.ejercicio-principal .boton:hover{
+    background: #FFF;
+    color:#000;
+}
+
+.ejercicio-principal .boton i{
+    margin-right: 1.25em;
+}
+/*-------------------- Contenedor Titulos y Controles ----------------------*/
+.contenedor-titulo-controles{
+    display: flex;
+    justify-content: space-between;
+    align-items: end;
+}
+
+.contenedor-titulo-controles h3{
+    color: #FFF;
+    font-size: 30px;
+}
+
+.contenedor-titulo-controles .indicadores button{
+    background: #FFF;
+    height: 3px;
+    width: 10px;
+    /*cuando se pasa el puntero indica que se puede clickear*/
+    cursor: pointer;
+    border: none;
+    margin-right: 2px;
+}
+
+.contenedor-titulo-controles .indicadores button:hover,
+.contenedor-titulo-controles .indicadores button.active{
+    background: red;
+}
+ 
+
+
+/*-------------------- Contenedor Principal y Flechas----------------------*/
+.ejercicios-recomendados{
+    margin-bottom: 70px;
+}
+
+.ejercicios-recomendados .contenedor-principal {
+    display: flex;
+    align-items: center;
+    position: relative;
+}
+
+.ejercicios-recomendados .contenedor-principal .flecha-izquierda,
+.ejercicios-recomendados .contenedor-principal .flecha-derecha {
+    /*position del contenedor*/
+    position: absolute;
+    border: none;
+    background: rgba(0,0,0,0.3);
+    font-size: 40px;
+    height: 50%;
+    top: calc(50% - 25%);
+    line-height: 40px;
+    width: 50px;
+    color: #FFF;
+    cursor: pointer;
+    z-index: 500;
+    transition: .2s ease all;
+
+}
+
+.ejercicios-recomendados .contenedor-principal .flecha-izquierda:hover,
+.ejercicios-recomendados .contenedor-principal .flecha-derecha:hover {
+   background: rgba(0,0,0, .9); 
+}
+
+.ejercicios-recomendados .contenedor-principal .flecha-izquierda{
+    left: 0;
+}
+
+.ejercicios-recomendados .contenedor-principal .flecha-derecha{
+    right: 0;
+}
+/*-------------------- Carousel ---------------*/
+.ejercicios-recomendados .contenedor-carrusel{
+    width: 100%;
+    padding: 20px 0;
+    /*todo lo que pase el 100% se esconde*/
+    overflow: hidden;
+    /*overflow-x: scroll;*/
+    /*comportamiento del scroll*/
+    scroll-behavior: smooth;
+}
+.ejercicios-recomendados .contenedor-carrusel .carrusel{
+    display: flex;
+    flex-wrap: nowrap;
+}
+
+.ejercicios-recomendados .contenedor-carrusel .carrusel .ejercicio{
+    /*width: 20%;*/
+    /*ancho minimo*/
+    min-width: 20%;
+    transition: .3s ease all;
+    box-shadow: 5px 5px 10px rgba(0,0,0, .3);
+
+}
+
+.ejercicios-recomendados .contenedor-carrusel .carrusel .ejercicio.hover{
+    transform: scale(1.2);
+    transform-origin: center;
+}
+.ejercicios-recomendados .contenedor-carrusel .carrusel .ejercicio img{
+    width: 100%;
+    vertical-align: top;
+    height: auto;
+    
+}
+/*-------------------- Media Queries ---------------*/
+@media screen and(max-width: 800px) {
+    /*al haber usado flexbox
+    con flex-direction: column; //cambiamos de horizontal a vertical
+    */
+    /*al haber usado em como medidas relativas 
+    solo debemos cambiar el font-size del contenedor*/
+    .ejercicio-principal{
+        font-size: 14px;
+    }
+
+    .ejercicio-principal .descripcion{
+        max-width: 100%;
+    }
+
+    .ejercicios-recomendados .contenedor-carrusel{
+        /*no se corta al sobrepasarel width*/
+        overflow: visible;
+    }
+
+    .ejercicios-recomendados .contenedor-carrusel .carrusel{
+        /*cambia a grilla*/
+        display: grid;
+        /*setea la cantidad de columnas y tamaño en fraccion*/
+        grid-template-columns: repeat(3, 1fr);
+        /*espaciado entr columnas*/
+        gap:20px;
+    }
+    .ejercicios-recomendados .indicadores,
+    .ejercicios-recomendados .flecha-izquierda,
+    .ejercicios-recomendados .flecha-derecha
+    {
+        display: none;
+    }
+} 
+.Target {
+	background-color: #b71c1c;
+}

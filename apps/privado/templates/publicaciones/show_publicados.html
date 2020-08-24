@@ -1,0 +1,142 @@
+<!DOCTYPE html>
+{% load staticfiles %}
+<html>
+<head>
+	<title>Publicados</title>
+	<!-- Integracion de JQuery y Bootstrap -->
+	{% include 'partials/_headCssJs.html'%}
+	<!-- Fin Integracion -->
+	
+</head>
+<body style="background-color: #81BEF7">
+	<div class="container">
+		<div class="container">
+			<div class="row" style="padding-top: 5%;">
+				<div class="col-md-10 col-md-offset-1 well">
+					<div class="row">
+						<div class="col-md-12">
+							<center><img src="{% static 'img/Escudo_PoliciaCh.png' %}"></center>
+						</div>
+						{% if messages %}
+							{% for message in messages %}
+								<div class="alert alert-success alert-dismissible" role alert>
+									<button type="button" class="close" data-dismiss="alert" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+									<p> <i class="glyphicon glyphicon-info-sign"></i> {{ message}}</p>
+								</div>
+							{%endfor%}	
+						{% endif %}	
+						
+					<hr>
+					<div class="table-bordered table condensed table-hover table-responsive">
+							<table id="myTable" class="display" style="width:100%">
+							<caption><h4>Ver Publicaciones Publicadas</h4></caption>
+								<thead>
+								
+									<tr>
+										<th>#</th>
+										<th>Tipo</th>
+										<th>Jurisdiccion</th>
+										<th>Categoria</th>
+										<th>Titulo</th>
+										<th>Fecha de Creacion</th>
+										<th>Estado</th>
+										<th>Usuario</th>
+										<th>Acciones</th>
+									</tr>
+								</thead>
+								<tbody>
+									{% for publicacion in publicaciones %}
+									<tr>
+										<td>
+											{{publicacion.id}}
+										</td>
+										<td>
+											{% if publicacion.tipo == 1%}
+												Articulo
+											{% else %}
+												Video
+											{% endif %}
+										</td>
+										<td>
+											{% if publicacion.jurisdiccion == 1 %}
+												Jefatura de Policia
+											{% elif publicacion.jurisdiccion == 2 %}
+												U. R. Cro. Rivadavia
+											{% elif publicacion.jurisdiccion == 3 %}
+												U. R. Esquel
+											{% elif publicacion.jurisdiccion == 4 %}
+												U. R. Pto. Madryn
+											{% elif publicacion.jurisdiccion == 5 %}
+												 U. R. Trelew
+											{% else %}
+												Provincia	 
+											{% endif %}
+										</td>
+										<td>
+											{% if publicacion.categoria == 0 %}
+												Informativo
+											{% elif publicacion.categoria == 1 %}
+												Institucional
+											{% elif publicacion.categoria == 2 %}
+												Comunidad
+											{% else %}
+												Otro	
+											{% endif %}
+										</td>
+										<td>
+											{{publicacion.titulo}}
+										</td>
+										<td>
+											{{publicacion.fecha_creacion|date:'d/m/Y'}}
+										</td>
+										<td>
+											{% if publicacion.is_publicado %}
+												<span class="badge badge-success">Publicado</span>
+											{% elif publicacion.is_archivado  %}
+												<span class="badge">Archivado</span>											 
+											{% elif not publicacion.is_publicado and not publicacion.is_archivado %}
+												  <span class="badge badge-info">Borrador</span> 											 
+											{% endif %}	
+											{% if publicacion.is_para_portada %}
+												<span class="badge badge-success">En Portada</span>
+											{% endif %}	
+										</td>
+										<td>
+											{{publicacion.usuario}}
+										</td>	
+										<td>
+											<a href="{% url 'show_publicacion' id=publicacion.id %}" > <i class="glyphicon glyphicon-eye-open"></i> </a>
+										
+											<a href="{% url 'confirm_delete_publicacion' id=publicacion.id %}" alt="Eliminar Publicacion"> <i class="glyphicon glyphicon-trash"></i> </a>
+										</td>
+									</tr>	
+									{% endfor %}
+								</tbody>
+								<tfoot>
+									<tr>
+										<th>#</th>
+										<th>Tipo</th>
+										<th>Jurisdiccion</th>
+										<th>Categoria</th>
+										<th>Titulo</th>
+										<th>Fecha de Creacion</th>
+										<th>Estado</th>
+										<th>Usuario</th>
+										<th>Acciones</th>
+									</tr>
+								</tfoot>
+							</table>
+							<a href="{% url 'dashboard' %}" class="btn btn-info btn-lg pull-right"> <i class="glyphicon glyphicon-arrow-left"></i> Volver </a>
+					</div>
+					
+				</div>	
+			</div>
+		</div>
+	</div>
+</body>
+<script>
+	$(document).ready( function () {
+    $('#myTable').DataTable();
+} );
+</script>
+</html>

@@ -15,13 +15,17 @@ from tinymce import models as tinymce_models
 
 class Documento(models.Model):
 	CATEGORIA = ((0 , 'SINIC-SAT'), (1, 'Anexo RRHH '),
-	(2, 'ModusOperandis '),(3, 'Vivienda '), (4, 'Área Finanzas '),)
-		
+	(2, 'ModusOperandis '),(3, 'Vivienda '), (4, 'Área Finanzas '),(5, 'Área Comunicaciones e Informatica '),(6, 'Departamento de Educacion Fisica '),)
+	
 	file_category = models.IntegerField(choices = CATEGORIA, validators=[tipo_validacion])
 	file_logo = models.CharField(max_length=100, validators=[texto_validacion])
 	file_name = models.CharField(max_length=100, validators=[texto_validacion])
 	file_description    = models.CharField(max_length = 250)
 	file_upload         = models.FileField(upload_to='documentos/')
+
+	def nombre_documento(self):
+		return '%s %s %s' % (self.file_category, self.file_name, self.file_description)
+
 
 	class Meta:
 		db_table = 'publico_documentos'

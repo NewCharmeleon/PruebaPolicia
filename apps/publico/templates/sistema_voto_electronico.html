@@ -1,0 +1,100 @@
+{% extends 'indexBackup.html' %} 
+
+{% block description %}  
+ <meta name="description" content="Policia del Chubut">
+ <title>Sistema Voto Electronico</title>
+{% endblock description %}  
+
+{% load staticfiles %}
+{% block contenido %}
+<style>
+.dd-content-layout .dd-content {
+    margin: 0 auto;
+    width: 80%;
+    margin-right: 0%;
+}
+</style>
+<section class="engine">
+    <a href="#"></a>
+</section>
+<div class="dd-sheet clearfix">
+    <div class="dd-layout-wrapper">
+        <div class="dd-content-layout">
+            <div class="dd-content-layout-row">
+                <div class="dd-layout-cell dd-sidebar1">
+                    <div class="dd-block clearfix">
+                        <div class="dd-blockheader"  >
+                            <h3 class="t">Sistema Voto Electronico</h3>
+                        </div>
+                        <div class="dd-blockcontent">
+                          	<ul class="menu">
+                           		<li class="item-158">
+						      		<a href='#PantallaPrincipal'>Pantalla Principal del Sistema.</a>
+                            	</li>
+                          	</ul>
+                        </div>
+                    </div>
+                    <div class="dd-block clearfix">
+                        <div class="dd-blockheader">
+                            <h3 class="t">VideoTutorial</h3>
+                        </div>
+                        <div class="dd-blockcontent">
+                            <ul class="menu">
+                                <li class="item-159">
+				   					<a href='#VideoTutorial'>Uso del Sistema de Voto Electronico.</a>
+                                </li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+				<div class="dd-layout-cell dd-content">
+					<article class="dd-post dd-messages" style="display: none;">
+						<div class="dd-postcontent clearfix">
+							<div id="system-message-container">
+							</div>
+						</div>
+					</article>
+                    <div class="item-page">
+                  		<article class="dd-post">
+                       		<div class="dd-postcontent clearfix">
+								<div class="dd-article">
+									<p style="margin-top: 0px; margin-bottom: 9px; color: #333333; font-family: 'Helvetica Neue', Helvetica, Arial, sans-serif; font-size: 20px; text-align: center; background-color: #ffffff;">
+										<strong>
+											<a name="PantallaPrincipal"> Pantalla de Bienvenida del Sistema de Voto Electronico</a>
+										</strong>
+									</p>
+									<div id="PantallaPrincipal" style="margin-bottom: 9px; height:80vh;">
+										<img class="imagen_sistema" width="100%" style="height: 80vh !important" src="{% static 'videos/sistema_voto_electronico.png' %}" alt="Menu Sistema Voto Electronico">
+									</div>
+									<hr>
+									<p style="margin-top: 0px; margin-bottom: 9px; color: #333333; font-family: 'Helvetica Neue', Helvetica, Arial, sans-serif; font-size: 20px; text-align: center; background-color: #ffffff;">
+											<strong>
+											<a name="VideoTutorial">Que es y como funciona el Sistema de Voto Electronico: </a>
+										</strong>
+									</p>
+									<div id="VideoTutorial">
+										<video poster="{% static 'img/Escudo_PoliciaCh.png' %}" width=99% height=100% controls >
+												<source src="{% static 'videos/Tutorial-votacion-completo.mp4' %}" type="video/mp4">
+												<!--source src="{% static 'img/Video.ogg' %}" type="video/ogg"-->
+												<!--source src="{% static 'img/Video.webm' %}" type="video/webm"-->	
+												Lo sentimos. Tu navegador no soporta HTML5 video.	
+										</video-->
+										<!--video oncontextmenu="return false;" poster="{% static 'img/Escudo_PoliciaCh.png' %}" width=99% height=100% controls>
+   											 <source type="video/mp4" id="video">
+										</video-->
+
+										<script>
+											//document.getElementById("video").src = "{% static 'videos/Tutorial-votacion-completo.mp4' %}";
+										</script>
+									</div>
+								</div>
+							</div>
+						</article>
+					</div>
+           		</div>
+        	</div>
+    	</div>
+	</div>
+</div>
+
+{% endblock contenido %}

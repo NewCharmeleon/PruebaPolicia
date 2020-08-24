@@ -1,0 +1,176 @@
+<!DOCTYPE html>
+{% load staticfiles %}
+<html>
+<head>
+	<title>Editar</title>
+	<!-- Integracion de JQuery y Bootstrap -->
+	{% include 'partials/_headCssJs.html'%}
+	<!-- Fin Integracion -->
+</head>
+<body style="background-color: #81BEF7">
+	
+	<div class="container">
+		<div class="row" style="padding-top: 5%;">
+			<div class="col-md-10 col-md-offset-1 well">
+				<div class="row">
+					<div class="col-md-12">
+						<center><img src="{% static 'img/Escudo_PoliciaCh.png' %}"></center>
+					</div>
+				</div>
+					<hr>
+				<div class="row">
+					{% if messages %}
+						<div class="alert alert-succes">
+							{% for message in messages %}
+								{{ message}}
+							{%endfor%}	
+						</div>
+					{% endif %}		
+					<div class="col-md-12">
+						<h2> Editar Dependencia</h2>
+						<hr style="border-top: 3px solid #81BEF7;">
+					</div>
+				</div>
+				<div class="row">
+					<br>
+					<form method="post" class="form-horizontal">{% csrf_token %}
+						<div class="form-group form-group-lg">
+							<label class="col-md-2"> Jurisdicci&oacute;n </label>
+							<div class="col-md-10">
+								{{form.jurisdiccion}}
+							</div>
+								{% if form.errors.jurisdiccion %}
+							<div class="col-md-10 col-md-offset-2 alert alert-danger">
+            							{{ form.errors.jurisdiccion }}
+        					</div>
+							{% endif %}
+						</div>	
+						<br>
+						<div class="form-group form-group-lg">
+							<label class="col-md-2"> Funci&oacute;n </label>
+							<div class="col-md-10">
+								{{form.funcion}}
+							</div>
+								{% if form.errors.funcion %}
+							<div class="col-md-10 col-md-offset-2 alert alert-danger">
+            						{{ form.errors.funcion|escape }}
+        					</div>
+							{% endif %}
+						</div>	
+						<br>
+						<div class="form-group form-group-lg">
+							<label class="col-md-2"> Nombre </label>
+							<div class="col-md-10">
+								{{form.nombre}}
+							</div>
+								{% if form.errors.nombre %}
+							<div class="col-md-10 col-md-offset-2 alert alert-danger">
+            						{{ form.errors.nombre|escape }}
+        					</div>
+							{% endif %}
+						</div>
+						<br>
+						<div class="form-group form-group-lg">
+							<label class="col-md-2"> Direcci&oacute;n </label>
+							<div class="col-md-10">
+								{{form.direccion}}
+							</div>
+						</div>
+							{% if form.errors.direccion %}
+							<div class="col-md-10 col-md-offset-2 alert alert-danger">
+            							{{ form.errors.direccion|escape }}
+        					</div>
+							{% endif %}
+						<div class="form-group form-group-lg">
+							<label class="col-md-2"> Ciudad </label>
+							<div class="col-md-10">
+								{{form.ciudad}}
+							</div>
+						</div>
+							{% if form.errors.ciudad %}
+							<div class="col-md-10 col-md-offset-2 alert alert-danger">
+        							{{ form.errors.ciudad|escape }}
+    						</div>
+							{% endif %}	
+						<div class="form-group form-group-lg">
+							<label class="col-md-2"> Telefono </label>
+							<div class="col-md-10">
+								{{form.telefono}}
+							</div>
+						</div>
+							{% if form.errors.telefono %}
+							<div class="col-md-10 col-md-offset-2 alert alert-danger">
+            							{{ form.errors.telefono|escape }}
+        					</div>
+							{% endif %}
+						<div class="form-group form-group-lg">
+							<label class="col-md-2"> Email </label>
+							<div class="col-md-10">
+								{{form.email}}
+							</div>
+						</div>
+							{% if form.errors.email %}
+							<div class="col-md-10 col-md-offset-2 alert alert-danger">
+            							{{ form.errors.email|escape }}
+        							</div>
+							{% endif %}	
+						<div class="form-group form-group-lg">
+							<label class="col-md-2"> Jefe </label>
+							<div class="col-md-10" >
+								{{form.jefe}}
+							</div>
+						</div>
+							{% if form.errors.jefe %}
+							<div class="col-md-10 col-md-offset-2 alert alert-danger">
+            							{{ form.errors.jefe|escape }}
+        							</div>
+							{% endif %}
+						<div class="form-group form-group-lg">
+							<label class="col-md-2"> SubJefe </label>
+							<div class="col-md-10" >
+								{{form.subjefe}}
+							</div>
+						</div>
+							{% if form.errors.subjefe %}
+							<div class="col-md-10 col-md-offset-2 alert alert-danger">
+            							{{ form.errors.subjefe|escape }}
+        							</div>
+							{% endif %}	
+						<div class="form-group form-group-lg">
+							<label class="col-md-2"> Ubicaci&oacute;n </label>
+							<div class="col-md-10" >
+								{{form.ubicacion}}
+							</div>
+						</div>
+							{% if form.errors.ubicacion %}
+							<div class="col-md-10 col-md-offset-2 alert alert-danger">
+            							{{ form.errors.ubicacion|escape }}
+        							</div>
+							{% endif %}	
+						<div class="form-group form-group-lg">
+							<label class="col-md-2"> Imagen </label>
+							<div class="col-md-10" >
+								{{form.imagen}}
+							</div>
+						</div>
+							{% if form.errors.imagen %}
+							<div class="col-md-10 col-md-offset-2 alert alert-danger">
+            							{{ form.errors.imagen|escape }}
+        							</div>
+							{% endif %}	
+						
+
+						<br>
+						<hr>
+						<button type="submit" class="btn btn-primary btn-lg pull-right"> <i class="glyphicon glyphicon-save"></i> Guardar </button>
+						
+						<a href="{% url 'show_dependencias_ver' %}" class="btn btn-danger btn-lg pull-right"> <i class="glyphicon glyphicon-remove"></i> Cancelar </a>
+						
+					</form>
+				</div>
+				</div>
+			</div>
+		</div>
+	</div>			
+	
+</body>

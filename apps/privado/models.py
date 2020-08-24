@@ -40,6 +40,8 @@ class Publicacion(models.Model):
 
 
 	#content = HTMLField()
+	def __str__(self):
+		return self.descripcion.upper()
 	
 	def Publicar(self):
 		self.fecha_publicacion=timezone.now()
@@ -176,6 +178,9 @@ class Autoridad(models.Model):
 	#phone_number = models.CharField(validators=[phone_regex], max_length=17, blank=True)
 	usuario = models.ForeignKey(User, on_delete = 'CASCADE')
 	
+	def __str__(self):
+		return self.descripcion.upper()
+
 	def nombre_completo(self):
 		return '%s %s %s' % (self.nombre, self.segundo_nombre, self.apellido)
 
@@ -298,3 +303,83 @@ class Dependencia(models.Model):
 		self.imagen = InMemoryUploadedFile(output,'ImageField', "%s.jpg" %self.imagen.name.split('.')[0], 'image/jpeg', sys.getsizeof(output), None)
 		self.save()
 		#super(Modify,self).save()
+
+class Ejercicio(models.Model):
+	TIPO = ((1 , 'Resistencia'), (2, 'Elongacion'),)
+	ZONA = ((0, 'Tren Superior'),(1, 'Zona Superior'),(2 , 'Tren Inferior'),)
+	#CATEGORIA = ((0 , 'Informativo'), (1, 'Institucional'), (2, 'Comunidad'),(3, 'Otro'),)
+
+	tipo = models.IntegerField(choices = TIPO, validators=[tipo_validacion])
+	zona = models.IntegerField(choices = ZONA, validators=[tipo_validacion])
+	objetivo = models.TextField(validators=[texto_validacion])
+	nombre = models.CharField(max_length=100, validators=[texto_validacion])
+	intensidad = models.TextField(validators=[texto_validacion])
+	detalle = models.TextField(validators=[texto_validacion])
+	url = models.URLField()#validators=[url_validacion])
+	imagen = models.ImageField(upload_to='ejercicios',null=True,blank=True, validators=[imagen_validacion])
+	#fuente = models.CharField(max_length=200, validators=[texto_validacion])
+	#categoria = models.IntegerField(choices = CATEGORIA, validators=[tipo_validacion])
+	#contenido = tinymce_models.HTMLField()
+	fecha_creacion = models.DateTimeField(auto_now_add=True)
+	fecha_modificacion = models.DateTimeField(auto_now=True)
+	fecha_publicacion = models.DateTimeField(blank=True, null=True)	
+	fecha_archivado = models.DateTimeField(blank=True, null=True)
+	#intro = models.CharField(max_length=350, null=True, blank=True)
+	is_publicado = models.BooleanField(default=False)
+	is_archivado = models.BooleanField(default=False)
+	is_para_portada = models.BooleanField(default=False)
+	usuario = models.ForeignKey(User, on_delete = 'CASCADE')
+
+
+	#content = HTMLField()
+	def __str__(self):
+		return self.descripcion.upper()
+	
+	def Publicar(self):
+		self.fecha_publicacion=timezone.now()
+		self.is_publicado = True
+		if self.is_archivado:
+			self.is_archivado = False
+		self.save()
+
+	def Enviar(self):
+		self.is_para_portada = True
+		if self.is_archivado:
+			self.is_archivado = False
+		self.save()	
+
+	def Despublicar(self):
+		self.is_para_portada = False
+		self.save()
+
+
+	def Archivar(self):
+		self.fecha_archivado=timezone.now()
+		self.is_archivado = True
+		if self.is_para_portada:
+			self.is_para_portada = False
+		if self.is_publicado:
+			self.is_publicado = False
+		self.save()	
+
+	def Redimensionar(self):
+	   	#self.imagen.resize((320, 240))
+   		#self.save()	
+   		#Opening the uploaded image
+		im = Image.open(self.imagen)
+
+		output = BytesIO()
+
+		#Resize/modify the image
+		im = im.resize( (500,400) )
+
+		#after modifications, save it to the output
+		im.save(output, format='JPEG', quality=320)
+		output.seek(0)
+
+		#change the imagefield value to be the newley modifed image value
+		self.imagen = InMemoryUploadedFile(output,'ImageField', "%s.jpg" %self.imagen.name.split('.')[0], 'image/jpeg', sys.getsizeof(output), None)
+		self.save()
+		#super(Modify,self).save()
+
+

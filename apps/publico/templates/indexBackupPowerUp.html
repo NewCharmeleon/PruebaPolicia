@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+{% load staticfiles %}
+<html>
+<head>
+  <script id="www-widgetapi-script" src="{% static 'www-widgetapi.js' %}" type="text/javascript" async=""></script>
+  <script id="YTAPI" src="{% static 'ytplayer/iframe_api.js' %}"></script>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1, minimum-scale=1 user-scalable=no">
+  <link rel="shortcut icon" href="{% static 'images/escudo-policiach-102x107.png' %}"  type="image/x-icon">
+  
+  <meta name="description" content="Policia del Chubut">
+  <title>Inicio</title>
+  
+  <!--incluimos el template partials enlaces de css-->
+  {% include 'partials/_linksCss.html' %}
+
+  <!--incluimos el template partials enlaces de BootstrapJs-->
+  {% include 'partials/_linksBootstrapJs.html' %}
+  
+</head>
+
+<body style="background: #262626 url({% static 'img/background.jpeg' %}) top center no-repeat fixed;">
+	
+	<!--incluimos el archivo partials header-->
+	{% include 'partials/_headerBackup.html' %}
+
+	<!--incluimos el archivo partials _carousel-->
+	{% include 'partials/_carousel.html' %}  
+
+	<!--incluimos el bloque contenido-->
+	{% block contenido %}
+		{% include 'bodyBackup.html' %}
+	{% endblock contenido %}
+	
+	<!--incluimos el template partials _derechosninos-->
+	{% include 'partials/_derechosninos.html' %}
+
+	<!--incluimos el template partials _redes-->
+	{% include 'partials/_redes.html' %}
+
+	<!--incluimos el template partials _footer-->
+	{% include 'partials/_footerBackup.html' %}
+
+	<!--incluimos el archivo partials enlaces de scriptsJs-->
+	{% include 'partials/_scriptsJsReproductor.html' %}
+
+ 
+  </body>
+</html>

@@ -1,0 +1,179 @@
+<!DOCTYPE html>
+{% load staticfiles %}
+
+<html>
+<head>
+	<title>Ver</title>
+	{% include 'partials/_metatags.html'%}
+	<!-- Integracion de JQuery y Bootstrap -->
+	{% include 'partials/_headCssJs.html'%}
+	<!-- Fin Integracion -->
+</head>
+<body style="background-color: #81BEF7">
+	
+	<div class="container">
+		<div class="row" style="padding-top: 5%;">
+			<div class="col-md-10 col-md-offset-1 well">
+				<div class="row">
+					{% if messages %}
+						{% for message in messages %}
+							<div class="alert alert-success alert-dismissible" role alert>
+								<button type="button" class="close" data-dismiss="alert" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+								<p> <i class="glyphicon glyphicon-info-sign"></i> {{ message}}</p>
+							</div>
+						{%endfor%}	
+					{% endif %}	
+					<div class="col-md-12">
+						<center><img src="{% static 'img/Escudo_PoliciaCh.png' %}"></center>
+					</div>
+				</div>
+				<hr>
+				<div class="row">
+					<div class="col-md-12">
+						<h2> Ver Dependencia</h2>
+						<hr style="border-top: 3px solid #81BEF7;">
+					</div>
+				</div>
+				<div class="row">
+					<br>
+					<div class="col-md-12">
+						<label class="col-md-2"> Jurisdicci&oacute;n </label>
+						<div id="tipo" class="col-md-10">
+							{% if dependencia.jurisdiccion == 1 %}
+									Jefatura de Policia
+							{% elif dependencia.jurisdiccion == 2 %}
+									U. R. Cro. Rivadavia
+							{% elif dependencia.jurisdiccion == 3 %}
+									U. R. Esquel
+							{% elif dependencia.jurisdiccion == 4 %}
+									U. R. Pto. Madryn
+							{% elif dependencia.jurisdiccion == 5 %}
+									 U. R. Trelew
+							{% else %}
+									Provincia
+							{% endif %}		
+						</div>
+					</div>
+					<br>
+					<hr style="border-top: 2px solid #cccccc;">
+					<div class="col-md-12">
+						<label class="col-md-2"> Funci&oacute;n </label>
+						<div class="col-md-10">
+							{% if dependencia.funcion == 1 %}
+								Escuela
+							{% else %}
+								Seguridad
+							{% endif %}
+						</div>
+					</div>
+					<br>	
+					<hr style="border-top: 2px solid #cccccc;">
+					<div class="col-md-12">
+						<label class="col-md-2"> Nombre </label>
+						<div class="col-md-10">
+							{{dependencia.nombre}}
+						</div>
+					</div>
+					<br>	
+					<hr style="border-top: 2px solid #cccccc;">
+					<div class="col-md-12">
+						<label class="col-md-2"> Direcci&oacute;n </label>
+						<div class="col-md-10">
+							{{dependencia.direccion}}
+						</div>
+					</div>
+					<br>
+					<hr style="border-top: 2px solid #cccccc;">
+					<div class="col-md-12">
+						<label class="col-md-2"> Ciudad </label>
+						<div class="col-md-10">
+							{{dependencia.ciudad}}
+						</div>
+					</div>
+					<br>
+					<hr style="border-top: 2px solid #cccccc;">
+					<div class="col-md-12">
+						<label class="col-md-2"> Telefono </label>
+						<div class="col-md-10">
+							{{dependencia.telefono}}
+						</div>
+					</div>
+					<br>
+					<!--
+					<hr style="border-top: 2px solid #cccccc;">
+					<div class="col-md-12">
+						<label class="col-md-2"> Email </label>
+						<div class="col-md-10">
+							{{dependencia.email}}
+						</div>
+					</div>
+					<br>-->
+					<hr style="border-top: 2px solid #cccccc;">
+					<div class="col-md-12">
+						<label class="col-md-2"> Jefe </label>
+						<div class="col-md-10">
+							{{dependencia.jefe}}
+						</div>
+					</div>
+					<br>
+					<hr style="border-top: 2px solid #cccccc;">
+					<div class="col-md-12">
+						<label class="col-md-2"> SubJefe </label>
+						<div class="col-md-10">
+							{{dependencia.subjefe}}
+						</div>
+					</div>
+					<br>
+					<hr style="border-top: 2px solid #cccccc;">
+					<div class="col-md-12">
+						<label class="col-md-2"> Ubicaci&oacute;n </label>
+						<div class="col-md-10">
+							{{dependencia.ubicacion}}
+						</div>
+					</div>
+					<br>	
+					<hr style="border-top: 2px solid #cccccc;">
+					<div class="col-md-12">
+						<label class="col-md-2"> Imagen </label>
+						<div class="col-md-10">
+							{{dependencia.imagen}}
+						</div>
+					</div>
+					<br>	
+					<hr style="border-top: 2px solid #81BEF7;">
+					<div id="estado" class="col-md-12">
+							<label class="col-md-2"> Estado </label>
+							<div class="col-md-10"> {% if dependencia.is_publicado %}
+											<span class="badge badge-success">Publicado</span>
+										{% elif dependencia.is_archivado  %}
+											<span class="badge">Archivado</span>											 
+										{% elif not dependencia.is_publicado and not dependencia.is_archivado %}
+											  <span class="badge badge-info">Borrador</span> 											 
+										{% endif %}	
+										{% if dependencia.is_para_portada %}
+											<span class="badge badge-success">En Portada</span>
+										{% endif %}	
+					</div>
+					<br>
+					<hr style="border-top: 2px solid #81BEF7;">
+					{% if dependencia.is_publicado and not dependencia.is_para_portada %}
+						¿Desea Enviar a la portada la dependencia: {{ dependencia.id}} ?
+						<a href="{% url 'enviar_dependencia' id=dependencia.id %}" class="btn btn-success btn-lg"> <i class="glyphicon glyphicon-trash"></i> Enviar a Portada </a>
+						<a href="{% url 'archivar_dependencia' id=dependencia.id %}" class="btn btn-warning btn-lg"> <i class="glyphicon glyphicon-trash"></i> Archivar </a>
+					{% elif dependencia.is_para_portada	%}
+
+						<a href="{% url 'despublicar_dependencia' id=dependencia.id %}" class="btn btn-warning btn-lg"> <i class="glyphicon glyphicon-trash"></i> Despublicar </a>
+					{% else  %}
+						¿Desea Publicar la dependencia: {{ dependencia.id }} ?
+						<a href="{% url 'publicar_dependencia' id=dependencia.id %}" class="btn btn-success btn-lg"> <i class="glyphicon glyphicon-trash"></i> Publicar </a>
+						<a href="{% url 'edit_dependencia' id=dependencia.id %}" class="btn btn-warning btn-lg"> <i class="glyphicon glyphicon-trash"></i> Editar </a>
+   					{% endif %}
+   					<a href="{% url 'show_dependencias_ver' %}" class="btn btn-info btn-lg pull-right"> <i class="glyphicon glyphicon-arrow-left"></i> Volver </a>
+					</div>
+				</div>
+			</div>
+		</div>
+	</div>			
+	
+		
+</body>

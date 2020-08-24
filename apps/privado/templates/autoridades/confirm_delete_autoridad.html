@@ -1,0 +1,141 @@
+<!DOCTYPE html>
+{% load staticfiles %}
+<html>
+<head>
+	<title>Ver</title>
+	<!-- Integracion de JQuery y Bootstrap -->
+	{% include 'partials/_headCssJs.html'%}
+	<!-- Fin Integracion -->
+
+</head>
+<body style="background-color: #81BEF7">
+	<div class="container">
+		<div class="container">
+			<div class="row" style="padding-top: 5%;">
+				<div class="col-md-10 col-md-offset-1 well">
+					<div class="row">
+						<div class="col-md-12">
+							<center><img src="{% static 'img/Escudo_PoliciaCh.png' %}"></center>
+						</div>
+					</div>
+					<hr>
+					<div class="row">
+						{% if messages %}
+							{% for message in messages %}
+								<div class="alert alert-danger alert-dismissible" role alert>
+									<button type="button" class="close" data-dismiss="alert" aria-label="Close"><span aria-hidden="true">&times;</span>
+									</button>
+										<p> <i class="glyphicon glyphicon-info-sign"></i> {{ message}}</p>	
+								</div>
+							{%endfor%}	
+						{% endif %}	
+						<div class="col-md-12">
+							<h2> Ver Autoridad</h2>
+							<hr style="border-top: 3px solid #81BEF7;">
+						</div>
+					</div>
+					<div class="row">
+						<br>
+						<div class="col-md-12">
+							<label class="col-md-2"> Nombre </label>
+							<div id="tipo" class="col-md-10">
+								{{autoridad.nombre}}		
+							</div>
+						</div>
+						<br>
+						<hr style="border-top: 2px solid #cccccc;">
+						<div class="col-md-12">
+							<label class="col-md-2"> Segundo Nombre </label>
+							<div class="col-md-10">
+								{{autoridad.segundo_nombre}}
+							</div>
+						</div>
+						<br>	
+						<hr style="border-top: 2px solid #cccccc;">
+						<div class="col-md-12">
+							<label class="col-md-2"> Apellido </label>
+							<div class="col-md-10">
+								{{autoridad.apellido}}
+							</div>
+						</div>
+						<br>	
+						<hr style="border-top: 2px solid #cccccc;">
+						<div class="col-md-12">
+							<label class="col-md-2"> Jerarquia </label>
+							<div class="col-md-10">
+								{{autoridad.jerarquia}}
+							</div>
+						</div>
+						<br>
+						<hr style="border-top: 2px solid #cccccc;">
+						<div class="col-md-12">
+							<label class="col-md-2"> Cargo </label>
+							<div class="col-md-10">
+								{{autoridad.cargo}}
+							</div>
+						</div>
+						<br>
+						<hr style="border-top: 2px solid #cccccc;">
+						<div class="col-md-12">
+							<label class="col-md-2"> Dependencia </label>
+							<div class="col-md-10">
+								{{autoridad.lugar}}
+							</div>
+						</div>
+						<br>
+						<hr style="border-top: 2px solid #cccccc;">
+						<div class="col-md-12">
+							<label class="col-md-2"> Direcci&oacute;n Laboral </label>
+							<div class="col-md-10">
+								{{autoridad.direccion_laboral}}
+							</div>
+						</div>
+						<br>	
+						<hr style="border-top: 2px solid #cccccc;">
+						<div class="col-md-12">
+							<label class="col-md-2"> Telefono Laboral </label>
+							<div class="col-md-10">
+								{{autoridad.telefono_laboral}}
+							</div>
+						</div>
+						<br>	
+						<hr style="border-top: 2px solid #cccccc;">
+						<div class="col-md-12">
+							<label class="col-md-2"> Telefono </label>
+							<div class="col-md-10">
+								{{autoridad.telefono}}
+							</div>
+						</div>
+						<br>
+						<hr style="border-top: 2px solid #cccccc;">
+						<div class="col-md-12">
+							<label class="col-md-2"> Email </label>
+							<div class="col-md-10">
+								{{autoridad.email}}
+							</div>
+						</div>	
+						<br>
+						<hr style="border-top: 2px solid #cccccc;">
+						<div class="col-md-12">
+							<label class="col-md-2"> Trayectoria </label>
+							<div class="col-md-10">
+								{{autoridad.trayectoria}}
+							</div>
+						</div>
+						<br>	
+						<hr style="border-top: 2px solid #81BEF7;">
+						</div>
+						
+						¿Está seguro que desea borrar la Autoridad: {{ autoridad.id }} ?
+    					<a href="{% url 'delete_autoridad' id=autoridad.id %}" class="btn btn-danger btn-lg"> <i class="glyphicon glyphicon-trash"></i> Eliminar </a>
+    					<a href="{% url 'archivar_autoridad' id=autoridad.id %}" class="btn btn-warning btn-lg"> <i class="glyphicon glyphicon-trash"></i> Archivar </a>
+						<a href="{% url 'show_autoridades' %}" class="btn btn-info btn-lg pull-right"> <i class="glyphicon glyphicon-arrow-left"></i> Volver </a>
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>			
+	</div>
+	     			 
+   
+</body>

@@ -1,0 +1,107 @@
+{% extends 'indexBackupPowerUp.html' %}   
+{% load staticfiles %}
+{% block contenido %}
+<!--incluimos el template partials enlaces de css del Reproductor-->
+  {% include 'partials/_linksCssReproductor.html' %}
+
+
+<section class="Body Container Reproductor">
+ <main>
+    <header>
+        <div class="TpTvSw">
+            <h1 class="Title">Acondicionamiento Fisico Funcional <span><span>Ejercicio 1</span> de <span>6</span></span></h1>
+            <ul class="ListPOpt">
+		<li><a rel="nofollow" onclick="window.open ('http://www.facebook.com/sharer.php?u=https:/', 'Facebook', 'toolbar=0, status=0, width=650, height=450');" class="Fcb fa-facebook"></a></li>
+		<li><a rel="nofollow" onclick="window.open('https://twitter.com/intent/tweet?original_referer=https:', 'Twitter', 'toolbar=0, status=0, width=650, height=450');" class="Twt fa-twitter"></a></li>
+		<li><a rel="nofollow" onclick="window.open(this.href,'', 'menubar=no,toolbar=no,resizable=yes,scrollbars=yes,height=600,width=600');return false;" href="https://plus.google.com/share?url=https://" class="Ggl fa-google-plus"></a></li>
+	    </ul>                    
+            <h2 class="SubTitle">01 - Zona: Tren Superior</h2>
+        </div>
+        <ul class="TPlayerNv">
+            <li data-shortcode="2" class="Button STPb Current" data-tplayernv="Opt0"><span>Ejercicio - </span><span>Vuelos Posteriores</span></li>
+            <li data-shortcode="2" class="Button STPb " data-tplayernv="Opt1"><span>Ejercicio - </span><span>Puente en construcci&oacute;n</span></li>
+            <li data-shortcode="2" class="Button STPb " data-tplayernv="Opt2"><span>Ejercicio - </span><span>Vuelos frontales</span></li>
+            <li data-shortcode="2" class="Button STPb " data-tplayernv="Opt3"><span>Ejercicio - </span><span>Flexiones de Brazos</span></li>
+            <li data-shortcode="2" class="Button STPb " data-tplayernv="Opt4"><span>Ejercicio - </span><span>Burpee con Flexi&oacute;n de Brazos</span></li>
+            <li data-shortcode="2" class="Button STPb " data-tplayernv="Opt5"><span>Ejercicio - </span><span>Flex. Diamante c/apoyo Rodillas</span></li>
+        </ul>
+    </header>    
+    <div class="ejercicio-principal">
+                        <div class="contenedor">
+                            <div class="TPlayer">
+                               <div class="TPlayerTb Current" id="Opt0">
+					<!--iframe src="https://drive.google.com/file/d/1S31saGrBX6nbMrxl0Hi81s5O0M68rls4/preview" width="640" height="480"></iframe--></div>
+					<iframe scrolling="no" src="https://youtube.com/embed/HzZAONQwA7M" width="640" height="480" frameborder="0"></iframe>
+				<div class="TPlayerTb " id="Opt1">
+					<!--iframe scrolling="no" src="https://drive.google.com/uc?id=1Rd6VpWIkWOT1ZnFYPkg2_32sTwyasG-b" width="607" height="360" frameborder="0"></iframe-->
+				</div>
+				<div class="TPlayerTb " id="Opt2">
+					<!--iframe scrolling="no" src="https://drive.google.com/uc?id=1S4S2f0CnRo3wLgMcp7Yy8-S6EcDk-KU7" width="607" height="360" frameborder="0"></iframe-->
+				</div>
+				<div class="TPlayerTb " id="Opt3">
+					<iframe scrolling="no" src="https://youtube.com/embed/HzZAONQwA7M" width="607" height="360" frameborder="0"></iframe>
+				</div>
+				<div class="TPlayerTb " id="Opt4">
+					<iframe scrolling="no" src="https://youtube.com/embed/Uy2nUNX38xE" width="607" height="360" frameborder="0"></iframe>
+				</div>
+				<div class="TPlayerTb " id="Opt5">
+					<iframe scrolling="no" src="https://youtube.com/embed/wgpEj-jSq3A" width="607" height="360" frameborder="0"></iframe>
+				</div>
+                                <span class="btnsplyr"> 
+                                    <span class="AAIco-lightbulb_outline lgtbx-lnk lghtsof"></span> 
+                                </span>
+                            </div>
+                            <p class="descripcion">
+                                Aca van la descripcion de los ejercicios
+                                Lorem ipsum dolor sit amet consectetur, adipisicing elit. Ipsam vero, cumque blanditiis soluta quia ab facilis repellat enim! Vel aliquam nesciunt assumenda quaerat perferendis ut facere ex voluptas reiciendis voluptatum!
+                                Lorem ipsum dolor, sit amet consectetur adipisicing elit. Architecto sint deleniti, mollitia numquam minima laborum debitis a quos fuga laudantium laboriosam totam sit ratione eum. Omnis saepe expedita possimus molestiae.
+                                Lorem ipsum dolor sit amet consectetur adipisicing elit. Ea cum esse voluptatibus dolor nesciunt tempora magni delectus. Consequatur deserunt quam nobis rerum, quis non amet eligendi animi et enim ratione.
+                            </p>
+                            <button role="button" class="boton"><i class="fas fa-play"></i>Reproducir</button>
+                            <button role="button" class="boton"><i class="fas fa-info-circle"></i>M&aacute;s Informaci&oacute;n</button>
+                        </div>
+                    </div>  
+                    <div class="ejercicios-recomendados contenedor">
+                            <div class="contenedor-titulo-controles">
+                                <h3>Ejercicios Recomendados</h3>
+                                <div class="indicadores"></div>
+                            </div>
+                            <div class="contenedor-principal">
+                                <button role="button" id="flecha-izquierda" class="flecha-izquierda"><i class="fas fa-angle-left"></i></button>
+                            
+                                <div class="contenedor-carrusel">
+                                    <div class="carrusel">
+                                        <div class="ejercicio">
+                                            <a href="#"><img src="{% static 'img/policias200.jpg' %}" alt=""></a>
+                                        </div>
+                                        <div class="ejercicio">
+                                            <a href="#"><img src="{% static 'img/policias200.jpg' %}" alt=""></a>
+                                        </div>
+                                        <div class="ejercicio">
+                                            <a href="#"><img src="{% static 'img/policias200.jpg' %}" alt=""></a>
+                                        </div>
+                                        <div class="ejercicio">
+                                            <a href="#"><img src="{% static 'img/policias200.jpg' %}" alt=""></a>
+                                        </div>
+                                        <div class="ejercicio">
+                                            <a href="#"><img src="{% static 'img/policias200.jpg' %}" alt=""></a>
+                                        </div>
+                                        <div class="ejercicio">
+                                            <a href="#"><img src="{% static 'img/policias200.jpg' %}" alt=""></a>
+                                        </div>
+                                        <div class="ejercicio">
+                                            <a href="#"><img src="{% static 'img/policias200.jpg' %}" alt=""></a>
+                                        </div>
+                                    </div>
+                                </div>
+
+                                <button role="button" id="flecha-derecha" class="flecha-derecha"><i class="fas fa-angle-right"></i></button>
+                            </div>
+
+                    </div>          
+                </main>
+
+   
+</section>
+ 
+{% endblock contenido %}

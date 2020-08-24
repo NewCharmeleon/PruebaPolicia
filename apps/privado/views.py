@@ -28,7 +28,7 @@ def login(request):
 					messages.success(request, 'Bienvenido usuario')
 					return HttpResponseRedirect(reverse('dashboard'))
 				else:
-					error = 'Verifique su usuario y contraseña'
+					error = 'Verifique su usuario y contraseÃ±a'
 					return render(request,'login.html',{'form':form,'error':error})
 			
 	return HttpResponseRedirect(reverse('dashboard'))
@@ -135,7 +135,7 @@ def show_publicacion(request,id):
 @login_required
 def ver_publicacion(request, id):
 	publicacion=get_object_or_404(Publicacion, id=id)
-	messages.success(request, "Publicación obtenida con exito!!!")
+	messages.success(request, "PublicaciÃ³n obtenida con exito!!!")
 	return render(request,'ver_publicacion.html',{'publicacion':publicacion})
 
 
@@ -650,3 +650,195 @@ def show_dependencias_portada(request):
 	else:	
 		messages.success(request, "Dependencias en Portada obtenidas con exito!!!")
 	return render(request,'show_dependencias_portada.html',{'dependencias':dependencias})
+
+#Vistas de Ejercicios+++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
+
+@login_required
+def dashboard_ejercicio(request):
+	ejercicios = Ejercicio.objects.order_by('zona')
+	#.filter(usuario = request.user)
+	return render(request,'ejercicios/dashboard_ejercicio.html',{'usuario':request.user,'ejercicios':ejercicios})
+
+
+@login_required
+@permission_required('privado.add_ejercicio', raise_exception=True)
+def new_ejercicio(request):
+
+	if request.method == 'POST':
+
+		form = EjercicioForm(request.POST,request.FILES)
+		
+		if form.is_valid():
+			ejercicio = Ejercicio() #instancio un nuevo ejercicio
+			ejercicio.tipo = form.cleaned_data['tipo']
+			ejercicio.zona = form.cleaned_data['zona']
+			ejercicio.objetivo = form.cleaned_data['objetivo']
+			ejercicio.nombre = form.cleaned_data['nombre']
+			ejercicio.intensidad = form.cleaned_data['intensidad']
+			ejercicio.detalle = form.cleaned_data['detalle']
+			dependencia.url = form.cleaned_data['url']
+			dependencia.imagen = form.cleaned_data['imagen']
+			
+			
+			dependencia.usuario = request.user
+
+			try:
+				
+				ejercicio.save()
+				messages.success(request, "Ejercicio creado con exito!!!")
+				return HttpResponseRedirect(reverse('show_ejercicios_ver'))
+				
+			except Exception as e:
+				print(e)
+				error = "Ocurrio un problema al guardar los datos"
+				
+		else:
+			messages.error(request, "Error. Revise los datos mal cargados.")
+			
+	else:
+		form = EjercicioForm()
+		#form.initial['tipo'] ='1'
+	return render(request,'ejercicios/new_ejercicio.html',{'form': form})
+
+
+@login_required
+@permission_required('privado.add_ejercicio', raise_exception=True)
+def show_ejercicios(request):
+
+	ejercicios = Ejercicio.objects.order_by('zona')
+	if not len(ejercicios):
+		messages.warning(request, "No existen ejercicios")
+	else:	
+		messages.success(request, "Ejercicios obtenidos con exito!!!")
+	return render(request,'ejercicios/show_ejercicios.html',{'ejercicios':ejercicios})
+
+
+@login_required
+
+def show_ejercicio(request,id):
+
+	ejercicio=get_object_or_404(Ejercicio, id=id)
+	messages.success(request, "Ejercicio obtenido con exito!!!")
+	return render(request,'ejercicios/show_ejercicio.html',{'ejercicio':ejercicio})
+
+
+@login_required	
+@permission_required('privado.change_ejercicio', raise_exception=False)
+def edit_ejercicio(request, id):
+
+	ejercicio=get_object_or_404(Ejercicio, id=id)
+	if request.method == 'POST':
+		form = EjercicioForm(request.POST, instance=ejercicio)
+		if form.is_valid():
+						
+			try:
+				form.save()
+				messages.success(request, "Ejercicio editado con exito!!!")
+				return HttpResponseRedirect(reverse('show_ejercicios_ver'))
+				
+			except Exception as e:
+				#print(e)
+				error = "Ocurrio un problema al guardar los datos"
+				return render(request, 'ejercicios/edit_ejercicio.html',{'form':form,'error':error})
+	else:
+		form = EjercicioForm(instance=ejercicio)
+
+	return render(request,"ejercicios/edit_ejercicio.html",{'form': form})	
+
+
+@login_required
+#@permission_required('privado.delete_ejercicio', raise_exception=False)
+def confirm_delete_ejercicio(request,id):
+
+	ejercicio=get_object_or_404(Ejercicio, id=id)
+	messages.success(request, "Ejercicio a eliminar!!!")
+	return render(request,'ejercicios/confirm_delete_ejercicio.html',{'ejercicio':ejercicio})
+
+
+@login_required
+@permission_required('privado.delete_ejercicio', raise_exception=False)
+def delete_ejercicio(request,id):
+
+	ejercicio=get_object_or_404(Ejercicio, id=id)
+	ejercicio.delete()
+	messages.success(request, "Ejercicio eliminado con exito!!!")
+	return HttpResponseRedirect(reverse('dashboard'))	
+
+
+@login_required
+@permission_required('privado.change_ejercicio', raise_exception=False)
+def publicar_ejercicio(request,id):
+
+	ejercicio=get_object_or_404(Ejercicio, id=id)
+	ejercicio.Publicar()
+	messages.success(request, "Ejercicio publicado con exito!!!")
+	return HttpResponseRedirect(reverse('show_ejercicios_ver'))	
+
+
+@login_required
+@permission_required('privado.change_ejercicio', raise_exception=False)
+def enviar_ejercicio(request,id):
+
+	#ejercicios=Ejercicio.objects.filter(is_publicado=True, is_para_portada=True)
+	ejercicio=get_object_or_404(Ejercicio, id=id)
+	ejercicio.Enviar()
+	messages.success(request, "Ejercicio publicado en portada con exito!!!")
+	return HttpResponseRedirect(reverse('show_ejercicios_ver'))	
+
+
+@login_required
+@permission_required('privado.change_ejercicio', raise_exception=True)
+def despublicar_ejercicio(request,id):
+
+	ejercicio=get_object_or_404(Ejercicio, id=id)
+	ejercicio.Despublicar()
+	messages.success(request, "Ejercicio despublicado en portada con exito!!!")
+	return HttpResponseRedirect(reverse('show_ejercicios_ver'))	
+
+@login_required
+def show_ejercicios_nopublicados(request):	
+	ejercicios = Ejercicio.objects.filter(is_archivado=False,is_publicado=False, is_para_portada=False).order_by('zona')
+	if not len(ejercicios):
+		messages.warning(request, "No existen Ejercicios No Publicados")
+	else:	
+		messages.success(request, "Ejercicios obtenidos con exito!!!")
+	return render(request,'ejercicios/show_ejercicios_nopublicados.html',{'ejercicios':ejercicios})
+
+@login_required
+@permission_required('privado.change_ejercicio', raise_exception=True)
+def archivar_ejercicio(request,id):
+
+	ejercicio=get_object_or_404(Ejercicio, id=id)
+	ejercicio.Archivar()
+	messages.success(request, "Ejercicio archivado con exito!!!")
+	return HttpResponseRedirect(reverse('show_ejercicios_ver'))	
+
+
+@login_required
+def show_ejercicios_archivados(request):	
+	ejercicios = Ejercicio.objects.filter(fecha_archivado__isnull=False,is_publicado=False).order_by('fecha_archivado')
+	if not len(ejercicios):
+		messages.warning(request, "No existen Ejercicios archivados")
+	else:	
+		messages.success(request, "Ejercicios archivados obtenidas con exito!!!")
+	return render(request,'ejercicios/show_ejercicios_archivados.html',{'ejercicios':ejercicios})
+
+
+@login_required
+def show_ejercicios_publicados(request):	
+	ejercicios = Ejercicio.objects.filter(is_publicado=True,is_archivado=False, is_para_portada=False).order_by('fecha_publicacion')
+	if not len(ejercicios):
+		messages.warning(request, "No existen Ejercicios Publicados")
+	else:	
+		messages.success(request, "Ejercicios obtenidos con exito!!!")
+	return render(request,'ejercicios/show_ejercicios_publicados.html',{'ejercicios':ejercicios})	
+
+
+@login_required
+def show_ejercicios_portada(request):	
+	ejercicios = Ejercicio.objects.filter(fecha_publicacion__isnull=False, is_para_portada=True).order_by('fecha_publicacion')
+	if not len(ejercicios):
+		messages.warning(request, "No existen Ejercicios en Portada")
+	else:	
+		messages.success(request, "Ejercicios en Portada obtenidas con exito!!!")
+	return render(request,'ejercicios/show_ejercicios_portada.html',{'dependencias':dependencias})	
